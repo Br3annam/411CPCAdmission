@@ -1,0 +1,11 @@
+C:\Users\TEST\OneDrive\Clarion\Senior Year\CIS 411\ExampleLook\ExampleLook\bin\Debug\ExampleLook.exe.config
+C:\Users\TEST\OneDrive\Clarion\Senior Year\CIS 411\ExampleLook\ExampleLook\bin\Debug\ExampleLook.exe
+C:\Users\TEST\OneDrive\Clarion\Senior Year\CIS 411\ExampleLook\ExampleLook\bin\Debug\ExampleLook.pdb
+C:\Users\TEST\OneDrive\Clarion\Senior Year\CIS 411\ExampleLook\ExampleLook\obj\Debug\ExampleLook.csprojResolveAssemblyReference.cache
+C:\Users\TEST\OneDrive\Clarion\Senior Year\CIS 411\ExampleLook\ExampleLook\obj\Debug\ExampleLook.CallSheetWindow.resources
+C:\Users\TEST\OneDrive\Clarion\Senior Year\CIS 411\ExampleLook\ExampleLook\obj\Debug\ExampleLook.Start.resources
+C:\Users\TEST\OneDrive\Clarion\Senior Year\CIS 411\ExampleLook\ExampleLook\obj\Debug\ExampleLook.Properties.Resources.resources
+C:\Users\TEST\OneDrive\Clarion\Senior Year\CIS 411\ExampleLook\ExampleLook\obj\Debug\ExampleLook.csproj.GenerateResource.Cache
+C:\Users\TEST\OneDrive\Clarion\Senior Year\CIS 411\ExampleLook\ExampleLook\obj\Debug\ExampleLook.exe
+C:\Users\TEST\OneDrive\Clarion\Senior Year\CIS 411\ExampleLook\ExampleLook\obj\Debug\ExampleLook.pdb
+C:\Users\TEST\OneDrive\Clarion\Senior Year\CIS 411\ExampleLook\ExampleLook\obj\Debug\ExampleLook.AdmissionsWindow.resources
