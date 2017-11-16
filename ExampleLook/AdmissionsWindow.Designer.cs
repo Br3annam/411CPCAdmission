@@ -187,6 +187,7 @@
             System.Windows.Forms.Label contextFactLabel;
             System.Windows.Forms.Label funcAssessLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdmissionsWindow));
+            System.Windows.Forms.Label insightLabel;
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.PatientAssess = new System.Windows.Forms.TabPage();
             this.idDataTextBox = new System.Windows.Forms.TextBox();
@@ -553,6 +554,7 @@
             this.psych_hospitalTableAdapter = new ExampleLook.cPCAppDataSetTableAdapters.psych_hospitalTableAdapter();
             this.medicationsTableAdapter = new ExampleLook.cPCAppDataSetTableAdapters.medicationsTableAdapter();
             this.substance_abuseTableAdapter = new ExampleLook.cPCAppDataSetTableAdapters.substance_abuseTableAdapter();
+            this.insightTextBox = new System.Windows.Forms.TextBox();
             firstNameLabel = new System.Windows.Forms.Label();
             lastNameLabel = new System.Windows.Forms.Label();
             dOBLabel = new System.Windows.Forms.Label();
@@ -710,6 +712,7 @@
             psychosocialFactLabel = new System.Windows.Forms.Label();
             contextFactLabel = new System.Windows.Forms.Label();
             funcAssessLabel = new System.Windows.Forms.Label();
+            insightLabel = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.PatientAssess.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.patient_admissionBindingSource)).BeginInit();
@@ -2232,6 +2235,8 @@
             // 
             // grpPatAssess
             // 
+            this.grpPatAssess.Controls.Add(insightLabel);
+            this.grpPatAssess.Controls.Add(this.insightTextBox);
             this.grpPatAssess.Controls.Add(this.sleUnaCheckBox);
             this.grpPatAssess.Controls.Add(this.sleNigCheckBox);
             this.grpPatAssess.Controls.Add(this.sleIntCheckBox);
@@ -6180,6 +6185,23 @@
             // 
             this.substance_abuseTableAdapter.ClearBeforeFill = true;
             // 
+            // insightLabel
+            // 
+            insightLabel.AutoSize = true;
+            insightLabel.Location = new System.Drawing.Point(739, 39);
+            insightLabel.Name = "insightLabel";
+            insightLabel.Size = new System.Drawing.Size(53, 17);
+            insightLabel.TabIndex = 74;
+            insightLabel.Text = "Insight:";
+            // 
+            // insightTextBox
+            // 
+            this.insightTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "Insight", true));
+            this.insightTextBox.Location = new System.Drawing.Point(798, 36);
+            this.insightTextBox.Name = "insightTextBox";
+            this.insightTextBox.Size = new System.Drawing.Size(100, 22);
+            this.insightTextBox.TabIndex = 75;
+            // 
             // AdmissionsWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -6640,5 +6662,6 @@
         private System.Windows.Forms.Label depressiveLabel;
         private System.Windows.Forms.BindingSource substance_abuseBindingSource;
         private cPCAppDataSetTableAdapters.substance_abuseTableAdapter substance_abuseTableAdapter;
+        private System.Windows.Forms.TextBox insightTextBox;
     }
 }
