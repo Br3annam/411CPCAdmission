@@ -188,11 +188,11 @@
             System.Windows.Forms.Label funcAssessLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdmissionsWindow));
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.PatientAssess = new System.Windows.Forms.TabPage();
             this.idDataTextBox = new System.Windows.Forms.TextBox();
             this.patient_admissionBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.cPCAppDataSet = new ExampleLook.CPCAppDataSet();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cPCAppDataSet = new ExampleLook.cPCAppDataSet();
+            this.grpPatAssess = new System.Windows.Forms.GroupBox();
             this.sleUnaCheckBox = new System.Windows.Forms.CheckBox();
             this.sleNigCheckBox = new System.Windows.Forms.CheckBox();
             this.sleIntCheckBox = new System.Windows.Forms.CheckBox();
@@ -254,7 +254,7 @@
             this.moodLabCheckBox = new System.Windows.Forms.CheckBox();
             this.moodDepCheckBox = new System.Windows.Forms.CheckBox();
             this.moodAppCheckBox = new System.Windows.Forms.CheckBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.grpPatientInfo = new System.Windows.Forms.GroupBox();
             this.transportDescTextBox = new System.Windows.Forms.TextBox();
             this.transportComboBox = new System.Windows.Forms.ComboBox();
             this.chiefComplaintTextBox = new System.Windows.Forms.TextBox();
@@ -272,7 +272,7 @@
             this.dOBDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.lastNameTextBox = new System.Windows.Forms.TextBox();
             this.firstNameTextBox = new System.Windows.Forms.TextBox();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.MedicalHIist = new System.Windows.Forms.TabPage();
             this.grpLegal = new System.Windows.Forms.GroupBox();
             this.grpDenyLegal = new System.Windows.Forms.GroupBox();
             this.incarcExplTextBox = new System.Windows.Forms.TextBox();
@@ -533,8 +533,9 @@
             this.physRecReferCheckBox = new System.Windows.Forms.CheckBox();
             this.timeAcceptedDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.physOnCallTextBox = new System.Windows.Forms.TextBox();
-            this.patient_admissionTableAdapter = new ExampleLook.CPCAppDataSetTableAdapters.patient_admissionTableAdapter();
-            this.tableAdapterManager = new ExampleLook.CPCAppDataSetTableAdapters.TableAdapterManager();
+            this.substance_abuseBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.patient_admissionTableAdapter = new ExampleLook.cPCAppDataSetTableAdapters.patient_admissionTableAdapter();
+            this.tableAdapterManager = new ExampleLook.cPCAppDataSetTableAdapters.TableAdapterManager();
             this.patient_admissionBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
@@ -548,10 +549,10 @@
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.patient_admissionBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
-            this.treatment_facilityTableAdapter = new ExampleLook.CPCAppDataSetTableAdapters.treatment_facilityTableAdapter();
-            this.psych_hospitalTableAdapter = new ExampleLook.CPCAppDataSetTableAdapters.psych_hospitalTableAdapter();
-            this.medicationsTableAdapter = new ExampleLook.CPCAppDataSetTableAdapters.medicationsTableAdapter();
-            this.tabPage9 = new System.Windows.Forms.TabPage();
+            this.treatment_facilityTableAdapter = new ExampleLook.cPCAppDataSetTableAdapters.treatment_facilityTableAdapter();
+            this.psych_hospitalTableAdapter = new ExampleLook.cPCAppDataSetTableAdapters.psych_hospitalTableAdapter();
+            this.medicationsTableAdapter = new ExampleLook.cPCAppDataSetTableAdapters.medicationsTableAdapter();
+            this.substance_abuseTableAdapter = new ExampleLook.cPCAppDataSetTableAdapters.substance_abuseTableAdapter();
             firstNameLabel = new System.Windows.Forms.Label();
             lastNameLabel = new System.Windows.Forms.Label();
             dOBLabel = new System.Windows.Forms.Label();
@@ -710,12 +711,12 @@
             contextFactLabel = new System.Windows.Forms.Label();
             funcAssessLabel = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
+            this.PatientAssess.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.patient_admissionBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cPCAppDataSet)).BeginInit();
-            this.groupBox2.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
+            this.grpPatAssess.SuspendLayout();
+            this.grpPatientInfo.SuspendLayout();
+            this.MedicalHIist.SuspendLayout();
             this.grpLegal.SuspendLayout();
             this.grpDenyLegal.SuspendLayout();
             this.grpMentalHealthTreatHist.SuspendLayout();
@@ -756,6 +757,7 @@
             this.tabPage8.SuspendLayout();
             this.grpProvDiag.SuspendLayout();
             this.grpPhysicianRecom.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.substance_abuseBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.patient_admissionBindingNavigator)).BeginInit();
             this.patient_admissionBindingNavigator.SuspendLayout();
             this.SuspendLayout();
@@ -1722,7 +1724,7 @@
             // supportsLabel
             // 
             supportsLabel.AutoSize = true;
-            supportsLabel.Location = new System.Drawing.Point(6, 301);
+            supportsLabel.Location = new System.Drawing.Point(6, 287);
             supportsLabel.Name = "supportsLabel";
             supportsLabel.Size = new System.Drawing.Size(69, 17);
             supportsLabel.TabIndex = 20;
@@ -1731,7 +1733,7 @@
             // strCopSkillsLabel
             // 
             strCopSkillsLabel.AutoSize = true;
-            strCopSkillsLabel.Location = new System.Drawing.Point(6, 332);
+            strCopSkillsLabel.Location = new System.Drawing.Point(6, 318);
             strCopSkillsLabel.Name = "strCopSkillsLabel";
             strCopSkillsLabel.Size = new System.Drawing.Size(159, 17);
             strCopSkillsLabel.TabIndex = 22;
@@ -2180,35 +2182,34 @@
             // 
             // tabControl1
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.PatientAssess);
+            this.tabControl1.Controls.Add(this.MedicalHIist);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Controls.Add(this.tabPage6);
             this.tabControl1.Controls.Add(this.tabPage7);
             this.tabControl1.Controls.Add(this.tabPage8);
-            this.tabControl1.Controls.Add(this.tabPage9);
             this.tabControl1.Location = new System.Drawing.Point(115, 30);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1077, 1057);
             this.tabControl1.TabIndex = 0;
             // 
-            // tabPage1
+            // PatientAssess
             // 
-            this.tabPage1.AutoScroll = true;
-            this.tabPage1.Controls.Add(idDataLabel);
-            this.tabPage1.Controls.Add(this.idDataTextBox);
-            this.tabPage1.Controls.Add(this.groupBox2);
-            this.tabPage1.Controls.Add(this.groupBox1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 25);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1069, 1028);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "tabPage1";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.PatientAssess.AutoScroll = true;
+            this.PatientAssess.Controls.Add(idDataLabel);
+            this.PatientAssess.Controls.Add(this.idDataTextBox);
+            this.PatientAssess.Controls.Add(this.grpPatAssess);
+            this.PatientAssess.Controls.Add(this.grpPatientInfo);
+            this.PatientAssess.Location = new System.Drawing.Point(4, 25);
+            this.PatientAssess.Name = "PatientAssess";
+            this.PatientAssess.Padding = new System.Windows.Forms.Padding(3);
+            this.PatientAssess.Size = new System.Drawing.Size(1069, 1028);
+            this.PatientAssess.TabIndex = 0;
+            this.PatientAssess.Text = "Patient Assessment";
+            this.PatientAssess.UseVisualStyleBackColor = true;
             // 
             // idDataTextBox
             // 
@@ -2226,86 +2227,85 @@
             // 
             // cPCAppDataSet
             // 
-            this.cPCAppDataSet.DataSetName = "CPCAppDataSet";
+            this.cPCAppDataSet.DataSetName = "cPCAppDataSet";
             this.cPCAppDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // groupBox2
+            // grpPatAssess
             // 
-            this.groupBox2.Controls.Add(this.sleUnaCheckBox);
-            this.groupBox2.Controls.Add(this.sleNigCheckBox);
-            this.groupBox2.Controls.Add(this.sleIntCheckBox);
-            this.groupBox2.Controls.Add(this.sleDifCheckBox);
-            this.groupBox2.Controls.Add(this.sleIncValueTextBox);
-            this.groupBox2.Controls.Add(this.sleIncCheckBox);
-            this.groupBox2.Controls.Add(this.sleDecValueTextBox);
-            this.groupBox2.Controls.Add(this.sleDecCheckBox);
-            this.groupBox2.Controls.Add(sleLabel);
-            this.groupBox2.Controls.Add(this.sleAppCheckBox);
-            this.groupBox2.Controls.Add(this.appeUnaCheckBox);
-            this.groupBox2.Controls.Add(this.appeLosValueTextBox);
-            this.groupBox2.Controls.Add(this.appeLosCheckBox);
-            this.groupBox2.Controls.Add(this.appeGaiValueTextBox);
-            this.groupBox2.Controls.Add(this.appeIncCheckBox);
-            this.groupBox2.Controls.Add(this.appeGaiCheckBox);
-            this.groupBox2.Controls.Add(this.appeDecCheckBox);
-            this.groupBox2.Controls.Add(appeLabel);
-            this.groupBox2.Controls.Add(this.appeAppCheckBox);
-            this.groupBox2.Controls.Add(this.orientDisCheckBox);
-            this.groupBox2.Controls.Add(this.orientSitCheckBox);
-            this.groupBox2.Controls.Add(this.orientTimCheckBox);
-            this.groupBox2.Controls.Add(this.orientPlaCheckBox);
-            this.groupBox2.Controls.Add(orientLabel);
-            this.groupBox2.Controls.Add(this.orientPerCheckBox);
-            this.groupBox2.Controls.Add(this.speechOtherValTextBox);
-            this.groupBox2.Controls.Add(this.speechOtherCheckBox);
-            this.groupBox2.Controls.Add(this.speechMonCheckBox);
-            this.groupBox2.Controls.Add(this.speechHosCheckBox);
-            this.groupBox2.Controls.Add(this.speechLoudCheckBox);
-            this.groupBox2.Controls.Add(this.speechRamCheckBox);
-            this.groupBox2.Controls.Add(this.speechPreCheckBox);
-            this.groupBox2.Controls.Add(speechLabel);
-            this.groupBox2.Controls.Add(this.speechAppCheckBox);
-            this.groupBox2.Controls.Add(this.affTearCheckBox);
-            this.groupBox2.Controls.Add(this.affLabCheckBox);
-            this.groupBox2.Controls.Add(this.affResCheckBox);
-            this.groupBox2.Controls.Add(this.affBluCheckBox);
-            this.groupBox2.Controls.Add(this.affInaCheckBox);
-            this.groupBox2.Controls.Add(affLabel);
-            this.groupBox2.Controls.Add(this.affAppCheckBox);
-            this.groupBox2.Controls.Add(this.thoughtContHalTypeTextBox);
-            this.groupBox2.Controls.Add(this.thoughtContHalCheckBox);
-            this.groupBox2.Controls.Add(this.thoughtContSomCheckBox);
-            this.groupBox2.Controls.Add(this.thoughtContDelCheckBox);
-            this.groupBox2.Controls.Add(this.thoughtContParCheckBox);
-            this.groupBox2.Controls.Add(this.thoughtContGraCheckBox);
-            this.groupBox2.Controls.Add(this.thoughtContPreCheckBox);
-            this.groupBox2.Controls.Add(thoughtContLabel);
-            this.groupBox2.Controls.Add(this.thoughtContReaCheckBox);
-            this.groupBox2.Controls.Add(this.thoughtProcDisCheckBox);
-            this.groupBox2.Controls.Add(this.thoughtProcBloCheckBox);
-            this.groupBox2.Controls.Add(this.thoughtProcObsCheckBox);
-            this.groupBox2.Controls.Add(this.thoughtProcRacCheckBox);
-            this.groupBox2.Controls.Add(this.thoughtProcLooCheckBox);
-            this.groupBox2.Controls.Add(this.thoughtProcTanCheckBox);
-            this.groupBox2.Controls.Add(this.thoughtProcConCheckBox);
-            this.groupBox2.Controls.Add(thoughtProcLabel);
-            this.groupBox2.Controls.Add(this.thoughtProcLogCheckBox);
-            this.groupBox2.Controls.Add(this.moodOtherValTextBox);
-            this.groupBox2.Controls.Add(this.moodOtherCheckBox);
-            this.groupBox2.Controls.Add(this.moodHosCheckBox);
-            this.groupBox2.Controls.Add(this.moodEupCheckBox);
-            this.groupBox2.Controls.Add(this.moodIrrCheckBox);
-            this.groupBox2.Controls.Add(this.moodAnxCheckBox);
-            this.groupBox2.Controls.Add(this.moodLabCheckBox);
-            this.groupBox2.Controls.Add(this.moodDepCheckBox);
-            this.groupBox2.Controls.Add(moodLabel);
-            this.groupBox2.Controls.Add(this.moodAppCheckBox);
-            this.groupBox2.Location = new System.Drawing.Point(30, 265);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(954, 584);
-            this.groupBox2.TabIndex = 1;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "groupBox2";
+            this.grpPatAssess.Controls.Add(this.sleUnaCheckBox);
+            this.grpPatAssess.Controls.Add(this.sleNigCheckBox);
+            this.grpPatAssess.Controls.Add(this.sleIntCheckBox);
+            this.grpPatAssess.Controls.Add(this.sleDifCheckBox);
+            this.grpPatAssess.Controls.Add(this.sleIncValueTextBox);
+            this.grpPatAssess.Controls.Add(this.sleIncCheckBox);
+            this.grpPatAssess.Controls.Add(this.sleDecValueTextBox);
+            this.grpPatAssess.Controls.Add(this.sleDecCheckBox);
+            this.grpPatAssess.Controls.Add(sleLabel);
+            this.grpPatAssess.Controls.Add(this.sleAppCheckBox);
+            this.grpPatAssess.Controls.Add(this.appeUnaCheckBox);
+            this.grpPatAssess.Controls.Add(this.appeLosValueTextBox);
+            this.grpPatAssess.Controls.Add(this.appeLosCheckBox);
+            this.grpPatAssess.Controls.Add(this.appeGaiValueTextBox);
+            this.grpPatAssess.Controls.Add(this.appeIncCheckBox);
+            this.grpPatAssess.Controls.Add(this.appeGaiCheckBox);
+            this.grpPatAssess.Controls.Add(this.appeDecCheckBox);
+            this.grpPatAssess.Controls.Add(appeLabel);
+            this.grpPatAssess.Controls.Add(this.appeAppCheckBox);
+            this.grpPatAssess.Controls.Add(this.orientDisCheckBox);
+            this.grpPatAssess.Controls.Add(this.orientSitCheckBox);
+            this.grpPatAssess.Controls.Add(this.orientTimCheckBox);
+            this.grpPatAssess.Controls.Add(this.orientPlaCheckBox);
+            this.grpPatAssess.Controls.Add(orientLabel);
+            this.grpPatAssess.Controls.Add(this.orientPerCheckBox);
+            this.grpPatAssess.Controls.Add(this.speechOtherValTextBox);
+            this.grpPatAssess.Controls.Add(this.speechOtherCheckBox);
+            this.grpPatAssess.Controls.Add(this.speechMonCheckBox);
+            this.grpPatAssess.Controls.Add(this.speechHosCheckBox);
+            this.grpPatAssess.Controls.Add(this.speechLoudCheckBox);
+            this.grpPatAssess.Controls.Add(this.speechRamCheckBox);
+            this.grpPatAssess.Controls.Add(this.speechPreCheckBox);
+            this.grpPatAssess.Controls.Add(speechLabel);
+            this.grpPatAssess.Controls.Add(this.speechAppCheckBox);
+            this.grpPatAssess.Controls.Add(this.affTearCheckBox);
+            this.grpPatAssess.Controls.Add(this.affLabCheckBox);
+            this.grpPatAssess.Controls.Add(this.affResCheckBox);
+            this.grpPatAssess.Controls.Add(this.affBluCheckBox);
+            this.grpPatAssess.Controls.Add(this.affInaCheckBox);
+            this.grpPatAssess.Controls.Add(affLabel);
+            this.grpPatAssess.Controls.Add(this.affAppCheckBox);
+            this.grpPatAssess.Controls.Add(this.thoughtContHalTypeTextBox);
+            this.grpPatAssess.Controls.Add(this.thoughtContHalCheckBox);
+            this.grpPatAssess.Controls.Add(this.thoughtContSomCheckBox);
+            this.grpPatAssess.Controls.Add(this.thoughtContDelCheckBox);
+            this.grpPatAssess.Controls.Add(this.thoughtContParCheckBox);
+            this.grpPatAssess.Controls.Add(this.thoughtContGraCheckBox);
+            this.grpPatAssess.Controls.Add(this.thoughtContPreCheckBox);
+            this.grpPatAssess.Controls.Add(thoughtContLabel);
+            this.grpPatAssess.Controls.Add(this.thoughtContReaCheckBox);
+            this.grpPatAssess.Controls.Add(this.thoughtProcDisCheckBox);
+            this.grpPatAssess.Controls.Add(this.thoughtProcBloCheckBox);
+            this.grpPatAssess.Controls.Add(this.thoughtProcObsCheckBox);
+            this.grpPatAssess.Controls.Add(this.thoughtProcRacCheckBox);
+            this.grpPatAssess.Controls.Add(this.thoughtProcLooCheckBox);
+            this.grpPatAssess.Controls.Add(this.thoughtProcTanCheckBox);
+            this.grpPatAssess.Controls.Add(this.thoughtProcConCheckBox);
+            this.grpPatAssess.Controls.Add(thoughtProcLabel);
+            this.grpPatAssess.Controls.Add(this.thoughtProcLogCheckBox);
+            this.grpPatAssess.Controls.Add(this.moodOtherValTextBox);
+            this.grpPatAssess.Controls.Add(this.moodOtherCheckBox);
+            this.grpPatAssess.Controls.Add(this.moodHosCheckBox);
+            this.grpPatAssess.Controls.Add(this.moodEupCheckBox);
+            this.grpPatAssess.Controls.Add(this.moodIrrCheckBox);
+            this.grpPatAssess.Controls.Add(this.moodAnxCheckBox);
+            this.grpPatAssess.Controls.Add(this.moodLabCheckBox);
+            this.grpPatAssess.Controls.Add(this.moodDepCheckBox);
+            this.grpPatAssess.Controls.Add(moodLabel);
+            this.grpPatAssess.Controls.Add(this.moodAppCheckBox);
+            this.grpPatAssess.Location = new System.Drawing.Point(30, 265);
+            this.grpPatAssess.Name = "grpPatAssess";
+            this.grpPatAssess.Size = new System.Drawing.Size(956, 601);
+            this.grpPatAssess.TabIndex = 1;
+            this.grpPatAssess.TabStop = false;
             // 
             // sleUnaCheckBox
             // 
@@ -2904,54 +2904,53 @@
             this.moodAppCheckBox.Text = "Appropriate";
             this.moodAppCheckBox.UseVisualStyleBackColor = true;
             // 
-            // groupBox1
+            // grpPatientInfo
             // 
-            this.groupBox1.Controls.Add(this.transportDescTextBox);
-            this.groupBox1.Controls.Add(transportLabel);
-            this.groupBox1.Controls.Add(this.transportComboBox);
-            this.groupBox1.Controls.Add(chiefComplaintLabel);
-            this.groupBox1.Controls.Add(this.chiefComplaintTextBox);
-            this.groupBox1.Controls.Add(admPsyDiagLabel);
-            this.groupBox1.Controls.Add(this.admPsyDiagTextBox);
-            this.groupBox1.Controls.Add(srcInfoLabel);
-            this.groupBox1.Controls.Add(this.commitStatDescTextBox);
-            this.groupBox1.Controls.Add(commitStatLabel);
-            this.groupBox1.Controls.Add(this.commitStatComboBox);
-            this.groupBox1.Controls.Add(schedAssessTimeLabel);
-            this.groupBox1.Controls.Add(this.schedAssessTimeTextBox);
-            this.groupBox1.Controls.Add(assessStartDateLabel);
-            this.groupBox1.Controls.Add(this.assessStartDateDateTimePicker);
-            this.groupBox1.Controls.Add(raceLabel);
-            this.groupBox1.Controls.Add(this.raceTextBox);
-            this.groupBox1.Controls.Add(maritalStatLabel);
-            this.groupBox1.Controls.Add(this.maritalStatTextBox);
-            this.groupBox1.Controls.Add(ageLabel);
-            this.groupBox1.Controls.Add(this.ageTextBox);
-            this.groupBox1.Controls.Add(genderLabel);
-            this.groupBox1.Controls.Add(this.genderComboBox);
-            this.groupBox1.Controls.Add(genderIDLabel);
-            this.groupBox1.Controls.Add(this.genderIDComboBox);
-            this.groupBox1.Controls.Add(mRNumLabel);
-            this.groupBox1.Controls.Add(this.mRNumTextBox);
-            this.groupBox1.Controls.Add(dOBLabel);
-            this.groupBox1.Controls.Add(this.dOBDateTimePicker);
-            this.groupBox1.Controls.Add(lastNameLabel);
-            this.groupBox1.Controls.Add(this.lastNameTextBox);
-            this.groupBox1.Controls.Add(firstNameLabel);
-            this.groupBox1.Controls.Add(this.firstNameTextBox);
-            this.groupBox1.Location = new System.Drawing.Point(30, 21);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(927, 238);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
+            this.grpPatientInfo.Controls.Add(this.transportDescTextBox);
+            this.grpPatientInfo.Controls.Add(transportLabel);
+            this.grpPatientInfo.Controls.Add(this.transportComboBox);
+            this.grpPatientInfo.Controls.Add(chiefComplaintLabel);
+            this.grpPatientInfo.Controls.Add(this.chiefComplaintTextBox);
+            this.grpPatientInfo.Controls.Add(admPsyDiagLabel);
+            this.grpPatientInfo.Controls.Add(this.admPsyDiagTextBox);
+            this.grpPatientInfo.Controls.Add(srcInfoLabel);
+            this.grpPatientInfo.Controls.Add(this.commitStatDescTextBox);
+            this.grpPatientInfo.Controls.Add(commitStatLabel);
+            this.grpPatientInfo.Controls.Add(this.commitStatComboBox);
+            this.grpPatientInfo.Controls.Add(schedAssessTimeLabel);
+            this.grpPatientInfo.Controls.Add(this.schedAssessTimeTextBox);
+            this.grpPatientInfo.Controls.Add(assessStartDateLabel);
+            this.grpPatientInfo.Controls.Add(this.assessStartDateDateTimePicker);
+            this.grpPatientInfo.Controls.Add(raceLabel);
+            this.grpPatientInfo.Controls.Add(this.raceTextBox);
+            this.grpPatientInfo.Controls.Add(maritalStatLabel);
+            this.grpPatientInfo.Controls.Add(this.maritalStatTextBox);
+            this.grpPatientInfo.Controls.Add(ageLabel);
+            this.grpPatientInfo.Controls.Add(this.ageTextBox);
+            this.grpPatientInfo.Controls.Add(genderLabel);
+            this.grpPatientInfo.Controls.Add(this.genderComboBox);
+            this.grpPatientInfo.Controls.Add(genderIDLabel);
+            this.grpPatientInfo.Controls.Add(this.genderIDComboBox);
+            this.grpPatientInfo.Controls.Add(mRNumLabel);
+            this.grpPatientInfo.Controls.Add(this.mRNumTextBox);
+            this.grpPatientInfo.Controls.Add(dOBLabel);
+            this.grpPatientInfo.Controls.Add(this.dOBDateTimePicker);
+            this.grpPatientInfo.Controls.Add(lastNameLabel);
+            this.grpPatientInfo.Controls.Add(this.lastNameTextBox);
+            this.grpPatientInfo.Controls.Add(firstNameLabel);
+            this.grpPatientInfo.Controls.Add(this.firstNameTextBox);
+            this.grpPatientInfo.Location = new System.Drawing.Point(30, 21);
+            this.grpPatientInfo.Name = "grpPatientInfo";
+            this.grpPatientInfo.Size = new System.Drawing.Size(954, 238);
+            this.grpPatientInfo.TabIndex = 0;
+            this.grpPatientInfo.TabStop = false;
             // 
             // transportDescTextBox
             // 
             this.transportDescTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "TransportDesc", true));
             this.transportDescTextBox.Location = new System.Drawing.Point(346, 128);
             this.transportDescTextBox.Name = "transportDescTextBox";
-            this.transportDescTextBox.Size = new System.Drawing.Size(535, 22);
+            this.transportDescTextBox.Size = new System.Drawing.Size(567, 22);
             this.transportDescTextBox.TabIndex = 33;
             // 
             // transportComboBox
@@ -2974,7 +2973,7 @@
             this.chiefComplaintTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "ChiefComplaint", true));
             this.chiefComplaintTextBox.Location = new System.Drawing.Point(146, 187);
             this.chiefComplaintTextBox.Name = "chiefComplaintTextBox";
-            this.chiefComplaintTextBox.Size = new System.Drawing.Size(735, 22);
+            this.chiefComplaintTextBox.Size = new System.Drawing.Size(767, 22);
             this.chiefComplaintTextBox.TabIndex = 29;
             // 
             // admPsyDiagTextBox
@@ -2982,7 +2981,7 @@
             this.admPsyDiagTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "AdmPsyDiag", true));
             this.admPsyDiagTextBox.Location = new System.Drawing.Point(159, 158);
             this.admPsyDiagTextBox.Name = "admPsyDiagTextBox";
-            this.admPsyDiagTextBox.Size = new System.Drawing.Size(722, 22);
+            this.admPsyDiagTextBox.Size = new System.Drawing.Size(754, 22);
             this.admPsyDiagTextBox.TabIndex = 27;
             // 
             // commitStatDescTextBox
@@ -2990,7 +2989,7 @@
             this.commitStatDescTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "CommitStatDesc", true));
             this.commitStatDescTextBox.Location = new System.Drawing.Point(725, 78);
             this.commitStatDescTextBox.Name = "commitStatDescTextBox";
-            this.commitStatDescTextBox.Size = new System.Drawing.Size(156, 22);
+            this.commitStatDescTextBox.Size = new System.Drawing.Size(188, 22);
             this.commitStatDescTextBox.TabIndex = 25;
             // 
             // commitStatComboBox
@@ -3030,7 +3029,7 @@
             this.raceTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "Race", true));
             this.raceTextBox.Location = new System.Drawing.Point(762, 46);
             this.raceTextBox.Name = "raceTextBox";
-            this.raceTextBox.Size = new System.Drawing.Size(119, 22);
+            this.raceTextBox.Size = new System.Drawing.Size(151, 22);
             this.raceTextBox.TabIndex = 17;
             // 
             // maritalStatTextBox
@@ -3079,7 +3078,7 @@
             this.mRNumTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "MRNum", true));
             this.mRNumTextBox.Location = new System.Drawing.Point(781, 15);
             this.mRNumTextBox.Name = "mRNumTextBox";
-            this.mRNumTextBox.Size = new System.Drawing.Size(100, 22);
+            this.mRNumTextBox.Size = new System.Drawing.Size(132, 22);
             this.mRNumTextBox.TabIndex = 7;
             this.mRNumTextBox.TextChanged += new System.EventHandler(this.mRNumTextBox_TextChanged);
             // 
@@ -3107,18 +3106,18 @@
             this.firstNameTextBox.Size = new System.Drawing.Size(139, 22);
             this.firstNameTextBox.TabIndex = 1;
             // 
-            // tabPage2
+            // MedicalHIist
             // 
-            this.tabPage2.Controls.Add(this.grpLegal);
-            this.tabPage2.Controls.Add(this.grpMentalHealthTreatHist);
-            this.tabPage2.Controls.Add(this.grpMedHist);
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1069, 1028);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.MedicalHIist.Controls.Add(this.grpLegal);
+            this.MedicalHIist.Controls.Add(this.grpMentalHealthTreatHist);
+            this.MedicalHIist.Controls.Add(this.grpMedHist);
+            this.MedicalHIist.Location = new System.Drawing.Point(4, 25);
+            this.MedicalHIist.Name = "MedicalHIist";
+            this.MedicalHIist.Padding = new System.Windows.Forms.Padding(3);
+            this.MedicalHIist.Size = new System.Drawing.Size(1069, 1028);
+            this.MedicalHIist.TabIndex = 1;
+            this.MedicalHIist.Text = "Medical History";
+            this.MedicalHIist.UseVisualStyleBackColor = true;
             // 
             // grpLegal
             // 
@@ -4514,7 +4513,7 @@
             this.grpAlcoDrugHist.Controls.Add(this.deniesMisuseCheckBox);
             this.grpAlcoDrugHist.Location = new System.Drawing.Point(15, 6);
             this.grpAlcoDrugHist.Name = "grpAlcoDrugHist";
-            this.grpAlcoDrugHist.Size = new System.Drawing.Size(1037, 564);
+            this.grpAlcoDrugHist.Size = new System.Drawing.Size(1046, 569);
             this.grpAlcoDrugHist.TabIndex = 0;
             this.grpAlcoDrugHist.TabStop = false;
             this.grpAlcoDrugHist.Text = "Alcohol/Drug History (Information collected below should only include the past 12" +
@@ -4684,7 +4683,7 @@
             this.deniesAlcDrugTreatCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.patient_admissionBindingSource, "DeniesAlcDrugTreat", true));
             this.deniesAlcDrugTreatCheckBox.Location = new System.Drawing.Point(6, 208);
             this.deniesAlcDrugTreatCheckBox.Name = "deniesAlcDrugTreatCheckBox";
-            this.deniesAlcDrugTreatCheckBox.Size = new System.Drawing.Size(104, 24);
+            this.deniesAlcDrugTreatCheckBox.Size = new System.Drawing.Size(267, 24);
             this.deniesAlcDrugTreatCheckBox.TabIndex = 2;
             this.deniesAlcDrugTreatCheckBox.Text = "Denies any alcohol/drug treatment";
             this.deniesAlcDrugTreatCheckBox.UseVisualStyleBackColor = true;
@@ -4721,7 +4720,7 @@
             this.grpCurrentMeds.Controls.Add(this.medCompliantDescTextBox);
             this.grpCurrentMeds.Controls.Add(medCompliantLabel);
             this.grpCurrentMeds.Controls.Add(this.medCompliantComboBox);
-            this.grpCurrentMeds.Location = new System.Drawing.Point(18, 634);
+            this.grpCurrentMeds.Location = new System.Drawing.Point(18, 627);
             this.grpCurrentMeds.Name = "grpCurrentMeds";
             this.grpCurrentMeds.Size = new System.Drawing.Size(1028, 384);
             this.grpCurrentMeds.TabIndex = 2;
@@ -4827,7 +4826,7 @@
             this.grpSocialHist.Controls.Add(this.highLevEduTextBox);
             this.grpSocialHist.Location = new System.Drawing.Point(18, 261);
             this.grpSocialHist.Name = "grpSocialHist";
-            this.grpSocialHist.Size = new System.Drawing.Size(1028, 366);
+            this.grpSocialHist.Size = new System.Drawing.Size(1028, 354);
             this.grpSocialHist.TabIndex = 1;
             this.grpSocialHist.TabStop = false;
             this.grpSocialHist.Text = "Past/Personal/Current Social History";
@@ -4835,7 +4834,7 @@
             // strCopSkillsTextBox
             // 
             this.strCopSkillsTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "StrCopSkills", true));
-            this.strCopSkillsTextBox.Location = new System.Drawing.Point(171, 329);
+            this.strCopSkillsTextBox.Location = new System.Drawing.Point(171, 315);
             this.strCopSkillsTextBox.Name = "strCopSkillsTextBox";
             this.strCopSkillsTextBox.Size = new System.Drawing.Size(832, 22);
             this.strCopSkillsTextBox.TabIndex = 23;
@@ -4843,7 +4842,7 @@
             // supportsTextBox
             // 
             this.supportsTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "Supports", true));
-            this.supportsTextBox.Location = new System.Drawing.Point(81, 298);
+            this.supportsTextBox.Location = new System.Drawing.Point(81, 284);
             this.supportsTextBox.Name = "supportsTextBox";
             this.supportsTextBox.Size = new System.Drawing.Size(922, 22);
             this.supportsTextBox.TabIndex = 21;
@@ -5778,7 +5777,7 @@
             this.funcAssessTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "FuncAssess", true));
             this.funcAssessTextBox.Location = new System.Drawing.Point(169, 210);
             this.funcAssessTextBox.Name = "funcAssessTextBox";
-            this.funcAssessTextBox.Size = new System.Drawing.Size(268, 22);
+            this.funcAssessTextBox.Size = new System.Drawing.Size(841, 22);
             this.funcAssessTextBox.TabIndex = 15;
             // 
             // contextFactDescTextBox
@@ -6010,6 +6009,11 @@
             this.physOnCallTextBox.Size = new System.Drawing.Size(265, 22);
             this.physOnCallTextBox.TabIndex = 1;
             // 
+            // substance_abuseBindingSource
+            // 
+            this.substance_abuseBindingSource.DataMember = "FK_substance_abuse_patient_admission";
+            this.substance_abuseBindingSource.DataSource = this.patient_admissionBindingSource;
+            // 
             // patient_admissionTableAdapter
             // 
             this.patient_admissionTableAdapter.ClearBeforeFill = true;
@@ -6025,6 +6029,7 @@
             this.tableAdapterManager.medical_problem_listTableAdapter = null;
             this.tableAdapterManager.medicationsTableAdapter = null;
             this.tableAdapterManager.pain_assessmentTableAdapter = null;
+            this.tableAdapterManager.patient_admission_extTableAdapter = null;
             this.tableAdapterManager.patient_admissionTableAdapter = this.patient_admissionTableAdapter;
             this.tableAdapterManager.precautionTableAdapter = null;
             this.tableAdapterManager.psych_hospitalTableAdapter = null;
@@ -6032,7 +6037,7 @@
             this.tableAdapterManager.short_term_goalsTableAdapter = null;
             this.tableAdapterManager.substance_abuseTableAdapter = null;
             this.tableAdapterManager.treatment_facilityTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = ExampleLook.CPCAppDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.UpdateOrder = ExampleLook.cPCAppDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // patient_admissionBindingNavigator
             // 
@@ -6171,15 +6176,9 @@
             // 
             this.medicationsTableAdapter.ClearBeforeFill = true;
             // 
-            // tabPage9
+            // substance_abuseTableAdapter
             // 
-            this.tabPage9.Location = new System.Drawing.Point(4, 25);
-            this.tabPage9.Name = "tabPage9";
-            this.tabPage9.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage9.Size = new System.Drawing.Size(1069, 1028);
-            this.tabPage9.TabIndex = 8;
-            this.tabPage9.Text = "tabPage9";
-            this.tabPage9.UseVisualStyleBackColor = true;
+            this.substance_abuseTableAdapter.ClearBeforeFill = true;
             // 
             // AdmissionsWindow
             // 
@@ -6193,15 +6192,15 @@
             this.Text = "AdmissionsWindow";
             this.Load += new System.EventHandler(this.AdmissionsWindow_Load);
             this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
+            this.PatientAssess.ResumeLayout(false);
+            this.PatientAssess.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.patient_admissionBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cPCAppDataSet)).EndInit();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.tabPage2.ResumeLayout(false);
+            this.grpPatAssess.ResumeLayout(false);
+            this.grpPatAssess.PerformLayout();
+            this.grpPatientInfo.ResumeLayout(false);
+            this.grpPatientInfo.PerformLayout();
+            this.MedicalHIist.ResumeLayout(false);
             this.grpLegal.ResumeLayout(false);
             this.grpDenyLegal.ResumeLayout(false);
             this.grpDenyLegal.PerformLayout();
@@ -6264,6 +6263,7 @@
             this.grpProvDiag.PerformLayout();
             this.grpPhysicianRecom.ResumeLayout(false);
             this.grpPhysicianRecom.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.substance_abuseBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.patient_admissionBindingNavigator)).EndInit();
             this.patient_admissionBindingNavigator.ResumeLayout(false);
             this.patient_admissionBindingNavigator.PerformLayout();
@@ -6275,13 +6275,13 @@
         #endregion
 
         private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TabPage tabPage2;
-        private CPCAppDataSet cPCAppDataSet;
+        private System.Windows.Forms.TabPage PatientAssess;
+        private System.Windows.Forms.GroupBox grpPatientInfo;
+        private System.Windows.Forms.TabPage MedicalHIist;
+        private cPCAppDataSet cPCAppDataSet;
         private System.Windows.Forms.BindingSource patient_admissionBindingSource;
-        private CPCAppDataSetTableAdapters.patient_admissionTableAdapter patient_admissionTableAdapter;
-        private CPCAppDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private cPCAppDataSetTableAdapters.patient_admissionTableAdapter patient_admissionTableAdapter;
+        private cPCAppDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.BindingNavigator patient_admissionBindingNavigator;
         private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
@@ -6310,7 +6310,7 @@
         private System.Windows.Forms.ComboBox genderIDComboBox;
         private System.Windows.Forms.TextBox chiefComplaintTextBox;
         private System.Windows.Forms.TextBox admPsyDiagTextBox;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox grpPatAssess;
         private System.Windows.Forms.CheckBox affTearCheckBox;
         private System.Windows.Forms.CheckBox affLabCheckBox;
         private System.Windows.Forms.CheckBox affResCheckBox;
@@ -6614,14 +6614,14 @@
         private System.Windows.Forms.TextBox medDiagTextBox;
         private System.Windows.Forms.CheckBox medDiagNoneCheckBox;
         private System.Windows.Forms.BindingSource treatment_facilityBindingSource;
-        private CPCAppDataSetTableAdapters.treatment_facilityTableAdapter treatment_facilityTableAdapter;
+        private cPCAppDataSetTableAdapters.treatment_facilityTableAdapter treatment_facilityTableAdapter;
         private System.Windows.Forms.DataGridView treatment_facilityDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.BindingSource psych_hospitalBindingSource;
-        private CPCAppDataSetTableAdapters.psych_hospitalTableAdapter psych_hospitalTableAdapter;
+        private cPCAppDataSetTableAdapters.psych_hospitalTableAdapter psych_hospitalTableAdapter;
         private System.Windows.Forms.DataGridView psych_hospitalDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
@@ -6629,7 +6629,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.Label directionsLabel;
         private System.Windows.Forms.BindingSource medicationsBindingSource;
-        private CPCAppDataSetTableAdapters.medicationsTableAdapter medicationsTableAdapter;
+        private cPCAppDataSetTableAdapters.medicationsTableAdapter medicationsTableAdapter;
         private System.Windows.Forms.DataGridView medicationsDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
@@ -6638,6 +6638,7 @@
         private System.Windows.Forms.Label moodLabilityLabel;
         private System.Windows.Forms.Label anxietyRelatedLabel;
         private System.Windows.Forms.Label depressiveLabel;
-        private System.Windows.Forms.TabPage tabPage9;
+        private System.Windows.Forms.BindingSource substance_abuseBindingSource;
+        private cPCAppDataSetTableAdapters.substance_abuseTableAdapter substance_abuseTableAdapter;
     }
 }

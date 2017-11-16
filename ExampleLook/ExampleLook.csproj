@@ -58,13 +58,10 @@
     <Compile Include="CallSheetWindow.Designer.cs">
       <DependentUpon>CallSheetWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="CPCAppDataSet.cs">
-      <DependentUpon>CPCAppDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="CPCAppDataSet.Designer.cs">
+    <Compile Include="cPCAppDataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CPCAppDataSet.xsd</DependentUpon>
+      <DependentUpon>cPCAppDataSet1.xsd</DependentUpon>
     </Compile>
     <Compile Include="DataLayer.cs" />
     <Compile Include="Start.cs">
@@ -93,16 +90,16 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="CPCAppDataSet.xsc">
-      <DependentUpon>CPCAppDataSet.xsd</DependentUpon>
+    <None Include="cPCAppDataSet1.xsc">
+      <DependentUpon>cPCAppDataSet1.xsd</DependentUpon>
     </None>
-    <None Include="CPCAppDataSet.xsd">
+    <None Include="cPCAppDataSet1.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>CPCAppDataSet.Designer.cs</LastGenOutput>
+      <LastGenOutput>cPCAppDataSet1.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="CPCAppDataSet.xss">
-      <DependentUpon>CPCAppDataSet.xsd</DependentUpon>
+    <None Include="cPCAppDataSet1.xss">
+      <DependentUpon>cPCAppDataSet1.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

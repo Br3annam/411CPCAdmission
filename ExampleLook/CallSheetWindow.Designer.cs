@@ -107,12 +107,12 @@
             System.Windows.Forms.Label medDiagLabel;
             System.Windows.Forms.Label faxLabLabel;
             System.Windows.Forms.Label transportLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CallSheetWindow));
             System.Windows.Forms.Label primInsNameLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CallSheetWindow));
             this.grpBxCallInfo = new System.Windows.Forms.GroupBox();
             this.callStartedTimeTextBox = new System.Windows.Forms.TextBox();
             this.patient_admissionBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.cPCAppDataSet = new ExampleLook.CPCAppDataSet();
+            this.cPCAppDataSet = new ExampleLook.cPCAppDataSet();
             this.callCollectedByTextBox1 = new System.Windows.Forms.TextBox();
             this.callStartedDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.grpBxReferralData = new System.Windows.Forms.GroupBox();
@@ -246,10 +246,10 @@
             this.nurseIntakeTextBox = new System.Windows.Forms.TextBox();
             this.medicationsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnSave = new System.Windows.Forms.Button();
-            this.patient_admissionTableAdapter = new ExampleLook.CPCAppDataSetTableAdapters.patient_admissionTableAdapter();
-            this.tableAdapterManager = new ExampleLook.CPCAppDataSetTableAdapters.TableAdapterManager();
-            this.medicationsTableAdapter = new ExampleLook.CPCAppDataSetTableAdapters.medicationsTableAdapter();
-            this.allergiesTableAdapter = new ExampleLook.CPCAppDataSetTableAdapters.allergiesTableAdapter();
+            this.patient_admissionTableAdapter = new ExampleLook.cPCAppDataSetTableAdapters.patient_admissionTableAdapter();
+            this.tableAdapterManager = new ExampleLook.cPCAppDataSetTableAdapters.TableAdapterManager();
+            this.medicationsTableAdapter = new ExampleLook.cPCAppDataSetTableAdapters.medicationsTableAdapter();
+            this.allergiesTableAdapter = new ExampleLook.cPCAppDataSetTableAdapters.allergiesTableAdapter();
             callerFNameLabel = new System.Windows.Forms.Label();
             callerLNameLabel = new System.Windows.Forms.Label();
             callerCityLabel = new System.Windows.Forms.Label();
@@ -1056,6 +1056,15 @@
             transportLabel.TabIndex = 12;
             transportLabel.Text = "Transportation?";
             // 
+            // primInsNameLabel
+            // 
+            primInsNameLabel.AutoSize = true;
+            primInsNameLabel.Location = new System.Drawing.Point(6, 18);
+            primInsNameLabel.Name = "primInsNameLabel";
+            primInsNameLabel.Size = new System.Drawing.Size(171, 17);
+            primInsNameLabel.TabIndex = 0;
+            primInsNameLabel.Text = "Primary Insurance Name: ";
+            // 
             // grpBxCallInfo
             // 
             this.grpBxCallInfo.Controls.Add(this.callStartedTimeTextBox);
@@ -1085,7 +1094,7 @@
             // 
             // cPCAppDataSet
             // 
-            this.cPCAppDataSet.DataSetName = "CPCAppDataSet";
+            this.cPCAppDataSet.DataSetName = "cPCAppDataSet";
             this.cPCAppDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // callCollectedByTextBox1
@@ -1222,7 +1231,7 @@
             this.patient_admissionBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.patient_admissionBindingNavigator.Name = "patient_admissionBindingNavigator";
             this.patient_admissionBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.patient_admissionBindingNavigator.Size = new System.Drawing.Size(1178, 27);
+            this.patient_admissionBindingNavigator.Size = new System.Drawing.Size(1157, 27);
             this.patient_admissionBindingNavigator.TabIndex = 2;
             this.patient_admissionBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -2480,6 +2489,7 @@
             this.tableAdapterManager.medical_problem_listTableAdapter = null;
             this.tableAdapterManager.medicationsTableAdapter = null;
             this.tableAdapterManager.pain_assessmentTableAdapter = null;
+            this.tableAdapterManager.patient_admission_extTableAdapter = null;
             this.tableAdapterManager.patient_admissionTableAdapter = this.patient_admissionTableAdapter;
             this.tableAdapterManager.precautionTableAdapter = null;
             this.tableAdapterManager.psych_hospitalTableAdapter = null;
@@ -2487,7 +2497,7 @@
             this.tableAdapterManager.short_term_goalsTableAdapter = null;
             this.tableAdapterManager.substance_abuseTableAdapter = null;
             this.tableAdapterManager.treatment_facilityTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = ExampleLook.CPCAppDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.UpdateOrder = ExampleLook.cPCAppDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // medicationsTableAdapter
             // 
@@ -2497,21 +2507,12 @@
             // 
             this.allergiesTableAdapter.ClearBeforeFill = true;
             // 
-            // primInsNameLabel
-            // 
-            primInsNameLabel.AutoSize = true;
-            primInsNameLabel.Location = new System.Drawing.Point(6, 18);
-            primInsNameLabel.Name = "primInsNameLabel";
-            primInsNameLabel.Size = new System.Drawing.Size(171, 17);
-            primInsNameLabel.TabIndex = 0;
-            primInsNameLabel.Text = "Primary Insurance Name: ";
-            // 
             // CallSheetWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1178, 1167);
+            this.ClientSize = new System.Drawing.Size(1178, 1037);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.tabCallSheet);
             this.Controls.Add(this.patient_admissionBindingNavigator);
@@ -2561,10 +2562,10 @@
 
         private System.Windows.Forms.GroupBox grpBxCallInfo;
         private System.Windows.Forms.GroupBox grpBxReferralData;
-        private CPCAppDataSet cPCAppDataSet;
+        private cPCAppDataSet cPCAppDataSet;
         private System.Windows.Forms.BindingSource patient_admissionBindingSource;
-        private CPCAppDataSetTableAdapters.patient_admissionTableAdapter patient_admissionTableAdapter;
-        private CPCAppDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private cPCAppDataSetTableAdapters.patient_admissionTableAdapter patient_admissionTableAdapter;
+        private cPCAppDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.BindingNavigator patient_admissionBindingNavigator;
         private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
@@ -2616,7 +2617,7 @@
         private System.Windows.Forms.TextBox bloodPressureTextBox;
         private System.Windows.Forms.TextBox iQTextBox;
         private System.Windows.Forms.BindingSource medicationsBindingSource;
-        private CPCAppDataSetTableAdapters.medicationsTableAdapter medicationsTableAdapter;
+        private cPCAppDataSetTableAdapters.medicationsTableAdapter medicationsTableAdapter;
         private System.Windows.Forms.GroupBox grpInsurance;
         private System.Windows.Forms.TextBox primInsPhoneTextBox;
         private System.Windows.Forms.TextBox primInsNameTextBox;
@@ -2640,7 +2641,7 @@
         private System.Windows.Forms.CheckBox presentSelfHarmCheckBox;
         private System.Windows.Forms.CheckBox presentSuicideCheckBox;
         private System.Windows.Forms.BindingSource allergiesBindingSource;
-        private CPCAppDataSetTableAdapters.allergiesTableAdapter allergiesTableAdapter;
+        private cPCAppDataSetTableAdapters.allergiesTableAdapter allergiesTableAdapter;
         private System.Windows.Forms.CheckBox emergencyContactCheckBox;
         private System.Windows.Forms.TextBox emergencyContactLNameTextBox;
         private System.Windows.Forms.TextBox emergencyContactFNameTextBox;
