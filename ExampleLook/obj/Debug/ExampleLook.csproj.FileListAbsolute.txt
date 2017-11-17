@@ -9,3 +9,14 @@ C:\Users\TEST\OneDrive\Clarion\Senior Year\CIS 411\ExampleLook\ExampleLook\obj\D
 C:\Users\TEST\OneDrive\Clarion\Senior Year\CIS 411\ExampleLook\ExampleLook\obj\Debug\ExampleLook.exe
 C:\Users\TEST\OneDrive\Clarion\Senior Year\CIS 411\ExampleLook\ExampleLook\obj\Debug\ExampleLook.pdb
 C:\Users\TEST\OneDrive\Clarion\Senior Year\CIS 411\ExampleLook\ExampleLook\obj\Debug\ExampleLook.AdmissionsWindow.resources
+C:\Users\smhru\411Proj\411CPCAdmission\ExampleLook\bin\Debug\ExampleLook.exe.config
+C:\Users\smhru\411Proj\411CPCAdmission\ExampleLook\obj\Debug\ExampleLook.exe
+C:\Users\smhru\411Proj\411CPCAdmission\ExampleLook\obj\Debug\ExampleLook.pdb
+C:\Users\smhru\411Proj\411CPCAdmission\ExampleLook\bin\Debug\ExampleLook.exe
+C:\Users\smhru\411Proj\411CPCAdmission\ExampleLook\bin\Debug\ExampleLook.pdb
+C:\Users\smhru\411Proj\411CPCAdmission\ExampleLook\obj\Debug\ExampleLook.csprojResolveAssemblyReference.cache
+C:\Users\smhru\411Proj\411CPCAdmission\ExampleLook\obj\Debug\ExampleLook.AdmissionsWindow.resources
+C:\Users\smhru\411Proj\411CPCAdmission\ExampleLook\obj\Debug\ExampleLook.CallSheetWindow.resources
+C:\Users\smhru\411Proj\411CPCAdmission\ExampleLook\obj\Debug\ExampleLook.Start.resources
+C:\Users\smhru\411Proj\411CPCAdmission\ExampleLook\obj\Debug\ExampleLook.Properties.Resources.resources
+C:\Users\smhru\411Proj\411CPCAdmission\ExampleLook\obj\Debug\ExampleLook.csproj.GenerateResource.Cache

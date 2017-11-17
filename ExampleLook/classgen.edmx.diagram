@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="4c7bd210272a4230b5a849b0e63cd972" Name="Diagram1">
+        <EntityTypeShape EntityType="CPCAppModel1.abuse_assessment" Width="1.5" PointX="5.25" PointY="82.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CPCAppModel1.allergy" Width="1.5" PointX="5.25" PointY="86.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CPCAppModel1.family_members" Width="1.5" PointX="5.25" PointY="89.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CPCAppModel1.medication" Width="1.5" PointX="5.25" PointY="92.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CPCAppModel1.pain_assessment" Width="1.5" PointX="5.25" PointY="95.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CPCAppModel1.patient_admission" Width="1.5" PointX="3" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CPCAppModel1.patient_admission_ext" Width="1.5" PointX="0.75" PointY="56" IsExpanded="true" />
+        <EntityTypeShape EntityType="CPCAppModel1.precaution" Width="1.5" PointX="5.25" PointY="98.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CPCAppModel1.psych_hospital" Width="1.5" PointX="5.25" PointY="101.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CPCAppModel1.psychiatric_problem_list" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CPCAppModel1.substance_abuse" Width="1.5" PointX="5.25" PointY="103.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CPCAppModel1.treatment_facility" Width="1.5" PointX="5.25" PointY="107.375" IsExpanded="true" />
+        <AssociationConnector Association="CPCAppModel1.FK_abuse_assessment_patient_admission" ManuallyRouted="false" />
+        <AssociationConnector Association="CPCAppModel1.FK_allergies_patient_admission" ManuallyRouted="false" />
+        <AssociationConnector Association="CPCAppModel1.FK_family_members_patient_admission" ManuallyRouted="false" />
+        <AssociationConnector Association="CPCAppModel1.FK_medications_patient_admission" ManuallyRouted="false" />
+        <AssociationConnector Association="CPCAppModel1.FK_pain_assessment_patient_admission" ManuallyRouted="false" />
+        <AssociationConnector Association="CPCAppModel1.FK_patient_admission_patient_admission_ext" ManuallyRouted="false" />
+        <AssociationConnector Association="CPCAppModel1.FK_precaution_patient_admission" ManuallyRouted="false" />
+        <AssociationConnector Association="CPCAppModel1.FK_psych_hospital_patient_admission" ManuallyRouted="false" />
+        <AssociationConnector Association="CPCAppModel1.FK_substance_abuse_patient_admission" ManuallyRouted="false" />
+        <AssociationConnector Association="CPCAppModel1.FK_treatment_facility_patient_admission" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

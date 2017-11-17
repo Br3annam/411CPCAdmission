@@ -39,7 +39,7 @@ namespace ExampleLook
         private void CallSheetWindow_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'cPCAppDataSet.abuse_assessment' table. You can move, or remove it, as needed.
-           // this.abuse_assessmentTableAdapter.Fill(this.cPCAppDataSet.abuse_assessment);
+            //this.abuse_assessmentTableAdapter.Fill(this.cPCAppDataSet.abuse_assessment);
 
 
             // TODO: This line of code loads data into the 'cPCAppDataSet.allergies' table. You can move, or remove it, as needed.
