@@ -27,6 +27,8 @@ namespace ExampleLook
 
         private void AdmissionsWindow_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'cPCAppDataSet.abuse_assessment' table. You can move, or remove it, as needed.
+            this.abuse_assessmentTableAdapter.Fill(this.cPCAppDataSet.abuse_assessment);
             // TODO: This line of code loads data into the 'cPCAppDataSet.substance_abuse' table. You can move, or remove it, as needed.
             this.substance_abuseTableAdapter.Fill(this.cPCAppDataSet.substance_abuse);
             // TODO: This line of code loads data into the 'cPCAppDataSet.substance_abuse' table. You can move, or remove it, as needed.
