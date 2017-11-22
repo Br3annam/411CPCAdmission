@@ -58,12 +58,18 @@
     <Compile Include="CallSheetWindow.Designer.cs">
       <DependentUpon>CallSheetWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="cPCAppDataSet1.Designer.cs">
+    <Compile Include="cPCAppDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>cPCAppDataSet1.xsd</DependentUpon>
+      <DependentUpon>cPCAppDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="DataLayer.cs" />
+    <Compile Include="NursingWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NursingWindow.Designer.cs">
+      <DependentUpon>NursingWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="Start.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +84,9 @@
     <EmbeddedResource Include="CallSheetWindow.resx">
       <DependentUpon>CallSheetWindow.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="NursingWindow.resx">
+      <DependentUpon>NursingWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Start.resx">
       <DependentUpon>Start.cs</DependentUpon>
     </EmbeddedResource>
@@ -90,16 +99,16 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="cPCAppDataSet1.xsc">
-      <DependentUpon>cPCAppDataSet1.xsd</DependentUpon>
+    <None Include="cPCAppDataSet.xsc">
+      <DependentUpon>cPCAppDataSet.xsd</DependentUpon>
     </None>
-    <None Include="cPCAppDataSet1.xsd">
+    <None Include="cPCAppDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>cPCAppDataSet1.Designer.cs</LastGenOutput>
+      <LastGenOutput>cPCAppDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="cPCAppDataSet1.xss">
-      <DependentUpon>cPCAppDataSet1.xsd</DependentUpon>
+    <None Include="cPCAppDataSet.xss">
+      <DependentUpon>cPCAppDataSet.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

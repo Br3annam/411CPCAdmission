@@ -9,3 +9,6 @@ C:\Users\TEST\OneDrive\Clarion\Senior Year\CIS 411\ExampleLook\ExampleLook\obj\D
 C:\Users\TEST\OneDrive\Clarion\Senior Year\CIS 411\ExampleLook\ExampleLook\obj\Debug\ExampleLook.exe
 C:\Users\TEST\OneDrive\Clarion\Senior Year\CIS 411\ExampleLook\ExampleLook\obj\Debug\ExampleLook.pdb
 C:\Users\TEST\OneDrive\Clarion\Senior Year\CIS 411\ExampleLook\ExampleLook\obj\Debug\ExampleLook.AdmissionsWindow.resources
+C:\Users\TEST\OneDrive\Clarion\Senior Year\CIS 411\ExampleLook BU5 nurse most done before db redo\ExampleLook\bin\Debug\ExampleLook.exe.config
+C:\Users\TEST\OneDrive\Clarion\Senior Year\CIS 411\ExampleLook BU5 nurse most done before db redo\ExampleLook\obj\Debug\ExampleLook.exe
+C:\Users\TEST\OneDrive\Clarion\Senior Year\CIS 411\ExampleLook BU5 nurse most done before db redo\ExampleLook\obj\Debug\ExampleLook.pdb
