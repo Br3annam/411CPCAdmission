@@ -115,14 +115,6 @@
             System.Windows.Forms.Label seekStaffLabel;
             System.Windows.Forms.Label seekStafRadLabel;
             System.Windows.Forms.Label usedTobaccoL30Label;
-            System.Windows.Forms.Label cigarettesLabel;
-            System.Windows.Forms.Label cigarettesValueLabel;
-            System.Windows.Forms.Label cigarsLabel;
-            System.Windows.Forms.Label cigarsValueLabel;
-            System.Windows.Forms.Label pipeSmokeLabel;
-            System.Windows.Forms.Label pipeSmokeValueLabel;
-            System.Windows.Forms.Label chewLabel;
-            System.Windows.Forms.Label chewValueLabel;
             System.Windows.Forms.Label currentReportPainLabel;
             System.Windows.Forms.Label lblFullAssess;
             System.Windows.Forms.Label nutScoreLabel;
@@ -166,6 +158,24 @@
             System.Windows.Forms.Label berCat3ResultLabel;
             System.Windows.Forms.Label berCat3RiskLabel;
             System.Windows.Forms.Label berCat3ConsultReqLabel;
+            System.Windows.Forms.Label berCat1ResultLabel;
+            System.Windows.Forms.Label berCat2ResultLabel;
+            System.Windows.Forms.Label offTobCessLabel;
+            System.Windows.Forms.Label yesPhysNotifiedLabel;
+            System.Windows.Forms.Label lblTobMedCont;
+            System.Windows.Forms.Label nameRelatNurseAssessLabel;
+            System.Windows.Forms.Label patientAwayHomeLabel;
+            System.Windows.Forms.Label immuneUpToDateLabel;
+            System.Windows.Forms.Label birthDefectsLabel;
+            System.Windows.Forms.Label histDevDelayLabel;
+            System.Windows.Forms.Label parGuardExpectLabel;
+            System.Windows.Forms.Label nurseAdminNoteLabel;
+            System.Windows.Forms.Label nurseSig1Label;
+            System.Windows.Forms.Label nurseSig1DateLabel;
+            System.Windows.Forms.Label nurseSig1TimeLabel;
+            System.Windows.Forms.Label nurseSig2Label;
+            System.Windows.Forms.Label nurseSig2DateLabel;
+            System.Windows.Forms.Label nurseSigTimeLabel;
             this.tabNurse = new System.Windows.Forms.TabControl();
             this.NurseAssess = new System.Windows.Forms.TabPage();
             this.PhysDesc = new System.Windows.Forms.GroupBox();
@@ -750,11 +760,17 @@
             this.tabBerlin = new System.Windows.Forms.TabPage();
             this.grpBerlinDirect = new System.Windows.Forms.GroupBox();
             this.grpCat3Instruct = new System.Windows.Forms.GroupBox();
+            this.berCat3ConsultReqComboBox = new System.Windows.Forms.ComboBox();
+            this.berCat3RiskComboBox = new System.Windows.Forms.ComboBox();
+            this.berCat3ResultComboBox = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.grpCat2Instruct = new System.Windows.Forms.GroupBox();
+            this.berCat2ResultComboBox = new System.Windows.Forms.ComboBox();
             this.berCat2TotalTextBox = new System.Windows.Forms.TextBox();
             this.berNum8OccurTextBox = new System.Windows.Forms.TextBox();
             this.lblCat2Instruct = new System.Windows.Forms.Label();
             this.grpCat1Instruct = new System.Windows.Forms.GroupBox();
+            this.berCat1ResultComboBox = new System.Windows.Forms.ComboBox();
             this.berCat1TotalTextBox = new System.Windows.Forms.TextBox();
             this.lblCat1Instruct = new System.Windows.Forms.Label();
             this.grpBerlin = new System.Windows.Forms.GroupBox();
@@ -781,8 +797,25 @@
             this.lblBerIQuestInstruct = new System.Windows.Forms.Label();
             this.tabTobacco = new System.Windows.Forms.TabPage();
             this.grpTobacco = new System.Windows.Forms.GroupBox();
+            this.tobMedContOtherDescTextBox = new System.Windows.Forms.TextBox();
+            this.tobMedContOtherCheckBox = new System.Windows.Forms.CheckBox();
+            this.tobMedContDrugInterCheckBox = new System.Windows.Forms.CheckBox();
+            this.tobMedContPatAllFDACheckBox = new System.Windows.Forms.CheckBox();
+            this.yesPhysNotifiedComboBox = new System.Windows.Forms.ComboBox();
+            this.offTobCessComboBox = new System.Windows.Forms.ComboBox();
+            this.grpTobCounsel = new System.Windows.Forms.GroupBox();
+            this.tobOtherDescTextBox = new System.Windows.Forms.TextBox();
+            this.tobPtRefusedCheckBox = new System.Windows.Forms.CheckBox();
+            this.tobNotOfferedCheckBox = new System.Windows.Forms.CheckBox();
+            this.tobOtherCheckBox = new System.Windows.Forms.CheckBox();
+            this.tobRevInfoCheckBox = new System.Windows.Forms.CheckBox();
+            this.tobRevCopCheckBox = new System.Windows.Forms.CheckBox();
+            this.tobRevDangerCheckBox = new System.Windows.Forms.CheckBox();
             this.usedTobaccoL30ComboBox = new System.Windows.Forms.ComboBox();
             this.grpTobIfYes = new System.Windows.Forms.GroupBox();
+            this.tobaccoOtherValueComboBox = new System.Windows.Forms.ComboBox();
+            this.tobaccoOtherDescTextBox = new System.Windows.Forms.TextBox();
+            this.tobaccoOtherCheckBox = new System.Windows.Forms.CheckBox();
             this.chewValueComboBox = new System.Windows.Forms.ComboBox();
             this.chewCheckBox = new System.Windows.Forms.CheckBox();
             this.pipeSmokeValueComboBox = new System.Windows.Forms.ComboBox();
@@ -791,6 +824,48 @@
             this.cigarsCheckBox = new System.Windows.Forms.CheckBox();
             this.cigarettesValueComboBox = new System.Windows.Forms.ComboBox();
             this.cigarettesCheckBox = new System.Windows.Forms.CheckBox();
+            this.tabAddendum = new System.Windows.Forms.TabPage();
+            this.grpDevStat = new System.Windows.Forms.GroupBox();
+            this.parGuardExpectTextBox = new System.Windows.Forms.TextBox();
+            this.histDevDelayDescTextBox = new System.Windows.Forms.TextBox();
+            this.histDevDelayComboBox = new System.Windows.Forms.ComboBox();
+            this.birthDefectsDescTextBox = new System.Windows.Forms.TextBox();
+            this.birthDefectsComboBox = new System.Windows.Forms.ComboBox();
+            this.immuneUpToDateComboBox = new System.Windows.Forms.ComboBox();
+            this.patientAwayHomeComboBox = new System.Windows.Forms.ComboBox();
+            this.grp1618YearOld = new System.Windows.Forms.GroupBox();
+            this.yr1618ReasChoiceCheckBox = new System.Windows.Forms.CheckBox();
+            this.yr1618InterestSexCheckBox = new System.Windows.Forms.CheckBox();
+            this.yr1618LessParentsCheckBox = new System.Windows.Forms.CheckBox();
+            this.yr1618InterestCheckBox = new System.Windows.Forms.CheckBox();
+            this.grp1315YearOld = new System.Windows.Forms.GroupBox();
+            this.yr1315GroupSportsCheckBox = new System.Windows.Forms.CheckBox();
+            this.yr1315CompThoughtCheckBox = new System.Windows.Forms.CheckBox();
+            this.yr1315ExpressAffCheckBox = new System.Windows.Forms.CheckBox();
+            this.yr1315ShowsConcCheckBox = new System.Windows.Forms.CheckBox();
+            this.grp912YearOld = new System.Windows.Forms.GroupBox();
+            this.yr912RespSelfCheckBox = new System.Windows.Forms.CheckBox();
+            this.yr912FamDecCheckBox = new System.Windows.Forms.CheckBox();
+            this.yr912HobbyCheckBox = new System.Windows.Forms.CheckBox();
+            this.yr912AttSpanCheckBox = new System.Windows.Forms.CheckBox();
+            this.yr912BestFriendCheckBox = new System.Windows.Forms.CheckBox();
+            this.grp58YearOld = new System.Windows.Forms.GroupBox();
+            this.yr58MinRespCheckBox = new System.Windows.Forms.CheckBox();
+            this.yr58NeedsCheckBox = new System.Windows.Forms.CheckBox();
+            this.yr58CoopCheckBox = new System.Windows.Forms.CheckBox();
+            this.yr58ChoresCheckBox = new System.Windows.Forms.CheckBox();
+            this.yr58BathCheckBox = new System.Windows.Forms.CheckBox();
+            this.grpNurseAddInfo = new System.Windows.Forms.GroupBox();
+            this.nameRelatNurseAssessTextBox = new System.Windows.Forms.TextBox();
+            this.tabNurseSum = new System.Windows.Forms.TabPage();
+            this.grpNurseSumm = new System.Windows.Forms.GroupBox();
+            this.nurseSigTimeTextBox = new System.Windows.Forms.TextBox();
+            this.nurseSig2DateDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.nurseSig2TextBox = new System.Windows.Forms.TextBox();
+            this.nurseSig1TimeTextBox = new System.Windows.Forms.TextBox();
+            this.nurseSig1DateDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.nurseSig1TextBox = new System.Windows.Forms.TextBox();
+            this.nurseAdminNoteTextBox = new System.Windows.Forms.TextBox();
             this.allergiesBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
@@ -809,10 +884,6 @@
             this.pain_assessmentTableAdapter = new ExampleLook.cPCAppDataSetTableAdapters.pain_assessmentTableAdapter();
             this.patient_admissionTableAdapter = new ExampleLook.cPCAppDataSetTableAdapters.patient_admissionTableAdapter();
             this.abuse_assessmentTableAdapter = new ExampleLook.cPCAppDataSetTableAdapters.abuse_assessmentTableAdapter();
-            this.label1 = new System.Windows.Forms.Label();
-            this.berCat3ResultComboBox = new System.Windows.Forms.ComboBox();
-            this.berCat3RiskComboBox = new System.Windows.Forms.ComboBox();
-            this.berCat3ConsultReqComboBox = new System.Windows.Forms.ComboBox();
             bloodPressureLabel = new System.Windows.Forms.Label();
             tLabel = new System.Windows.Forms.Label();
             pLabel = new System.Windows.Forms.Label();
@@ -898,14 +969,6 @@
             seekStaffLabel = new System.Windows.Forms.Label();
             seekStafRadLabel = new System.Windows.Forms.Label();
             usedTobaccoL30Label = new System.Windows.Forms.Label();
-            cigarettesLabel = new System.Windows.Forms.Label();
-            cigarettesValueLabel = new System.Windows.Forms.Label();
-            cigarsLabel = new System.Windows.Forms.Label();
-            cigarsValueLabel = new System.Windows.Forms.Label();
-            pipeSmokeLabel = new System.Windows.Forms.Label();
-            pipeSmokeValueLabel = new System.Windows.Forms.Label();
-            chewLabel = new System.Windows.Forms.Label();
-            chewValueLabel = new System.Windows.Forms.Label();
             currentReportPainLabel = new System.Windows.Forms.Label();
             lblFullAssess = new System.Windows.Forms.Label();
             nutScoreLabel = new System.Windows.Forms.Label();
@@ -949,6 +1012,24 @@
             berCat3ResultLabel = new System.Windows.Forms.Label();
             berCat3RiskLabel = new System.Windows.Forms.Label();
             berCat3ConsultReqLabel = new System.Windows.Forms.Label();
+            berCat1ResultLabel = new System.Windows.Forms.Label();
+            berCat2ResultLabel = new System.Windows.Forms.Label();
+            offTobCessLabel = new System.Windows.Forms.Label();
+            yesPhysNotifiedLabel = new System.Windows.Forms.Label();
+            lblTobMedCont = new System.Windows.Forms.Label();
+            nameRelatNurseAssessLabel = new System.Windows.Forms.Label();
+            patientAwayHomeLabel = new System.Windows.Forms.Label();
+            immuneUpToDateLabel = new System.Windows.Forms.Label();
+            birthDefectsLabel = new System.Windows.Forms.Label();
+            histDevDelayLabel = new System.Windows.Forms.Label();
+            parGuardExpectLabel = new System.Windows.Forms.Label();
+            nurseAdminNoteLabel = new System.Windows.Forms.Label();
+            nurseSig1Label = new System.Windows.Forms.Label();
+            nurseSig1DateLabel = new System.Windows.Forms.Label();
+            nurseSig1TimeLabel = new System.Windows.Forms.Label();
+            nurseSig2Label = new System.Windows.Forms.Label();
+            nurseSig2DateLabel = new System.Windows.Forms.Label();
+            nurseSigTimeLabel = new System.Windows.Forms.Label();
             this.tabNurse.SuspendLayout();
             this.NurseAssess.SuspendLayout();
             this.PhysDesc.SuspendLayout();
@@ -1041,7 +1122,17 @@
             this.grpCat1.SuspendLayout();
             this.tabTobacco.SuspendLayout();
             this.grpTobacco.SuspendLayout();
+            this.grpTobCounsel.SuspendLayout();
             this.grpTobIfYes.SuspendLayout();
+            this.tabAddendum.SuspendLayout();
+            this.grpDevStat.SuspendLayout();
+            this.grp1618YearOld.SuspendLayout();
+            this.grp1315YearOld.SuspendLayout();
+            this.grp912YearOld.SuspendLayout();
+            this.grp58YearOld.SuspendLayout();
+            this.grpNurseAddInfo.SuspendLayout();
+            this.tabNurseSum.SuspendLayout();
+            this.grpNurseSumm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.allergiesBindingNavigator)).BeginInit();
             this.allergiesBindingNavigator.SuspendLayout();
             this.SuspendLayout();
@@ -1283,7 +1374,7 @@
             // lblLearnChal
             // 
             lblLearnChal.AutoSize = true;
-            lblLearnChal.Location = new System.Drawing.Point(10, 83);
+            lblLearnChal.Location = new System.Drawing.Point(10, 108);
             lblLearnChal.Name = "lblLearnChal";
             lblLearnChal.Size = new System.Drawing.Size(144, 17);
             lblLearnChal.TabIndex = 17;
@@ -1292,7 +1383,7 @@
             // lblLearnPref
             // 
             lblLearnPref.AutoSize = true;
-            lblLearnPref.Location = new System.Drawing.Point(10, 143);
+            lblLearnPref.Location = new System.Drawing.Point(10, 191);
             lblLearnPref.Name = "lblLearnPref";
             lblLearnPref.Size = new System.Drawing.Size(153, 17);
             lblLearnPref.TabIndex = 26;
@@ -1569,9 +1660,9 @@
             histSexAbuseLabel.AutoSize = true;
             histSexAbuseLabel.Location = new System.Drawing.Point(21, 147);
             histSexAbuseLabel.Name = "histSexAbuseLabel";
-            histSexAbuseLabel.Size = new System.Drawing.Size(107, 17);
+            histSexAbuseLabel.Size = new System.Drawing.Size(231, 17);
             histSexAbuseLabel.TabIndex = 6;
-            histSexAbuseLabel.Text = "Hist Sex Abuse:";
+            histSexAbuseLabel.Text = "History of physical or sexual abuse:";
             // 
             // histSubAbuseLabel
             // 
@@ -1815,83 +1906,11 @@
             // usedTobaccoL30Label
             // 
             usedTobaccoL30Label.AutoSize = true;
-            usedTobaccoL30Label.Location = new System.Drawing.Point(32, 32);
+            usedTobaccoL30Label.Location = new System.Drawing.Point(6, 32);
             usedTobaccoL30Label.Name = "usedTobaccoL30Label";
             usedTobaccoL30Label.Size = new System.Drawing.Size(406, 17);
             usedTobaccoL30Label.TabIndex = 1;
             usedTobaccoL30Label.Text = "Has the patient used any tobacco products in the last 30 days?";
-            // 
-            // cigarettesLabel
-            // 
-            cigarettesLabel.AutoSize = true;
-            cigarettesLabel.Location = new System.Drawing.Point(29, 38);
-            cigarettesLabel.Name = "cigarettesLabel";
-            cigarettesLabel.Size = new System.Drawing.Size(76, 17);
-            cigarettesLabel.TabIndex = 0;
-            cigarettesLabel.Text = "Cigarettes:";
-            // 
-            // cigarettesValueLabel
-            // 
-            cigarettesValueLabel.AutoSize = true;
-            cigarettesValueLabel.Location = new System.Drawing.Point(256, 41);
-            cigarettesValueLabel.Name = "cigarettesValueLabel";
-            cigarettesValueLabel.Size = new System.Drawing.Size(116, 17);
-            cigarettesValueLabel.TabIndex = 2;
-            cigarettesValueLabel.Text = "Cigarettes Value:";
-            // 
-            // cigarsLabel
-            // 
-            cigarsLabel.AutoSize = true;
-            cigarsLabel.Location = new System.Drawing.Point(36, 74);
-            cigarsLabel.Name = "cigarsLabel";
-            cigarsLabel.Size = new System.Drawing.Size(52, 17);
-            cigarsLabel.TabIndex = 4;
-            cigarsLabel.Text = "Cigars:";
-            // 
-            // cigarsValueLabel
-            // 
-            cigarsValueLabel.AutoSize = true;
-            cigarsValueLabel.Location = new System.Drawing.Point(260, 72);
-            cigarsValueLabel.Name = "cigarsValueLabel";
-            cigarsValueLabel.Size = new System.Drawing.Size(92, 17);
-            cigarsValueLabel.TabIndex = 6;
-            cigarsValueLabel.Text = "Cigars Value:";
-            // 
-            // pipeSmokeLabel
-            // 
-            pipeSmokeLabel.AutoSize = true;
-            pipeSmokeLabel.Location = new System.Drawing.Point(37, 107);
-            pipeSmokeLabel.Name = "pipeSmokeLabel";
-            pipeSmokeLabel.Size = new System.Drawing.Size(87, 17);
-            pipeSmokeLabel.TabIndex = 8;
-            pipeSmokeLabel.Text = "Pipe Smoke:";
-            // 
-            // pipeSmokeValueLabel
-            // 
-            pipeSmokeValueLabel.AutoSize = true;
-            pipeSmokeValueLabel.Location = new System.Drawing.Point(264, 108);
-            pipeSmokeValueLabel.Name = "pipeSmokeValueLabel";
-            pipeSmokeValueLabel.Size = new System.Drawing.Size(127, 17);
-            pipeSmokeValueLabel.TabIndex = 10;
-            pipeSmokeValueLabel.Text = "Pipe Smoke Value:";
-            // 
-            // chewLabel
-            // 
-            chewLabel.AutoSize = true;
-            chewLabel.Location = new System.Drawing.Point(37, 135);
-            chewLabel.Name = "chewLabel";
-            chewLabel.Size = new System.Drawing.Size(46, 17);
-            chewLabel.TabIndex = 12;
-            chewLabel.Text = "Chew:";
-            // 
-            // chewValueLabel
-            // 
-            chewValueLabel.AutoSize = true;
-            chewValueLabel.Location = new System.Drawing.Point(264, 139);
-            chewValueLabel.Name = "chewValueLabel";
-            chewValueLabel.Size = new System.Drawing.Size(86, 17);
-            chewValueLabel.TabIndex = 14;
-            chewValueLabel.Text = "Chew Value:";
             // 
             // currentReportPainLabel
             // 
@@ -2249,6 +2268,197 @@
             berCat2TotalLabel.TabIndex = 3;
             berCat2TotalLabel.Text = "Total points for Category 2:";
             // 
+            // berCat3ResultLabel
+            // 
+            berCat3ResultLabel.AutoSize = true;
+            berCat3ResultLabel.Location = new System.Drawing.Point(9, 95);
+            berCat3ResultLabel.Name = "berCat3ResultLabel";
+            berCat3ResultLabel.Size = new System.Drawing.Size(55, 17);
+            berCat3ResultLabel.TabIndex = 1;
+            berCat3ResultLabel.Text = "Select: ";
+            // 
+            // berCat3RiskLabel
+            // 
+            berCat3RiskLabel.AutoSize = true;
+            berCat3RiskLabel.Location = new System.Drawing.Point(10, 134);
+            berCat3RiskLabel.Name = "berCat3RiskLabel";
+            berCat3RiskLabel.Size = new System.Drawing.Size(39, 17);
+            berCat3RiskLabel.TabIndex = 3;
+            berCat3RiskLabel.Text = "Risk:";
+            // 
+            // berCat3ConsultReqLabel
+            // 
+            berCat3ConsultReqLabel.AutoSize = true;
+            berCat3ConsultReqLabel.Location = new System.Drawing.Point(210, 95);
+            berCat3ConsultReqLabel.Name = "berCat3ConsultReqLabel";
+            berCat3ConsultReqLabel.Size = new System.Drawing.Size(209, 17);
+            berCat3ConsultReqLabel.TabIndex = 5;
+            berCat3ConsultReqLabel.Text = "Respiratory Consult Requested:";
+            // 
+            // berCat1ResultLabel
+            // 
+            berCat1ResultLabel.AutoSize = true;
+            berCat1ResultLabel.Location = new System.Drawing.Point(505, 68);
+            berCat1ResultLabel.Name = "berCat1ResultLabel";
+            berCat1ResultLabel.Size = new System.Drawing.Size(51, 17);
+            berCat1ResultLabel.TabIndex = 3;
+            berCat1ResultLabel.Text = "Select:";
+            // 
+            // berCat2ResultLabel
+            // 
+            berCat2ResultLabel.AutoSize = true;
+            berCat2ResultLabel.Location = new System.Drawing.Point(505, 103);
+            berCat2ResultLabel.Name = "berCat2ResultLabel";
+            berCat2ResultLabel.Size = new System.Drawing.Size(51, 17);
+            berCat2ResultLabel.TabIndex = 5;
+            berCat2ResultLabel.Text = "Select:";
+            // 
+            // offTobCessLabel
+            // 
+            offTobCessLabel.AutoSize = true;
+            offTobCessLabel.Location = new System.Drawing.Point(6, 512);
+            offTobCessLabel.Name = "offTobCessLabel";
+            offTobCessLabel.Size = new System.Drawing.Size(361, 17);
+            offTobCessLabel.TabIndex = 4;
+            offTobCessLabel.Text = "Was the patient offered tobacco cessation medications?";
+            // 
+            // yesPhysNotifiedLabel
+            // 
+            yesPhysNotifiedLabel.AutoSize = true;
+            yesPhysNotifiedLabel.Location = new System.Drawing.Point(404, 542);
+            yesPhysNotifiedLabel.Name = "yesPhysNotifiedLabel";
+            yesPhysNotifiedLabel.Size = new System.Drawing.Size(444, 17);
+            yesPhysNotifiedLabel.TabIndex = 6;
+            yesPhysNotifiedLabel.Text = "If \"yes\", was Physician notified of the patient request for medications?";
+            // 
+            // lblTobMedCont
+            // 
+            lblTobMedCont.AutoSize = true;
+            lblTobMedCont.Location = new System.Drawing.Point(6, 575);
+            lblTobMedCont.Name = "lblTobMedCont";
+            lblTobMedCont.Size = new System.Drawing.Size(384, 17);
+            lblTobMedCont.TabIndex = 8;
+            lblTobMedCont.Text = "Tobacco cessation medications are contraindicated due to :";
+            // 
+            // nameRelatNurseAssessLabel
+            // 
+            nameRelatNurseAssessLabel.AutoSize = true;
+            nameRelatNurseAssessLabel.Location = new System.Drawing.Point(12, 32);
+            nameRelatNurseAssessLabel.Name = "nameRelatNurseAssessLabel";
+            nameRelatNurseAssessLabel.Size = new System.Drawing.Size(612, 17);
+            nameRelatNurseAssessLabel.TabIndex = 1;
+            nameRelatNurseAssessLabel.Text = "Name and relationship of family/ guardian/ support persons present for the nursin" +
+    "g assessment:";
+            // 
+            // patientAwayHomeLabel
+            // 
+            patientAwayHomeLabel.AutoSize = true;
+            patientAwayHomeLabel.Location = new System.Drawing.Point(18, 452);
+            patientAwayHomeLabel.Name = "patientAwayHomeLabel";
+            patientAwayHomeLabel.Size = new System.Drawing.Size(313, 17);
+            patientAwayHomeLabel.TabIndex = 4;
+            patientAwayHomeLabel.Text = "Has patient ever stayed away from home/family?";
+            // 
+            // immuneUpToDateLabel
+            // 
+            immuneUpToDateLabel.AutoSize = true;
+            immuneUpToDateLabel.Location = new System.Drawing.Point(18, 479);
+            immuneUpToDateLabel.Name = "immuneUpToDateLabel";
+            immuneUpToDateLabel.Size = new System.Drawing.Size(199, 17);
+            immuneUpToDateLabel.TabIndex = 6;
+            immuneUpToDateLabel.Text = "Are immunizations up to date?";
+            // 
+            // birthDefectsLabel
+            // 
+            birthDefectsLabel.AutoSize = true;
+            birthDefectsLabel.Location = new System.Drawing.Point(18, 506);
+            birthDefectsLabel.Name = "birthDefectsLabel";
+            birthDefectsLabel.Size = new System.Drawing.Size(191, 17);
+            birthDefectsLabel.TabIndex = 8;
+            birthDefectsLabel.Text = "Any congenital birth defects?";
+            // 
+            // histDevDelayLabel
+            // 
+            histDevDelayLabel.AutoSize = true;
+            histDevDelayLabel.Location = new System.Drawing.Point(18, 589);
+            histDevDelayLabel.Name = "histDevDelayLabel";
+            histDevDelayLabel.Size = new System.Drawing.Size(217, 17);
+            histDevDelayLabel.TabIndex = 11;
+            histDevDelayLabel.Text = "History of developmental delays?";
+            // 
+            // parGuardExpectLabel
+            // 
+            parGuardExpectLabel.AutoSize = true;
+            parGuardExpectLabel.Location = new System.Drawing.Point(18, 670);
+            parGuardExpectLabel.Name = "parGuardExpectLabel";
+            parGuardExpectLabel.Size = new System.Drawing.Size(415, 17);
+            parGuardExpectLabel.TabIndex = 14;
+            parGuardExpectLabel.Text = "As a parent/guardian what do you expect from this hospital stay?";
+            // 
+            // nurseAdminNoteLabel
+            // 
+            nurseAdminNoteLabel.Location = new System.Drawing.Point(6, 18);
+            nurseAdminNoteLabel.Name = "nurseAdminNoteLabel";
+            nurseAdminNoteLabel.Size = new System.Drawing.Size(973, 37);
+            nurseAdminNoteLabel.TabIndex = 0;
+            nurseAdminNoteLabel.Text = "Note: Assimilate data into clinical picture of patient status, events leading to " +
+    "hospitalization, patient response, and immediate interventions - i.e. Observatio" +
+    "n Rounds Q15...";
+            // 
+            // nurseSig1Label
+            // 
+            nurseSig1Label.AutoSize = true;
+            nurseSig1Label.Location = new System.Drawing.Point(37, 638);
+            nurseSig1Label.Name = "nurseSig1Label";
+            nurseSig1Label.Size = new System.Drawing.Size(115, 17);
+            nurseSig1Label.TabIndex = 2;
+            nurseSig1Label.Text = "Nurse Signature:";
+            // 
+            // nurseSig1DateLabel
+            // 
+            nurseSig1DateLabel.AutoSize = true;
+            nurseSig1DateLabel.Location = new System.Drawing.Point(402, 638);
+            nurseSig1DateLabel.Name = "nurseSig1DateLabel";
+            nurseSig1DateLabel.Size = new System.Drawing.Size(42, 17);
+            nurseSig1DateLabel.TabIndex = 4;
+            nurseSig1DateLabel.Text = "Date:";
+            // 
+            // nurseSig1TimeLabel
+            // 
+            nurseSig1TimeLabel.AutoSize = true;
+            nurseSig1TimeLabel.Location = new System.Drawing.Point(656, 638);
+            nurseSig1TimeLabel.Name = "nurseSig1TimeLabel";
+            nurseSig1TimeLabel.Size = new System.Drawing.Size(43, 17);
+            nurseSig1TimeLabel.TabIndex = 6;
+            nurseSig1TimeLabel.Text = "Time:";
+            // 
+            // nurseSig2Label
+            // 
+            nurseSig2Label.AutoSize = true;
+            nurseSig2Label.Location = new System.Drawing.Point(37, 685);
+            nurseSig2Label.Name = "nurseSig2Label";
+            nurseSig2Label.Size = new System.Drawing.Size(115, 17);
+            nurseSig2Label.TabIndex = 8;
+            nurseSig2Label.Text = "Nurse Signature:";
+            // 
+            // nurseSig2DateLabel
+            // 
+            nurseSig2DateLabel.AutoSize = true;
+            nurseSig2DateLabel.Location = new System.Drawing.Point(402, 685);
+            nurseSig2DateLabel.Name = "nurseSig2DateLabel";
+            nurseSig2DateLabel.Size = new System.Drawing.Size(42, 17);
+            nurseSig2DateLabel.TabIndex = 10;
+            nurseSig2DateLabel.Text = "Date:";
+            // 
+            // nurseSigTimeLabel
+            // 
+            nurseSigTimeLabel.AutoSize = true;
+            nurseSigTimeLabel.Location = new System.Drawing.Point(656, 685);
+            nurseSigTimeLabel.Name = "nurseSigTimeLabel";
+            nurseSigTimeLabel.Size = new System.Drawing.Size(43, 17);
+            nurseSigTimeLabel.TabIndex = 12;
+            nurseSigTimeLabel.Text = "Time:";
+            // 
             // tabNurse
             // 
             this.tabNurse.Controls.Add(this.NurseAssess);
@@ -2262,10 +2472,12 @@
             this.tabNurse.Controls.Add(this.tabRiskAssess2);
             this.tabNurse.Controls.Add(this.tabBerlin);
             this.tabNurse.Controls.Add(this.tabTobacco);
+            this.tabNurse.Controls.Add(this.tabAddendum);
+            this.tabNurse.Controls.Add(this.tabNurseSum);
             this.tabNurse.Location = new System.Drawing.Point(43, 30);
             this.tabNurse.Name = "tabNurse";
             this.tabNurse.SelectedIndex = 0;
-            this.tabNurse.Size = new System.Drawing.Size(999, 1559);
+            this.tabNurse.Size = new System.Drawing.Size(1006, 1514);
             this.tabNurse.TabIndex = 0;
             // 
             // NurseAssess
@@ -2277,7 +2489,7 @@
             this.NurseAssess.Location = new System.Drawing.Point(4, 25);
             this.NurseAssess.Name = "NurseAssess";
             this.NurseAssess.Padding = new System.Windows.Forms.Padding(3);
-            this.NurseAssess.Size = new System.Drawing.Size(991, 1530);
+            this.NurseAssess.Size = new System.Drawing.Size(998, 1530);
             this.NurseAssess.TabIndex = 0;
             this.NurseAssess.Text = "Nursing Assessment";
             this.NurseAssess.UseVisualStyleBackColor = true;
@@ -2507,7 +2719,7 @@
             this.PainAssess.Location = new System.Drawing.Point(4, 25);
             this.PainAssess.Name = "PainAssess";
             this.PainAssess.Padding = new System.Windows.Forms.Padding(3);
-            this.PainAssess.Size = new System.Drawing.Size(991, 1530);
+            this.PainAssess.Size = new System.Drawing.Size(998, 1485);
             this.PainAssess.TabIndex = 1;
             this.PainAssess.Text = "Pain Assessment";
             this.PainAssess.UseVisualStyleBackColor = true;
@@ -4554,7 +4766,7 @@
             this.tabAbuseAssess.Location = new System.Drawing.Point(4, 25);
             this.tabAbuseAssess.Name = "tabAbuseAssess";
             this.tabAbuseAssess.Padding = new System.Windows.Forms.Padding(3);
-            this.tabAbuseAssess.Size = new System.Drawing.Size(991, 1530);
+            this.tabAbuseAssess.Size = new System.Drawing.Size(998, 1485);
             this.tabAbuseAssess.TabIndex = 2;
             this.tabAbuseAssess.Text = "Abuse Assessment";
             this.tabAbuseAssess.UseVisualStyleBackColor = true;
@@ -4574,7 +4786,7 @@
             this.grpRespTreat.Controls.Add(this.duringStayHelpTextBox);
             this.grpRespTreat.Controls.Add(this.methSuccessManageTextBox);
             this.grpRespTreat.Controls.Add(methSuccessManageLabel);
-            this.grpRespTreat.Location = new System.Drawing.Point(7, 838);
+            this.grpRespTreat.Location = new System.Drawing.Point(7, 881);
             this.grpRespTreat.Name = "grpRespTreat";
             this.grpRespTreat.Size = new System.Drawing.Size(971, 290);
             this.grpRespTreat.TabIndex = 42;
@@ -4674,7 +4886,7 @@
             this.grpLearn.Controls.Add(this.canPatReadComboBox);
             this.grpLearn.Location = new System.Drawing.Point(7, 657);
             this.grpLearn.Name = "grpLearn";
-            this.grpLearn.Size = new System.Drawing.Size(971, 175);
+            this.grpLearn.Size = new System.Drawing.Size(971, 218);
             this.grpLearn.TabIndex = 3;
             this.grpLearn.TabStop = false;
             this.grpLearn.Text = "Learning Readiness and Preferences";
@@ -4682,7 +4894,7 @@
             // learnPrefHandsCheckBox
             // 
             this.learnPrefHandsCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.patient_admissionBindingSource, "LearnPrefHands", true));
-            this.learnPrefHandsCheckBox.Location = new System.Drawing.Point(736, 139);
+            this.learnPrefHandsCheckBox.Location = new System.Drawing.Point(736, 187);
             this.learnPrefHandsCheckBox.Name = "learnPrefHandsCheckBox";
             this.learnPrefHandsCheckBox.Size = new System.Drawing.Size(104, 24);
             this.learnPrefHandsCheckBox.TabIndex = 31;
@@ -4692,7 +4904,7 @@
             // learnPrefVideoCheckBox
             // 
             this.learnPrefVideoCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.patient_admissionBindingSource, "LearnPrefVideo", true));
-            this.learnPrefVideoCheckBox.Location = new System.Drawing.Point(615, 139);
+            this.learnPrefVideoCheckBox.Location = new System.Drawing.Point(615, 187);
             this.learnPrefVideoCheckBox.Name = "learnPrefVideoCheckBox";
             this.learnPrefVideoCheckBox.Size = new System.Drawing.Size(120, 24);
             this.learnPrefVideoCheckBox.TabIndex = 30;
@@ -4702,7 +4914,7 @@
             // learnPrefDemoCheckBox
             // 
             this.learnPrefDemoCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.patient_admissionBindingSource, "LearnPrefDemo", true));
-            this.learnPrefDemoCheckBox.Location = new System.Drawing.Point(472, 139);
+            this.learnPrefDemoCheckBox.Location = new System.Drawing.Point(472, 187);
             this.learnPrefDemoCheckBox.Name = "learnPrefDemoCheckBox";
             this.learnPrefDemoCheckBox.Size = new System.Drawing.Size(142, 24);
             this.learnPrefDemoCheckBox.TabIndex = 29;
@@ -4712,7 +4924,7 @@
             // learnPrefVerbCheckBox
             // 
             this.learnPrefVerbCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.patient_admissionBindingSource, "LearnPrefVerb", true));
-            this.learnPrefVerbCheckBox.Location = new System.Drawing.Point(324, 139);
+            this.learnPrefVerbCheckBox.Location = new System.Drawing.Point(324, 187);
             this.learnPrefVerbCheckBox.Name = "learnPrefVerbCheckBox";
             this.learnPrefVerbCheckBox.Size = new System.Drawing.Size(147, 24);
             this.learnPrefVerbCheckBox.TabIndex = 28;
@@ -4722,7 +4934,7 @@
             // learnPrefWritCheckBox
             // 
             this.learnPrefWritCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.patient_admissionBindingSource, "LearnPrefWrit", true));
-            this.learnPrefWritCheckBox.Location = new System.Drawing.Point(164, 139);
+            this.learnPrefWritCheckBox.Location = new System.Drawing.Point(164, 187);
             this.learnPrefWritCheckBox.Name = "learnPrefWritCheckBox";
             this.learnPrefWritCheckBox.Size = new System.Drawing.Size(159, 24);
             this.learnPrefWritCheckBox.TabIndex = 27;
@@ -4732,7 +4944,7 @@
             // learnChalOtherDescTextBox
             // 
             this.learnChalOtherDescTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "LearnChalOtherDesc", true));
-            this.learnChalOtherDescTextBox.Location = new System.Drawing.Point(669, 109);
+            this.learnChalOtherDescTextBox.Location = new System.Drawing.Point(669, 134);
             this.learnChalOtherDescTextBox.Name = "learnChalOtherDescTextBox";
             this.learnChalOtherDescTextBox.Size = new System.Drawing.Size(274, 22);
             this.learnChalOtherDescTextBox.TabIndex = 26;
@@ -4740,7 +4952,7 @@
             // learnChalOtherCheckBox
             // 
             this.learnChalOtherCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.patient_admissionBindingSource, "LearnChalOther", true));
-            this.learnChalOtherCheckBox.Location = new System.Drawing.Point(593, 109);
+            this.learnChalOtherCheckBox.Location = new System.Drawing.Point(593, 134);
             this.learnChalOtherCheckBox.Name = "learnChalOtherCheckBox";
             this.learnChalOtherCheckBox.Size = new System.Drawing.Size(70, 24);
             this.learnChalOtherCheckBox.TabIndex = 25;
@@ -4750,7 +4962,7 @@
             // learnChalDenyCheckBox
             // 
             this.learnChalDenyCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.patient_admissionBindingSource, "LearnChalDeny", true));
-            this.learnChalDenyCheckBox.Location = new System.Drawing.Point(511, 109);
+            this.learnChalDenyCheckBox.Location = new System.Drawing.Point(511, 134);
             this.learnChalDenyCheckBox.Name = "learnChalDenyCheckBox";
             this.learnChalDenyCheckBox.Size = new System.Drawing.Size(76, 24);
             this.learnChalDenyCheckBox.TabIndex = 24;
@@ -4760,7 +4972,7 @@
             // learnChalSenseImpairCheckBox
             // 
             this.learnChalSenseImpairCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.patient_admissionBindingSource, "LearnChalSenseImpair", true));
-            this.learnChalSenseImpairCheckBox.Location = new System.Drawing.Point(158, 109);
+            this.learnChalSenseImpairCheckBox.Location = new System.Drawing.Point(158, 134);
             this.learnChalSenseImpairCheckBox.Name = "learnChalSenseImpairCheckBox";
             this.learnChalSenseImpairCheckBox.Size = new System.Drawing.Size(352, 24);
             this.learnChalSenseImpairCheckBox.TabIndex = 23;
@@ -4770,7 +4982,7 @@
             // learnChalLangBarCheckBox
             // 
             this.learnChalLangBarCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.patient_admissionBindingSource, "LearnChalLangBar", true));
-            this.learnChalLangBarCheckBox.Location = new System.Drawing.Point(724, 79);
+            this.learnChalLangBarCheckBox.Location = new System.Drawing.Point(724, 104);
             this.learnChalLangBarCheckBox.Name = "learnChalLangBarCheckBox";
             this.learnChalLangBarCheckBox.Size = new System.Drawing.Size(156, 24);
             this.learnChalLangBarCheckBox.TabIndex = 22;
@@ -4780,7 +4992,7 @@
             // learnChalImpThoughtCheckBox
             // 
             this.learnChalImpThoughtCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.patient_admissionBindingSource, "LearnChalImpThought", true));
-            this.learnChalImpThoughtCheckBox.Location = new System.Drawing.Point(573, 79);
+            this.learnChalImpThoughtCheckBox.Location = new System.Drawing.Point(573, 104);
             this.learnChalImpThoughtCheckBox.Name = "learnChalImpThoughtCheckBox";
             this.learnChalImpThoughtCheckBox.Size = new System.Drawing.Size(144, 24);
             this.learnChalImpThoughtCheckBox.TabIndex = 21;
@@ -4790,7 +5002,7 @@
             // learnChalPoorCopCheckBox
             // 
             this.learnChalPoorCopCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.patient_admissionBindingSource, "LearnChalPoorCop", true));
-            this.learnChalPoorCopCheckBox.Location = new System.Drawing.Point(373, 79);
+            this.learnChalPoorCopCheckBox.Location = new System.Drawing.Point(373, 104);
             this.learnChalPoorCopCheckBox.Name = "learnChalPoorCopCheckBox";
             this.learnChalPoorCopCheckBox.Size = new System.Drawing.Size(193, 24);
             this.learnChalPoorCopCheckBox.TabIndex = 20;
@@ -4800,7 +5012,7 @@
             // learnChalEmoCheckBox
             // 
             this.learnChalEmoCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.patient_admissionBindingSource, "LearnChalEmo", true));
-            this.learnChalEmoCheckBox.Location = new System.Drawing.Point(264, 79);
+            this.learnChalEmoCheckBox.Location = new System.Drawing.Point(264, 104);
             this.learnChalEmoCheckBox.Name = "learnChalEmoCheckBox";
             this.learnChalEmoCheckBox.Size = new System.Drawing.Size(102, 24);
             this.learnChalEmoCheckBox.TabIndex = 19;
@@ -4810,7 +5022,7 @@
             // learnChalCogCheckBox
             // 
             this.learnChalCogCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.patient_admissionBindingSource, "LearnChalCog", true));
-            this.learnChalCogCheckBox.Location = new System.Drawing.Point(161, 79);
+            this.learnChalCogCheckBox.Location = new System.Drawing.Point(161, 104);
             this.learnChalCogCheckBox.Name = "learnChalCogCheckBox";
             this.learnChalCogCheckBox.Size = new System.Drawing.Size(96, 24);
             this.learnChalCogCheckBox.TabIndex = 18;
@@ -5632,7 +5844,7 @@
             this.tabNutrit.Location = new System.Drawing.Point(4, 25);
             this.tabNutrit.Name = "tabNutrit";
             this.tabNutrit.Padding = new System.Windows.Forms.Padding(3);
-            this.tabNutrit.Size = new System.Drawing.Size(991, 1530);
+            this.tabNutrit.Size = new System.Drawing.Size(998, 1485);
             this.tabNutrit.TabIndex = 3;
             this.tabNutrit.Text = "Nutritional Screen";
             this.tabNutrit.UseVisualStyleBackColor = true;
@@ -6063,7 +6275,7 @@
             this.tabSuicRisk.Location = new System.Drawing.Point(4, 25);
             this.tabSuicRisk.Name = "tabSuicRisk";
             this.tabSuicRisk.Padding = new System.Windows.Forms.Padding(3);
-            this.tabSuicRisk.Size = new System.Drawing.Size(991, 1530);
+            this.tabSuicRisk.Size = new System.Drawing.Size(998, 1485);
             this.tabSuicRisk.TabIndex = 4;
             this.tabSuicRisk.Text = "Suicide Risk";
             this.tabSuicRisk.UseVisualStyleBackColor = true;
@@ -6121,9 +6333,9 @@
             this.histSexAbuseComboBox.Items.AddRange(new object[] {
             "No",
             "YES>>Who and When:"});
-            this.histSexAbuseComboBox.Location = new System.Drawing.Point(134, 144);
+            this.histSexAbuseComboBox.Location = new System.Drawing.Point(258, 144);
             this.histSexAbuseComboBox.Name = "histSexAbuseComboBox";
-            this.histSexAbuseComboBox.Size = new System.Drawing.Size(191, 24);
+            this.histSexAbuseComboBox.Size = new System.Drawing.Size(237, 24);
             this.histSexAbuseComboBox.TabIndex = 7;
             // 
             // closeAttemptSuicideDescTextBox
@@ -6587,7 +6799,7 @@
             this.tabSuicRisk2.Location = new System.Drawing.Point(4, 25);
             this.tabSuicRisk2.Name = "tabSuicRisk2";
             this.tabSuicRisk2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabSuicRisk2.Size = new System.Drawing.Size(991, 1530);
+            this.tabSuicRisk2.Size = new System.Drawing.Size(998, 1485);
             this.tabSuicRisk2.TabIndex = 5;
             this.tabSuicRisk2.Text = "Suicide Risk 2";
             this.tabSuicRisk2.UseVisualStyleBackColor = true;
@@ -6959,7 +7171,7 @@
             this.tabSuicRisk3.Location = new System.Drawing.Point(4, 25);
             this.tabSuicRisk3.Name = "tabSuicRisk3";
             this.tabSuicRisk3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabSuicRisk3.Size = new System.Drawing.Size(991, 1530);
+            this.tabSuicRisk3.Size = new System.Drawing.Size(998, 1485);
             this.tabSuicRisk3.TabIndex = 6;
             this.tabSuicRisk3.Text = "Suicide Risk 3";
             this.tabSuicRisk3.UseVisualStyleBackColor = true;
@@ -7195,7 +7407,7 @@
             this.tabRiskAssess.Location = new System.Drawing.Point(4, 25);
             this.tabRiskAssess.Name = "tabRiskAssess";
             this.tabRiskAssess.Padding = new System.Windows.Forms.Padding(3);
-            this.tabRiskAssess.Size = new System.Drawing.Size(991, 1530);
+            this.tabRiskAssess.Size = new System.Drawing.Size(998, 1485);
             this.tabRiskAssess.TabIndex = 7;
             this.tabRiskAssess.Text = "Risk Assessment";
             this.tabRiskAssess.UseVisualStyleBackColor = true;
@@ -7558,7 +7770,7 @@
             this.tabRiskAssess2.Location = new System.Drawing.Point(4, 25);
             this.tabRiskAssess2.Name = "tabRiskAssess2";
             this.tabRiskAssess2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabRiskAssess2.Size = new System.Drawing.Size(991, 1530);
+            this.tabRiskAssess2.Size = new System.Drawing.Size(998, 1485);
             this.tabRiskAssess2.TabIndex = 8;
             this.tabRiskAssess2.Text = "Risk Assessment 2";
             this.tabRiskAssess2.UseVisualStyleBackColor = true;
@@ -8485,7 +8697,7 @@
             this.tabBerlin.Location = new System.Drawing.Point(4, 25);
             this.tabBerlin.Name = "tabBerlin";
             this.tabBerlin.Padding = new System.Windows.Forms.Padding(3);
-            this.tabBerlin.Size = new System.Drawing.Size(991, 1530);
+            this.tabBerlin.Size = new System.Drawing.Size(998, 1485);
             this.tabBerlin.TabIndex = 9;
             this.tabBerlin.Text = "Berlin Questionnaire";
             this.tabBerlin.UseVisualStyleBackColor = true;
@@ -8518,8 +8730,57 @@
             this.grpCat3Instruct.TabStop = false;
             this.grpCat3Instruct.Text = "Category 3";
             // 
+            // berCat3ConsultReqComboBox
+            // 
+            this.berCat3ConsultReqComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "BerCat3ConsultReq", true));
+            this.berCat3ConsultReqComboBox.FormattingEnabled = true;
+            this.berCat3ConsultReqComboBox.Items.AddRange(new object[] {
+            "Yes",
+            "No"});
+            this.berCat3ConsultReqComboBox.Location = new System.Drawing.Point(425, 92);
+            this.berCat3ConsultReqComboBox.Name = "berCat3ConsultReqComboBox";
+            this.berCat3ConsultReqComboBox.Size = new System.Drawing.Size(121, 24);
+            this.berCat3ConsultReqComboBox.TabIndex = 6;
+            // 
+            // berCat3RiskComboBox
+            // 
+            this.berCat3RiskComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "BerCat3Risk", true));
+            this.berCat3RiskComboBox.FormattingEnabled = true;
+            this.berCat3RiskComboBox.Items.AddRange(new object[] {
+            "High Risk - If there are two or more categories with a positive score",
+            "Low Risk - If there is only 1 or no categories with a positive score"});
+            this.berCat3RiskComboBox.Location = new System.Drawing.Point(55, 131);
+            this.berCat3RiskComboBox.Name = "berCat3RiskComboBox";
+            this.berCat3RiskComboBox.Size = new System.Drawing.Size(605, 24);
+            this.berCat3RiskComboBox.TabIndex = 4;
+            // 
+            // berCat3ResultComboBox
+            // 
+            this.berCat3ResultComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "BerCat3Result", true));
+            this.berCat3ResultComboBox.FormattingEnabled = true;
+            this.berCat3ResultComboBox.Items.AddRange(new object[] {
+            "Positive",
+            "Negative"});
+            this.berCat3ResultComboBox.Location = new System.Drawing.Point(70, 92);
+            this.berCat3ResultComboBox.Name = "berCat3ResultComboBox";
+            this.berCat3ResultComboBox.Size = new System.Drawing.Size(121, 24);
+            this.berCat3ResultComboBox.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(9, 27);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(651, 51);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Item 10: If number is yes or BMI is greater than 30, Category 3 is positive.\r\n\r\nI" +
+    "F PATIENT IS DETERMINED HIGH RISK, PLEASE ORDER MEDICAL CONSULT FOR RESPIRATORY." +
+    "";
+            // 
             // grpCat2Instruct
             // 
+            this.grpCat2Instruct.Controls.Add(berCat2ResultLabel);
+            this.grpCat2Instruct.Controls.Add(this.berCat2ResultComboBox);
             this.grpCat2Instruct.Controls.Add(berCat2TotalLabel);
             this.grpCat2Instruct.Controls.Add(this.berCat2TotalTextBox);
             this.grpCat2Instruct.Controls.Add(berNum8OccurLabel);
@@ -8531,6 +8792,18 @@
             this.grpCat2Instruct.TabIndex = 2;
             this.grpCat2Instruct.TabStop = false;
             this.grpCat2Instruct.Text = "Category 2";
+            // 
+            // berCat2ResultComboBox
+            // 
+            this.berCat2ResultComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "BerCat2Result", true));
+            this.berCat2ResultComboBox.FormattingEnabled = true;
+            this.berCat2ResultComboBox.Items.AddRange(new object[] {
+            "Positive",
+            "Negative"});
+            this.berCat2ResultComboBox.Location = new System.Drawing.Point(564, 100);
+            this.berCat2ResultComboBox.Name = "berCat2ResultComboBox";
+            this.berCat2ResultComboBox.Size = new System.Drawing.Size(121, 24);
+            this.berCat2ResultComboBox.TabIndex = 6;
             // 
             // berCat2TotalTextBox
             // 
@@ -8559,6 +8832,8 @@
             // 
             // grpCat1Instruct
             // 
+            this.grpCat1Instruct.Controls.Add(berCat1ResultLabel);
+            this.grpCat1Instruct.Controls.Add(this.berCat1ResultComboBox);
             this.grpCat1Instruct.Controls.Add(berCat1TotalLabel);
             this.grpCat1Instruct.Controls.Add(this.berCat1TotalTextBox);
             this.grpCat1Instruct.Controls.Add(this.lblCat1Instruct);
@@ -8568,6 +8843,18 @@
             this.grpCat1Instruct.TabIndex = 1;
             this.grpCat1Instruct.TabStop = false;
             this.grpCat1Instruct.Text = "Category 1";
+            // 
+            // berCat1ResultComboBox
+            // 
+            this.berCat1ResultComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "BerCat1Result", true));
+            this.berCat1ResultComboBox.FormattingEnabled = true;
+            this.berCat1ResultComboBox.Items.AddRange(new object[] {
+            "Positive",
+            "Negative"});
+            this.berCat1ResultComboBox.Location = new System.Drawing.Point(562, 65);
+            this.berCat1ResultComboBox.Name = "berCat1ResultComboBox";
+            this.berCat1ResultComboBox.Size = new System.Drawing.Size(121, 24);
+            this.berCat1ResultComboBox.TabIndex = 4;
             // 
             // berCat1TotalTextBox
             // 
@@ -8873,26 +9160,190 @@
             // 
             // tabTobacco
             // 
+            this.tabTobacco.AutoScroll = true;
             this.tabTobacco.Controls.Add(this.grpTobacco);
             this.tabTobacco.Location = new System.Drawing.Point(4, 25);
             this.tabTobacco.Name = "tabTobacco";
             this.tabTobacco.Padding = new System.Windows.Forms.Padding(3);
-            this.tabTobacco.Size = new System.Drawing.Size(991, 1530);
+            this.tabTobacco.Size = new System.Drawing.Size(998, 1485);
             this.tabTobacco.TabIndex = 10;
             this.tabTobacco.Text = "Tobacco Use Screening";
             this.tabTobacco.UseVisualStyleBackColor = true;
             // 
             // grpTobacco
             // 
+            this.grpTobacco.Controls.Add(this.tobMedContOtherDescTextBox);
+            this.grpTobacco.Controls.Add(this.tobMedContOtherCheckBox);
+            this.grpTobacco.Controls.Add(this.tobMedContDrugInterCheckBox);
+            this.grpTobacco.Controls.Add(lblTobMedCont);
+            this.grpTobacco.Controls.Add(this.tobMedContPatAllFDACheckBox);
+            this.grpTobacco.Controls.Add(yesPhysNotifiedLabel);
+            this.grpTobacco.Controls.Add(this.yesPhysNotifiedComboBox);
+            this.grpTobacco.Controls.Add(offTobCessLabel);
+            this.grpTobacco.Controls.Add(this.offTobCessComboBox);
+            this.grpTobacco.Controls.Add(this.grpTobCounsel);
             this.grpTobacco.Controls.Add(usedTobaccoL30Label);
             this.grpTobacco.Controls.Add(this.usedTobaccoL30ComboBox);
             this.grpTobacco.Controls.Add(this.grpTobIfYes);
             this.grpTobacco.Location = new System.Drawing.Point(7, 24);
             this.grpTobacco.Name = "grpTobacco";
-            this.grpTobacco.Size = new System.Drawing.Size(978, 432);
+            this.grpTobacco.Size = new System.Drawing.Size(992, 724);
             this.grpTobacco.TabIndex = 0;
             this.grpTobacco.TabStop = false;
             this.grpTobacco.Text = "Tobacco Use Screening";
+            // 
+            // tobMedContOtherDescTextBox
+            // 
+            this.tobMedContOtherDescTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "TobMedContOtherDesc", true));
+            this.tobMedContOtherDescTextBox.Location = new System.Drawing.Point(32, 685);
+            this.tobMedContOtherDescTextBox.Name = "tobMedContOtherDescTextBox";
+            this.tobMedContOtherDescTextBox.Size = new System.Drawing.Size(934, 22);
+            this.tobMedContOtherDescTextBox.TabIndex = 14;
+            // 
+            // tobMedContOtherCheckBox
+            // 
+            this.tobMedContOtherCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.patient_admissionBindingSource, "TobMedContOther", true));
+            this.tobMedContOtherCheckBox.Location = new System.Drawing.Point(32, 655);
+            this.tobMedContOtherCheckBox.Name = "tobMedContOtherCheckBox";
+            this.tobMedContOtherCheckBox.Size = new System.Drawing.Size(104, 24);
+            this.tobMedContOtherCheckBox.TabIndex = 13;
+            this.tobMedContOtherCheckBox.Text = "Other:";
+            this.tobMedContOtherCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // tobMedContDrugInterCheckBox
+            // 
+            this.tobMedContDrugInterCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.patient_admissionBindingSource, "TobMedContDrugInter", true));
+            this.tobMedContDrugInterCheckBox.Location = new System.Drawing.Point(32, 625);
+            this.tobMedContDrugInterCheckBox.Name = "tobMedContDrugInterCheckBox";
+            this.tobMedContDrugInterCheckBox.Size = new System.Drawing.Size(429, 24);
+            this.tobMedContDrugInterCheckBox.TabIndex = 11;
+            this.tobMedContDrugInterCheckBox.Text = "Drug interaction with other medications the patient is taking";
+            this.tobMedContDrugInterCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // tobMedContPatAllFDACheckBox
+            // 
+            this.tobMedContPatAllFDACheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.patient_admissionBindingSource, "TobMedContPatAllFDA", true));
+            this.tobMedContPatAllFDACheckBox.Location = new System.Drawing.Point(32, 595);
+            this.tobMedContPatAllFDACheckBox.Name = "tobMedContPatAllFDACheckBox";
+            this.tobMedContPatAllFDACheckBox.Size = new System.Drawing.Size(483, 24);
+            this.tobMedContPatAllFDACheckBox.TabIndex = 9;
+            this.tobMedContPatAllFDACheckBox.Text = "Patient allergy to all FDA approved tobacco cessation medications";
+            this.tobMedContPatAllFDACheckBox.UseVisualStyleBackColor = true;
+            // 
+            // yesPhysNotifiedComboBox
+            // 
+            this.yesPhysNotifiedComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "YesPhysNotified", true));
+            this.yesPhysNotifiedComboBox.FormattingEnabled = true;
+            this.yesPhysNotifiedComboBox.Items.AddRange(new object[] {
+            "Yes",
+            "No"});
+            this.yesPhysNotifiedComboBox.Location = new System.Drawing.Point(854, 539);
+            this.yesPhysNotifiedComboBox.Name = "yesPhysNotifiedComboBox";
+            this.yesPhysNotifiedComboBox.Size = new System.Drawing.Size(112, 24);
+            this.yesPhysNotifiedComboBox.TabIndex = 7;
+            // 
+            // offTobCessComboBox
+            // 
+            this.offTobCessComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "OffTobCess", true));
+            this.offTobCessComboBox.FormattingEnabled = true;
+            this.offTobCessComboBox.Items.AddRange(new object[] {
+            "Yes",
+            "No",
+            "Patient Refused",
+            "N/A (patient smokes 4 or less cigarettes per day, smokes cigars/pipe or uses smok" +
+                "eless tobacco)"});
+            this.offTobCessComboBox.Location = new System.Drawing.Point(373, 509);
+            this.offTobCessComboBox.Name = "offTobCessComboBox";
+            this.offTobCessComboBox.Size = new System.Drawing.Size(593, 24);
+            this.offTobCessComboBox.TabIndex = 5;
+            // 
+            // grpTobCounsel
+            // 
+            this.grpTobCounsel.Controls.Add(this.tobOtherDescTextBox);
+            this.grpTobCounsel.Controls.Add(this.tobPtRefusedCheckBox);
+            this.grpTobCounsel.Controls.Add(this.tobNotOfferedCheckBox);
+            this.grpTobCounsel.Controls.Add(this.tobOtherCheckBox);
+            this.grpTobCounsel.Controls.Add(this.tobRevInfoCheckBox);
+            this.grpTobCounsel.Controls.Add(this.tobRevCopCheckBox);
+            this.grpTobCounsel.Controls.Add(this.tobRevDangerCheckBox);
+            this.grpTobCounsel.Location = new System.Drawing.Point(6, 261);
+            this.grpTobCounsel.Name = "grpTobCounsel";
+            this.grpTobCounsel.Size = new System.Drawing.Size(966, 237);
+            this.grpTobCounsel.TabIndex = 3;
+            this.grpTobCounsel.TabStop = false;
+            this.grpTobCounsel.Text = "If patient reports any tobacco use, was counseling regarding quitting provided?";
+            // 
+            // tobOtherDescTextBox
+            // 
+            this.tobOtherDescTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "TobOtherDesc", true));
+            this.tobOtherDescTextBox.Location = new System.Drawing.Point(241, 147);
+            this.tobOtherDescTextBox.Name = "tobOtherDescTextBox";
+            this.tobOtherDescTextBox.Size = new System.Drawing.Size(719, 22);
+            this.tobOtherDescTextBox.TabIndex = 14;
+            // 
+            // tobPtRefusedCheckBox
+            // 
+            this.tobPtRefusedCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.patient_admissionBindingSource, "TobPtRefused", true));
+            this.tobPtRefusedCheckBox.Location = new System.Drawing.Point(26, 203);
+            this.tobPtRefusedCheckBox.Name = "tobPtRefusedCheckBox";
+            this.tobPtRefusedCheckBox.Size = new System.Drawing.Size(221, 24);
+            this.tobPtRefusedCheckBox.TabIndex = 13;
+            this.tobPtRefusedCheckBox.Text = "Patient refused counseling";
+            this.tobPtRefusedCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // tobNotOfferedCheckBox
+            // 
+            this.tobNotOfferedCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.patient_admissionBindingSource, "TobNotOffered", true));
+            this.tobNotOfferedCheckBox.Location = new System.Drawing.Point(26, 175);
+            this.tobNotOfferedCheckBox.Name = "tobNotOfferedCheckBox";
+            this.tobNotOfferedCheckBox.Size = new System.Drawing.Size(209, 24);
+            this.tobNotOfferedCheckBox.TabIndex = 11;
+            this.tobNotOfferedCheckBox.Text = "Counseling was not offered";
+            this.tobNotOfferedCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // tobOtherCheckBox
+            // 
+            this.tobOtherCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.patient_admissionBindingSource, "TobOther", true));
+            this.tobOtherCheckBox.Location = new System.Drawing.Point(26, 147);
+            this.tobOtherCheckBox.Name = "tobOtherCheckBox";
+            this.tobOtherCheckBox.Size = new System.Drawing.Size(209, 24);
+            this.tobOtherCheckBox.TabIndex = 7;
+            this.tobOtherCheckBox.Text = "Other counseling provided:";
+            this.tobOtherCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // tobRevInfoCheckBox
+            // 
+            this.tobRevInfoCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.patient_admissionBindingSource, "TobRevInfo", true));
+            this.tobRevInfoCheckBox.Location = new System.Drawing.Point(26, 98);
+            this.tobRevInfoCheckBox.Name = "tobRevInfoCheckBox";
+            this.tobRevInfoCheckBox.Size = new System.Drawing.Size(914, 45);
+            this.tobRevInfoCheckBox.TabIndex = 5;
+            this.tobRevInfoCheckBox.Text = "Reviewed information on quitting - provided list of resources/referral to quit he" +
+    "lp line and discussed cessation medications available at this facility.";
+            this.tobRevInfoCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // tobRevCopCheckBox
+            // 
+            this.tobRevCopCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.patient_admissionBindingSource, "TobRevCop", true));
+            this.tobRevCopCheckBox.Location = new System.Drawing.Point(26, 70);
+            this.tobRevCopCheckBox.Name = "tobRevCopCheckBox";
+            this.tobRevCopCheckBox.Size = new System.Drawing.Size(934, 24);
+            this.tobRevCopCheckBox.TabIndex = 3;
+            this.tobRevCopCheckBox.Text = "Reviewed coping skills - Reviewed handouts and provided written information to pa" +
+    "tient.";
+            this.tobRevCopCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // tobRevDangerCheckBox
+            // 
+            this.tobRevDangerCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.patient_admissionBindingSource, "TobRevDanger", true));
+            this.tobRevDangerCheckBox.Location = new System.Drawing.Point(26, 27);
+            this.tobRevDangerCheckBox.Name = "tobRevDangerCheckBox";
+            this.tobRevDangerCheckBox.Size = new System.Drawing.Size(934, 39);
+            this.tobRevDangerCheckBox.TabIndex = 1;
+            this.tobRevDangerCheckBox.Text = "Reviewed recognizing dager situations (Beinga around smokers, starting the day, f" +
+    "eeling stressed, being in a car, drinking coffee/tea, enjoying a meal, drinking " +
+    "an alcoholic beverage, feeling bored.)";
+            this.tobRevDangerCheckBox.UseVisualStyleBackColor = true;
             // 
             // usedTobaccoL30ComboBox
             // 
@@ -8901,111 +9352,608 @@
             this.usedTobaccoL30ComboBox.Items.AddRange(new object[] {
             "Yes",
             "No"});
-            this.usedTobaccoL30ComboBox.Location = new System.Drawing.Point(444, 29);
+            this.usedTobaccoL30ComboBox.Location = new System.Drawing.Point(418, 29);
             this.usedTobaccoL30ComboBox.Name = "usedTobaccoL30ComboBox";
-            this.usedTobaccoL30ComboBox.Size = new System.Drawing.Size(121, 24);
+            this.usedTobaccoL30ComboBox.Size = new System.Drawing.Size(147, 24);
             this.usedTobaccoL30ComboBox.TabIndex = 2;
             // 
             // grpTobIfYes
             // 
-            this.grpTobIfYes.Controls.Add(chewValueLabel);
+            this.grpTobIfYes.Controls.Add(this.tobaccoOtherValueComboBox);
+            this.grpTobIfYes.Controls.Add(this.tobaccoOtherDescTextBox);
+            this.grpTobIfYes.Controls.Add(this.tobaccoOtherCheckBox);
             this.grpTobIfYes.Controls.Add(this.chewValueComboBox);
-            this.grpTobIfYes.Controls.Add(chewLabel);
             this.grpTobIfYes.Controls.Add(this.chewCheckBox);
-            this.grpTobIfYes.Controls.Add(pipeSmokeValueLabel);
             this.grpTobIfYes.Controls.Add(this.pipeSmokeValueComboBox);
-            this.grpTobIfYes.Controls.Add(pipeSmokeLabel);
             this.grpTobIfYes.Controls.Add(this.pipeSmokeCheckBox);
-            this.grpTobIfYes.Controls.Add(cigarsValueLabel);
             this.grpTobIfYes.Controls.Add(this.cigarsValueComboBox);
-            this.grpTobIfYes.Controls.Add(cigarsLabel);
             this.grpTobIfYes.Controls.Add(this.cigarsCheckBox);
-            this.grpTobIfYes.Controls.Add(cigarettesValueLabel);
             this.grpTobIfYes.Controls.Add(this.cigarettesValueComboBox);
-            this.grpTobIfYes.Controls.Add(cigarettesLabel);
             this.grpTobIfYes.Controls.Add(this.cigarettesCheckBox);
-            this.grpTobIfYes.Location = new System.Drawing.Point(36, 60);
+            this.grpTobIfYes.Location = new System.Drawing.Point(6, 60);
             this.grpTobIfYes.Name = "grpTobIfYes";
-            this.grpTobIfYes.Size = new System.Drawing.Size(901, 205);
+            this.grpTobIfYes.Size = new System.Drawing.Size(966, 195);
             this.grpTobIfYes.TabIndex = 0;
             this.grpTobIfYes.TabStop = false;
             this.grpTobIfYes.Text = "If \"Yes\" the following MUST be completed:";
+            // 
+            // tobaccoOtherValueComboBox
+            // 
+            this.tobaccoOtherValueComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "TobaccoOtherValue", true));
+            this.tobaccoOtherValueComboBox.FormattingEnabled = true;
+            this.tobaccoOtherValueComboBox.Items.AddRange(new object[] {
+            "Daily use",
+            "Less than daily use"});
+            this.tobaccoOtherValueComboBox.Location = new System.Drawing.Point(356, 155);
+            this.tobaccoOtherValueComboBox.Name = "tobaccoOtherValueComboBox";
+            this.tobaccoOtherValueComboBox.Size = new System.Drawing.Size(398, 24);
+            this.tobaccoOtherValueComboBox.TabIndex = 21;
+            // 
+            // tobaccoOtherDescTextBox
+            // 
+            this.tobaccoOtherDescTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "TobaccoOtherDesc", true));
+            this.tobaccoOtherDescTextBox.Location = new System.Drawing.Point(108, 155);
+            this.tobaccoOtherDescTextBox.Name = "tobaccoOtherDescTextBox";
+            this.tobaccoOtherDescTextBox.Size = new System.Drawing.Size(242, 22);
+            this.tobaccoOtherDescTextBox.TabIndex = 19;
+            // 
+            // tobaccoOtherCheckBox
+            // 
+            this.tobaccoOtherCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.patient_admissionBindingSource, "TobaccoOther", true));
+            this.tobaccoOtherCheckBox.Location = new System.Drawing.Point(26, 155);
+            this.tobaccoOtherCheckBox.Name = "tobaccoOtherCheckBox";
+            this.tobaccoOtherCheckBox.Size = new System.Drawing.Size(76, 24);
+            this.tobaccoOtherCheckBox.TabIndex = 17;
+            this.tobaccoOtherCheckBox.Text = "Other:";
+            this.tobaccoOtherCheckBox.UseVisualStyleBackColor = true;
             // 
             // chewValueComboBox
             // 
             this.chewValueComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "ChewValue", true));
             this.chewValueComboBox.FormattingEnabled = true;
-            this.chewValueComboBox.Location = new System.Drawing.Point(356, 136);
+            this.chewValueComboBox.Items.AddRange(new object[] {
+            "Daily use",
+            "Less than daily use"});
+            this.chewValueComboBox.Location = new System.Drawing.Point(356, 123);
             this.chewValueComboBox.Name = "chewValueComboBox";
-            this.chewValueComboBox.Size = new System.Drawing.Size(121, 24);
+            this.chewValueComboBox.Size = new System.Drawing.Size(398, 24);
             this.chewValueComboBox.TabIndex = 15;
             // 
             // chewCheckBox
             // 
             this.chewCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.patient_admissionBindingSource, "Chew", true));
-            this.chewCheckBox.Location = new System.Drawing.Point(89, 130);
+            this.chewCheckBox.Location = new System.Drawing.Point(26, 123);
             this.chewCheckBox.Name = "chewCheckBox";
-            this.chewCheckBox.Size = new System.Drawing.Size(104, 24);
+            this.chewCheckBox.Size = new System.Drawing.Size(160, 24);
             this.chewCheckBox.TabIndex = 13;
-            this.chewCheckBox.Text = "checkBox1";
+            this.chewCheckBox.Text = "Chewing tobacco";
             this.chewCheckBox.UseVisualStyleBackColor = true;
             // 
             // pipeSmokeValueComboBox
             // 
             this.pipeSmokeValueComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "PipeSmokeValue", true));
             this.pipeSmokeValueComboBox.FormattingEnabled = true;
-            this.pipeSmokeValueComboBox.Location = new System.Drawing.Point(397, 105);
+            this.pipeSmokeValueComboBox.Items.AddRange(new object[] {
+            "Daily use",
+            "Less than daily use"});
+            this.pipeSmokeValueComboBox.Location = new System.Drawing.Point(356, 91);
             this.pipeSmokeValueComboBox.Name = "pipeSmokeValueComboBox";
-            this.pipeSmokeValueComboBox.Size = new System.Drawing.Size(121, 24);
+            this.pipeSmokeValueComboBox.Size = new System.Drawing.Size(398, 24);
             this.pipeSmokeValueComboBox.TabIndex = 11;
             // 
             // pipeSmokeCheckBox
             // 
             this.pipeSmokeCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.patient_admissionBindingSource, "PipeSmoke", true));
-            this.pipeSmokeCheckBox.Location = new System.Drawing.Point(130, 102);
+            this.pipeSmokeCheckBox.Location = new System.Drawing.Point(26, 91);
             this.pipeSmokeCheckBox.Name = "pipeSmokeCheckBox";
             this.pipeSmokeCheckBox.Size = new System.Drawing.Size(104, 24);
             this.pipeSmokeCheckBox.TabIndex = 9;
-            this.pipeSmokeCheckBox.Text = "checkBox1";
+            this.pipeSmokeCheckBox.Text = "Pipe";
             this.pipeSmokeCheckBox.UseVisualStyleBackColor = true;
             // 
             // cigarsValueComboBox
             // 
             this.cigarsValueComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "CigarsValue", true));
             this.cigarsValueComboBox.FormattingEnabled = true;
-            this.cigarsValueComboBox.Location = new System.Drawing.Point(358, 69);
+            this.cigarsValueComboBox.Items.AddRange(new object[] {
+            "Daily use",
+            "Less than daily use"});
+            this.cigarsValueComboBox.Location = new System.Drawing.Point(356, 59);
             this.cigarsValueComboBox.Name = "cigarsValueComboBox";
-            this.cigarsValueComboBox.Size = new System.Drawing.Size(121, 24);
+            this.cigarsValueComboBox.Size = new System.Drawing.Size(398, 24);
             this.cigarsValueComboBox.TabIndex = 7;
             // 
             // cigarsCheckBox
             // 
             this.cigarsCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.patient_admissionBindingSource, "Cigars", true));
-            this.cigarsCheckBox.Location = new System.Drawing.Point(94, 69);
+            this.cigarsCheckBox.Location = new System.Drawing.Point(26, 59);
             this.cigarsCheckBox.Name = "cigarsCheckBox";
             this.cigarsCheckBox.Size = new System.Drawing.Size(104, 24);
             this.cigarsCheckBox.TabIndex = 5;
-            this.cigarsCheckBox.Text = "checkBox1";
+            this.cigarsCheckBox.Text = "Cigars";
             this.cigarsCheckBox.UseVisualStyleBackColor = true;
             // 
             // cigarettesValueComboBox
             // 
             this.cigarettesValueComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "CigarettesValue", true));
             this.cigarettesValueComboBox.FormattingEnabled = true;
-            this.cigarettesValueComboBox.Location = new System.Drawing.Point(378, 38);
+            this.cigarettesValueComboBox.Items.AddRange(new object[] {
+            "More than 1/2 pack per day",
+            "1/4 - 1/2 pack per day",
+            "Less than 1/4 pack per day",
+            "Less than daily use"});
+            this.cigarettesValueComboBox.Location = new System.Drawing.Point(356, 27);
             this.cigarettesValueComboBox.Name = "cigarettesValueComboBox";
-            this.cigarettesValueComboBox.Size = new System.Drawing.Size(121, 24);
+            this.cigarettesValueComboBox.Size = new System.Drawing.Size(398, 24);
             this.cigarettesValueComboBox.TabIndex = 3;
             // 
             // cigarettesCheckBox
             // 
             this.cigarettesCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.patient_admissionBindingSource, "Cigarettes", true));
-            this.cigarettesCheckBox.Location = new System.Drawing.Point(111, 33);
+            this.cigarettesCheckBox.Location = new System.Drawing.Point(26, 27);
             this.cigarettesCheckBox.Name = "cigarettesCheckBox";
             this.cigarettesCheckBox.Size = new System.Drawing.Size(104, 24);
             this.cigarettesCheckBox.TabIndex = 1;
-            this.cigarettesCheckBox.Text = "checkBox1";
+            this.cigarettesCheckBox.Text = "Cigarettes";
             this.cigarettesCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // tabAddendum
+            // 
+            this.tabAddendum.Controls.Add(this.grpDevStat);
+            this.tabAddendum.Controls.Add(this.grpNurseAddInfo);
+            this.tabAddendum.Location = new System.Drawing.Point(4, 25);
+            this.tabAddendum.Name = "tabAddendum";
+            this.tabAddendum.Padding = new System.Windows.Forms.Padding(3);
+            this.tabAddendum.Size = new System.Drawing.Size(998, 1485);
+            this.tabAddendum.TabIndex = 11;
+            this.tabAddendum.Text = "Addendum";
+            this.tabAddendum.UseVisualStyleBackColor = true;
+            // 
+            // grpDevStat
+            // 
+            this.grpDevStat.Controls.Add(parGuardExpectLabel);
+            this.grpDevStat.Controls.Add(this.parGuardExpectTextBox);
+            this.grpDevStat.Controls.Add(this.histDevDelayDescTextBox);
+            this.grpDevStat.Controls.Add(histDevDelayLabel);
+            this.grpDevStat.Controls.Add(this.histDevDelayComboBox);
+            this.grpDevStat.Controls.Add(this.birthDefectsDescTextBox);
+            this.grpDevStat.Controls.Add(birthDefectsLabel);
+            this.grpDevStat.Controls.Add(this.birthDefectsComboBox);
+            this.grpDevStat.Controls.Add(immuneUpToDateLabel);
+            this.grpDevStat.Controls.Add(this.immuneUpToDateComboBox);
+            this.grpDevStat.Controls.Add(patientAwayHomeLabel);
+            this.grpDevStat.Controls.Add(this.patientAwayHomeComboBox);
+            this.grpDevStat.Controls.Add(this.grp1618YearOld);
+            this.grpDevStat.Controls.Add(this.grp1315YearOld);
+            this.grpDevStat.Controls.Add(this.grp912YearOld);
+            this.grpDevStat.Controls.Add(this.grp58YearOld);
+            this.grpDevStat.Location = new System.Drawing.Point(12, 175);
+            this.grpDevStat.Name = "grpDevStat";
+            this.grpDevStat.Size = new System.Drawing.Size(979, 785);
+            this.grpDevStat.TabIndex = 3;
+            this.grpDevStat.TabStop = false;
+            this.grpDevStat.Text = "Developmental Status (check all that apply for your age group)";
+            // 
+            // parGuardExpectTextBox
+            // 
+            this.parGuardExpectTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "ParGuardExpect", true));
+            this.parGuardExpectTextBox.Location = new System.Drawing.Point(21, 697);
+            this.parGuardExpectTextBox.Multiline = true;
+            this.parGuardExpectTextBox.Name = "parGuardExpectTextBox";
+            this.parGuardExpectTextBox.Size = new System.Drawing.Size(932, 65);
+            this.parGuardExpectTextBox.TabIndex = 15;
+            // 
+            // histDevDelayDescTextBox
+            // 
+            this.histDevDelayDescTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "HistDevDelayDesc", true));
+            this.histDevDelayDescTextBox.Location = new System.Drawing.Point(21, 616);
+            this.histDevDelayDescTextBox.Multiline = true;
+            this.histDevDelayDescTextBox.Name = "histDevDelayDescTextBox";
+            this.histDevDelayDescTextBox.Size = new System.Drawing.Size(932, 44);
+            this.histDevDelayDescTextBox.TabIndex = 14;
+            // 
+            // histDevDelayComboBox
+            // 
+            this.histDevDelayComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "HistDevDelay", true));
+            this.histDevDelayComboBox.FormattingEnabled = true;
+            this.histDevDelayComboBox.Items.AddRange(new object[] {
+            "Yes (specify below)",
+            "No"});
+            this.histDevDelayComboBox.Location = new System.Drawing.Point(241, 586);
+            this.histDevDelayComboBox.Name = "histDevDelayComboBox";
+            this.histDevDelayComboBox.Size = new System.Drawing.Size(121, 24);
+            this.histDevDelayComboBox.TabIndex = 12;
+            // 
+            // birthDefectsDescTextBox
+            // 
+            this.birthDefectsDescTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "BirthDefectsDesc", true));
+            this.birthDefectsDescTextBox.Location = new System.Drawing.Point(21, 533);
+            this.birthDefectsDescTextBox.Multiline = true;
+            this.birthDefectsDescTextBox.Name = "birthDefectsDescTextBox";
+            this.birthDefectsDescTextBox.Size = new System.Drawing.Size(932, 46);
+            this.birthDefectsDescTextBox.TabIndex = 11;
+            // 
+            // birthDefectsComboBox
+            // 
+            this.birthDefectsComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "BirthDefects", true));
+            this.birthDefectsComboBox.FormattingEnabled = true;
+            this.birthDefectsComboBox.Items.AddRange(new object[] {
+            "Yes (specify below)"});
+            this.birthDefectsComboBox.Location = new System.Drawing.Point(215, 503);
+            this.birthDefectsComboBox.Name = "birthDefectsComboBox";
+            this.birthDefectsComboBox.Size = new System.Drawing.Size(121, 24);
+            this.birthDefectsComboBox.TabIndex = 9;
+            // 
+            // immuneUpToDateComboBox
+            // 
+            this.immuneUpToDateComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "ImmuneUpToDate", true));
+            this.immuneUpToDateComboBox.FormattingEnabled = true;
+            this.immuneUpToDateComboBox.Items.AddRange(new object[] {
+            "Yes",
+            "No"});
+            this.immuneUpToDateComboBox.Location = new System.Drawing.Point(223, 476);
+            this.immuneUpToDateComboBox.Name = "immuneUpToDateComboBox";
+            this.immuneUpToDateComboBox.Size = new System.Drawing.Size(121, 24);
+            this.immuneUpToDateComboBox.TabIndex = 7;
+            // 
+            // patientAwayHomeComboBox
+            // 
+            this.patientAwayHomeComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "PatientAwayHome", true));
+            this.patientAwayHomeComboBox.FormattingEnabled = true;
+            this.patientAwayHomeComboBox.Items.AddRange(new object[] {
+            "Yes",
+            "No"});
+            this.patientAwayHomeComboBox.Location = new System.Drawing.Point(337, 449);
+            this.patientAwayHomeComboBox.Name = "patientAwayHomeComboBox";
+            this.patientAwayHomeComboBox.Size = new System.Drawing.Size(121, 24);
+            this.patientAwayHomeComboBox.TabIndex = 5;
+            // 
+            // grp1618YearOld
+            // 
+            this.grp1618YearOld.Controls.Add(this.yr1618ReasChoiceCheckBox);
+            this.grp1618YearOld.Controls.Add(this.yr1618InterestSexCheckBox);
+            this.grp1618YearOld.Controls.Add(this.yr1618LessParentsCheckBox);
+            this.grp1618YearOld.Controls.Add(this.yr1618InterestCheckBox);
+            this.grp1618YearOld.Location = new System.Drawing.Point(516, 233);
+            this.grp1618YearOld.Name = "grp1618YearOld";
+            this.grp1618YearOld.Size = new System.Drawing.Size(443, 206);
+            this.grp1618YearOld.TabIndex = 3;
+            this.grp1618YearOld.TabStop = false;
+            this.grp1618YearOld.Text = "16-18 Years Old";
+            // 
+            // yr1618ReasChoiceCheckBox
+            // 
+            this.yr1618ReasChoiceCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.patient_admissionBindingSource, "Yr1618ReasChoice", true));
+            this.yr1618ReasChoiceCheckBox.Location = new System.Drawing.Point(6, 108);
+            this.yr1618ReasChoiceCheckBox.Name = "yr1618ReasChoiceCheckBox";
+            this.yr1618ReasChoiceCheckBox.Size = new System.Drawing.Size(431, 39);
+            this.yr1618ReasChoiceCheckBox.TabIndex = 7;
+            this.yr1618ReasChoiceCheckBox.Text = "Better able to give reasons for their choices, including how their actions may af" +
+    "fect others";
+            this.yr1618ReasChoiceCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // yr1618InterestSexCheckBox
+            // 
+            this.yr1618InterestSexCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.patient_admissionBindingSource, "Yr1618InterestSex", true));
+            this.yr1618InterestSexCheckBox.Location = new System.Drawing.Point(6, 82);
+            this.yr1618InterestSexCheckBox.Name = "yr1618InterestSexCheckBox";
+            this.yr1618InterestSexCheckBox.Size = new System.Drawing.Size(374, 24);
+            this.yr1618InterestSexCheckBox.TabIndex = 5;
+            this.yr1618InterestSexCheckBox.Text = "Has increased interest in opposite sex/relationships";
+            this.yr1618InterestSexCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // yr1618LessParentsCheckBox
+            // 
+            this.yr1618LessParentsCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.patient_admissionBindingSource, "Yr1618LessParents", true));
+            this.yr1618LessParentsCheckBox.Location = new System.Drawing.Point(6, 56);
+            this.yr1618LessParentsCheckBox.Name = "yr1618LessParentsCheckBox";
+            this.yr1618LessParentsCheckBox.Size = new System.Drawing.Size(399, 24);
+            this.yr1618LessParentsCheckBox.TabIndex = 3;
+            this.yr1618LessParentsCheckBox.Text = "Spends less time with parents and more time with friends";
+            this.yr1618LessParentsCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // yr1618InterestCheckBox
+            // 
+            this.yr1618InterestCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.patient_admissionBindingSource, "Yr1618Interest", true));
+            this.yr1618InterestCheckBox.Location = new System.Drawing.Point(6, 30);
+            this.yr1618InterestCheckBox.Name = "yr1618InterestCheckBox";
+            this.yr1618InterestCheckBox.Size = new System.Drawing.Size(329, 24);
+            this.yr1618InterestCheckBox.TabIndex = 1;
+            this.yr1618InterestCheckBox.Text = "Demonstrates interest in future career goals";
+            this.yr1618InterestCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // grp1315YearOld
+            // 
+            this.grp1315YearOld.Controls.Add(this.yr1315GroupSportsCheckBox);
+            this.grp1315YearOld.Controls.Add(this.yr1315CompThoughtCheckBox);
+            this.grp1315YearOld.Controls.Add(this.yr1315ExpressAffCheckBox);
+            this.grp1315YearOld.Controls.Add(this.yr1315ShowsConcCheckBox);
+            this.grp1315YearOld.Location = new System.Drawing.Point(15, 233);
+            this.grp1315YearOld.Name = "grp1315YearOld";
+            this.grp1315YearOld.Size = new System.Drawing.Size(443, 206);
+            this.grp1315YearOld.TabIndex = 2;
+            this.grp1315YearOld.TabStop = false;
+            this.grp1315YearOld.Text = "13-15 Years Old";
+            // 
+            // yr1315GroupSportsCheckBox
+            // 
+            this.yr1315GroupSportsCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.patient_admissionBindingSource, "Yr1315GroupSports", true));
+            this.yr1315GroupSportsCheckBox.Location = new System.Drawing.Point(6, 162);
+            this.yr1315GroupSportsCheckBox.Name = "yr1315GroupSportsCheckBox";
+            this.yr1315GroupSportsCheckBox.Size = new System.Drawing.Size(431, 24);
+            this.yr1315GroupSportsCheckBox.TabIndex = 7;
+            this.yr1315GroupSportsCheckBox.Text = "Involved in group sports, social, and school activities";
+            this.yr1315GroupSportsCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // yr1315CompThoughtCheckBox
+            // 
+            this.yr1315CompThoughtCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.patient_admissionBindingSource, "Yr1315CompThought", true));
+            this.yr1315CompThoughtCheckBox.Location = new System.Drawing.Point(6, 114);
+            this.yr1315CompThoughtCheckBox.Name = "yr1315CompThoughtCheckBox";
+            this.yr1315CompThoughtCheckBox.Size = new System.Drawing.Size(431, 42);
+            this.yr1315CompThoughtCheckBox.TabIndex = 5;
+            this.yr1315CompThoughtCheckBox.Text = "Has increased ability for complex thought, including what is right and wrong";
+            this.yr1315CompThoughtCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // yr1315ExpressAffCheckBox
+            // 
+            this.yr1315ExpressAffCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.patient_admissionBindingSource, "Yr1315ExpressAff", true));
+            this.yr1315ExpressAffCheckBox.Location = new System.Drawing.Point(6, 70);
+            this.yr1315ExpressAffCheckBox.Name = "yr1315ExpressAffCheckBox";
+            this.yr1315ExpressAffCheckBox.Size = new System.Drawing.Size(431, 38);
+            this.yr1315ExpressAffCheckBox.TabIndex = 3;
+            this.yr1315ExpressAffCheckBox.Text = "Expresses less affection towards and more independence from parents";
+            this.yr1315ExpressAffCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // yr1315ShowsConcCheckBox
+            // 
+            this.yr1315ShowsConcCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.patient_admissionBindingSource, "Yr1315ShowsConc", true));
+            this.yr1315ShowsConcCheckBox.Location = new System.Drawing.Point(6, 21);
+            this.yr1315ShowsConcCheckBox.Name = "yr1315ShowsConcCheckBox";
+            this.yr1315ShowsConcCheckBox.Size = new System.Drawing.Size(431, 43);
+            this.yr1315ShowsConcCheckBox.TabIndex = 1;
+            this.yr1315ShowsConcCheckBox.Text = "Shows increased concern about body image, appearance, and clothing";
+            this.yr1315ShowsConcCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // grp912YearOld
+            // 
+            this.grp912YearOld.Controls.Add(this.yr912RespSelfCheckBox);
+            this.grp912YearOld.Controls.Add(this.yr912FamDecCheckBox);
+            this.grp912YearOld.Controls.Add(this.yr912HobbyCheckBox);
+            this.grp912YearOld.Controls.Add(this.yr912AttSpanCheckBox);
+            this.grp912YearOld.Controls.Add(this.yr912BestFriendCheckBox);
+            this.grp912YearOld.Location = new System.Drawing.Point(516, 35);
+            this.grp912YearOld.Name = "grp912YearOld";
+            this.grp912YearOld.Size = new System.Drawing.Size(443, 192);
+            this.grp912YearOld.TabIndex = 1;
+            this.grp912YearOld.TabStop = false;
+            this.grp912YearOld.Text = "9-12 Years Old";
+            // 
+            // yr912RespSelfCheckBox
+            // 
+            this.yr912RespSelfCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.patient_admissionBindingSource, "Yr912RespSelf", true));
+            this.yr912RespSelfCheckBox.Location = new System.Drawing.Point(6, 141);
+            this.yr912RespSelfCheckBox.Name = "yr912RespSelfCheckBox";
+            this.yr912RespSelfCheckBox.Size = new System.Drawing.Size(329, 24);
+            this.yr912RespSelfCheckBox.TabIndex = 9;
+            this.yr912RespSelfCheckBox.Text = "Assumes responsibility for self and belongings";
+            this.yr912RespSelfCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // yr912FamDecCheckBox
+            // 
+            this.yr912FamDecCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.patient_admissionBindingSource, "Yr912FamDec", true));
+            this.yr912FamDecCheckBox.Location = new System.Drawing.Point(6, 111);
+            this.yr912FamDecCheckBox.Name = "yr912FamDecCheckBox";
+            this.yr912FamDecCheckBox.Size = new System.Drawing.Size(214, 24);
+            this.yr912FamDecCheckBox.TabIndex = 7;
+            this.yr912FamDecCheckBox.Text = "Involved in family decisions";
+            this.yr912FamDecCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // yr912HobbyCheckBox
+            // 
+            this.yr912HobbyCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.patient_admissionBindingSource, "Yr912Hobby", true));
+            this.yr912HobbyCheckBox.Location = new System.Drawing.Point(6, 81);
+            this.yr912HobbyCheckBox.Name = "yr912HobbyCheckBox";
+            this.yr912HobbyCheckBox.Size = new System.Drawing.Size(160, 24);
+            this.yr912HobbyCheckBox.TabIndex = 5;
+            this.yr912HobbyCheckBox.Text = "Has a hobby";
+            this.yr912HobbyCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // yr912AttSpanCheckBox
+            // 
+            this.yr912AttSpanCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.patient_admissionBindingSource, "Yr912AttSpan", true));
+            this.yr912AttSpanCheckBox.Location = new System.Drawing.Point(6, 51);
+            this.yr912AttSpanCheckBox.Name = "yr912AttSpanCheckBox";
+            this.yr912AttSpanCheckBox.Size = new System.Drawing.Size(225, 24);
+            this.yr912AttSpanCheckBox.TabIndex = 3;
+            this.yr912AttSpanCheckBox.Text = "Has increased attention span";
+            this.yr912AttSpanCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // yr912BestFriendCheckBox
+            // 
+            this.yr912BestFriendCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.patient_admissionBindingSource, "Yr912BestFriend", true));
+            this.yr912BestFriendCheckBox.Location = new System.Drawing.Point(6, 21);
+            this.yr912BestFriendCheckBox.Name = "yr912BestFriendCheckBox";
+            this.yr912BestFriendCheckBox.Size = new System.Drawing.Size(160, 24);
+            this.yr912BestFriendCheckBox.TabIndex = 1;
+            this.yr912BestFriendCheckBox.Text = "Has a best friend";
+            this.yr912BestFriendCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // grp58YearOld
+            // 
+            this.grp58YearOld.Controls.Add(this.yr58MinRespCheckBox);
+            this.grp58YearOld.Controls.Add(this.yr58NeedsCheckBox);
+            this.grp58YearOld.Controls.Add(this.yr58CoopCheckBox);
+            this.grp58YearOld.Controls.Add(this.yr58ChoresCheckBox);
+            this.grp58YearOld.Controls.Add(this.yr58BathCheckBox);
+            this.grp58YearOld.Location = new System.Drawing.Point(15, 35);
+            this.grp58YearOld.Name = "grp58YearOld";
+            this.grp58YearOld.Size = new System.Drawing.Size(443, 193);
+            this.grp58YearOld.TabIndex = 0;
+            this.grp58YearOld.TabStop = false;
+            this.grp58YearOld.Text = "5-8 Years Old";
+            // 
+            // yr58MinRespCheckBox
+            // 
+            this.yr58MinRespCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.patient_admissionBindingSource, "Yr58MinResp", true));
+            this.yr58MinRespCheckBox.Location = new System.Drawing.Point(6, 141);
+            this.yr58MinRespCheckBox.Name = "yr58MinRespCheckBox";
+            this.yr58MinRespCheckBox.Size = new System.Drawing.Size(230, 24);
+            this.yr58MinRespCheckBox.TabIndex = 9;
+            this.yr58MinRespCheckBox.Text = "Assumes minor responsibility";
+            this.yr58MinRespCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // yr58NeedsCheckBox
+            // 
+            this.yr58NeedsCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.patient_admissionBindingSource, "Yr58Needs", true));
+            this.yr58NeedsCheckBox.Location = new System.Drawing.Point(6, 111);
+            this.yr58NeedsCheckBox.Name = "yr58NeedsCheckBox";
+            this.yr58NeedsCheckBox.Size = new System.Drawing.Size(230, 24);
+            this.yr58NeedsCheckBox.TabIndex = 7;
+            this.yr58NeedsCheckBox.Text = "Able to express his/hers needs";
+            this.yr58NeedsCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // yr58CoopCheckBox
+            // 
+            this.yr58CoopCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.patient_admissionBindingSource, "Yr58Coop", true));
+            this.yr58CoopCheckBox.Location = new System.Drawing.Point(6, 81);
+            this.yr58CoopCheckBox.Name = "yr58CoopCheckBox";
+            this.yr58CoopCheckBox.Size = new System.Drawing.Size(165, 24);
+            this.yr58CoopCheckBox.TabIndex = 5;
+            this.yr58CoopCheckBox.Text = "Plays cooperatively";
+            this.yr58CoopCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // yr58ChoresCheckBox
+            // 
+            this.yr58ChoresCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.patient_admissionBindingSource, "Yr58Chores", true));
+            this.yr58ChoresCheckBox.Location = new System.Drawing.Point(6, 51);
+            this.yr58ChoresCheckBox.Name = "yr58ChoresCheckBox";
+            this.yr58ChoresCheckBox.Size = new System.Drawing.Size(188, 24);
+            this.yr58ChoresCheckBox.TabIndex = 3;
+            this.yr58ChoresCheckBox.Text = "Does household chores";
+            this.yr58ChoresCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // yr58BathCheckBox
+            // 
+            this.yr58BathCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.patient_admissionBindingSource, "Yr58Bath", true));
+            this.yr58BathCheckBox.Location = new System.Drawing.Point(6, 21);
+            this.yr58BathCheckBox.Name = "yr58BathCheckBox";
+            this.yr58BathCheckBox.Size = new System.Drawing.Size(230, 24);
+            this.yr58BathCheckBox.TabIndex = 1;
+            this.yr58BathCheckBox.Text = "Bathes, dresses, combs hair";
+            this.yr58BathCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // grpNurseAddInfo
+            // 
+            this.grpNurseAddInfo.Controls.Add(this.nameRelatNurseAssessTextBox);
+            this.grpNurseAddInfo.Controls.Add(nameRelatNurseAssessLabel);
+            this.grpNurseAddInfo.Location = new System.Drawing.Point(6, 20);
+            this.grpNurseAddInfo.Name = "grpNurseAddInfo";
+            this.grpNurseAddInfo.Size = new System.Drawing.Size(986, 985);
+            this.grpNurseAddInfo.TabIndex = 3;
+            this.grpNurseAddInfo.TabStop = false;
+            this.grpNurseAddInfo.Text = "C/A Nursing Assessment Additional Information";
+            // 
+            // nameRelatNurseAssessTextBox
+            // 
+            this.nameRelatNurseAssessTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "NameRelatNurseAssess", true));
+            this.nameRelatNurseAssessTextBox.Location = new System.Drawing.Point(15, 52);
+            this.nameRelatNurseAssessTextBox.Multiline = true;
+            this.nameRelatNurseAssessTextBox.Name = "nameRelatNurseAssessTextBox";
+            this.nameRelatNurseAssessTextBox.Size = new System.Drawing.Size(609, 97);
+            this.nameRelatNurseAssessTextBox.TabIndex = 2;
+            // 
+            // tabNurseSum
+            // 
+            this.tabNurseSum.AutoScroll = true;
+            this.tabNurseSum.Controls.Add(this.grpNurseSumm);
+            this.tabNurseSum.Location = new System.Drawing.Point(4, 25);
+            this.tabNurseSum.Name = "tabNurseSum";
+            this.tabNurseSum.Padding = new System.Windows.Forms.Padding(3);
+            this.tabNurseSum.Size = new System.Drawing.Size(998, 1530);
+            this.tabNurseSum.TabIndex = 12;
+            this.tabNurseSum.Text = "Summary";
+            this.tabNurseSum.UseVisualStyleBackColor = true;
+            // 
+            // grpNurseSumm
+            // 
+            this.grpNurseSumm.Controls.Add(nurseSigTimeLabel);
+            this.grpNurseSumm.Controls.Add(this.nurseSigTimeTextBox);
+            this.grpNurseSumm.Controls.Add(nurseSig2DateLabel);
+            this.grpNurseSumm.Controls.Add(this.nurseSig2DateDateTimePicker);
+            this.grpNurseSumm.Controls.Add(nurseSig2Label);
+            this.grpNurseSumm.Controls.Add(this.nurseSig2TextBox);
+            this.grpNurseSumm.Controls.Add(nurseSig1TimeLabel);
+            this.grpNurseSumm.Controls.Add(this.nurseSig1TimeTextBox);
+            this.grpNurseSumm.Controls.Add(nurseSig1DateLabel);
+            this.grpNurseSumm.Controls.Add(this.nurseSig1DateDateTimePicker);
+            this.grpNurseSumm.Controls.Add(nurseSig1Label);
+            this.grpNurseSumm.Controls.Add(this.nurseSig1TextBox);
+            this.grpNurseSumm.Controls.Add(nurseAdminNoteLabel);
+            this.grpNurseSumm.Controls.Add(this.nurseAdminNoteTextBox);
+            this.grpNurseSumm.Location = new System.Drawing.Point(7, 19);
+            this.grpNurseSumm.Name = "grpNurseSumm";
+            this.grpNurseSumm.Size = new System.Drawing.Size(985, 728);
+            this.grpNurseSumm.TabIndex = 0;
+            this.grpNurseSumm.TabStop = false;
+            this.grpNurseSumm.Text = "Nursing Admission Summary";
+            // 
+            // nurseSigTimeTextBox
+            // 
+            this.nurseSigTimeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "NurseSigTime", true));
+            this.nurseSigTimeTextBox.Location = new System.Drawing.Point(705, 682);
+            this.nurseSigTimeTextBox.Name = "nurseSigTimeTextBox";
+            this.nurseSigTimeTextBox.Size = new System.Drawing.Size(100, 22);
+            this.nurseSigTimeTextBox.TabIndex = 13;
+            // 
+            // nurseSig2DateDateTimePicker
+            // 
+            this.nurseSig2DateDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.patient_admissionBindingSource, "NurseSig2Date", true));
+            this.nurseSig2DateDateTimePicker.Location = new System.Drawing.Point(450, 680);
+            this.nurseSig2DateDateTimePicker.Name = "nurseSig2DateDateTimePicker";
+            this.nurseSig2DateDateTimePicker.Size = new System.Drawing.Size(200, 22);
+            this.nurseSig2DateDateTimePicker.TabIndex = 11;
+            // 
+            // nurseSig2TextBox
+            // 
+            this.nurseSig2TextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "NurseSig2", true));
+            this.nurseSig2TextBox.Location = new System.Drawing.Point(158, 682);
+            this.nurseSig2TextBox.Name = "nurseSig2TextBox";
+            this.nurseSig2TextBox.Size = new System.Drawing.Size(238, 22);
+            this.nurseSig2TextBox.TabIndex = 9;
+            // 
+            // nurseSig1TimeTextBox
+            // 
+            this.nurseSig1TimeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "NurseSig1Time", true));
+            this.nurseSig1TimeTextBox.Location = new System.Drawing.Point(705, 635);
+            this.nurseSig1TimeTextBox.Name = "nurseSig1TimeTextBox";
+            this.nurseSig1TimeTextBox.Size = new System.Drawing.Size(100, 22);
+            this.nurseSig1TimeTextBox.TabIndex = 7;
+            // 
+            // nurseSig1DateDateTimePicker
+            // 
+            this.nurseSig1DateDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.patient_admissionBindingSource, "NurseSig1Date", true));
+            this.nurseSig1DateDateTimePicker.Location = new System.Drawing.Point(450, 633);
+            this.nurseSig1DateDateTimePicker.Name = "nurseSig1DateDateTimePicker";
+            this.nurseSig1DateDateTimePicker.Size = new System.Drawing.Size(200, 22);
+            this.nurseSig1DateDateTimePicker.TabIndex = 5;
+            // 
+            // nurseSig1TextBox
+            // 
+            this.nurseSig1TextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "NurseSig1", true));
+            this.nurseSig1TextBox.Location = new System.Drawing.Point(158, 635);
+            this.nurseSig1TextBox.Name = "nurseSig1TextBox";
+            this.nurseSig1TextBox.Size = new System.Drawing.Size(238, 22);
+            this.nurseSig1TextBox.TabIndex = 3;
+            // 
+            // nurseAdminNoteTextBox
+            // 
+            this.nurseAdminNoteTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "NurseAdminNote", true));
+            this.nurseAdminNoteTextBox.Location = new System.Drawing.Point(6, 68);
+            this.nurseAdminNoteTextBox.Multiline = true;
+            this.nurseAdminNoteTextBox.Name = "nurseAdminNoteTextBox";
+            this.nurseAdminNoteTextBox.Size = new System.Drawing.Size(973, 559);
+            this.nurseAdminNoteTextBox.TabIndex = 1;
             // 
             // allergiesBindingNavigator
             // 
@@ -9034,7 +9982,7 @@
             this.allergiesBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.allergiesBindingNavigator.Name = "allergiesBindingNavigator";
             this.allergiesBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.allergiesBindingNavigator.Size = new System.Drawing.Size(1170, 27);
+            this.allergiesBindingNavigator.Size = new System.Drawing.Size(1079, 27);
             this.allergiesBindingNavigator.TabIndex = 1;
             this.allergiesBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -9169,86 +10117,12 @@
             // 
             this.abuse_assessmentTableAdapter.ClearBeforeFill = true;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 27);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(651, 51);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Item 10: If number is yes or BMI is greater than 30, Category 3 is positive.\r\n\r\nI" +
-    "F PATIENT IS DETERMINED HIGH RISK, PLEASE ORDER MEDICAL CONSULT FOR RESPIRATORY." +
-    "";
-            // 
-            // berCat3ResultLabel
-            // 
-            berCat3ResultLabel.AutoSize = true;
-            berCat3ResultLabel.Location = new System.Drawing.Point(9, 95);
-            berCat3ResultLabel.Name = "berCat3ResultLabel";
-            berCat3ResultLabel.Size = new System.Drawing.Size(55, 17);
-            berCat3ResultLabel.TabIndex = 1;
-            berCat3ResultLabel.Text = "Select: ";
-            // 
-            // berCat3ResultComboBox
-            // 
-            this.berCat3ResultComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "BerCat3Result", true));
-            this.berCat3ResultComboBox.FormattingEnabled = true;
-            this.berCat3ResultComboBox.Items.AddRange(new object[] {
-            "Positive",
-            "Negative"});
-            this.berCat3ResultComboBox.Location = new System.Drawing.Point(70, 92);
-            this.berCat3ResultComboBox.Name = "berCat3ResultComboBox";
-            this.berCat3ResultComboBox.Size = new System.Drawing.Size(121, 24);
-            this.berCat3ResultComboBox.TabIndex = 2;
-            // 
-            // berCat3RiskLabel
-            // 
-            berCat3RiskLabel.AutoSize = true;
-            berCat3RiskLabel.Location = new System.Drawing.Point(10, 134);
-            berCat3RiskLabel.Name = "berCat3RiskLabel";
-            berCat3RiskLabel.Size = new System.Drawing.Size(39, 17);
-            berCat3RiskLabel.TabIndex = 3;
-            berCat3RiskLabel.Text = "Risk:";
-            // 
-            // berCat3RiskComboBox
-            // 
-            this.berCat3RiskComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "BerCat3Risk", true));
-            this.berCat3RiskComboBox.FormattingEnabled = true;
-            this.berCat3RiskComboBox.Items.AddRange(new object[] {
-            "High Risk - If there are two or more categories with a positive score",
-            "Low Risk - If there is only 1 or no categories with a positive score"});
-            this.berCat3RiskComboBox.Location = new System.Drawing.Point(55, 131);
-            this.berCat3RiskComboBox.Name = "berCat3RiskComboBox";
-            this.berCat3RiskComboBox.Size = new System.Drawing.Size(605, 24);
-            this.berCat3RiskComboBox.TabIndex = 4;
-            // 
-            // berCat3ConsultReqLabel
-            // 
-            berCat3ConsultReqLabel.AutoSize = true;
-            berCat3ConsultReqLabel.Location = new System.Drawing.Point(210, 95);
-            berCat3ConsultReqLabel.Name = "berCat3ConsultReqLabel";
-            berCat3ConsultReqLabel.Size = new System.Drawing.Size(209, 17);
-            berCat3ConsultReqLabel.TabIndex = 5;
-            berCat3ConsultReqLabel.Text = "Respiratory Consult Requested:";
-            // 
-            // berCat3ConsultReqComboBox
-            // 
-            this.berCat3ConsultReqComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "BerCat3ConsultReq", true));
-            this.berCat3ConsultReqComboBox.FormattingEnabled = true;
-            this.berCat3ConsultReqComboBox.Items.AddRange(new object[] {
-            "Yes",
-            "No"});
-            this.berCat3ConsultReqComboBox.Location = new System.Drawing.Point(425, 92);
-            this.berCat3ConsultReqComboBox.Name = "berCat3ConsultReqComboBox";
-            this.berCat3ConsultReqComboBox.Size = new System.Drawing.Size(121, 24);
-            this.berCat3ConsultReqComboBox.TabIndex = 6;
-            // 
             // NursingWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1191, 1045);
+            this.ClientSize = new System.Drawing.Size(1100, 1045);
             this.Controls.Add(this.allergiesBindingNavigator);
             this.Controls.Add(this.tabNurse);
             this.Name = "NursingWindow";
@@ -9403,8 +10277,22 @@
             this.tabTobacco.ResumeLayout(false);
             this.grpTobacco.ResumeLayout(false);
             this.grpTobacco.PerformLayout();
+            this.grpTobCounsel.ResumeLayout(false);
+            this.grpTobCounsel.PerformLayout();
             this.grpTobIfYes.ResumeLayout(false);
             this.grpTobIfYes.PerformLayout();
+            this.tabAddendum.ResumeLayout(false);
+            this.grpDevStat.ResumeLayout(false);
+            this.grpDevStat.PerformLayout();
+            this.grp1618YearOld.ResumeLayout(false);
+            this.grp1315YearOld.ResumeLayout(false);
+            this.grp912YearOld.ResumeLayout(false);
+            this.grp58YearOld.ResumeLayout(false);
+            this.grpNurseAddInfo.ResumeLayout(false);
+            this.grpNurseAddInfo.PerformLayout();
+            this.tabNurseSum.ResumeLayout(false);
+            this.grpNurseSumm.ResumeLayout(false);
+            this.grpNurseSumm.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.allergiesBindingNavigator)).EndInit();
             this.allergiesBindingNavigator.ResumeLayout(false);
             this.allergiesBindingNavigator.PerformLayout();
@@ -10062,5 +10950,66 @@
         private System.Windows.Forms.ComboBox berCat3RiskComboBox;
         private System.Windows.Forms.ComboBox berCat3ResultComboBox;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.CheckBox tobaccoOtherCheckBox;
+        private System.Windows.Forms.ComboBox berCat2ResultComboBox;
+        private System.Windows.Forms.ComboBox berCat1ResultComboBox;
+        private System.Windows.Forms.GroupBox grpTobCounsel;
+        private System.Windows.Forms.TextBox tobOtherDescTextBox;
+        private System.Windows.Forms.CheckBox tobPtRefusedCheckBox;
+        private System.Windows.Forms.CheckBox tobNotOfferedCheckBox;
+        private System.Windows.Forms.CheckBox tobOtherCheckBox;
+        private System.Windows.Forms.CheckBox tobRevInfoCheckBox;
+        private System.Windows.Forms.CheckBox tobRevCopCheckBox;
+        private System.Windows.Forms.CheckBox tobRevDangerCheckBox;
+        private System.Windows.Forms.ComboBox tobaccoOtherValueComboBox;
+        private System.Windows.Forms.TextBox tobaccoOtherDescTextBox;
+        private System.Windows.Forms.TextBox tobMedContOtherDescTextBox;
+        private System.Windows.Forms.CheckBox tobMedContOtherCheckBox;
+        private System.Windows.Forms.CheckBox tobMedContDrugInterCheckBox;
+        private System.Windows.Forms.CheckBox tobMedContPatAllFDACheckBox;
+        private System.Windows.Forms.ComboBox yesPhysNotifiedComboBox;
+        private System.Windows.Forms.ComboBox offTobCessComboBox;
+        private System.Windows.Forms.TabPage tabAddendum;
+        private System.Windows.Forms.GroupBox grpDevStat;
+        private System.Windows.Forms.TextBox histDevDelayDescTextBox;
+        private System.Windows.Forms.ComboBox histDevDelayComboBox;
+        private System.Windows.Forms.TextBox birthDefectsDescTextBox;
+        private System.Windows.Forms.ComboBox birthDefectsComboBox;
+        private System.Windows.Forms.ComboBox immuneUpToDateComboBox;
+        private System.Windows.Forms.ComboBox patientAwayHomeComboBox;
+        private System.Windows.Forms.GroupBox grp1618YearOld;
+        private System.Windows.Forms.CheckBox yr1618ReasChoiceCheckBox;
+        private System.Windows.Forms.CheckBox yr1618InterestSexCheckBox;
+        private System.Windows.Forms.CheckBox yr1618LessParentsCheckBox;
+        private System.Windows.Forms.CheckBox yr1618InterestCheckBox;
+        private System.Windows.Forms.GroupBox grp1315YearOld;
+        private System.Windows.Forms.CheckBox yr1315GroupSportsCheckBox;
+        private System.Windows.Forms.CheckBox yr1315CompThoughtCheckBox;
+        private System.Windows.Forms.CheckBox yr1315ExpressAffCheckBox;
+        private System.Windows.Forms.CheckBox yr1315ShowsConcCheckBox;
+        private System.Windows.Forms.GroupBox grp912YearOld;
+        private System.Windows.Forms.CheckBox yr912RespSelfCheckBox;
+        private System.Windows.Forms.CheckBox yr912FamDecCheckBox;
+        private System.Windows.Forms.CheckBox yr912HobbyCheckBox;
+        private System.Windows.Forms.CheckBox yr912AttSpanCheckBox;
+        private System.Windows.Forms.CheckBox yr912BestFriendCheckBox;
+        private System.Windows.Forms.GroupBox grp58YearOld;
+        private System.Windows.Forms.CheckBox yr58MinRespCheckBox;
+        private System.Windows.Forms.CheckBox yr58NeedsCheckBox;
+        private System.Windows.Forms.CheckBox yr58CoopCheckBox;
+        private System.Windows.Forms.CheckBox yr58ChoresCheckBox;
+        private System.Windows.Forms.CheckBox yr58BathCheckBox;
+        private System.Windows.Forms.GroupBox grpNurseAddInfo;
+        private System.Windows.Forms.TextBox nameRelatNurseAssessTextBox;
+        private System.Windows.Forms.TextBox parGuardExpectTextBox;
+        private System.Windows.Forms.TabPage tabNurseSum;
+        private System.Windows.Forms.GroupBox grpNurseSumm;
+        private System.Windows.Forms.TextBox nurseSigTimeTextBox;
+        private System.Windows.Forms.DateTimePicker nurseSig2DateDateTimePicker;
+        private System.Windows.Forms.TextBox nurseSig2TextBox;
+        private System.Windows.Forms.TextBox nurseSig1TimeTextBox;
+        private System.Windows.Forms.DateTimePicker nurseSig1DateDateTimePicker;
+        private System.Windows.Forms.TextBox nurseSig1TextBox;
+        private System.Windows.Forms.TextBox nurseAdminNoteTextBox;
     }
 }

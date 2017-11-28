@@ -52,11 +52,23 @@
     <Compile Include="AdmissionsWindow.Designer.cs">
       <DependentUpon>AdmissionsWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdultSocialWorkWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdultSocialWorkWindow.Designer.cs">
+      <DependentUpon>AdultSocialWorkWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="CallSheetWindow.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CallSheetWindow.Designer.cs">
       <DependentUpon>CallSheetWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChildSocialWorkerWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChildSocialWorkerWindow.Designer.cs">
+      <DependentUpon>ChildSocialWorkerWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="cPCAppDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -81,8 +93,14 @@
     <EmbeddedResource Include="AdmissionsWindow.resx">
       <DependentUpon>AdmissionsWindow.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AdultSocialWorkWindow.resx">
+      <DependentUpon>AdultSocialWorkWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CallSheetWindow.resx">
       <DependentUpon>CallSheetWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChildSocialWorkerWindow.resx">
+      <DependentUpon>ChildSocialWorkerWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NursingWindow.resx">
       <DependentUpon>NursingWindow.cs</DependentUpon>
