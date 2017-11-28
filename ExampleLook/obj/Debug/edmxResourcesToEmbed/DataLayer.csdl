@@ -1,0 +1,1889 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CPCAppModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="abuse_assessment">
+    <Key>
+      <PropertyRef Name="PatientID" />
+      <PropertyRef Name="AbuseType" />
+    </Key>
+    <Property Name="PatientID" Type="Int32" Nullable="false" />
+    <Property Name="AbuseType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Issue" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AgeOfAbuse" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="AbuserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AbusedTime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Reported" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ReportedToWhom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CY47Complete" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <NavigationProperty Name="patient_admission" Relationship="Self.FK_abuse_assessment_patient_admission" FromRole="abuse_assessment" ToRole="patient_admission" />
+  </EntityType>
+  <EntityType Name="allergy">
+    <Key>
+      <PropertyRef Name="PatientID" />
+      <PropertyRef Name="AllergicType" />
+    </Key>
+    <Property Name="PatientID" Type="Int32" Nullable="false" />
+    <Property Name="AllergicType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AllergicTypeDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="patient_admission" Relationship="Self.FK_allergies_patient_admission" FromRole="allergies" ToRole="patient_admission" />
+  </EntityType>
+  <EntityType Name="deffered_problem_list">
+    <Key>
+      <PropertyRef Name="PatientID" />
+      <PropertyRef Name="DeferProbDateEst" />
+    </Key>
+    <Property Name="PatientID" Type="Int32" Nullable="false" />
+    <Property Name="DeferProbDateEst" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="DeferProb" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DeferProbRatforDefer" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="patient_admission" Relationship="Self.FK_deffered_problem_list_patient_admission" FromRole="deffered_problem_list" ToRole="patient_admission" />
+  </EntityType>
+  <EntityType Name="family_members">
+    <Key>
+      <PropertyRef Name="PatientID" />
+      <PropertyRef Name="FamMemName" />
+    </Key>
+    <Property Name="PatientID" Type="Int32" Nullable="false" />
+    <Property Name="FamMemName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FamMemAge" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FamMemRelat" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FamLocation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FamApprxLastContact" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FamMemOccup" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FamMemHealth" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="patient_admission" Relationship="Self.FK_family_members_patient_admission" FromRole="family_members" ToRole="patient_admission" />
+  </EntityType>
+  <EntityType Name="function">
+    <Key>
+      <PropertyRef Name="PatientID" />
+      <PropertyRef Name="FunctionName" />
+    </Key>
+    <Property Name="PatientID" Type="Int32" Nullable="false" />
+    <Property Name="FunctionName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="NotApplicable" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Strength" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Concern" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="patient_admission" Relationship="Self.FK_functions_patient_admission" FromRole="functions" ToRole="patient_admission" />
+  </EntityType>
+  <EntityType Name="intervention">
+    <Key>
+      <PropertyRef Name="PatientID" />
+      <PropertyRef Name="InterventDate" />
+    </Key>
+    <Property Name="PatientID" Type="Int32" Nullable="false" />
+    <Property Name="InterventDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Intervent" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="InterventRepStaff" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="InterventOften" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="InterventMet" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <NavigationProperty Name="patient_admission" Relationship="Self.FK_interventions_patient_admission" FromRole="interventions" ToRole="patient_admission" />
+  </EntityType>
+  <EntityType Name="medical_problem_list">
+    <Key>
+      <PropertyRef Name="PatientID" />
+      <PropertyRef Name="MedProbID" />
+    </Key>
+    <Property Name="PatientID" Type="Int32" Nullable="false" />
+    <Property Name="MedProbID" Type="Int32" Nullable="false" />
+    <Property Name="MedProbDateEst" Type="DateTime" Precision="0" />
+    <Property Name="MedProb" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MedProbChronStab" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="MedProbDateChange" Type="DateTime" Precision="0" />
+    <Property Name="MedProbResolved" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="MedProbDC" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="MedProbDefer" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="patient_admission" Relationship="Self.FK_medical_problem_list_patient_admission" FromRole="medical_problem_list" ToRole="patient_admission" />
+  </EntityType>
+  <EntityType Name="medication">
+    <Key>
+      <PropertyRef Name="PatientID" />
+      <PropertyRef Name="MedCurrent" />
+      <PropertyRef Name="MedDosage" />
+      <PropertyRef Name="MedFrequency" />
+    </Key>
+    <Property Name="PatientID" Type="Int32" Nullable="false" />
+    <Property Name="MedCurrent" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MedDosage" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MedFrequency" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="patient_admission" Relationship="Self.FK_medications_patient_admission" FromRole="medications" ToRole="patient_admission" />
+  </EntityType>
+  <EntityType Name="pain_assessment">
+    <Key>
+      <PropertyRef Name="PatientID" />
+      <PropertyRef Name="PainLocation" />
+    </Key>
+    <Property Name="PatientID" Type="Int32" Nullable="false" />
+    <Property Name="PainLocation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PainOnset" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="PainDuration" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="PainType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PainTriggers" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="patient_admission" Relationship="Self.FK_pain_assessment_patient_admission" FromRole="pain_assessment" ToRole="patient_admission" />
+  </EntityType>
+  <EntityType Name="patient_admission">
+    <Key>
+      <PropertyRef Name="PatientID" />
+    </Key>
+    <Property Name="Inactive" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="PatientID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CurrentPatient" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CallerFName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CallerLName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CallerCity" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CallerState" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CallerZip" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CallerPhone" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="CallerRefName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CallerAgency" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FirstName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="MiddleInitial" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="LastName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="PrefLang" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="PrefLangDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Age" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="DOB" Type="DateTime" Precision="0" />
+    <Property Name="Gender" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="SSN" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="State" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="Zip" Type="String" MaxLength="5" FixedLength="true" Unicode="false" />
+    <Property Name="County" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Phone" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="GenderID" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CommitStat" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="CommitStatDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PresentProb" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="PresentSuicide" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="PresentSelfHarm" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="PresentHomicide" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="PresentPsychosis" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="PresentOther" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="PresentOtherDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LethalMeans" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SubMisuse" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="PrevTx" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CurrentOutpat" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MedConcerns" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="PotentialPreg" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="IntelDisable" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="IQ" Type="Int32" />
+    <Property Name="SexVictim" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="SexVictimDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SexAggress" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="SexAggressDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Allergies" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="BloodPressure" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="T" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="P" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="R" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="VitalsNotObtain" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="StableTrans" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="NurseIntake" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MilStat" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="PrimInsName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PrimInsPhone" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="SecInsName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SecInsPhone" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="MedEduRights" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="MedEduRightsFName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MedEduRightsLName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MedEduRightsRelat" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MedEduRightsPhone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Guardianship" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="GuardianshipFName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="GuardianshipLName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="GuardianshipRelat" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="GuardianshipPhone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PowAttorney" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="PowAttorneyFName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PowAttorneyLName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PowAttorneyRelat" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PowAttorneyPhone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EmergencyContact" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="EmergencyContactFName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EmergencyContactLName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EmergencyContactRelat" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EmergencyContactPhone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SchedAssess" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="SchedAssessDate" Type="DateTime" Precision="0" />
+    <Property Name="SchedAssessTime" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="FaxLab" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="PhysOnCall" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NurseNotified" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TimeAcceptedNA" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="TimeAccepted" Type="DateTime" Precision="3" />
+    <Property Name="AdmPsyDiag" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="MedDiag" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Transport" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="TransportDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CallNotes" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CallCollectedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CallEndedTime" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="CallEnded" Type="DateTime" Precision="3" />
+    <Property Name="CallStartedTime" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="CallStarted" Type="DateTime" Precision="3" />
+    <Property Name="MRNum" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="MaritalStat" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Race" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="AssessStartDate" Type="DateTime" Precision="0" />
+    <Property Name="AssessStartTime" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="SrcInfo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ChiefComplaint" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MoodApp" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="MoodDep" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="MoodLab" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="MoodAnx" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="MoodIrr" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="MoodEup" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="MoodHos" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="MoodOther" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="MoodOtherVal" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ThoughtProcLog" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ThoughtProcCon" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ThoughtProcTan" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ThoughtProcLoo" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ThoughtProcRac" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ThoughtProcObs" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ThoughtProcBlo" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ThoughtProcDis" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ThoughtContRea" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ThoughtContPre" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ThoughtContGra" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ThoughtContPar" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ThoughtContDel" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ThoughtContSom" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ThoughtContHal" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ThoughtContHalType" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="AffApp" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="AffIna" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="AffBlu" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="AffRes" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="AffLab" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="AffTear" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="AffCon" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="AffIncon" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Insight" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Judgement" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="SpeechApp" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="SpeechPre" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="SpeechRam" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="SpeechLoud" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="SpeechHos" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="SpeechMon" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="SpeechOther" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="SpeechOtherVal" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="OrientPer" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="OrientPla" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="OrientTim" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="OrientSit" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="OrientDis" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Appearance" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="MotorBehavior" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="MotorBehaviorDesc" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="AppeApp" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="AppeDec" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="AppeInc" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="AppeGai" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="AppeGaiValue" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="AppeLos" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="AppeLosValue" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="AppeUna" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="SleApp" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="SleDec" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="SleDecValue" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="SleInc" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="SleIncValue" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="SleDif" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="SleInt" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="SleNig" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="SleUna" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="IdData" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="MedHistory" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Surgical" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="HistMRSA" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="HistMRSAExpl" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DietRest" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="DietRestExpl" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="HistFalls" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="HistFallsExpl" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PCP" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="PCPName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OutMentHealth" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ComplTreat" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ComplTreatBarr" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PsychHosp" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="HistNonCompMed" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ReHospNonComp" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="PrevDiag" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="PrevDiagExpl" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AutismSpecDis" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="DeniesLegal" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CurrentLegal" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Probation" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Parole" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="LegalCounty" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Charges" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Incarc" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="IncarcExpl" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="DeniesSuic" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="SuicIdeaYes" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="SuicIdeaNoPlan" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="SuicIdeaMethod" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="SuicIdeaPlan" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="SuicIdeaIntent" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="SuicIdeaMeans" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="SuicIdeaDesc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ViolSelf6Mo" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ViolSelf6MoDesc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="SuicPriorAtt" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="SuicPriorAttDesc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="FamHistSuic" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="FamHistSuicDesc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="AttemptInpat" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="AttemptInpatDesc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="AssoHopeless" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="AssoHelpless" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="AssoSad" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="AssoTearful" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="AssoImpulsive" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="AssoIsolative" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="SuicAttInpatient" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="SuicAttInpatientDesc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="DeniesSelfInj" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="SelfInjLastAtt" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="SelfInjInpatient" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="SelfInjInpatientDesc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="DeniesHom" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="HomIdeaYes" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="HomIdeaPlan" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="HomIdeaNoPlan" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="HomIdeaIntent" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="HomIdeaMeans" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="HomIdeaDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="HomIdeaTarget" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ViolOthers6Mo" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ViolOthers6MoDesc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ViolOtherHist" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ViolOtherHistDesc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="HomPriorAtt" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="HomPriorAttDesc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="FamHistHom" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="FamHistHomDesc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="AccessWeap" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="AccessWeapDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DeniesAssa" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="HistAssaBeh" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="HisAssaBehDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AngerProb" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="AngerProbDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DeniesPsychFam" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="PsychFam" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="PsychFamDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DeniesHistAbuse" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="TraumEve" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="TraumEveDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CombVic" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CombVicDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IncProm" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="IncPromDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ExpSelf" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ExpSelfDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MegLaw" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="SexAggRiskBeh" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="HistSexAggBeh" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="SexPreocc" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="HistCrimSex" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="PsychSexPreocc" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="SecVicRisk" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="DevDelay" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="VicSexPreocc" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="PhyStatus" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="VicSexAbuse" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="MedComp" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="DeniesMisuse" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="DeniesAlcDrugTreat" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CurrentAlcDrugTreat" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CurrentAlcDrugTreatDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AlcDrugHist" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="AlcDrugHistDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="HistWithdrawSymp" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="HistWIthdrawSympDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DelTrem" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="LongPerSober" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="LongPerSoberDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SubLegalProb" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="SubLegalProbDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FamHistSubAbu" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="FamHistSubAbuDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CurrentTobUse" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CurrentTobUseDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="HowOftenAlc" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="HowManyAlcTyp" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="HowOftenSix" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="AuditSubComplTotal" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="DeniesPsychosis" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="PsychHall" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="PsychHallDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PsychComm" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="PsychCommDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PsychDel" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="PsychDelDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PsychRel" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="PsychRelDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="HighLevEdu" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Employed" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="EmployedDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="RepPayee" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="RepPayeeDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Disability" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="DisabilityDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Siblings" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="SiblingsDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Children" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ChildrenDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ChildUnd18Care" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LivingSituation" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="LivingSituationDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Supports" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="StrCopSkills" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MedCompliant" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="MedCompliantDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MedNotes" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Education" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CurSchoolNam" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EncoEnur" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="EncoEnurDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CruelAnimals" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CruelAnimalsDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FireSet" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="FireSetDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Stealing" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="StealingDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Lying" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="LyingDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="RunAway" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="RunAwayDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Rebel" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="RebelHome" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="RebelSchool" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="RebelDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DetSchPer" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="DetSchPerDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ProbSchool" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ProbSchoolDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IndivEduProg" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="IndivEduProgLearnSup" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="IndivEduProgEmoSup" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="DifMakeFriends" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="DifMakeFriendsDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SchRefu" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="SchRefuDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Bullied" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="BulliedDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BullyOth" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="BullyOthDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DepSympSad" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="DepSympCrying" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="DepSympHopeless" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="DepSympHelpless" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="DepSympWithdrawn" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="DepSympIsolative" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="DepSympIrritable" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="MoodLabSwings" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="MoodLabAggBeh" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="MoodLabEsc" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="MoodLabGrand" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="MoodLabPoor" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="AnxRelPhys" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="AnxRelHand" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="AnxRelOCDTho" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="AnxRelOCDBeh" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="PhysContact" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TimeReviewed" Type="DateTime" Precision="3" />
+    <Property Name="PhysRecAdmit" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="PhysRecRefer" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="PhysRecDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AttPhys" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="StaffCompIntake" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="StaffCompIntakeDateTime" Type="DateTime" Precision="3" />
+    <Property Name="StaffPrepIntakeDoc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="StaffPrepIntakeDocDateTime" Type="DateTime" Precision="3" />
+    <Property Name="MetalDetect" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="MetalDetectExpl" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ProvDiagInpatient" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ProvDiagPartHosp" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ProvDiagNA" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="MedDiagNone" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="PsychosocialFact" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="PsychosocialFactDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ContextFact" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ContextFactDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FuncAssess" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PhysicianDateTime" Type="DateTime" Precision="3" />
+    <Property Name="FifteenMinChecks" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="OneToOneChecks" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="UnitRestriction" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="GymRestriction" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="PrecautionSuicide" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="PrecautionSexAgg" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="PrecautionSexVic" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="PrecautionAssault" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="PrecautionElope" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="PrecautionMedRisk" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="PrecautionFall" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="PrecautionSelfHarm" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="PrecautionNone" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ArcStaffName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UnitStaffName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="HairColor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EyeColor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Height" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="HeighCm" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Weight" Type="String" MaxLength="7" FixedLength="false" Unicode="false" />
+    <Property Name="WeightKg" Type="String" MaxLength="7" FixedLength="false" Unicode="false" />
+    <Property Name="Waist" Type="String" MaxLength="7" FixedLength="false" Unicode="false" />
+    <Property Name="WaistCm" Type="String" MaxLength="7" FixedLength="false" Unicode="false" />
+    <Property Name="CurrentReportPain" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="YesFullAssess" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="NoSkipPain" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ApplyHeat" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ApplyCold" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Resting" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Elevation" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="DeepBreathing" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Relaxation" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Medication" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="MedicationDesc" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="PainOther" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="PainOtherDesc" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="SexualActive" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="DenySex" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="PrefMale" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="PrefFemale" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="PrefBi" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="PrefPan" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="PrefOther" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="PrefOtherDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="STDHist" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="STDHistDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DenyCardio" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ChestPain" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Pacemaker" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="MI" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="PVD" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Palitations" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="IrregPulse" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Hypertension" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Hypotension" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Edema" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Arrhythmia" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="HeartFailure" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CardioOther" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CardioOtherDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="GastroDeny" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Nausea" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="GastroPain" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="GERD" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="GastroUlcers" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Hernia" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="LivDisease" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="GastroOther" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="GastroOtherDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BowelDeny" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Diarrhea" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Constipation" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Hemmoroids" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Incont" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Lax" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="AntiDiarrheal" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="BowelOther" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="BowelOtherDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LastBM" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DentalDeny" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="DenturesUp" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="DenturesLow" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="DenturesPart" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="LooseMissingTeeth" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="DentalUlcers" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="BleedingGums" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Extractions" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="DentalOther" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="DentalOtherDesc" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="NoseThroatDeny" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Sinus" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="SoreThroat" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Hoarseness" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="DiffSwallow" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ColdSympt" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Thrush" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="NoseThroatOther" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="NoseThroatOtherDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="RespDeny" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ShortBreath" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="LaboredBreath" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Asthma" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Cough" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="COPD" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="SleepApnea" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CPAP" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="RespOther" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="RespOtherDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NeuroDeny" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Seizures" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="LastSeizure" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Stroke" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="FreqHeadache" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="NeuroConfusion" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="WeakParalysis" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="HeadInjuryTrauma" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Dizziness" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Tremors" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Migraine" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="NeuroOther" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="NeuroOtherDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SkinDeny" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="SkinUlcers" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Scars" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Bruises" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="RashHives" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Discolor" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Itching" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Wound" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Sutures" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="NumSutures" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="Staples" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="StaplesNum" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="SkinOther" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="SkinOtherDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="GenitDeny" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Burning" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Nocturia" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Hematuria" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="UTI" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="GenitFreqInc" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="GenitFreqDec" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Hesitancy" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Incontinence" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="GenitOther" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="GenitOtherDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EndoDeny" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="EndoDiabetes" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="EndoInsulin" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="DietControlled" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="DiagEndoDis" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="DiagEndoDisDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EndoOther" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="EndoOtherDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MuscDeny" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="BackPain" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="JointPain" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Arthritis" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="MuscRigid" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Breaks" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="BoneDisease" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="MuscWeakness" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="MuscOther" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="MuscOtherDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FemRepNA" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="FemRepDeny" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="SuspPreg" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Preg" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="PregMonths" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BirthControl" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="BirthControlType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FemRepOther" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="FemRepOtherDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MenstNa" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="MenstDeny" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="RegMenst" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Dysmen" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Amenorrhea" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="MenstOther" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="MenstOtherDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LMP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MaleRepNA" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="MaleRepDeny" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="MaleDischarge" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="MaleHesitancy" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="MaleImpotent" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="MaleProstateProb" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="MaleRepOther" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="MaleRepOtherDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ConcernReturnRes" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ConcernReturnResDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PhysicalDeny" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="PhysicalImpGait" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="PhysicalTransDiff" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="PhysicalBedImm" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="PhysicalStanding" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="PhysicalFatigue" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="PhysicalAssistDev" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="PhysicalGenWeak" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="OccuDeny" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="OccuDressing" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="OccuBathing" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="OccuFeeding" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="OccuGrooming" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="OccuToilet" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="OccuOther" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="OccuOtherDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SwalDeny" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="SwalDiffSwal" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="SwalCoughAfter" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="SwalCoughWhile" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="SwalHistAsp" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="SwalDrool" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="SwalOther" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="SwalOtherDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SleepAvg" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="SleepDeny" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="SleepInsom" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="SleepEarlyAwake" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="SleepNightAwake" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="SleepReqMed" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="SleepNightmares" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="SleepOther" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="SleepOtherDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="VisDeny" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="VisBlurry" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="VisGlasses" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="VisContacts" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="VisImpair" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="VisLegBlind" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="VisOther" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="VisOtherDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="HearDeny" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="HearEarPain" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="HearAid" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="HearImpair" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="HearDeaf" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="HearSignLang" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="HearRing" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="HearOther" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="HearOtherDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CanPatRead" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CanPatWrite" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="GradeYesNo" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="GradeDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="GED" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="YearsCollege" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="YearsCollegeDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DegEarned" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LearnChalCog" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="LearnChalEmo" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="LearnChalPoorCop" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="LearnChalImpThought" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="LearnChalLangBar" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="LearnChalSenseImpair" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="LearnChalDeny" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="LearnChalOther" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="LearnChalOtherDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LearnPrefWrit" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="LearnPrefVerb" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="LearnPrefDemo" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="LearnPrefVideo" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="LearnPrefAudio" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="LearnPrefHands" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="FeelAboutHospitalized" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="IssueBroughtHosp" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="IDSuppLife" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="MethSuccessManage" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="DuringStayHelp" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="SpiritReligCultPrac" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="SpiritReligCultPracDesc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="NutScore" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="NutDeny" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="NutMedPreg" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="NutMedAnem" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="NutMedCirr" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="NutMedHiv" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="NutMedHyperten" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="NutMedHyperlip" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="NutMedOther" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="NutMedOtherDesc" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="NutDiabetes" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="NutUnderWei" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="NutBingPurg" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="NutVomit" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="NutDiarr" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="NutCultDiet" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="NutCultDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NutChewDiff" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="DietConsultOrder" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="FluidIntake" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ComplaintThirst" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="StickyMembrane" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="AmberUrine" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="LossSkin" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="DryFlakySkin" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="SunkEyes" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="DehydrationOther" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="DehydrationOtherDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BMIScore" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="BMIL19G30" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="BMIAgreeAssess" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="SuicideSrcPatient" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="SuicideSrcFamily" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="SuicideSrcFamilyDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SuicideSrcOther" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="SuicideSrcOtherDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PresentSelfInj" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="PresentSelfInjDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AppearSelfInf" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="AppearSelfInfDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="WishDead" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="WishDeadDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ThoughtKillSelf" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ThoughtKillSelfDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ThoughtKillsSelfIntent" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ThoughtKillSelfIntentDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ThoughtKillSelfHow" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ThoughtKillSelfHowDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="WorkedOutKillSelf" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="WorkedOutKillSelfDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ThinkActThoughts" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ThinkActThoughtsDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ThoughtsFrighten" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ThoughtsFrightenDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="HaveOwnLethal" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="HaveOwnLethalType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="HaveOwnLethalWhere" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="HaveOwnLethalWho" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MadeSuicideAttempt" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="MadeSuicideAttemptDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="StoppedAttempt" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="StoppedAttemptDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AttemptAroundPpl" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="AttemptAroundPplDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DiagSchiz" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="DiagSchizDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CloseAttemptSuicide" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CloseAttemptSuicideDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="HistSexAbuse" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="HistSexAbuseWho" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="HistSexAbuseWhen" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="HistSubAbuse" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="HistSubAbuseDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IntentHurtUpset" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="IntentHurtUpsetDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="HighLevelStress" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="HighLevelStressDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="HopelessHelpless" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="HopelessHelplessDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="WithdrawnLately" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="WithdrawnLatelyDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="StressorsList" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="StressorsLossDig" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ImportantPeople" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="WhoTellAnything" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="SkillsProud" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="OtherProtFact" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ClinPresStress" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ClinPresDep" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ClinPresNoHope" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ClinPresBurden" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ClinPresNeg" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ClinPresOther" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ClinPresOtherDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EngageCredible" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="EngageCoop" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="EngageRelieved" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="EngageSeekHelp" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="RiskStatusRad" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="RiskStatusWhy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="RiskStateRad" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="RiskStateWhy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="RiskStateTrig" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="InternalCopeStrat" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="InternalCopeRad" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ActiveDistract" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ActiveDistractRad" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="TalkLovedOut" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="TalkLovedOutRad" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="SeekStaff" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="SeekStafRad" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="NoResIdenOrAvail" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="AdultFallScore" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Name="ChildAdolFallScore" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Name="ElopeScore" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Name="ElopeIntent" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ElopeHist" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ElopeTest" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ElopeSubAbuse" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ElopeUnpredict" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ElopeInvolun" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ElopePsychotic" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="HomAssultVioScore" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Name="HomAssultStrike" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="HomAssultVerbThreat" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="HomAssultHist" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="HomAssultAdmitHI" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="HomAssultParaDelus" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="HomAssultManic" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="HomAssultUnpredict" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="HomAssultPsychotic" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="SexActOutScore" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Name="SexActPredator" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="SexActHyper" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="SexActPoorBound" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="SexActHist" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="SexActImpulse" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="SexActManic" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="SexActPromis" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="SexActExplicit" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="VulnerRiskScore" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Name="VulnerRiskVisHear" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="VulnerRiskDelay" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="VulnerRiskHist" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="VulnerRiskConfus" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="VulnerRiskFrail" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="VulnerRiskWand" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="VulnerRiskVerbProv" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="VulnerRiskMobil" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="WdAlcoh" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="WdBenzo" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="WdAlcBenzDeny7" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="WdAlcBenzAdmitRecent" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="WdAlcBenzDenySympt" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="WdAlcBenzNausVom" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="WdAlcBenzTremors" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="WdAlcBenzSweats" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="WdAlcBenzAnxiety" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="WdAlcBenzHeadAche" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="WdAlcBenzAgitated" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="WdAlcBenzDisoriented" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="WdAlcBenzTactile" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="WdAlcBenzAuditory" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="WdAlcBenzVisual" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="WdCocaineDeny7" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="WdCocaineAdmitRecent" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="WdCocaineDenySympt" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="WdCocaineAgitated" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="WdCocaineDep" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="WdCocaineAnxiety" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="WdCocaineExFatigue" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="WdCocaineAngryBurst" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="WdCocaineTremors" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="WdCocaineMuscAche" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="WdCocaineCramps" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="WdCocainePain" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="WdCocaineDistSleep" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="WdCocaineNausVom" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="WdOpiDeny7" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="WdOpiAdmitRecent" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="WdOpiDenySympt" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="WdOpiSweat" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="WdOpiDialPupils" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="WdOpiWateryEyes" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="WdOpiSneezRunNose" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="WdOpiHighBP" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="WdOpiGooseBmp" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="WdOpiMuscAche" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="WdOpiInsom" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="WdOpiNausVom" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="WdOpiDiarrhea" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="WdMethDeny7" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="WdMethAdmitRecent" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="WdMethDenySympt" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="WdMethFatigue" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="WdMethDistSleep" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="WdMethIrritable" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="WdMethIntenseHun" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="WdMethDepMood" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="WdMethAnxiety" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="WdMethPsychSympt" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="WdMarjDeny7" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="WdMarjAdmitRecent" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="WdMarjDenySympt" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="WdMarjIrritable" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="WdMarjPhysicalTension" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="WdMarjDecAppetite" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="WdMarjDepMood" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="WdMarjStomAche" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="WdMarjRestless" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="WdMarjInsom" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="WdMarjAggresive" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="WdMarjAnger" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="WdMarjStrngeDream" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="WdMarjAnxiety" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="BerDoSnore" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="BerSnoreIs" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="BerOftenSnore" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="BerSnoreBotherPeople" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="BerNoticeQuitBreath" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="BerOftenTired" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="BerWalkTired" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="BerNodOffDrive" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="BerNodOffDriveOften" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="BerHighBP" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="BerCat1Total" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="BerCat1Result" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="BerNum8Occur" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="BerCat2Total" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="BerCat2Result" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="BerCat3Result" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="BerCat3Risk" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="BerCat3ConsultReq" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Cigarettes" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CigarettesValue" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Cigars" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CigarsValue" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="PipeSmoke" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="PipeSmokeValue" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Chew" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ChewValue" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="TobaccoOther" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="TobaccoOtherDesc" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="TobaccoOtherValue" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="TobRevDanger" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="TobRevCop" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="TobRevInfo" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="TobOther" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="TobOtherDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TobNotOffered" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="TobPtRefused" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="OffTobCess" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="YesPhysNotified" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="TobMedContPatAllFDA" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="TobMedContDrugInter" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="TobMedContOther" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="TobMedContOtherDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NameRelatNurseAssess" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Yr58Bath" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Yr58Chores" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Yr58Coop" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Yr58Needs" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Yr58MinResp" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Yr912BestFriend" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Yr912AttSpan" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Yr912Hobby" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Yr912FamDec" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Yr912RespSelf" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Yr1315ShowsConc" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Yr1315ExpressAff" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Yr1315CompThought" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Yr1315GroupSports" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Yr1618Interest" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Yr1618LessParents" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Yr1618InterestSex" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="Yr1618ReasChoice" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="PatientAwayHome" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ImmuneUpToDate" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="BirthDefects" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="BirthDefectsDesc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="HistDevDelay" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="HistDevDelayDesc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ParGuardExpect" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="NurseAdminNote" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="NurseSig1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NurseSig1Date" Type="DateTime" Precision="0" />
+    <Property Name="NurseSig1Time" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="NurseSig2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NurseSig2Date" Type="DateTime" Precision="0" />
+    <Property Name="NurseSigTime" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="abuse_assessment" Relationship="Self.FK_abuse_assessment_patient_admission" FromRole="patient_admission" ToRole="abuse_assessment" />
+    <NavigationProperty Name="allergies1" Relationship="Self.FK_allergies_patient_admission" FromRole="patient_admission" ToRole="allergies" />
+    <NavigationProperty Name="deffered_problem_list" Relationship="Self.FK_deffered_problem_list_patient_admission" FromRole="patient_admission" ToRole="deffered_problem_list" />
+    <NavigationProperty Name="family_members" Relationship="Self.FK_family_members_patient_admission" FromRole="patient_admission" ToRole="family_members" />
+    <NavigationProperty Name="functions" Relationship="Self.FK_functions_patient_admission" FromRole="patient_admission" ToRole="functions" />
+    <NavigationProperty Name="interventions" Relationship="Self.FK_interventions_patient_admission" FromRole="patient_admission" ToRole="interventions" />
+    <NavigationProperty Name="medical_problem_list" Relationship="Self.FK_medical_problem_list_patient_admission" FromRole="patient_admission" ToRole="medical_problem_list" />
+    <NavigationProperty Name="medications" Relationship="Self.FK_medications_patient_admission" FromRole="patient_admission" ToRole="medications" />
+    <NavigationProperty Name="pain_assessment" Relationship="Self.FK_pain_assessment_patient_admission" FromRole="patient_admission" ToRole="pain_assessment" />
+    <NavigationProperty Name="patient_admission_ext" Relationship="Self.FK_patient_admission_patient_admission_ext" FromRole="patient_admission" ToRole="patient_admission_ext" />
+    <NavigationProperty Name="precautions" Relationship="Self.FK_precaution_patient_admission" FromRole="patient_admission" ToRole="precaution" />
+    <NavigationProperty Name="psych_hospital" Relationship="Self.FK_psych_hospital_patient_admission" FromRole="patient_admission" ToRole="psych_hospital" />
+    <NavigationProperty Name="psychiatric_problem_list" Relationship="Self.FK_psychiatric_problem_list_patient_admission" FromRole="patient_admission" ToRole="psychiatric_problem_list" />
+    <NavigationProperty Name="short_term_goals" Relationship="Self.FK_short_term_goals_patient_admission" FromRole="patient_admission" ToRole="short_term_goals" />
+    <NavigationProperty Name="substance_abuse" Relationship="Self.FK_substance_abuse_patient_admission" FromRole="patient_admission" ToRole="substance_abuse" />
+    <NavigationProperty Name="treatment_facility" Relationship="Self.FK_treatment_facility_patient_admission" FromRole="patient_admission" ToRole="treatment_facility" />
+  </EntityType>
+  <EntityType Name="patient_admission_ext">
+    <Key>
+      <PropertyRef Name="PatientID" />
+    </Key>
+    <Property Name="PatientID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ASWAssignWorker" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ASWDateComplete" Type="DateTime" Precision="0" />
+    <Property Name="ASWLegStat" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWLegStatDesc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ASWSrcInfo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ASWReliableSrc" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWReliableSrcDesc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ASWNaturePresProb" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ASWCurLevFuncDifTypFunc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ASWPatDescSelfSomeone" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ASWFamSupDescPat" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ASWCommInvolve" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ASWDangerSelfNotPres" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWDangerSelfCurrent" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWDangerSelfHistory" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWDangerSelfIdeation" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWDangerSelfPlan" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWDangerSelfAttempt" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWDangerSelfIntent" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWDangerOthersNotPres" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWDangerOthersCurrent" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWDangerOthersHistory" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWDangerOthersIdeation" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWDangerOthersPlan" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWDangerOthersAttempt" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWDangerOthersIntent" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWDangerDesc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ASWLethPriorMeans" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ASWPastSelfInj" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWPastSelfInjDesc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ASWWeaponLethMeans" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWWeaponLethMeansRemovePlan" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ASWEduPosRisk" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWResponsePat" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ASWResponsePatDate" Type="DateTime" Precision="0" />
+    <Property Name="ASWResponsePatTime" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="ASWVerify" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ASWVerifyDate" Type="DateTime" Precision="0" />
+    <Property Name="ASWVerifyTime" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="ASWSexAbuseVict" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWSexAbusePerp" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWSexAbuseWitness" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWSexAbuseWitnessDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ASWSexAbuseReport" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWSexAbuseReportDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ASWPhysAbuseVict" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWPhysAbusePerp" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWPhysAbuseWitness" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWPhsyAbuseWitnessDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ASWPhsyAbuseReport" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWPhsyAbuseReportDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ASWEmoNegAbuseVict" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWEmoNegAbusePerp" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWEmoNegAbuseWitness" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWEmoNegAbuseWitnessDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ASWEmoNegAbuseReported" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWEmoNegAbuseReportedDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ASWOtherTraumaExp" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ASWHomePrior" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ASWRetHome" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWRetHomeWhom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ASWRetHomeWhen" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ASWHomePlanDisch" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ASWSafeHome" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWSafeHomeDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ASWMaritStat" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWDateChange" Type="DateTime" Precision="0" />
+    <Property Name="ASWCurrPreg" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWTermPreg" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWTermPregDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ASWMemHelpful" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWMemHelpfulDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ASWRelatProb" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ASWDateFamSess" Type="DateTime" Precision="0" />
+    <Property Name="ASWFamSessInvite" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ASWFamDeclineReason" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ASWPriorFamInvolve" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ASWRecFamInvolve" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ASWProbImpactFam" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWProbImpactFamDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ASWHistHomSuic" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWHistHomSuicDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ASWMedAdhPat" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWMedAdhTreat" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWHospPrev" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWHospPrevRemainComm" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ASWEffIneffTreatment" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ASWDvlpNone" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWDvlpGambling" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWDvlpShopping" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWDvlpEmoEat" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWDvlpCleanOrg" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWDvlpHoardCollect" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWDvlpOther" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWDvlpOtherDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ASWDvlpExplain" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ASWHistArrest" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWHistArrestDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ASWOtherLegal" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWOtherLegalDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ASWCurrSchool" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWCurrSchoolWhere" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ASWSchoolStress" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWSchoolStressDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ASWHighestEduComplete" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ASWDesireFutEdu" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWSubAbuseNA" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWIncDrugAlc" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWSubAbuseResultArrest" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWSubAbuseResultRelatProb" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWSubAbuseResultUnpBills" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWSubAbuseResultThoughtSelfHarm" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWSubAbuseResultBlackout" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWSubAbuseResultWorkProb" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWSubAbuseResultPromis" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWSubAbuseResultOther" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWSubAbuseResultOtherDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ASWSubAbuseResultNone" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWSeeUseProb" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWDrugChoice" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ASWBenefitUse" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ASWSubTreatHist" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWSubTreatHistDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ASWFeedback" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWDiscNegCons" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWDiscSeverity" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWMotDisc" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWAdvAbstain" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWInterventionOther" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWInterventionOtherDesc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ASWRecom" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWRecomDesc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ASWPatInformRecom" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWEduProvPat" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWReferMade" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWReferMadeDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ASWEmpStress" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWFeelCurrWork" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWFeelCurrWorkDesc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ASWAvgMonIncome" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="ASWSrcIncome" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ASWInvolvMilitary" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWMilBranch" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ASWMilDates" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ASWMilDischar" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ASWMilDepAwayHome" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWMilEngageCombat" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWMilSigEvents" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ASWEligVABenefits" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWFinanceStress" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWFinanceStressDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ASWMeetBasicNeeds" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWMedIssContrib" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWMedIssContribDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ASWHistSigMedIss" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWHistSigMedIssDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ASWChronDisabImpFunct" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWChronDisabImpFunctDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ASWChangReligInvo" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWCurrReligInvo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ASWCultIssContrib" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWCultIssContribDesc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ASWWeNeedKnow" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWWeNeedKnowDesc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ASWCareHIstNonComp" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWCareHouse" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWCarePetsUnsup" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWCareTrans" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWCareAcuteMed" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWCareNone" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWCareOther" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWCareOtherDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ASWReadmNA" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWReadmMedStab" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWReadmPriorAuthor" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWReadmCompli" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWReadmOther" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWReadmOtherDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ASWMAPartCommSupp" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWMAPartCommSuppWhen" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ASWMAPartCommSuppResp" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ASWObtMedTrans" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWObtMedIncome" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWObtMedNeed" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWObtMedNeedDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ASWArrSchedPersVeh" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWArrSchedFamFri" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWArrSchedMATP" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWArrSchedNeed" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWArrSchedNeedDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ASWPrefPharm" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ASWConcernFollowPlan" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWBarTrans" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWBarMeds" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWBarHouse" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWBarNonComp" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWBarAbsFacAccSpecNeed" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWBarOther" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWBarOtherDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ASWBarNone" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWReferOutpat" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWReferPsych" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWReferPHP" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWReferPsychRehab" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWReferIOP" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWReferLTSRCRR" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWReferEAC" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWReferStateHosp" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWReferCMBCM" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWReferInpatDA" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWReferPCP" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWReferOutpatDA" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWReferPeerSpec" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWReferOther" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWReferOtherDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ASWReferNone" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWConcRecom" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ASWRoleGrpTher" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWRoleIndivTher" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWRoleFamTher" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWRoleAftercare" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWRoleOther" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASWRoleOtherDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ASWPrelimDischargePlan" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ASWStaffSigDate" Type="DateTime" Precision="0" />
+    <Property Name="ASWStaffSigTime" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="CSWSocialWorker" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CSWDateComplete" Type="DateTime" Precision="0" />
+    <Property Name="CSWLegalGardNa" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CSWLegalGardDesc" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CSWLegStat" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CSWLegStatDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CSWSrcInfo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CSWSrcReliab" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CSWSrcReliabDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CSWNaturePresProb" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CSWLevFuncDifTyp" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CSWPatDescElse" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CSWCareDescPat" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CSWCommInv" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CSWDanSelfNot" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CSWDanSelfCurr" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CSWDanSelfHist" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CSWDanSelfIdea" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CSWDanSelfPlan" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CSWDanSelfAtt" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CSWDanSelfInte" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CSWDanOthNot" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CSWDanOthCurr" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CSWDanOthHist" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CSWDanOthIdea" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CSWDanOthPlan" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CSWDanOthAtt" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CSWDanOthInte" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CSWDanDesc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CSWLethPriorMean" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="CSWPastSelfInj" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CSWPastSelfInjDesc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CSWWeapHome" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CSWWeapPlanDesc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CSWEduRiskWeap" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CSWRespPt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CSWRespDatePt" Type="DateTime" Precision="0" />
+    <Property Name="CSWRespTimePt" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="CSWVerif" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CSWVerifDate" Type="DateTime" Precision="0" />
+    <Property Name="CSWVerifTime" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="CSWSexAbuseVict" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CSWSexAbusePerp" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CSWSexAbuseWitness" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CSWSexAbuseWitnessDesc" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="CSWSexAbuseReport" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CSWSexAbuseReportDesc" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="CSWPsyAbuseVict" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CSWPsyAbusePerp" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CSWPsyAbuseWitness" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CSWPsyAbuseWitnessDesc" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="CSWPsyAbuseReport" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CSWPsyAbuseReportDesc" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="CSWEmoNegAbuseVict" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CSWEmoNegAbusePerp" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CSWEmoNegAbuseWitness" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CSWEmoNegAbuseWitnessDesc" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="CSWEmoNegAbuseReport" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CSWEmoNegAbuseReportDesc" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="CSWOthTraumaExp" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CSWHomePriorAdmin" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CSWRetHome" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CSWRetHomeWhom" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="CSWRetHomeWhen" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="CSWCarePlanDisch" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CSWSafeHome" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CSWSafeHomeDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CSWSexAct" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CSWSexActAge" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CSWSexActNumPart" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CSWSexActPreg" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CSWSexActPregTimes" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CSWSexActPregNumChi" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CSWSigRelat" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CSWParentMaritStat" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CSWParentMaritStatDate" Type="DateTime" Precision="0" />
+    <Property Name="CSWPrimeCaregiver" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CSWVisitArrange" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CSWMemHelpPat" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CSWMemHelpPatDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CSWRelatProbMem" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CSWFamSessDate" Type="DateTime" Precision="0" />
+    <Property Name="CSWFamSessInvite" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CSWFamSessDeclineReason" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CSWLevFamInvPrior" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CSWRecommFamInvAfter" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CSWCarFeelPatDifBehav" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CSWCarFeelPatDifBehavDesc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CSWHistCYS" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CSWHistCYSDesc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CSWFamMemAbuImp" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CSWFamMemAbuImpDesc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CSWHistHomSuic" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CSWHistHomSuicDesc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CSWPatPartTreat" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CSWPatMedPat" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CSWPatMedTreatProv" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CSWPatHospPrev" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CSWHospPrevHelpCommInvo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CSWHosp30ContribReadmin" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CSWEffIneffTreatHist" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CSWIncUseSubstance" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CSWSubResultArrest" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CSWSubResultRelatProb" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CSWSubResultUnpaidBills" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CSWSubResultThoughtSelfHarm" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CSWSubResultBlackout" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CSWSubResultWorkProb" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CSWSubResultPromisc" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CSWSubResultOther" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CSWSubResultOtherDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CSWSubResultNone" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CSWSeeUseProb" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CSWDrugChoice" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="CSWReasonUse" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CSWSubAbuseTreatHist" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CSWInterventions" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CSWSubAbuseRecommNA" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CSWSubAbuseRecommDesc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CSWPatInformRecomm" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CSWEduProvPat" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CSWFamInformRecomm" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CSWEduProvFam" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CSWReferMade" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CSWReferMadeDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CSWHistArrest" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CSWHistArrestDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CSWOthLegIss" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CSWOthLegIssDesc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CSWTimeCurrSchool" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="CSWNumSchoolAtt" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="CSWPatFeelSchTeach" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CSWPatFeelClassmates" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CSWSigChanSocAca" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CSWSigChanSocAcaDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CSWDetSuspensTruancy" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CSWDetSuspensTruancyDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CSWWorking" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CSWWorkingHoursWeek" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="CSWWorkingFeelings" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CSWParMilit" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CSWParMilitDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CSWParMilitDeploy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CSWBasicNeedMet" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CSWMedIssContrib" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CSWMedIssContribDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CSWChronPainDisabImpFunct" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CSWChronPainDisabImpFunctDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CSWHistSigMedIss" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CSWHistSigMedIssDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CSWEatDepBored" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CSWEatDepBoredDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CSWCurrStatedFeelBody" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CSWChangeReligInvolv" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CSWChangeReligInvolvDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CSWCultIssContribProb" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CSWCultIssContribProbDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CSWCultOther" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CSWCultOtherDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CSWAssessNeed" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CSWMACommSuppServ" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CSWMACommSuppServWhen" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CSWMACommSuppServResponse" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CSWObtMed" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CSWPrefPharm" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CSWConcernFollDisch" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CSWHowArriveSchedAppoint" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CSWBarTransport" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CSWBarCostMed" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CSWBarHousing" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CSWBarHisNonComp" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CSWBarAbsFacSpecNeed" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CSWBarOther" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CSWBarOtherDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CSWBarNone" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CSWRefOutpat" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CSWRefPsychia" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CSWRefPHP" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CSWRefTFCCRR" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CSWRefRTF" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CSWRefBHRS" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CSWRefFB" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CSWRefMST" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CSWRefCMBCM" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CSWRefInpatDA" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CSWRefPCP" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CSWRefOutpatDA" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CSWRefNeuro" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CSWRefOther" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CSWRefOtherDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CSWRefNone" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CSWClinConcRecomm" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CSWSWGroup" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CSWSWIndiv" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CSWSWFamily" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CSWSWAftercare" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CSWSWOther" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CSWSWOtherDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CSWPreDisch" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CSWStaffSigDate" Type="DateTime" Precision="0" />
+    <Property Name="CSWStaffSigTime" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="patient_admission" Relationship="Self.FK_patient_admission_patient_admission_ext" FromRole="patient_admission_ext" ToRole="patient_admission" />
+  </EntityType>
+  <EntityType Name="precaution">
+    <Key>
+      <PropertyRef Name="PatientID" />
+      <PropertyRef Name="PrecautionType" />
+    </Key>
+    <Property Name="PatientID" Type="Int32" Nullable="false" />
+    <Property Name="PrecautionType" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PrecDateAdd" Type="DateTime" Precision="0" />
+    <Property Name="PrecDateDC" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="patient_admission" Relationship="Self.FK_precaution_patient_admission" FromRole="precaution" ToRole="patient_admission" />
+  </EntityType>
+  <EntityType Name="psych_hospital">
+    <Key>
+      <PropertyRef Name="PatientID" />
+      <PropertyRef Name="Hospital" />
+    </Key>
+    <Property Name="PatientID" Type="Int32" Nullable="false" />
+    <Property Name="Hospital" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DatesServiced" Type="DateTime" Precision="0" />
+    <Property Name="Reason" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="patient_admission" Relationship="Self.FK_psych_hospital_patient_admission" FromRole="psych_hospital" ToRole="patient_admission" />
+  </EntityType>
+  <EntityType Name="psychiatric_problem_list">
+    <Key>
+      <PropertyRef Name="PatientID" />
+      <PropertyRef Name="PsychProbID" />
+    </Key>
+    <Property Name="PatientID" Type="Int32" Nullable="false" />
+    <Property Name="PsychProbID" Type="Int32" Nullable="false" />
+    <Property Name="PsychProbDateEst" Type="DateTime" Precision="0" />
+    <Property Name="PsychProb" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PsychProbChronStab" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="PsychProbDateChange" Type="DateTime" Precision="0" />
+    <Property Name="PsychProbResolved" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="PsychProbDC" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="PsychProbDefer" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="patient_admission" Relationship="Self.FK_psychiatric_problem_list_patient_admission" FromRole="psychiatric_problem_list" ToRole="patient_admission" />
+  </EntityType>
+  <EntityType Name="short_term_goals">
+    <Key>
+      <PropertyRef Name="PatientID" />
+      <PropertyRef Name="ShortGoalID" />
+    </Key>
+    <Property Name="PatientID" Type="Int32" Nullable="false" />
+    <Property Name="ShortGoalID" Type="Int32" Nullable="false" />
+    <Property Name="ShortGoalDate" Type="DateTime" Precision="0" />
+    <Property Name="ShortGoal" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ShortGoalTargDate" Type="DateTime" Precision="0" />
+    <Property Name="ShortGoalNewTargDate" Type="DateTime" Precision="0" />
+    <Property Name="ShortGoalMet" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ShortGoalNotMet" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <NavigationProperty Name="patient_admission" Relationship="Self.FK_short_term_goals_patient_admission" FromRole="short_term_goals" ToRole="patient_admission" />
+  </EntityType>
+  <EntityType Name="substance_abuse">
+    <Key>
+      <PropertyRef Name="PatientID" />
+      <PropertyRef Name="SubUsedName" />
+    </Key>
+    <Property Name="PatientID" Type="Int32" Nullable="false" />
+    <Property Name="SubUsedName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SubUsedStartAge" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="SubUsedFreqUse90" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SubUsedAmtUsed" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SubUsedMethod" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SubUsedDuration" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SubUsedPrdAbstin" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="patient_admission" Relationship="Self.FK_substance_abuse_patient_admission" FromRole="substance_abuse" ToRole="patient_admission" />
+  </EntityType>
+  <EntityType Name="treatment_facility">
+    <Key>
+      <PropertyRef Name="PatientID" />
+      <PropertyRef Name="Agency" />
+    </Key>
+    <Property Name="PatientID" Type="Int32" Nullable="false" />
+    <Property Name="Agency" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ClinicianDisiplineTitle" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="CurrentFacility" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <NavigationProperty Name="patient_admission" Relationship="Self.FK_treatment_facility_patient_admission" FromRole="treatment_facility" ToRole="patient_admission" />
+  </EntityType>
+  <Association Name="FK_abuse_assessment_patient_admission">
+    <End Role="patient_admission" Type="Self.patient_admission" Multiplicity="1" />
+    <End Role="abuse_assessment" Type="Self.abuse_assessment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="patient_admission">
+        <PropertyRef Name="PatientID" />
+      </Principal>
+      <Dependent Role="abuse_assessment">
+        <PropertyRef Name="PatientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_allergies_patient_admission">
+    <End Role="patient_admission" Type="Self.patient_admission" Multiplicity="1" />
+    <End Role="allergies" Type="Self.allergy" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="patient_admission">
+        <PropertyRef Name="PatientID" />
+      </Principal>
+      <Dependent Role="allergies">
+        <PropertyRef Name="PatientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_deffered_problem_list_patient_admission">
+    <End Role="patient_admission" Type="Self.patient_admission" Multiplicity="1" />
+    <End Role="deffered_problem_list" Type="Self.deffered_problem_list" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="patient_admission">
+        <PropertyRef Name="PatientID" />
+      </Principal>
+      <Dependent Role="deffered_problem_list">
+        <PropertyRef Name="PatientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_family_members_patient_admission">
+    <End Role="patient_admission" Type="Self.patient_admission" Multiplicity="1" />
+    <End Role="family_members" Type="Self.family_members" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="patient_admission">
+        <PropertyRef Name="PatientID" />
+      </Principal>
+      <Dependent Role="family_members">
+        <PropertyRef Name="PatientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_functions_patient_admission">
+    <End Role="patient_admission" Type="Self.patient_admission" Multiplicity="1" />
+    <End Role="functions" Type="Self.function" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="patient_admission">
+        <PropertyRef Name="PatientID" />
+      </Principal>
+      <Dependent Role="functions">
+        <PropertyRef Name="PatientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_interventions_patient_admission">
+    <End Role="patient_admission" Type="Self.patient_admission" Multiplicity="1" />
+    <End Role="interventions" Type="Self.intervention" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="patient_admission">
+        <PropertyRef Name="PatientID" />
+      </Principal>
+      <Dependent Role="interventions">
+        <PropertyRef Name="PatientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_medical_problem_list_patient_admission">
+    <End Role="patient_admission" Type="Self.patient_admission" Multiplicity="1" />
+    <End Role="medical_problem_list" Type="Self.medical_problem_list" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="patient_admission">
+        <PropertyRef Name="PatientID" />
+      </Principal>
+      <Dependent Role="medical_problem_list">
+        <PropertyRef Name="PatientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_medications_patient_admission">
+    <End Role="patient_admission" Type="Self.patient_admission" Multiplicity="1" />
+    <End Role="medications" Type="Self.medication" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="patient_admission">
+        <PropertyRef Name="PatientID" />
+      </Principal>
+      <Dependent Role="medications">
+        <PropertyRef Name="PatientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_pain_assessment_patient_admission">
+    <End Role="patient_admission" Type="Self.patient_admission" Multiplicity="1" />
+    <End Role="pain_assessment" Type="Self.pain_assessment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="patient_admission">
+        <PropertyRef Name="PatientID" />
+      </Principal>
+      <Dependent Role="pain_assessment">
+        <PropertyRef Name="PatientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_patient_admission_patient_admission_ext">
+    <End Role="patient_admission_ext" Type="Self.patient_admission_ext" Multiplicity="1" />
+    <End Role="patient_admission" Type="Self.patient_admission" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="patient_admission_ext">
+        <PropertyRef Name="PatientID" />
+      </Principal>
+      <Dependent Role="patient_admission">
+        <PropertyRef Name="PatientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_precaution_patient_admission">
+    <End Role="patient_admission" Type="Self.patient_admission" Multiplicity="1" />
+    <End Role="precaution" Type="Self.precaution" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="patient_admission">
+        <PropertyRef Name="PatientID" />
+      </Principal>
+      <Dependent Role="precaution">
+        <PropertyRef Name="PatientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_psych_hospital_patient_admission">
+    <End Role="patient_admission" Type="Self.patient_admission" Multiplicity="1" />
+    <End Role="psych_hospital" Type="Self.psych_hospital" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="patient_admission">
+        <PropertyRef Name="PatientID" />
+      </Principal>
+      <Dependent Role="psych_hospital">
+        <PropertyRef Name="PatientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_psychiatric_problem_list_patient_admission">
+    <End Role="patient_admission" Type="Self.patient_admission" Multiplicity="1" />
+    <End Role="psychiatric_problem_list" Type="Self.psychiatric_problem_list" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="patient_admission">
+        <PropertyRef Name="PatientID" />
+      </Principal>
+      <Dependent Role="psychiatric_problem_list">
+        <PropertyRef Name="PatientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_short_term_goals_patient_admission">
+    <End Role="patient_admission" Type="Self.patient_admission" Multiplicity="1" />
+    <End Role="short_term_goals" Type="Self.short_term_goals" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="patient_admission">
+        <PropertyRef Name="PatientID" />
+      </Principal>
+      <Dependent Role="short_term_goals">
+        <PropertyRef Name="PatientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_substance_abuse_patient_admission">
+    <End Role="patient_admission" Type="Self.patient_admission" Multiplicity="1" />
+    <End Role="substance_abuse" Type="Self.substance_abuse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="patient_admission">
+        <PropertyRef Name="PatientID" />
+      </Principal>
+      <Dependent Role="substance_abuse">
+        <PropertyRef Name="PatientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_treatment_facility_patient_admission">
+    <End Role="patient_admission" Type="Self.patient_admission" Multiplicity="1" />
+    <End Role="treatment_facility" Type="Self.treatment_facility" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="patient_admission">
+        <PropertyRef Name="PatientID" />
+      </Principal>
+      <Dependent Role="treatment_facility">
+        <PropertyRef Name="PatientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="CPCAppEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="abuse_assessment" EntityType="Self.abuse_assessment" />
+    <EntitySet Name="allergies" EntityType="Self.allergy" />
+    <EntitySet Name="deffered_problem_list" EntityType="Self.deffered_problem_list" />
+    <EntitySet Name="family_members" EntityType="Self.family_members" />
+    <EntitySet Name="functions" EntityType="Self.function" />
+    <EntitySet Name="interventions" EntityType="Self.intervention" />
+    <EntitySet Name="medical_problem_list" EntityType="Self.medical_problem_list" />
+    <EntitySet Name="medications" EntityType="Self.medication" />
+    <EntitySet Name="pain_assessment" EntityType="Self.pain_assessment" />
+    <EntitySet Name="patient_admission" EntityType="Self.patient_admission" />
+    <EntitySet Name="patient_admission_ext" EntityType="Self.patient_admission_ext" />
+    <EntitySet Name="precautions" EntityType="Self.precaution" />
+    <EntitySet Name="psych_hospital" EntityType="Self.psych_hospital" />
+    <EntitySet Name="psychiatric_problem_list" EntityType="Self.psychiatric_problem_list" />
+    <EntitySet Name="short_term_goals" EntityType="Self.short_term_goals" />
+    <EntitySet Name="substance_abuse" EntityType="Self.substance_abuse" />
+    <EntitySet Name="treatment_facility" EntityType="Self.treatment_facility" />
+    <AssociationSet Name="FK_abuse_assessment_patient_admission" Association="Self.FK_abuse_assessment_patient_admission">
+      <End Role="patient_admission" EntitySet="patient_admission" />
+      <End Role="abuse_assessment" EntitySet="abuse_assessment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_allergies_patient_admission" Association="Self.FK_allergies_patient_admission">
+      <End Role="patient_admission" EntitySet="patient_admission" />
+      <End Role="allergies" EntitySet="allergies" />
+    </AssociationSet>
+    <AssociationSet Name="FK_deffered_problem_list_patient_admission" Association="Self.FK_deffered_problem_list_patient_admission">
+      <End Role="patient_admission" EntitySet="patient_admission" />
+      <End Role="deffered_problem_list" EntitySet="deffered_problem_list" />
+    </AssociationSet>
+    <AssociationSet Name="FK_family_members_patient_admission" Association="Self.FK_family_members_patient_admission">
+      <End Role="patient_admission" EntitySet="patient_admission" />
+      <End Role="family_members" EntitySet="family_members" />
+    </AssociationSet>
+    <AssociationSet Name="FK_functions_patient_admission" Association="Self.FK_functions_patient_admission">
+      <End Role="patient_admission" EntitySet="patient_admission" />
+      <End Role="functions" EntitySet="functions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_interventions_patient_admission" Association="Self.FK_interventions_patient_admission">
+      <End Role="patient_admission" EntitySet="patient_admission" />
+      <End Role="interventions" EntitySet="interventions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_medical_problem_list_patient_admission" Association="Self.FK_medical_problem_list_patient_admission">
+      <End Role="patient_admission" EntitySet="patient_admission" />
+      <End Role="medical_problem_list" EntitySet="medical_problem_list" />
+    </AssociationSet>
+    <AssociationSet Name="FK_medications_patient_admission" Association="Self.FK_medications_patient_admission">
+      <End Role="patient_admission" EntitySet="patient_admission" />
+      <End Role="medications" EntitySet="medications" />
+    </AssociationSet>
+    <AssociationSet Name="FK_pain_assessment_patient_admission" Association="Self.FK_pain_assessment_patient_admission">
+      <End Role="patient_admission" EntitySet="patient_admission" />
+      <End Role="pain_assessment" EntitySet="pain_assessment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_patient_admission_patient_admission_ext" Association="Self.FK_patient_admission_patient_admission_ext">
+      <End Role="patient_admission_ext" EntitySet="patient_admission_ext" />
+      <End Role="patient_admission" EntitySet="patient_admission" />
+    </AssociationSet>
+    <AssociationSet Name="FK_precaution_patient_admission" Association="Self.FK_precaution_patient_admission">
+      <End Role="patient_admission" EntitySet="patient_admission" />
+      <End Role="precaution" EntitySet="precautions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_psych_hospital_patient_admission" Association="Self.FK_psych_hospital_patient_admission">
+      <End Role="patient_admission" EntitySet="patient_admission" />
+      <End Role="psych_hospital" EntitySet="psych_hospital" />
+    </AssociationSet>
+    <AssociationSet Name="FK_psychiatric_problem_list_patient_admission" Association="Self.FK_psychiatric_problem_list_patient_admission">
+      <End Role="patient_admission" EntitySet="patient_admission" />
+      <End Role="psychiatric_problem_list" EntitySet="psychiatric_problem_list" />
+    </AssociationSet>
+    <AssociationSet Name="FK_short_term_goals_patient_admission" Association="Self.FK_short_term_goals_patient_admission">
+      <End Role="patient_admission" EntitySet="patient_admission" />
+      <End Role="short_term_goals" EntitySet="short_term_goals" />
+    </AssociationSet>
+    <AssociationSet Name="FK_substance_abuse_patient_admission" Association="Self.FK_substance_abuse_patient_admission">
+      <End Role="patient_admission" EntitySet="patient_admission" />
+      <End Role="substance_abuse" EntitySet="substance_abuse" />
+    </AssociationSet>
+    <AssociationSet Name="FK_treatment_facility_patient_admission" Association="Self.FK_treatment_facility_patient_admission">
+      <End Role="patient_admission" EntitySet="patient_admission" />
+      <End Role="treatment_facility" EntitySet="treatment_facility" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

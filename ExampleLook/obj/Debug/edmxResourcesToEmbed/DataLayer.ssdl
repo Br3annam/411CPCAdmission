@@ -1,0 +1,1857 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CPCAppModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="abuse_assessment">
+    <Key>
+      <PropertyRef Name="PatientID" />
+      <PropertyRef Name="AbuseType" />
+    </Key>
+    <Property Name="PatientID" Type="int" Nullable="false" />
+    <Property Name="AbuseType" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Issue" Type="varchar" MaxLength="50" />
+    <Property Name="AgeOfAbuse" Type="varchar" MaxLength="3" />
+    <Property Name="AbuserName" Type="varchar" MaxLength="50" />
+    <Property Name="AbusedTime" Type="varchar" MaxLength="50" />
+    <Property Name="Reported" Type="char" MaxLength="1" />
+    <Property Name="ReportedToWhom" Type="varchar" MaxLength="50" />
+    <Property Name="CY47Complete" Type="char" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="allergies">
+    <Key>
+      <PropertyRef Name="PatientID" />
+      <PropertyRef Name="AllergicType" />
+    </Key>
+    <Property Name="PatientID" Type="int" Nullable="false" />
+    <Property Name="AllergicType" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="AllergicTypeDesc" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="deffered_problem_list">
+    <Key>
+      <PropertyRef Name="PatientID" />
+      <PropertyRef Name="DeferProbDateEst" />
+    </Key>
+    <Property Name="PatientID" Type="int" Nullable="false" />
+    <Property Name="DeferProbDateEst" Type="date" Nullable="false" />
+    <Property Name="DeferProb" Type="varchar" MaxLength="50" />
+    <Property Name="DeferProbRatforDefer" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="family_members">
+    <Key>
+      <PropertyRef Name="PatientID" />
+      <PropertyRef Name="FamMemName" />
+    </Key>
+    <Property Name="PatientID" Type="int" Nullable="false" />
+    <Property Name="FamMemName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="FamMemAge" Type="varchar" MaxLength="50" />
+    <Property Name="FamMemRelat" Type="varchar" MaxLength="50" />
+    <Property Name="FamLocation" Type="varchar" MaxLength="50" />
+    <Property Name="FamApprxLastContact" Type="varchar" MaxLength="50" />
+    <Property Name="FamMemOccup" Type="varchar" MaxLength="50" />
+    <Property Name="FamMemHealth" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="functions">
+    <Key>
+      <PropertyRef Name="PatientID" />
+      <PropertyRef Name="FunctionName" />
+    </Key>
+    <Property Name="PatientID" Type="int" Nullable="false" />
+    <Property Name="FunctionName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="NotApplicable" Type="char" MaxLength="1" />
+    <Property Name="Strength" Type="varchar" MaxLength="50" />
+    <Property Name="Concern" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="interventions">
+    <Key>
+      <PropertyRef Name="PatientID" />
+      <PropertyRef Name="InterventDate" />
+    </Key>
+    <Property Name="PatientID" Type="int" Nullable="false" />
+    <Property Name="InterventDate" Type="date" Nullable="false" />
+    <Property Name="Intervent" Type="varchar" MaxLength="50" />
+    <Property Name="InterventRepStaff" Type="varchar" MaxLength="30" />
+    <Property Name="InterventOften" Type="varchar" MaxLength="10" />
+    <Property Name="InterventMet" Type="char" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="medical_problem_list">
+    <Key>
+      <PropertyRef Name="PatientID" />
+      <PropertyRef Name="MedProbID" />
+    </Key>
+    <Property Name="PatientID" Type="int" Nullable="false" />
+    <Property Name="MedProbID" Type="int" Nullable="false" />
+    <Property Name="MedProbDateEst" Type="date" />
+    <Property Name="MedProb" Type="varchar" MaxLength="50" />
+    <Property Name="MedProbChronStab" Type="varchar" MaxLength="10" />
+    <Property Name="MedProbDateChange" Type="date" />
+    <Property Name="MedProbResolved" Type="char" MaxLength="1" />
+    <Property Name="MedProbDC" Type="char" MaxLength="1" />
+    <Property Name="MedProbDefer" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="medications">
+    <Key>
+      <PropertyRef Name="PatientID" />
+      <PropertyRef Name="MedCurrent" />
+      <PropertyRef Name="MedDosage" />
+      <PropertyRef Name="MedFrequency" />
+    </Key>
+    <Property Name="PatientID" Type="int" Nullable="false" />
+    <Property Name="MedCurrent" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="MedDosage" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="MedFrequency" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="pain_assessment">
+    <Key>
+      <PropertyRef Name="PatientID" />
+      <PropertyRef Name="PainLocation" />
+    </Key>
+    <Property Name="PatientID" Type="int" Nullable="false" />
+    <Property Name="PainLocation" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="PainOnset" Type="varchar" MaxLength="25" />
+    <Property Name="PainDuration" Type="nchar" MaxLength="10" />
+    <Property Name="PainType" Type="varchar" MaxLength="50" />
+    <Property Name="PainTriggers" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="patient_admission">
+    <Key>
+      <PropertyRef Name="PatientID" />
+    </Key>
+    <Property Name="Inactive" Type="char" MaxLength="1" />
+    <Property Name="PatientID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CurrentPatient" Type="char" MaxLength="1" />
+    <Property Name="CallerFName" Type="varchar" MaxLength="50" />
+    <Property Name="CallerLName" Type="varchar" MaxLength="50" />
+    <Property Name="CallerCity" Type="varchar" MaxLength="50" />
+    <Property Name="CallerState" Type="varchar" MaxLength="50" />
+    <Property Name="CallerZip" Type="varchar" MaxLength="50" />
+    <Property Name="CallerPhone" Type="varchar" MaxLength="15" />
+    <Property Name="CallerRefName" Type="varchar" MaxLength="50" />
+    <Property Name="CallerAgency" Type="varchar" MaxLength="50" />
+    <Property Name="FirstName" Type="varchar" MaxLength="20" />
+    <Property Name="MiddleInitial" Type="char" MaxLength="1" />
+    <Property Name="LastName" Type="varchar" MaxLength="20" />
+    <Property Name="PrefLang" Type="char" MaxLength="1" />
+    <Property Name="PrefLangDesc" Type="varchar" MaxLength="50" />
+    <Property Name="Age" Type="varchar" MaxLength="3" />
+    <Property Name="DOB" Type="date" />
+    <Property Name="Gender" Type="char" MaxLength="1" />
+    <Property Name="SSN" Type="varchar" MaxLength="10" />
+    <Property Name="Address" Type="varchar" MaxLength="50" />
+    <Property Name="City" Type="varchar" MaxLength="50" />
+    <Property Name="State" Type="varchar" MaxLength="2" />
+    <Property Name="Zip" Type="char" MaxLength="5" />
+    <Property Name="County" Type="varchar" MaxLength="50" />
+    <Property Name="Phone" Type="varchar" MaxLength="10" />
+    <Property Name="GenderID" Type="char" MaxLength="1" />
+    <Property Name="CommitStat" Type="varchar" MaxLength="10" />
+    <Property Name="CommitStatDesc" Type="varchar" MaxLength="50" />
+    <Property Name="PresentProb" Type="varchar(max)" />
+    <Property Name="PresentSuicide" Type="char" MaxLength="1" />
+    <Property Name="PresentSelfHarm" Type="char" MaxLength="1" />
+    <Property Name="PresentHomicide" Type="char" MaxLength="1" />
+    <Property Name="PresentPsychosis" Type="char" MaxLength="1" />
+    <Property Name="PresentOther" Type="char" MaxLength="1" />
+    <Property Name="PresentOtherDesc" Type="varchar" MaxLength="50" />
+    <Property Name="LethalMeans" Type="varchar" MaxLength="50" />
+    <Property Name="SubMisuse" Type="varchar(max)" />
+    <Property Name="PrevTx" Type="varchar" MaxLength="50" />
+    <Property Name="CurrentOutpat" Type="varchar" MaxLength="50" />
+    <Property Name="MedConcerns" Type="varchar(max)" />
+    <Property Name="PotentialPreg" Type="char" MaxLength="1" />
+    <Property Name="IntelDisable" Type="char" MaxLength="1" />
+    <Property Name="IQ" Type="int" />
+    <Property Name="SexVictim" Type="char" MaxLength="1" />
+    <Property Name="SexVictimDesc" Type="varchar" MaxLength="50" />
+    <Property Name="SexAggress" Type="char" MaxLength="1" />
+    <Property Name="SexAggressDesc" Type="varchar" MaxLength="50" />
+    <Property Name="Allergies" Type="varchar(max)" />
+    <Property Name="BloodPressure" Type="varchar" MaxLength="10" />
+    <Property Name="T" Type="varchar" MaxLength="50" />
+    <Property Name="P" Type="varchar" MaxLength="50" />
+    <Property Name="R" Type="varchar" MaxLength="50" />
+    <Property Name="VitalsNotObtain" Type="char" MaxLength="1" />
+    <Property Name="StableTrans" Type="char" MaxLength="1" />
+    <Property Name="NurseIntake" Type="varchar" MaxLength="50" />
+    <Property Name="MilStat" Type="char" MaxLength="1" />
+    <Property Name="PrimInsName" Type="varchar" MaxLength="50" />
+    <Property Name="PrimInsPhone" Type="varchar" MaxLength="10" />
+    <Property Name="SecInsName" Type="varchar" MaxLength="50" />
+    <Property Name="SecInsPhone" Type="varchar" MaxLength="10" />
+    <Property Name="MedEduRights" Type="char" MaxLength="1" />
+    <Property Name="MedEduRightsFName" Type="varchar" MaxLength="50" />
+    <Property Name="MedEduRightsLName" Type="varchar" MaxLength="50" />
+    <Property Name="MedEduRightsRelat" Type="varchar" MaxLength="50" />
+    <Property Name="MedEduRightsPhone" Type="varchar" MaxLength="50" />
+    <Property Name="Guardianship" Type="char" MaxLength="1" />
+    <Property Name="GuardianshipFName" Type="varchar" MaxLength="50" />
+    <Property Name="GuardianshipLName" Type="varchar" MaxLength="50" />
+    <Property Name="GuardianshipRelat" Type="varchar" MaxLength="50" />
+    <Property Name="GuardianshipPhone" Type="varchar" MaxLength="50" />
+    <Property Name="PowAttorney" Type="char" MaxLength="1" />
+    <Property Name="PowAttorneyFName" Type="varchar" MaxLength="50" />
+    <Property Name="PowAttorneyLName" Type="varchar" MaxLength="50" />
+    <Property Name="PowAttorneyRelat" Type="varchar" MaxLength="50" />
+    <Property Name="PowAttorneyPhone" Type="varchar" MaxLength="50" />
+    <Property Name="EmergencyContact" Type="char" MaxLength="1" />
+    <Property Name="EmergencyContactFName" Type="varchar" MaxLength="50" />
+    <Property Name="EmergencyContactLName" Type="varchar" MaxLength="50" />
+    <Property Name="EmergencyContactRelat" Type="varchar" MaxLength="50" />
+    <Property Name="EmergencyContactPhone" Type="varchar" MaxLength="50" />
+    <Property Name="SchedAssess" Type="char" MaxLength="1" />
+    <Property Name="SchedAssessDate" Type="date" />
+    <Property Name="SchedAssessTime" Type="varchar" MaxLength="10" />
+    <Property Name="FaxLab" Type="char" MaxLength="1" />
+    <Property Name="PhysOnCall" Type="varchar" MaxLength="50" />
+    <Property Name="NurseNotified" Type="varchar" MaxLength="50" />
+    <Property Name="TimeAcceptedNA" Type="char" MaxLength="1" />
+    <Property Name="TimeAccepted" Type="datetime" />
+    <Property Name="AdmPsyDiag" Type="varchar(max)" />
+    <Property Name="MedDiag" Type="varchar(max)" />
+    <Property Name="Transport" Type="char" MaxLength="1" />
+    <Property Name="TransportDesc" Type="varchar" MaxLength="50" />
+    <Property Name="CallNotes" Type="varchar(max)" />
+    <Property Name="CallCollectedBy" Type="varchar" MaxLength="50" />
+    <Property Name="CallEndedTime" Type="varchar" MaxLength="10" />
+    <Property Name="CallEnded" Type="datetime" />
+    <Property Name="CallStartedTime" Type="varchar" MaxLength="10" />
+    <Property Name="CallStarted" Type="datetime" />
+    <Property Name="MRNum" Type="varchar" MaxLength="5" />
+    <Property Name="MaritalStat" Type="varchar" MaxLength="20" />
+    <Property Name="Race" Type="varchar" MaxLength="20" />
+    <Property Name="AssessStartDate" Type="date" />
+    <Property Name="AssessStartTime" Type="varchar" MaxLength="10" />
+    <Property Name="SrcInfo" Type="varchar" MaxLength="20" />
+    <Property Name="ChiefComplaint" Type="varchar" MaxLength="50" />
+    <Property Name="MoodApp" Type="char" MaxLength="1" />
+    <Property Name="MoodDep" Type="char" MaxLength="1" />
+    <Property Name="MoodLab" Type="char" MaxLength="1" />
+    <Property Name="MoodAnx" Type="char" MaxLength="1" />
+    <Property Name="MoodIrr" Type="char" MaxLength="1" />
+    <Property Name="MoodEup" Type="char" MaxLength="1" />
+    <Property Name="MoodHos" Type="char" MaxLength="1" />
+    <Property Name="MoodOther" Type="char" MaxLength="1" />
+    <Property Name="MoodOtherVal" Type="varchar" MaxLength="20" />
+    <Property Name="ThoughtProcLog" Type="char" MaxLength="1" />
+    <Property Name="ThoughtProcCon" Type="char" MaxLength="1" />
+    <Property Name="ThoughtProcTan" Type="char" MaxLength="1" />
+    <Property Name="ThoughtProcLoo" Type="char" MaxLength="1" />
+    <Property Name="ThoughtProcRac" Type="char" MaxLength="1" />
+    <Property Name="ThoughtProcObs" Type="char" MaxLength="1" />
+    <Property Name="ThoughtProcBlo" Type="char" MaxLength="1" />
+    <Property Name="ThoughtProcDis" Type="char" MaxLength="1" />
+    <Property Name="ThoughtContRea" Type="char" MaxLength="1" />
+    <Property Name="ThoughtContPre" Type="char" MaxLength="1" />
+    <Property Name="ThoughtContGra" Type="char" MaxLength="1" />
+    <Property Name="ThoughtContPar" Type="char" MaxLength="1" />
+    <Property Name="ThoughtContDel" Type="char" MaxLength="1" />
+    <Property Name="ThoughtContSom" Type="char" MaxLength="1" />
+    <Property Name="ThoughtContHal" Type="char" MaxLength="1" />
+    <Property Name="ThoughtContHalType" Type="varchar" MaxLength="20" />
+    <Property Name="AffApp" Type="char" MaxLength="1" />
+    <Property Name="AffIna" Type="char" MaxLength="1" />
+    <Property Name="AffBlu" Type="char" MaxLength="1" />
+    <Property Name="AffRes" Type="char" MaxLength="1" />
+    <Property Name="AffLab" Type="char" MaxLength="1" />
+    <Property Name="AffTear" Type="char" MaxLength="1" />
+    <Property Name="AffCon" Type="char" MaxLength="1" />
+    <Property Name="AffIncon" Type="char" MaxLength="1" />
+    <Property Name="Insight" Type="char" MaxLength="1" />
+    <Property Name="Judgement" Type="char" MaxLength="1" />
+    <Property Name="SpeechApp" Type="char" MaxLength="1" />
+    <Property Name="SpeechPre" Type="char" MaxLength="1" />
+    <Property Name="SpeechRam" Type="char" MaxLength="1" />
+    <Property Name="SpeechLoud" Type="char" MaxLength="1" />
+    <Property Name="SpeechHos" Type="char" MaxLength="1" />
+    <Property Name="SpeechMon" Type="char" MaxLength="1" />
+    <Property Name="SpeechOther" Type="char" MaxLength="1" />
+    <Property Name="SpeechOtherVal" Type="varchar" MaxLength="20" />
+    <Property Name="OrientPer" Type="char" MaxLength="1" />
+    <Property Name="OrientPla" Type="char" MaxLength="1" />
+    <Property Name="OrientTim" Type="char" MaxLength="1" />
+    <Property Name="OrientSit" Type="char" MaxLength="1" />
+    <Property Name="OrientDis" Type="char" MaxLength="1" />
+    <Property Name="Appearance" Type="char" MaxLength="1" />
+    <Property Name="MotorBehavior" Type="char" MaxLength="1" />
+    <Property Name="MotorBehaviorDesc" Type="nchar" MaxLength="10" />
+    <Property Name="AppeApp" Type="char" MaxLength="1" />
+    <Property Name="AppeDec" Type="char" MaxLength="1" />
+    <Property Name="AppeInc" Type="char" MaxLength="1" />
+    <Property Name="AppeGai" Type="char" MaxLength="1" />
+    <Property Name="AppeGaiValue" Type="varchar" MaxLength="3" />
+    <Property Name="AppeLos" Type="char" MaxLength="1" />
+    <Property Name="AppeLosValue" Type="varchar" MaxLength="3" />
+    <Property Name="AppeUna" Type="char" MaxLength="1" />
+    <Property Name="SleApp" Type="char" MaxLength="1" />
+    <Property Name="SleDec" Type="char" MaxLength="1" />
+    <Property Name="SleDecValue" Type="varchar" MaxLength="10" />
+    <Property Name="SleInc" Type="char" MaxLength="1" />
+    <Property Name="SleIncValue" Type="varchar" MaxLength="10" />
+    <Property Name="SleDif" Type="char" MaxLength="1" />
+    <Property Name="SleInt" Type="char" MaxLength="1" />
+    <Property Name="SleNig" Type="char" MaxLength="1" />
+    <Property Name="SleUna" Type="char" MaxLength="1" />
+    <Property Name="IdData" Type="varchar(max)" />
+    <Property Name="MedHistory" Type="varchar(max)" />
+    <Property Name="Surgical" Type="varchar(max)" />
+    <Property Name="HistMRSA" Type="char" MaxLength="1" />
+    <Property Name="HistMRSAExpl" Type="varchar" MaxLength="50" />
+    <Property Name="DietRest" Type="char" MaxLength="1" />
+    <Property Name="DietRestExpl" Type="varchar" MaxLength="50" />
+    <Property Name="HistFalls" Type="char" MaxLength="1" />
+    <Property Name="HistFallsExpl" Type="varchar" MaxLength="50" />
+    <Property Name="PCP" Type="char" MaxLength="1" />
+    <Property Name="PCPName" Type="varchar" MaxLength="50" />
+    <Property Name="OutMentHealth" Type="char" MaxLength="1" />
+    <Property Name="ComplTreat" Type="char" MaxLength="1" />
+    <Property Name="ComplTreatBarr" Type="varchar" MaxLength="50" />
+    <Property Name="PsychHosp" Type="char" MaxLength="1" />
+    <Property Name="HistNonCompMed" Type="char" MaxLength="1" />
+    <Property Name="ReHospNonComp" Type="char" MaxLength="1" />
+    <Property Name="PrevDiag" Type="char" MaxLength="1" />
+    <Property Name="PrevDiagExpl" Type="varchar" MaxLength="50" />
+    <Property Name="AutismSpecDis" Type="char" MaxLength="1" />
+    <Property Name="DeniesLegal" Type="char" MaxLength="1" />
+    <Property Name="CurrentLegal" Type="varchar" MaxLength="50" />
+    <Property Name="Probation" Type="char" MaxLength="1" />
+    <Property Name="Parole" Type="char" MaxLength="1" />
+    <Property Name="LegalCounty" Type="varchar" MaxLength="20" />
+    <Property Name="Charges" Type="varchar(max)" />
+    <Property Name="Incarc" Type="char" MaxLength="1" />
+    <Property Name="IncarcExpl" Type="varchar(max)" />
+    <Property Name="DeniesSuic" Type="char" MaxLength="1" />
+    <Property Name="SuicIdeaYes" Type="char" MaxLength="1" />
+    <Property Name="SuicIdeaNoPlan" Type="char" MaxLength="1" />
+    <Property Name="SuicIdeaMethod" Type="char" MaxLength="1" />
+    <Property Name="SuicIdeaPlan" Type="char" MaxLength="1" />
+    <Property Name="SuicIdeaIntent" Type="char" MaxLength="1" />
+    <Property Name="SuicIdeaMeans" Type="char" MaxLength="1" />
+    <Property Name="SuicIdeaDesc" Type="varchar(max)" />
+    <Property Name="ViolSelf6Mo" Type="char" MaxLength="1" />
+    <Property Name="ViolSelf6MoDesc" Type="varchar(max)" />
+    <Property Name="SuicPriorAtt" Type="char" MaxLength="1" />
+    <Property Name="SuicPriorAttDesc" Type="varchar(max)" />
+    <Property Name="FamHistSuic" Type="char" MaxLength="1" />
+    <Property Name="FamHistSuicDesc" Type="varchar(max)" />
+    <Property Name="AttemptInpat" Type="char" MaxLength="1" />
+    <Property Name="AttemptInpatDesc" Type="varchar(max)" />
+    <Property Name="AssoHopeless" Type="char" MaxLength="1" />
+    <Property Name="AssoHelpless" Type="char" MaxLength="1" />
+    <Property Name="AssoSad" Type="char" MaxLength="1" />
+    <Property Name="AssoTearful" Type="char" MaxLength="1" />
+    <Property Name="AssoImpulsive" Type="char" MaxLength="1" />
+    <Property Name="AssoIsolative" Type="char" MaxLength="1" />
+    <Property Name="SuicAttInpatient" Type="char" MaxLength="1" />
+    <Property Name="SuicAttInpatientDesc" Type="varchar(max)" />
+    <Property Name="DeniesSelfInj" Type="char" MaxLength="1" />
+    <Property Name="SelfInjLastAtt" Type="varchar(max)" />
+    <Property Name="SelfInjInpatient" Type="char" MaxLength="1" />
+    <Property Name="SelfInjInpatientDesc" Type="varchar(max)" />
+    <Property Name="DeniesHom" Type="char" MaxLength="1" />
+    <Property Name="HomIdeaYes" Type="char" MaxLength="1" />
+    <Property Name="HomIdeaPlan" Type="char" MaxLength="1" />
+    <Property Name="HomIdeaNoPlan" Type="char" MaxLength="1" />
+    <Property Name="HomIdeaIntent" Type="char" MaxLength="1" />
+    <Property Name="HomIdeaMeans" Type="char" MaxLength="1" />
+    <Property Name="HomIdeaDesc" Type="varchar" MaxLength="50" />
+    <Property Name="HomIdeaTarget" Type="varchar" MaxLength="50" />
+    <Property Name="ViolOthers6Mo" Type="char" MaxLength="1" />
+    <Property Name="ViolOthers6MoDesc" Type="varchar(max)" />
+    <Property Name="ViolOtherHist" Type="char" MaxLength="1" />
+    <Property Name="ViolOtherHistDesc" Type="varchar(max)" />
+    <Property Name="HomPriorAtt" Type="char" MaxLength="1" />
+    <Property Name="HomPriorAttDesc" Type="varchar(max)" />
+    <Property Name="FamHistHom" Type="char" MaxLength="1" />
+    <Property Name="FamHistHomDesc" Type="varchar(max)" />
+    <Property Name="AccessWeap" Type="char" MaxLength="1" />
+    <Property Name="AccessWeapDesc" Type="varchar" MaxLength="50" />
+    <Property Name="DeniesAssa" Type="char" MaxLength="1" />
+    <Property Name="HistAssaBeh" Type="char" MaxLength="1" />
+    <Property Name="HisAssaBehDesc" Type="varchar" MaxLength="50" />
+    <Property Name="AngerProb" Type="char" MaxLength="1" />
+    <Property Name="AngerProbDesc" Type="varchar" MaxLength="50" />
+    <Property Name="DeniesPsychFam" Type="char" MaxLength="1" />
+    <Property Name="PsychFam" Type="char" MaxLength="1" />
+    <Property Name="PsychFamDesc" Type="varchar" MaxLength="50" />
+    <Property Name="DeniesHistAbuse" Type="char" MaxLength="1" />
+    <Property Name="TraumEve" Type="char" MaxLength="1" />
+    <Property Name="TraumEveDesc" Type="varchar" MaxLength="50" />
+    <Property Name="CombVic" Type="char" MaxLength="1" />
+    <Property Name="CombVicDesc" Type="varchar" MaxLength="50" />
+    <Property Name="IncProm" Type="char" MaxLength="1" />
+    <Property Name="IncPromDesc" Type="varchar" MaxLength="50" />
+    <Property Name="ExpSelf" Type="char" MaxLength="1" />
+    <Property Name="ExpSelfDesc" Type="varchar" MaxLength="50" />
+    <Property Name="MegLaw" Type="char" MaxLength="1" />
+    <Property Name="SexAggRiskBeh" Type="char" MaxLength="1" />
+    <Property Name="HistSexAggBeh" Type="char" MaxLength="1" />
+    <Property Name="SexPreocc" Type="char" MaxLength="1" />
+    <Property Name="HistCrimSex" Type="char" MaxLength="1" />
+    <Property Name="PsychSexPreocc" Type="char" MaxLength="1" />
+    <Property Name="SecVicRisk" Type="char" MaxLength="1" />
+    <Property Name="DevDelay" Type="char" MaxLength="1" />
+    <Property Name="VicSexPreocc" Type="char" MaxLength="1" />
+    <Property Name="PhyStatus" Type="char" MaxLength="1" />
+    <Property Name="VicSexAbuse" Type="char" MaxLength="1" />
+    <Property Name="MedComp" Type="char" MaxLength="1" />
+    <Property Name="DeniesMisuse" Type="char" MaxLength="1" />
+    <Property Name="DeniesAlcDrugTreat" Type="char" MaxLength="1" />
+    <Property Name="CurrentAlcDrugTreat" Type="char" MaxLength="1" />
+    <Property Name="CurrentAlcDrugTreatDesc" Type="varchar" MaxLength="50" />
+    <Property Name="AlcDrugHist" Type="char" MaxLength="1" />
+    <Property Name="AlcDrugHistDesc" Type="varchar" MaxLength="50" />
+    <Property Name="HistWithdrawSymp" Type="char" MaxLength="1" />
+    <Property Name="HistWIthdrawSympDesc" Type="varchar" MaxLength="50" />
+    <Property Name="DelTrem" Type="char" MaxLength="1" />
+    <Property Name="LongPerSober" Type="char" MaxLength="1" />
+    <Property Name="LongPerSoberDesc" Type="varchar" MaxLength="50" />
+    <Property Name="SubLegalProb" Type="char" MaxLength="1" />
+    <Property Name="SubLegalProbDesc" Type="varchar" MaxLength="50" />
+    <Property Name="FamHistSubAbu" Type="char" MaxLength="1" />
+    <Property Name="FamHistSubAbuDesc" Type="varchar" MaxLength="50" />
+    <Property Name="CurrentTobUse" Type="char" MaxLength="1" />
+    <Property Name="CurrentTobUseDesc" Type="varchar" MaxLength="50" />
+    <Property Name="HowOftenAlc" Type="char" MaxLength="1" />
+    <Property Name="HowManyAlcTyp" Type="char" MaxLength="1" />
+    <Property Name="HowOftenSix" Type="char" MaxLength="1" />
+    <Property Name="AuditSubComplTotal" Type="varchar" MaxLength="2" />
+    <Property Name="DeniesPsychosis" Type="char" MaxLength="1" />
+    <Property Name="PsychHall" Type="char" MaxLength="1" />
+    <Property Name="PsychHallDesc" Type="varchar" MaxLength="50" />
+    <Property Name="PsychComm" Type="char" MaxLength="1" />
+    <Property Name="PsychCommDesc" Type="varchar" MaxLength="50" />
+    <Property Name="PsychDel" Type="char" MaxLength="1" />
+    <Property Name="PsychDelDesc" Type="varchar" MaxLength="50" />
+    <Property Name="PsychRel" Type="char" MaxLength="1" />
+    <Property Name="PsychRelDesc" Type="varchar" MaxLength="50" />
+    <Property Name="HighLevEdu" Type="varchar" MaxLength="50" />
+    <Property Name="Employed" Type="char" MaxLength="1" />
+    <Property Name="EmployedDesc" Type="varchar" MaxLength="50" />
+    <Property Name="RepPayee" Type="char" MaxLength="1" />
+    <Property Name="RepPayeeDesc" Type="varchar" MaxLength="50" />
+    <Property Name="Disability" Type="char" MaxLength="1" />
+    <Property Name="DisabilityDesc" Type="varchar" MaxLength="50" />
+    <Property Name="Siblings" Type="char" MaxLength="1" />
+    <Property Name="SiblingsDesc" Type="varchar" MaxLength="50" />
+    <Property Name="Children" Type="char" MaxLength="1" />
+    <Property Name="ChildrenDesc" Type="varchar" MaxLength="50" />
+    <Property Name="ChildUnd18Care" Type="varchar" MaxLength="50" />
+    <Property Name="LivingSituation" Type="char" MaxLength="1" />
+    <Property Name="LivingSituationDesc" Type="varchar" MaxLength="50" />
+    <Property Name="Supports" Type="varchar" MaxLength="50" />
+    <Property Name="StrCopSkills" Type="varchar" MaxLength="50" />
+    <Property Name="MedCompliant" Type="char" MaxLength="1" />
+    <Property Name="MedCompliantDesc" Type="varchar" MaxLength="50" />
+    <Property Name="MedNotes" Type="varchar(max)" />
+    <Property Name="Education" Type="char" MaxLength="1" />
+    <Property Name="CurSchoolNam" Type="varchar" MaxLength="50" />
+    <Property Name="EncoEnur" Type="char" MaxLength="1" />
+    <Property Name="EncoEnurDesc" Type="varchar" MaxLength="50" />
+    <Property Name="CruelAnimals" Type="char" MaxLength="1" />
+    <Property Name="CruelAnimalsDesc" Type="varchar" MaxLength="50" />
+    <Property Name="FireSet" Type="char" MaxLength="1" />
+    <Property Name="FireSetDesc" Type="varchar" MaxLength="50" />
+    <Property Name="Stealing" Type="char" MaxLength="1" />
+    <Property Name="StealingDesc" Type="varchar" MaxLength="50" />
+    <Property Name="Lying" Type="char" MaxLength="1" />
+    <Property Name="LyingDesc" Type="varchar" MaxLength="50" />
+    <Property Name="RunAway" Type="char" MaxLength="1" />
+    <Property Name="RunAwayDesc" Type="varchar" MaxLength="50" />
+    <Property Name="Rebel" Type="char" MaxLength="1" />
+    <Property Name="RebelHome" Type="char" MaxLength="1" />
+    <Property Name="RebelSchool" Type="char" MaxLength="1" />
+    <Property Name="RebelDesc" Type="varchar" MaxLength="50" />
+    <Property Name="DetSchPer" Type="char" MaxLength="1" />
+    <Property Name="DetSchPerDesc" Type="varchar" MaxLength="50" />
+    <Property Name="ProbSchool" Type="char" MaxLength="1" />
+    <Property Name="ProbSchoolDesc" Type="varchar" MaxLength="50" />
+    <Property Name="IndivEduProg" Type="char" MaxLength="1" />
+    <Property Name="IndivEduProgLearnSup" Type="char" MaxLength="1" />
+    <Property Name="IndivEduProgEmoSup" Type="char" MaxLength="1" />
+    <Property Name="DifMakeFriends" Type="char" MaxLength="1" />
+    <Property Name="DifMakeFriendsDesc" Type="varchar" MaxLength="50" />
+    <Property Name="SchRefu" Type="char" MaxLength="1" />
+    <Property Name="SchRefuDesc" Type="varchar" MaxLength="50" />
+    <Property Name="Bullied" Type="char" MaxLength="1" />
+    <Property Name="BulliedDesc" Type="varchar" MaxLength="50" />
+    <Property Name="BullyOth" Type="char" MaxLength="1" />
+    <Property Name="BullyOthDesc" Type="varchar" MaxLength="50" />
+    <Property Name="DepSympSad" Type="char" MaxLength="1" />
+    <Property Name="DepSympCrying" Type="char" MaxLength="1" />
+    <Property Name="DepSympHopeless" Type="char" MaxLength="1" />
+    <Property Name="DepSympHelpless" Type="char" MaxLength="1" />
+    <Property Name="DepSympWithdrawn" Type="char" MaxLength="1" />
+    <Property Name="DepSympIsolative" Type="char" MaxLength="1" />
+    <Property Name="DepSympIrritable" Type="char" MaxLength="1" />
+    <Property Name="MoodLabSwings" Type="char" MaxLength="1" />
+    <Property Name="MoodLabAggBeh" Type="char" MaxLength="1" />
+    <Property Name="MoodLabEsc" Type="char" MaxLength="1" />
+    <Property Name="MoodLabGrand" Type="char" MaxLength="1" />
+    <Property Name="MoodLabPoor" Type="char" MaxLength="1" />
+    <Property Name="AnxRelPhys" Type="char" MaxLength="1" />
+    <Property Name="AnxRelHand" Type="char" MaxLength="1" />
+    <Property Name="AnxRelOCDTho" Type="char" MaxLength="1" />
+    <Property Name="AnxRelOCDBeh" Type="char" MaxLength="1" />
+    <Property Name="PhysContact" Type="varchar" MaxLength="50" />
+    <Property Name="TimeReviewed" Type="datetime" />
+    <Property Name="PhysRecAdmit" Type="char" MaxLength="1" />
+    <Property Name="PhysRecRefer" Type="char" MaxLength="1" />
+    <Property Name="PhysRecDesc" Type="varchar" MaxLength="50" />
+    <Property Name="AttPhys" Type="varchar" MaxLength="50" />
+    <Property Name="StaffCompIntake" Type="varchar" MaxLength="50" />
+    <Property Name="StaffCompIntakeDateTime" Type="datetime" />
+    <Property Name="StaffPrepIntakeDoc" Type="varchar" MaxLength="50" />
+    <Property Name="StaffPrepIntakeDocDateTime" Type="datetime" />
+    <Property Name="MetalDetect" Type="char" MaxLength="1" />
+    <Property Name="MetalDetectExpl" Type="varchar" MaxLength="50" />
+    <Property Name="ProvDiagInpatient" Type="char" MaxLength="1" />
+    <Property Name="ProvDiagPartHosp" Type="char" MaxLength="1" />
+    <Property Name="ProvDiagNA" Type="char" MaxLength="1" />
+    <Property Name="MedDiagNone" Type="char" MaxLength="1" />
+    <Property Name="PsychosocialFact" Type="char" MaxLength="1" />
+    <Property Name="PsychosocialFactDesc" Type="varchar" MaxLength="50" />
+    <Property Name="ContextFact" Type="char" MaxLength="1" />
+    <Property Name="ContextFactDesc" Type="varchar" MaxLength="50" />
+    <Property Name="FuncAssess" Type="varchar" MaxLength="50" />
+    <Property Name="PhysicianDateTime" Type="datetime" />
+    <Property Name="FifteenMinChecks" Type="char" MaxLength="1" />
+    <Property Name="OneToOneChecks" Type="char" MaxLength="1" />
+    <Property Name="UnitRestriction" Type="char" MaxLength="1" />
+    <Property Name="GymRestriction" Type="char" MaxLength="1" />
+    <Property Name="PrecautionSuicide" Type="char" MaxLength="1" />
+    <Property Name="PrecautionSexAgg" Type="char" MaxLength="1" />
+    <Property Name="PrecautionSexVic" Type="char" MaxLength="1" />
+    <Property Name="PrecautionAssault" Type="char" MaxLength="1" />
+    <Property Name="PrecautionElope" Type="char" MaxLength="1" />
+    <Property Name="PrecautionMedRisk" Type="char" MaxLength="1" />
+    <Property Name="PrecautionFall" Type="char" MaxLength="1" />
+    <Property Name="PrecautionSelfHarm" Type="char" MaxLength="1" />
+    <Property Name="PrecautionNone" Type="char" MaxLength="1" />
+    <Property Name="ArcStaffName" Type="varchar" MaxLength="50" />
+    <Property Name="UnitStaffName" Type="varchar" MaxLength="50" />
+    <Property Name="HairColor" Type="varchar" MaxLength="50" />
+    <Property Name="EyeColor" Type="varchar" MaxLength="50" />
+    <Property Name="Height" Type="varchar" MaxLength="10" />
+    <Property Name="HeighCm" Type="varchar" MaxLength="10" />
+    <Property Name="Weight" Type="varchar" MaxLength="7" />
+    <Property Name="WeightKg" Type="varchar" MaxLength="7" />
+    <Property Name="Waist" Type="varchar" MaxLength="7" />
+    <Property Name="WaistCm" Type="varchar" MaxLength="7" />
+    <Property Name="CurrentReportPain" Type="char" MaxLength="1" />
+    <Property Name="YesFullAssess" Type="char" MaxLength="1" />
+    <Property Name="NoSkipPain" Type="char" MaxLength="1" />
+    <Property Name="ApplyHeat" Type="char" MaxLength="1" />
+    <Property Name="ApplyCold" Type="char" MaxLength="1" />
+    <Property Name="Resting" Type="char" MaxLength="1" />
+    <Property Name="Elevation" Type="char" MaxLength="1" />
+    <Property Name="DeepBreathing" Type="char" MaxLength="1" />
+    <Property Name="Relaxation" Type="char" MaxLength="1" />
+    <Property Name="Medication" Type="char" MaxLength="1" />
+    <Property Name="MedicationDesc" Type="char" MaxLength="1" />
+    <Property Name="PainOther" Type="char" MaxLength="1" />
+    <Property Name="PainOtherDesc" Type="nchar" MaxLength="10" />
+    <Property Name="SexualActive" Type="char" MaxLength="1" />
+    <Property Name="DenySex" Type="char" MaxLength="1" />
+    <Property Name="PrefMale" Type="char" MaxLength="1" />
+    <Property Name="PrefFemale" Type="char" MaxLength="1" />
+    <Property Name="PrefBi" Type="char" MaxLength="1" />
+    <Property Name="PrefPan" Type="char" MaxLength="1" />
+    <Property Name="PrefOther" Type="char" MaxLength="1" />
+    <Property Name="PrefOtherDesc" Type="varchar" MaxLength="50" />
+    <Property Name="STDHist" Type="char" MaxLength="1" />
+    <Property Name="STDHistDesc" Type="varchar" MaxLength="50" />
+    <Property Name="DenyCardio" Type="char" MaxLength="1" />
+    <Property Name="ChestPain" Type="char" MaxLength="1" />
+    <Property Name="Pacemaker" Type="char" MaxLength="1" />
+    <Property Name="MI" Type="char" MaxLength="1" />
+    <Property Name="PVD" Type="char" MaxLength="1" />
+    <Property Name="Palitations" Type="char" MaxLength="1" />
+    <Property Name="IrregPulse" Type="char" MaxLength="1" />
+    <Property Name="Hypertension" Type="char" MaxLength="1" />
+    <Property Name="Hypotension" Type="char" MaxLength="1" />
+    <Property Name="Edema" Type="char" MaxLength="1" />
+    <Property Name="Arrhythmia" Type="char" MaxLength="1" />
+    <Property Name="HeartFailure" Type="char" MaxLength="1" />
+    <Property Name="CardioOther" Type="char" MaxLength="1" />
+    <Property Name="CardioOtherDesc" Type="varchar" MaxLength="50" />
+    <Property Name="GastroDeny" Type="char" MaxLength="1" />
+    <Property Name="Nausea" Type="char" MaxLength="1" />
+    <Property Name="GastroPain" Type="char" MaxLength="1" />
+    <Property Name="GERD" Type="char" MaxLength="1" />
+    <Property Name="GastroUlcers" Type="char" MaxLength="1" />
+    <Property Name="Hernia" Type="char" MaxLength="1" />
+    <Property Name="LivDisease" Type="char" MaxLength="1" />
+    <Property Name="GastroOther" Type="char" MaxLength="1" />
+    <Property Name="GastroOtherDesc" Type="varchar" MaxLength="50" />
+    <Property Name="BowelDeny" Type="char" MaxLength="1" />
+    <Property Name="Diarrhea" Type="char" MaxLength="1" />
+    <Property Name="Constipation" Type="char" MaxLength="1" />
+    <Property Name="Hemmoroids" Type="char" MaxLength="1" />
+    <Property Name="Incont" Type="char" MaxLength="1" />
+    <Property Name="Lax" Type="char" MaxLength="1" />
+    <Property Name="AntiDiarrheal" Type="char" MaxLength="1" />
+    <Property Name="BowelOther" Type="char" MaxLength="1" />
+    <Property Name="BowelOtherDesc" Type="varchar" MaxLength="50" />
+    <Property Name="LastBM" Type="varchar" MaxLength="50" />
+    <Property Name="DentalDeny" Type="char" MaxLength="1" />
+    <Property Name="DenturesUp" Type="char" MaxLength="1" />
+    <Property Name="DenturesLow" Type="char" MaxLength="1" />
+    <Property Name="DenturesPart" Type="char" MaxLength="1" />
+    <Property Name="LooseMissingTeeth" Type="char" MaxLength="1" />
+    <Property Name="DentalUlcers" Type="char" MaxLength="1" />
+    <Property Name="BleedingGums" Type="char" MaxLength="1" />
+    <Property Name="Extractions" Type="char" MaxLength="1" />
+    <Property Name="DentalOther" Type="char" MaxLength="1" />
+    <Property Name="DentalOtherDesc" Type="char" MaxLength="1" />
+    <Property Name="NoseThroatDeny" Type="char" MaxLength="1" />
+    <Property Name="Sinus" Type="char" MaxLength="1" />
+    <Property Name="SoreThroat" Type="char" MaxLength="1" />
+    <Property Name="Hoarseness" Type="char" MaxLength="1" />
+    <Property Name="DiffSwallow" Type="char" MaxLength="1" />
+    <Property Name="ColdSympt" Type="char" MaxLength="1" />
+    <Property Name="Thrush" Type="char" MaxLength="1" />
+    <Property Name="NoseThroatOther" Type="char" MaxLength="1" />
+    <Property Name="NoseThroatOtherDesc" Type="varchar" MaxLength="50" />
+    <Property Name="RespDeny" Type="char" MaxLength="1" />
+    <Property Name="ShortBreath" Type="char" MaxLength="1" />
+    <Property Name="LaboredBreath" Type="char" MaxLength="1" />
+    <Property Name="Asthma" Type="char" MaxLength="1" />
+    <Property Name="Cough" Type="char" MaxLength="1" />
+    <Property Name="COPD" Type="char" MaxLength="1" />
+    <Property Name="SleepApnea" Type="char" MaxLength="1" />
+    <Property Name="CPAP" Type="char" MaxLength="1" />
+    <Property Name="RespOther" Type="char" MaxLength="1" />
+    <Property Name="RespOtherDesc" Type="varchar" MaxLength="50" />
+    <Property Name="NeuroDeny" Type="char" MaxLength="1" />
+    <Property Name="Seizures" Type="char" MaxLength="1" />
+    <Property Name="LastSeizure" Type="varchar" MaxLength="50" />
+    <Property Name="Stroke" Type="char" MaxLength="1" />
+    <Property Name="FreqHeadache" Type="char" MaxLength="1" />
+    <Property Name="NeuroConfusion" Type="char" MaxLength="1" />
+    <Property Name="WeakParalysis" Type="char" MaxLength="1" />
+    <Property Name="HeadInjuryTrauma" Type="char" MaxLength="1" />
+    <Property Name="Dizziness" Type="char" MaxLength="1" />
+    <Property Name="Tremors" Type="char" MaxLength="1" />
+    <Property Name="Migraine" Type="char" MaxLength="1" />
+    <Property Name="NeuroOther" Type="char" MaxLength="1" />
+    <Property Name="NeuroOtherDesc" Type="varchar" MaxLength="50" />
+    <Property Name="SkinDeny" Type="char" MaxLength="1" />
+    <Property Name="SkinUlcers" Type="char" MaxLength="1" />
+    <Property Name="Scars" Type="char" MaxLength="1" />
+    <Property Name="Bruises" Type="char" MaxLength="1" />
+    <Property Name="RashHives" Type="char" MaxLength="1" />
+    <Property Name="Discolor" Type="char" MaxLength="1" />
+    <Property Name="Itching" Type="char" MaxLength="1" />
+    <Property Name="Wound" Type="char" MaxLength="1" />
+    <Property Name="Sutures" Type="char" MaxLength="1" />
+    <Property Name="NumSutures" Type="varchar" MaxLength="2" />
+    <Property Name="Staples" Type="char" MaxLength="1" />
+    <Property Name="StaplesNum" Type="varchar" MaxLength="2" />
+    <Property Name="SkinOther" Type="char" MaxLength="1" />
+    <Property Name="SkinOtherDesc" Type="varchar" MaxLength="50" />
+    <Property Name="GenitDeny" Type="char" MaxLength="1" />
+    <Property Name="Burning" Type="char" MaxLength="1" />
+    <Property Name="Nocturia" Type="char" MaxLength="1" />
+    <Property Name="Hematuria" Type="char" MaxLength="1" />
+    <Property Name="UTI" Type="char" MaxLength="1" />
+    <Property Name="GenitFreqInc" Type="char" MaxLength="1" />
+    <Property Name="GenitFreqDec" Type="char" MaxLength="1" />
+    <Property Name="Hesitancy" Type="char" MaxLength="1" />
+    <Property Name="Incontinence" Type="char" MaxLength="1" />
+    <Property Name="GenitOther" Type="char" MaxLength="1" />
+    <Property Name="GenitOtherDesc" Type="varchar" MaxLength="50" />
+    <Property Name="EndoDeny" Type="char" MaxLength="1" />
+    <Property Name="EndoDiabetes" Type="char" MaxLength="1" />
+    <Property Name="EndoInsulin" Type="char" MaxLength="1" />
+    <Property Name="DietControlled" Type="char" MaxLength="1" />
+    <Property Name="DiagEndoDis" Type="char" MaxLength="1" />
+    <Property Name="DiagEndoDisDesc" Type="varchar" MaxLength="50" />
+    <Property Name="EndoOther" Type="char" MaxLength="1" />
+    <Property Name="EndoOtherDesc" Type="varchar" MaxLength="50" />
+    <Property Name="MuscDeny" Type="char" MaxLength="1" />
+    <Property Name="BackPain" Type="char" MaxLength="1" />
+    <Property Name="JointPain" Type="char" MaxLength="1" />
+    <Property Name="Arthritis" Type="char" MaxLength="1" />
+    <Property Name="MuscRigid" Type="char" MaxLength="1" />
+    <Property Name="Breaks" Type="char" MaxLength="1" />
+    <Property Name="BoneDisease" Type="char" MaxLength="1" />
+    <Property Name="MuscWeakness" Type="char" MaxLength="1" />
+    <Property Name="MuscOther" Type="char" MaxLength="1" />
+    <Property Name="MuscOtherDesc" Type="varchar" MaxLength="50" />
+    <Property Name="FemRepNA" Type="char" MaxLength="1" />
+    <Property Name="FemRepDeny" Type="char" MaxLength="1" />
+    <Property Name="SuspPreg" Type="char" MaxLength="1" />
+    <Property Name="Preg" Type="char" MaxLength="1" />
+    <Property Name="PregMonths" Type="varchar" MaxLength="50" />
+    <Property Name="BirthControl" Type="char" MaxLength="1" />
+    <Property Name="BirthControlType" Type="varchar" MaxLength="50" />
+    <Property Name="FemRepOther" Type="char" MaxLength="1" />
+    <Property Name="FemRepOtherDesc" Type="varchar" MaxLength="50" />
+    <Property Name="MenstNa" Type="char" MaxLength="1" />
+    <Property Name="MenstDeny" Type="char" MaxLength="1" />
+    <Property Name="RegMenst" Type="char" MaxLength="1" />
+    <Property Name="Dysmen" Type="char" MaxLength="1" />
+    <Property Name="Amenorrhea" Type="char" MaxLength="1" />
+    <Property Name="MenstOther" Type="char" MaxLength="1" />
+    <Property Name="MenstOtherDesc" Type="varchar" MaxLength="50" />
+    <Property Name="LMP" Type="varchar" MaxLength="50" />
+    <Property Name="MaleRepNA" Type="char" MaxLength="1" />
+    <Property Name="MaleRepDeny" Type="char" MaxLength="1" />
+    <Property Name="MaleDischarge" Type="char" MaxLength="1" />
+    <Property Name="MaleHesitancy" Type="char" MaxLength="1" />
+    <Property Name="MaleImpotent" Type="char" MaxLength="1" />
+    <Property Name="MaleProstateProb" Type="char" MaxLength="1" />
+    <Property Name="MaleRepOther" Type="char" MaxLength="1" />
+    <Property Name="MaleRepOtherDesc" Type="varchar" MaxLength="50" />
+    <Property Name="ConcernReturnRes" Type="char" MaxLength="1" />
+    <Property Name="ConcernReturnResDesc" Type="varchar" MaxLength="50" />
+    <Property Name="PhysicalDeny" Type="char" MaxLength="1" />
+    <Property Name="PhysicalImpGait" Type="char" MaxLength="1" />
+    <Property Name="PhysicalTransDiff" Type="char" MaxLength="1" />
+    <Property Name="PhysicalBedImm" Type="char" MaxLength="1" />
+    <Property Name="PhysicalStanding" Type="char" MaxLength="1" />
+    <Property Name="PhysicalFatigue" Type="char" MaxLength="1" />
+    <Property Name="PhysicalAssistDev" Type="char" MaxLength="1" />
+    <Property Name="PhysicalGenWeak" Type="char" MaxLength="1" />
+    <Property Name="OccuDeny" Type="char" MaxLength="1" />
+    <Property Name="OccuDressing" Type="char" MaxLength="1" />
+    <Property Name="OccuBathing" Type="char" MaxLength="1" />
+    <Property Name="OccuFeeding" Type="char" MaxLength="1" />
+    <Property Name="OccuGrooming" Type="char" MaxLength="1" />
+    <Property Name="OccuToilet" Type="char" MaxLength="1" />
+    <Property Name="OccuOther" Type="char" MaxLength="1" />
+    <Property Name="OccuOtherDesc" Type="varchar" MaxLength="50" />
+    <Property Name="SwalDeny" Type="char" MaxLength="1" />
+    <Property Name="SwalDiffSwal" Type="char" MaxLength="1" />
+    <Property Name="SwalCoughAfter" Type="char" MaxLength="1" />
+    <Property Name="SwalCoughWhile" Type="char" MaxLength="1" />
+    <Property Name="SwalHistAsp" Type="char" MaxLength="1" />
+    <Property Name="SwalDrool" Type="char" MaxLength="1" />
+    <Property Name="SwalOther" Type="char" MaxLength="1" />
+    <Property Name="SwalOtherDesc" Type="varchar" MaxLength="50" />
+    <Property Name="SleepAvg" Type="varchar" MaxLength="3" />
+    <Property Name="SleepDeny" Type="char" MaxLength="1" />
+    <Property Name="SleepInsom" Type="char" MaxLength="1" />
+    <Property Name="SleepEarlyAwake" Type="char" MaxLength="1" />
+    <Property Name="SleepNightAwake" Type="char" MaxLength="1" />
+    <Property Name="SleepReqMed" Type="char" MaxLength="1" />
+    <Property Name="SleepNightmares" Type="char" MaxLength="1" />
+    <Property Name="SleepOther" Type="char" MaxLength="1" />
+    <Property Name="SleepOtherDesc" Type="varchar" MaxLength="50" />
+    <Property Name="VisDeny" Type="char" MaxLength="1" />
+    <Property Name="VisBlurry" Type="char" MaxLength="1" />
+    <Property Name="VisGlasses" Type="char" MaxLength="1" />
+    <Property Name="VisContacts" Type="char" MaxLength="1" />
+    <Property Name="VisImpair" Type="char" MaxLength="1" />
+    <Property Name="VisLegBlind" Type="char" MaxLength="1" />
+    <Property Name="VisOther" Type="char" MaxLength="1" />
+    <Property Name="VisOtherDesc" Type="varchar" MaxLength="50" />
+    <Property Name="HearDeny" Type="char" MaxLength="1" />
+    <Property Name="HearEarPain" Type="char" MaxLength="1" />
+    <Property Name="HearAid" Type="char" MaxLength="1" />
+    <Property Name="HearImpair" Type="char" MaxLength="1" />
+    <Property Name="HearDeaf" Type="char" MaxLength="1" />
+    <Property Name="HearSignLang" Type="char" MaxLength="1" />
+    <Property Name="HearRing" Type="char" MaxLength="1" />
+    <Property Name="HearOther" Type="char" MaxLength="1" />
+    <Property Name="HearOtherDesc" Type="varchar" MaxLength="50" />
+    <Property Name="CanPatRead" Type="char" MaxLength="1" />
+    <Property Name="CanPatWrite" Type="char" MaxLength="1" />
+    <Property Name="GradeYesNo" Type="char" MaxLength="1" />
+    <Property Name="GradeDesc" Type="varchar" MaxLength="50" />
+    <Property Name="GED" Type="char" MaxLength="1" />
+    <Property Name="YearsCollege" Type="char" MaxLength="1" />
+    <Property Name="YearsCollegeDesc" Type="varchar" MaxLength="50" />
+    <Property Name="DegEarned" Type="varchar" MaxLength="50" />
+    <Property Name="LearnChalCog" Type="char" MaxLength="1" />
+    <Property Name="LearnChalEmo" Type="char" MaxLength="1" />
+    <Property Name="LearnChalPoorCop" Type="char" MaxLength="1" />
+    <Property Name="LearnChalImpThought" Type="char" MaxLength="1" />
+    <Property Name="LearnChalLangBar" Type="char" MaxLength="1" />
+    <Property Name="LearnChalSenseImpair" Type="char" MaxLength="1" />
+    <Property Name="LearnChalDeny" Type="char" MaxLength="1" />
+    <Property Name="LearnChalOther" Type="char" MaxLength="1" />
+    <Property Name="LearnChalOtherDesc" Type="varchar" MaxLength="50" />
+    <Property Name="LearnPrefWrit" Type="char" MaxLength="1" />
+    <Property Name="LearnPrefVerb" Type="char" MaxLength="1" />
+    <Property Name="LearnPrefDemo" Type="char" MaxLength="1" />
+    <Property Name="LearnPrefVideo" Type="char" MaxLength="1" />
+    <Property Name="LearnPrefAudio" Type="char" MaxLength="1" />
+    <Property Name="LearnPrefHands" Type="char" MaxLength="1" />
+    <Property Name="FeelAboutHospitalized" Type="varchar(max)" />
+    <Property Name="IssueBroughtHosp" Type="varchar(max)" />
+    <Property Name="IDSuppLife" Type="varchar(max)" />
+    <Property Name="MethSuccessManage" Type="varchar(max)" />
+    <Property Name="DuringStayHelp" Type="varchar(max)" />
+    <Property Name="SpiritReligCultPrac" Type="char" MaxLength="1" />
+    <Property Name="SpiritReligCultPracDesc" Type="varchar(max)" />
+    <Property Name="NutScore" Type="varchar" MaxLength="2" />
+    <Property Name="NutDeny" Type="char" MaxLength="1" />
+    <Property Name="NutMedPreg" Type="char" MaxLength="1" />
+    <Property Name="NutMedAnem" Type="char" MaxLength="1" />
+    <Property Name="NutMedCirr" Type="char" MaxLength="1" />
+    <Property Name="NutMedHiv" Type="char" MaxLength="1" />
+    <Property Name="NutMedHyperten" Type="char" MaxLength="1" />
+    <Property Name="NutMedHyperlip" Type="char" MaxLength="1" />
+    <Property Name="NutMedOther" Type="char" MaxLength="1" />
+    <Property Name="NutMedOtherDesc" Type="varchar" MaxLength="25" />
+    <Property Name="NutDiabetes" Type="char" MaxLength="1" />
+    <Property Name="NutUnderWei" Type="char" MaxLength="1" />
+    <Property Name="NutBingPurg" Type="char" MaxLength="1" />
+    <Property Name="NutVomit" Type="char" MaxLength="1" />
+    <Property Name="NutDiarr" Type="char" MaxLength="1" />
+    <Property Name="NutCultDiet" Type="char" MaxLength="1" />
+    <Property Name="NutCultDesc" Type="varchar" MaxLength="50" />
+    <Property Name="NutChewDiff" Type="char" MaxLength="1" />
+    <Property Name="DietConsultOrder" Type="char" MaxLength="1" />
+    <Property Name="FluidIntake" Type="char" MaxLength="1" />
+    <Property Name="ComplaintThirst" Type="char" MaxLength="1" />
+    <Property Name="StickyMembrane" Type="char" MaxLength="1" />
+    <Property Name="AmberUrine" Type="char" MaxLength="1" />
+    <Property Name="LossSkin" Type="char" MaxLength="1" />
+    <Property Name="DryFlakySkin" Type="char" MaxLength="1" />
+    <Property Name="SunkEyes" Type="char" MaxLength="1" />
+    <Property Name="DehydrationOther" Type="char" MaxLength="1" />
+    <Property Name="DehydrationOtherDesc" Type="varchar" MaxLength="50" />
+    <Property Name="BMIScore" Type="varchar" MaxLength="3" />
+    <Property Name="BMIL19G30" Type="char" MaxLength="1" />
+    <Property Name="BMIAgreeAssess" Type="char" MaxLength="1" />
+    <Property Name="SuicideSrcPatient" Type="char" MaxLength="1" />
+    <Property Name="SuicideSrcFamily" Type="char" MaxLength="1" />
+    <Property Name="SuicideSrcFamilyDesc" Type="varchar" MaxLength="50" />
+    <Property Name="SuicideSrcOther" Type="char" MaxLength="1" />
+    <Property Name="SuicideSrcOtherDesc" Type="varchar" MaxLength="50" />
+    <Property Name="PresentSelfInj" Type="char" MaxLength="1" />
+    <Property Name="PresentSelfInjDesc" Type="varchar" MaxLength="50" />
+    <Property Name="AppearSelfInf" Type="char" MaxLength="1" />
+    <Property Name="AppearSelfInfDesc" Type="varchar" MaxLength="50" />
+    <Property Name="WishDead" Type="char" MaxLength="1" />
+    <Property Name="WishDeadDesc" Type="varchar" MaxLength="50" />
+    <Property Name="ThoughtKillSelf" Type="char" MaxLength="1" />
+    <Property Name="ThoughtKillSelfDesc" Type="varchar" MaxLength="50" />
+    <Property Name="ThoughtKillsSelfIntent" Type="char" MaxLength="1" />
+    <Property Name="ThoughtKillSelfIntentDesc" Type="varchar" MaxLength="50" />
+    <Property Name="ThoughtKillSelfHow" Type="char" MaxLength="1" />
+    <Property Name="ThoughtKillSelfHowDesc" Type="varchar" MaxLength="50" />
+    <Property Name="WorkedOutKillSelf" Type="char" MaxLength="1" />
+    <Property Name="WorkedOutKillSelfDesc" Type="varchar" MaxLength="50" />
+    <Property Name="ThinkActThoughts" Type="char" MaxLength="1" />
+    <Property Name="ThinkActThoughtsDesc" Type="varchar" MaxLength="50" />
+    <Property Name="ThoughtsFrighten" Type="char" MaxLength="1" />
+    <Property Name="ThoughtsFrightenDesc" Type="varchar" MaxLength="50" />
+    <Property Name="HaveOwnLethal" Type="char" MaxLength="1" />
+    <Property Name="HaveOwnLethalType" Type="varchar" MaxLength="50" />
+    <Property Name="HaveOwnLethalWhere" Type="varchar" MaxLength="50" />
+    <Property Name="HaveOwnLethalWho" Type="varchar" MaxLength="50" />
+    <Property Name="MadeSuicideAttempt" Type="char" MaxLength="1" />
+    <Property Name="MadeSuicideAttemptDesc" Type="varchar" MaxLength="50" />
+    <Property Name="StoppedAttempt" Type="char" MaxLength="1" />
+    <Property Name="StoppedAttemptDesc" Type="varchar" MaxLength="50" />
+    <Property Name="AttemptAroundPpl" Type="char" MaxLength="1" />
+    <Property Name="AttemptAroundPplDesc" Type="varchar" MaxLength="50" />
+    <Property Name="DiagSchiz" Type="char" MaxLength="1" />
+    <Property Name="DiagSchizDesc" Type="varchar" MaxLength="50" />
+    <Property Name="CloseAttemptSuicide" Type="char" MaxLength="1" />
+    <Property Name="CloseAttemptSuicideDesc" Type="varchar" MaxLength="50" />
+    <Property Name="HistSexAbuse" Type="char" MaxLength="1" />
+    <Property Name="HistSexAbuseWho" Type="varchar" MaxLength="50" />
+    <Property Name="HistSexAbuseWhen" Type="varchar" MaxLength="50" />
+    <Property Name="HistSubAbuse" Type="char" MaxLength="1" />
+    <Property Name="HistSubAbuseDesc" Type="varchar" MaxLength="50" />
+    <Property Name="IntentHurtUpset" Type="char" MaxLength="1" />
+    <Property Name="IntentHurtUpsetDesc" Type="varchar" MaxLength="50" />
+    <Property Name="HighLevelStress" Type="char" MaxLength="1" />
+    <Property Name="HighLevelStressDesc" Type="varchar" MaxLength="50" />
+    <Property Name="HopelessHelpless" Type="char" MaxLength="1" />
+    <Property Name="HopelessHelplessDesc" Type="varchar" MaxLength="50" />
+    <Property Name="WithdrawnLately" Type="char" MaxLength="1" />
+    <Property Name="WithdrawnLatelyDesc" Type="varchar" MaxLength="50" />
+    <Property Name="StressorsList" Type="varchar(max)" />
+    <Property Name="StressorsLossDig" Type="varchar(max)" />
+    <Property Name="ImportantPeople" Type="varchar(max)" />
+    <Property Name="WhoTellAnything" Type="varchar(max)" />
+    <Property Name="SkillsProud" Type="varchar(max)" />
+    <Property Name="OtherProtFact" Type="varchar(max)" />
+    <Property Name="ClinPresStress" Type="char" MaxLength="1" />
+    <Property Name="ClinPresDep" Type="char" MaxLength="1" />
+    <Property Name="ClinPresNoHope" Type="char" MaxLength="1" />
+    <Property Name="ClinPresBurden" Type="char" MaxLength="1" />
+    <Property Name="ClinPresNeg" Type="char" MaxLength="1" />
+    <Property Name="ClinPresOther" Type="char" MaxLength="1" />
+    <Property Name="ClinPresOtherDesc" Type="varchar" MaxLength="50" />
+    <Property Name="EngageCredible" Type="char" MaxLength="1" />
+    <Property Name="EngageCoop" Type="char" MaxLength="1" />
+    <Property Name="EngageRelieved" Type="char" MaxLength="1" />
+    <Property Name="EngageSeekHelp" Type="char" MaxLength="1" />
+    <Property Name="RiskStatusRad" Type="char" MaxLength="1" />
+    <Property Name="RiskStatusWhy" Type="varchar" MaxLength="50" />
+    <Property Name="RiskStateRad" Type="char" MaxLength="1" />
+    <Property Name="RiskStateWhy" Type="varchar" MaxLength="50" />
+    <Property Name="RiskStateTrig" Type="varchar(max)" />
+    <Property Name="InternalCopeStrat" Type="varchar(max)" />
+    <Property Name="InternalCopeRad" Type="char" MaxLength="1" />
+    <Property Name="ActiveDistract" Type="varchar(max)" />
+    <Property Name="ActiveDistractRad" Type="char" MaxLength="1" />
+    <Property Name="TalkLovedOut" Type="varchar(max)" />
+    <Property Name="TalkLovedOutRad" Type="char" MaxLength="1" />
+    <Property Name="SeekStaff" Type="varchar(max)" />
+    <Property Name="SeekStafRad" Type="char" MaxLength="1" />
+    <Property Name="NoResIdenOrAvail" Type="char" MaxLength="1" />
+    <Property Name="AdultFallScore" Type="char" MaxLength="3" />
+    <Property Name="ChildAdolFallScore" Type="char" MaxLength="3" />
+    <Property Name="ElopeScore" Type="char" MaxLength="3" />
+    <Property Name="ElopeIntent" Type="char" MaxLength="1" />
+    <Property Name="ElopeHist" Type="char" MaxLength="1" />
+    <Property Name="ElopeTest" Type="char" MaxLength="1" />
+    <Property Name="ElopeSubAbuse" Type="char" MaxLength="1" />
+    <Property Name="ElopeUnpredict" Type="char" MaxLength="1" />
+    <Property Name="ElopeInvolun" Type="char" MaxLength="1" />
+    <Property Name="ElopePsychotic" Type="char" MaxLength="1" />
+    <Property Name="HomAssultVioScore" Type="char" MaxLength="3" />
+    <Property Name="HomAssultStrike" Type="char" MaxLength="1" />
+    <Property Name="HomAssultVerbThreat" Type="char" MaxLength="1" />
+    <Property Name="HomAssultHist" Type="char" MaxLength="1" />
+    <Property Name="HomAssultAdmitHI" Type="char" MaxLength="1" />
+    <Property Name="HomAssultParaDelus" Type="char" MaxLength="1" />
+    <Property Name="HomAssultManic" Type="char" MaxLength="1" />
+    <Property Name="HomAssultUnpredict" Type="char" MaxLength="1" />
+    <Property Name="HomAssultPsychotic" Type="char" MaxLength="1" />
+    <Property Name="SexActOutScore" Type="char" MaxLength="3" />
+    <Property Name="SexActPredator" Type="char" MaxLength="1" />
+    <Property Name="SexActHyper" Type="char" MaxLength="1" />
+    <Property Name="SexActPoorBound" Type="char" MaxLength="1" />
+    <Property Name="SexActHist" Type="char" MaxLength="1" />
+    <Property Name="SexActImpulse" Type="char" MaxLength="1" />
+    <Property Name="SexActManic" Type="char" MaxLength="1" />
+    <Property Name="SexActPromis" Type="char" MaxLength="1" />
+    <Property Name="SexActExplicit" Type="char" MaxLength="1" />
+    <Property Name="VulnerRiskScore" Type="char" MaxLength="3" />
+    <Property Name="VulnerRiskVisHear" Type="char" MaxLength="1" />
+    <Property Name="VulnerRiskDelay" Type="char" MaxLength="1" />
+    <Property Name="VulnerRiskHist" Type="char" MaxLength="1" />
+    <Property Name="VulnerRiskConfus" Type="char" MaxLength="1" />
+    <Property Name="VulnerRiskFrail" Type="char" MaxLength="1" />
+    <Property Name="VulnerRiskWand" Type="char" MaxLength="1" />
+    <Property Name="VulnerRiskVerbProv" Type="char" MaxLength="1" />
+    <Property Name="VulnerRiskMobil" Type="char" MaxLength="1" />
+    <Property Name="WdAlcoh" Type="char" MaxLength="1" />
+    <Property Name="WdBenzo" Type="char" MaxLength="1" />
+    <Property Name="WdAlcBenzDeny7" Type="char" MaxLength="1" />
+    <Property Name="WdAlcBenzAdmitRecent" Type="char" MaxLength="1" />
+    <Property Name="WdAlcBenzDenySympt" Type="char" MaxLength="1" />
+    <Property Name="WdAlcBenzNausVom" Type="char" MaxLength="1" />
+    <Property Name="WdAlcBenzTremors" Type="char" MaxLength="1" />
+    <Property Name="WdAlcBenzSweats" Type="char" MaxLength="1" />
+    <Property Name="WdAlcBenzAnxiety" Type="char" MaxLength="1" />
+    <Property Name="WdAlcBenzHeadAche" Type="char" MaxLength="1" />
+    <Property Name="WdAlcBenzAgitated" Type="char" MaxLength="1" />
+    <Property Name="WdAlcBenzDisoriented" Type="char" MaxLength="1" />
+    <Property Name="WdAlcBenzTactile" Type="char" MaxLength="1" />
+    <Property Name="WdAlcBenzAuditory" Type="char" MaxLength="1" />
+    <Property Name="WdAlcBenzVisual" Type="char" MaxLength="1" />
+    <Property Name="WdCocaineDeny7" Type="char" MaxLength="1" />
+    <Property Name="WdCocaineAdmitRecent" Type="char" MaxLength="1" />
+    <Property Name="WdCocaineDenySympt" Type="char" MaxLength="1" />
+    <Property Name="WdCocaineAgitated" Type="char" MaxLength="1" />
+    <Property Name="WdCocaineDep" Type="char" MaxLength="1" />
+    <Property Name="WdCocaineAnxiety" Type="char" MaxLength="1" />
+    <Property Name="WdCocaineExFatigue" Type="char" MaxLength="1" />
+    <Property Name="WdCocaineAngryBurst" Type="char" MaxLength="1" />
+    <Property Name="WdCocaineTremors" Type="char" MaxLength="1" />
+    <Property Name="WdCocaineMuscAche" Type="char" MaxLength="1" />
+    <Property Name="WdCocaineCramps" Type="char" MaxLength="1" />
+    <Property Name="WdCocainePain" Type="char" MaxLength="1" />
+    <Property Name="WdCocaineDistSleep" Type="char" MaxLength="1" />
+    <Property Name="WdCocaineNausVom" Type="char" MaxLength="1" />
+    <Property Name="WdOpiDeny7" Type="char" MaxLength="1" />
+    <Property Name="WdOpiAdmitRecent" Type="char" MaxLength="1" />
+    <Property Name="WdOpiDenySympt" Type="char" MaxLength="1" />
+    <Property Name="WdOpiSweat" Type="char" MaxLength="1" />
+    <Property Name="WdOpiDialPupils" Type="char" MaxLength="1" />
+    <Property Name="WdOpiWateryEyes" Type="char" MaxLength="1" />
+    <Property Name="WdOpiSneezRunNose" Type="char" MaxLength="1" />
+    <Property Name="WdOpiHighBP" Type="char" MaxLength="1" />
+    <Property Name="WdOpiGooseBmp" Type="char" MaxLength="1" />
+    <Property Name="WdOpiMuscAche" Type="char" MaxLength="1" />
+    <Property Name="WdOpiInsom" Type="char" MaxLength="1" />
+    <Property Name="WdOpiNausVom" Type="char" MaxLength="1" />
+    <Property Name="WdOpiDiarrhea" Type="char" MaxLength="1" />
+    <Property Name="WdMethDeny7" Type="char" MaxLength="1" />
+    <Property Name="WdMethAdmitRecent" Type="char" MaxLength="1" />
+    <Property Name="WdMethDenySympt" Type="char" MaxLength="1" />
+    <Property Name="WdMethFatigue" Type="char" MaxLength="1" />
+    <Property Name="WdMethDistSleep" Type="char" MaxLength="1" />
+    <Property Name="WdMethIrritable" Type="char" MaxLength="1" />
+    <Property Name="WdMethIntenseHun" Type="char" MaxLength="1" />
+    <Property Name="WdMethDepMood" Type="char" MaxLength="1" />
+    <Property Name="WdMethAnxiety" Type="char" MaxLength="1" />
+    <Property Name="WdMethPsychSympt" Type="char" MaxLength="1" />
+    <Property Name="WdMarjDeny7" Type="char" MaxLength="1" />
+    <Property Name="WdMarjAdmitRecent" Type="char" MaxLength="1" />
+    <Property Name="WdMarjDenySympt" Type="char" MaxLength="1" />
+    <Property Name="WdMarjIrritable" Type="char" MaxLength="1" />
+    <Property Name="WdMarjPhysicalTension" Type="char" MaxLength="1" />
+    <Property Name="WdMarjDecAppetite" Type="char" MaxLength="1" />
+    <Property Name="WdMarjDepMood" Type="char" MaxLength="1" />
+    <Property Name="WdMarjStomAche" Type="char" MaxLength="1" />
+    <Property Name="WdMarjRestless" Type="char" MaxLength="1" />
+    <Property Name="WdMarjInsom" Type="char" MaxLength="1" />
+    <Property Name="WdMarjAggresive" Type="char" MaxLength="1" />
+    <Property Name="WdMarjAnger" Type="char" MaxLength="1" />
+    <Property Name="WdMarjStrngeDream" Type="char" MaxLength="1" />
+    <Property Name="WdMarjAnxiety" Type="char" MaxLength="1" />
+    <Property Name="BerDoSnore" Type="char" MaxLength="1" />
+    <Property Name="BerSnoreIs" Type="char" MaxLength="1" />
+    <Property Name="BerOftenSnore" Type="char" MaxLength="1" />
+    <Property Name="BerSnoreBotherPeople" Type="char" MaxLength="1" />
+    <Property Name="BerNoticeQuitBreath" Type="char" MaxLength="1" />
+    <Property Name="BerOftenTired" Type="char" MaxLength="1" />
+    <Property Name="BerWalkTired" Type="char" MaxLength="1" />
+    <Property Name="BerNodOffDrive" Type="char" MaxLength="1" />
+    <Property Name="BerNodOffDriveOften" Type="char" MaxLength="1" />
+    <Property Name="BerHighBP" Type="char" MaxLength="1" />
+    <Property Name="BerCat1Total" Type="varchar" MaxLength="2" />
+    <Property Name="BerCat1Result" Type="char" MaxLength="1" />
+    <Property Name="BerNum8Occur" Type="varchar" MaxLength="25" />
+    <Property Name="BerCat2Total" Type="varchar" MaxLength="2" />
+    <Property Name="BerCat2Result" Type="char" MaxLength="1" />
+    <Property Name="BerCat3Result" Type="char" MaxLength="1" />
+    <Property Name="BerCat3Risk" Type="char" MaxLength="1" />
+    <Property Name="BerCat3ConsultReq" Type="char" MaxLength="1" />
+    <Property Name="Cigarettes" Type="char" MaxLength="1" />
+    <Property Name="CigarettesValue" Type="char" MaxLength="1" />
+    <Property Name="Cigars" Type="char" MaxLength="1" />
+    <Property Name="CigarsValue" Type="char" MaxLength="1" />
+    <Property Name="PipeSmoke" Type="char" MaxLength="1" />
+    <Property Name="PipeSmokeValue" Type="char" MaxLength="1" />
+    <Property Name="Chew" Type="char" MaxLength="1" />
+    <Property Name="ChewValue" Type="char" MaxLength="1" />
+    <Property Name="TobaccoOther" Type="char" MaxLength="1" />
+    <Property Name="TobaccoOtherDesc" Type="varchar" MaxLength="25" />
+    <Property Name="TobaccoOtherValue" Type="char" MaxLength="1" />
+    <Property Name="TobRevDanger" Type="char" MaxLength="1" />
+    <Property Name="TobRevCop" Type="char" MaxLength="1" />
+    <Property Name="TobRevInfo" Type="char" MaxLength="1" />
+    <Property Name="TobOther" Type="char" MaxLength="1" />
+    <Property Name="TobOtherDesc" Type="varchar" MaxLength="50" />
+    <Property Name="TobNotOffered" Type="char" MaxLength="1" />
+    <Property Name="TobPtRefused" Type="char" MaxLength="1" />
+    <Property Name="OffTobCess" Type="char" MaxLength="1" />
+    <Property Name="YesPhysNotified" Type="char" MaxLength="1" />
+    <Property Name="TobMedContPatAllFDA" Type="char" MaxLength="1" />
+    <Property Name="TobMedContDrugInter" Type="char" MaxLength="1" />
+    <Property Name="TobMedContOther" Type="char" MaxLength="1" />
+    <Property Name="TobMedContOtherDesc" Type="varchar" MaxLength="50" />
+    <Property Name="NameRelatNurseAssess" Type="varchar(max)" />
+    <Property Name="Yr58Bath" Type="char" MaxLength="1" />
+    <Property Name="Yr58Chores" Type="char" MaxLength="1" />
+    <Property Name="Yr58Coop" Type="char" MaxLength="1" />
+    <Property Name="Yr58Needs" Type="char" MaxLength="1" />
+    <Property Name="Yr58MinResp" Type="char" MaxLength="1" />
+    <Property Name="Yr912BestFriend" Type="char" MaxLength="1" />
+    <Property Name="Yr912AttSpan" Type="char" MaxLength="1" />
+    <Property Name="Yr912Hobby" Type="char" MaxLength="1" />
+    <Property Name="Yr912FamDec" Type="char" MaxLength="1" />
+    <Property Name="Yr912RespSelf" Type="char" MaxLength="1" />
+    <Property Name="Yr1315ShowsConc" Type="char" MaxLength="1" />
+    <Property Name="Yr1315ExpressAff" Type="char" MaxLength="1" />
+    <Property Name="Yr1315CompThought" Type="char" MaxLength="1" />
+    <Property Name="Yr1315GroupSports" Type="char" MaxLength="1" />
+    <Property Name="Yr1618Interest" Type="char" MaxLength="1" />
+    <Property Name="Yr1618LessParents" Type="char" MaxLength="1" />
+    <Property Name="Yr1618InterestSex" Type="char" MaxLength="1" />
+    <Property Name="Yr1618ReasChoice" Type="char" MaxLength="1" />
+    <Property Name="PatientAwayHome" Type="char" MaxLength="1" />
+    <Property Name="ImmuneUpToDate" Type="char" MaxLength="1" />
+    <Property Name="BirthDefects" Type="char" MaxLength="1" />
+    <Property Name="BirthDefectsDesc" Type="varchar(max)" />
+    <Property Name="HistDevDelay" Type="char" MaxLength="1" />
+    <Property Name="HistDevDelayDesc" Type="varchar(max)" />
+    <Property Name="ParGuardExpect" Type="varchar(max)" />
+    <Property Name="NurseAdminNote" Type="varchar(max)" />
+    <Property Name="NurseSig1" Type="varchar" MaxLength="50" />
+    <Property Name="NurseSig1Date" Type="date" />
+    <Property Name="NurseSig1Time" Type="varchar" MaxLength="10" />
+    <Property Name="NurseSig2" Type="varchar" MaxLength="50" />
+    <Property Name="NurseSig2Date" Type="date" />
+    <Property Name="NurseSigTime" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="patient_admission_ext">
+    <Key>
+      <PropertyRef Name="PatientID" />
+    </Key>
+    <Property Name="PatientID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ASWAssignWorker" Type="varchar" MaxLength="50" />
+    <Property Name="ASWDateComplete" Type="date" />
+    <Property Name="ASWLegStat" Type="char" MaxLength="1" />
+    <Property Name="ASWLegStatDesc" Type="varchar(max)" />
+    <Property Name="ASWSrcInfo" Type="varchar" MaxLength="50" />
+    <Property Name="ASWReliableSrc" Type="char" MaxLength="1" />
+    <Property Name="ASWReliableSrcDesc" Type="varchar(max)" />
+    <Property Name="ASWNaturePresProb" Type="varchar(max)" />
+    <Property Name="ASWCurLevFuncDifTypFunc" Type="varchar(max)" />
+    <Property Name="ASWPatDescSelfSomeone" Type="varchar(max)" />
+    <Property Name="ASWFamSupDescPat" Type="varchar(max)" />
+    <Property Name="ASWCommInvolve" Type="varchar(max)" />
+    <Property Name="ASWDangerSelfNotPres" Type="char" MaxLength="1" />
+    <Property Name="ASWDangerSelfCurrent" Type="char" MaxLength="1" />
+    <Property Name="ASWDangerSelfHistory" Type="char" MaxLength="1" />
+    <Property Name="ASWDangerSelfIdeation" Type="char" MaxLength="1" />
+    <Property Name="ASWDangerSelfPlan" Type="char" MaxLength="1" />
+    <Property Name="ASWDangerSelfAttempt" Type="char" MaxLength="1" />
+    <Property Name="ASWDangerSelfIntent" Type="char" MaxLength="1" />
+    <Property Name="ASWDangerOthersNotPres" Type="char" MaxLength="1" />
+    <Property Name="ASWDangerOthersCurrent" Type="char" MaxLength="1" />
+    <Property Name="ASWDangerOthersHistory" Type="char" MaxLength="1" />
+    <Property Name="ASWDangerOthersIdeation" Type="char" MaxLength="1" />
+    <Property Name="ASWDangerOthersPlan" Type="char" MaxLength="1" />
+    <Property Name="ASWDangerOthersAttempt" Type="char" MaxLength="1" />
+    <Property Name="ASWDangerOthersIntent" Type="char" MaxLength="1" />
+    <Property Name="ASWDangerDesc" Type="varchar(max)" />
+    <Property Name="ASWLethPriorMeans" Type="varchar(max)" />
+    <Property Name="ASWPastSelfInj" Type="char" MaxLength="1" />
+    <Property Name="ASWPastSelfInjDesc" Type="varchar(max)" />
+    <Property Name="ASWWeaponLethMeans" Type="char" MaxLength="1" />
+    <Property Name="ASWWeaponLethMeansRemovePlan" Type="varchar(max)" />
+    <Property Name="ASWEduPosRisk" Type="char" MaxLength="1" />
+    <Property Name="ASWResponsePat" Type="varchar" MaxLength="50" />
+    <Property Name="ASWResponsePatDate" Type="date" />
+    <Property Name="ASWResponsePatTime" Type="varchar" MaxLength="10" />
+    <Property Name="ASWVerify" Type="varchar" MaxLength="50" />
+    <Property Name="ASWVerifyDate" Type="date" />
+    <Property Name="ASWVerifyTime" Type="varchar" MaxLength="10" />
+    <Property Name="ASWSexAbuseVict" Type="char" MaxLength="1" />
+    <Property Name="ASWSexAbusePerp" Type="char" MaxLength="1" />
+    <Property Name="ASWSexAbuseWitness" Type="char" MaxLength="1" />
+    <Property Name="ASWSexAbuseWitnessDesc" Type="varchar" MaxLength="50" />
+    <Property Name="ASWSexAbuseReport" Type="char" MaxLength="1" />
+    <Property Name="ASWSexAbuseReportDesc" Type="varchar" MaxLength="50" />
+    <Property Name="ASWPhysAbuseVict" Type="char" MaxLength="1" />
+    <Property Name="ASWPhysAbusePerp" Type="char" MaxLength="1" />
+    <Property Name="ASWPhysAbuseWitness" Type="char" MaxLength="1" />
+    <Property Name="ASWPhsyAbuseWitnessDesc" Type="varchar" MaxLength="50" />
+    <Property Name="ASWPhsyAbuseReport" Type="char" MaxLength="1" />
+    <Property Name="ASWPhsyAbuseReportDesc" Type="varchar" MaxLength="50" />
+    <Property Name="ASWEmoNegAbuseVict" Type="char" MaxLength="1" />
+    <Property Name="ASWEmoNegAbusePerp" Type="char" MaxLength="1" />
+    <Property Name="ASWEmoNegAbuseWitness" Type="char" MaxLength="1" />
+    <Property Name="ASWEmoNegAbuseWitnessDesc" Type="varchar" MaxLength="50" />
+    <Property Name="ASWEmoNegAbuseReported" Type="char" MaxLength="1" />
+    <Property Name="ASWEmoNegAbuseReportedDesc" Type="varchar" MaxLength="50" />
+    <Property Name="ASWOtherTraumaExp" Type="varchar" MaxLength="50" />
+    <Property Name="ASWHomePrior" Type="varchar" MaxLength="50" />
+    <Property Name="ASWRetHome" Type="char" MaxLength="1" />
+    <Property Name="ASWRetHomeWhom" Type="varchar" MaxLength="50" />
+    <Property Name="ASWRetHomeWhen" Type="varchar" MaxLength="50" />
+    <Property Name="ASWHomePlanDisch" Type="varchar" MaxLength="50" />
+    <Property Name="ASWSafeHome" Type="char" MaxLength="1" />
+    <Property Name="ASWSafeHomeDesc" Type="varchar" MaxLength="50" />
+    <Property Name="ASWMaritStat" Type="char" MaxLength="1" />
+    <Property Name="ASWDateChange" Type="date" />
+    <Property Name="ASWCurrPreg" Type="char" MaxLength="1" />
+    <Property Name="ASWTermPreg" Type="char" MaxLength="1" />
+    <Property Name="ASWTermPregDesc" Type="varchar" MaxLength="50" />
+    <Property Name="ASWMemHelpful" Type="char" MaxLength="1" />
+    <Property Name="ASWMemHelpfulDesc" Type="varchar" MaxLength="50" />
+    <Property Name="ASWRelatProb" Type="varchar" MaxLength="50" />
+    <Property Name="ASWDateFamSess" Type="date" />
+    <Property Name="ASWFamSessInvite" Type="varchar" MaxLength="50" />
+    <Property Name="ASWFamDeclineReason" Type="varchar" MaxLength="50" />
+    <Property Name="ASWPriorFamInvolve" Type="varchar" MaxLength="50" />
+    <Property Name="ASWRecFamInvolve" Type="varchar" MaxLength="50" />
+    <Property Name="ASWProbImpactFam" Type="char" MaxLength="1" />
+    <Property Name="ASWProbImpactFamDesc" Type="varchar" MaxLength="50" />
+    <Property Name="ASWHistHomSuic" Type="char" MaxLength="1" />
+    <Property Name="ASWHistHomSuicDesc" Type="varchar" MaxLength="50" />
+    <Property Name="ASWMedAdhPat" Type="char" MaxLength="1" />
+    <Property Name="ASWMedAdhTreat" Type="char" MaxLength="1" />
+    <Property Name="ASWHospPrev" Type="char" MaxLength="1" />
+    <Property Name="ASWHospPrevRemainComm" Type="varchar" MaxLength="50" />
+    <Property Name="ASWEffIneffTreatment" Type="varchar" MaxLength="50" />
+    <Property Name="ASWDvlpNone" Type="char" MaxLength="1" />
+    <Property Name="ASWDvlpGambling" Type="char" MaxLength="1" />
+    <Property Name="ASWDvlpShopping" Type="char" MaxLength="1" />
+    <Property Name="ASWDvlpEmoEat" Type="char" MaxLength="1" />
+    <Property Name="ASWDvlpCleanOrg" Type="char" MaxLength="1" />
+    <Property Name="ASWDvlpHoardCollect" Type="char" MaxLength="1" />
+    <Property Name="ASWDvlpOther" Type="char" MaxLength="1" />
+    <Property Name="ASWDvlpOtherDesc" Type="varchar" MaxLength="50" />
+    <Property Name="ASWDvlpExplain" Type="varchar" MaxLength="50" />
+    <Property Name="ASWHistArrest" Type="char" MaxLength="1" />
+    <Property Name="ASWHistArrestDesc" Type="varchar" MaxLength="50" />
+    <Property Name="ASWOtherLegal" Type="char" MaxLength="1" />
+    <Property Name="ASWOtherLegalDesc" Type="varchar" MaxLength="50" />
+    <Property Name="ASWCurrSchool" Type="char" MaxLength="1" />
+    <Property Name="ASWCurrSchoolWhere" Type="varchar" MaxLength="50" />
+    <Property Name="ASWSchoolStress" Type="char" MaxLength="1" />
+    <Property Name="ASWSchoolStressDesc" Type="varchar" MaxLength="50" />
+    <Property Name="ASWHighestEduComplete" Type="varchar" MaxLength="50" />
+    <Property Name="ASWDesireFutEdu" Type="char" MaxLength="1" />
+    <Property Name="ASWSubAbuseNA" Type="char" MaxLength="1" />
+    <Property Name="ASWIncDrugAlc" Type="char" MaxLength="1" />
+    <Property Name="ASWSubAbuseResultArrest" Type="char" MaxLength="1" />
+    <Property Name="ASWSubAbuseResultRelatProb" Type="char" MaxLength="1" />
+    <Property Name="ASWSubAbuseResultUnpBills" Type="char" MaxLength="1" />
+    <Property Name="ASWSubAbuseResultThoughtSelfHarm" Type="char" MaxLength="1" />
+    <Property Name="ASWSubAbuseResultBlackout" Type="char" MaxLength="1" />
+    <Property Name="ASWSubAbuseResultWorkProb" Type="char" MaxLength="1" />
+    <Property Name="ASWSubAbuseResultPromis" Type="char" MaxLength="1" />
+    <Property Name="ASWSubAbuseResultOther" Type="char" MaxLength="1" />
+    <Property Name="ASWSubAbuseResultOtherDesc" Type="varchar" MaxLength="50" />
+    <Property Name="ASWSubAbuseResultNone" Type="char" MaxLength="1" />
+    <Property Name="ASWSeeUseProb" Type="char" MaxLength="1" />
+    <Property Name="ASWDrugChoice" Type="varchar" MaxLength="50" />
+    <Property Name="ASWBenefitUse" Type="varchar" MaxLength="50" />
+    <Property Name="ASWSubTreatHist" Type="char" MaxLength="1" />
+    <Property Name="ASWSubTreatHistDesc" Type="varchar" MaxLength="50" />
+    <Property Name="ASWFeedback" Type="char" MaxLength="1" />
+    <Property Name="ASWDiscNegCons" Type="char" MaxLength="1" />
+    <Property Name="ASWDiscSeverity" Type="char" MaxLength="1" />
+    <Property Name="ASWMotDisc" Type="char" MaxLength="1" />
+    <Property Name="ASWAdvAbstain" Type="char" MaxLength="1" />
+    <Property Name="ASWInterventionOther" Type="char" MaxLength="1" />
+    <Property Name="ASWInterventionOtherDesc" Type="varchar(max)" />
+    <Property Name="ASWRecom" Type="char" MaxLength="1" />
+    <Property Name="ASWRecomDesc" Type="varchar(max)" />
+    <Property Name="ASWPatInformRecom" Type="char" MaxLength="1" />
+    <Property Name="ASWEduProvPat" Type="char" MaxLength="1" />
+    <Property Name="ASWReferMade" Type="char" MaxLength="1" />
+    <Property Name="ASWReferMadeDesc" Type="varchar" MaxLength="50" />
+    <Property Name="ASWEmpStress" Type="char" MaxLength="1" />
+    <Property Name="ASWFeelCurrWork" Type="char" MaxLength="1" />
+    <Property Name="ASWFeelCurrWorkDesc" Type="varchar(max)" />
+    <Property Name="ASWAvgMonIncome" Type="varchar" MaxLength="10" />
+    <Property Name="ASWSrcIncome" Type="varchar" MaxLength="50" />
+    <Property Name="ASWInvolvMilitary" Type="char" MaxLength="1" />
+    <Property Name="ASWMilBranch" Type="varchar" MaxLength="50" />
+    <Property Name="ASWMilDates" Type="varchar" MaxLength="50" />
+    <Property Name="ASWMilDischar" Type="varchar" MaxLength="50" />
+    <Property Name="ASWMilDepAwayHome" Type="char" MaxLength="1" />
+    <Property Name="ASWMilEngageCombat" Type="char" MaxLength="1" />
+    <Property Name="ASWMilSigEvents" Type="varchar" MaxLength="50" />
+    <Property Name="ASWEligVABenefits" Type="char" MaxLength="1" />
+    <Property Name="ASWFinanceStress" Type="char" MaxLength="1" />
+    <Property Name="ASWFinanceStressDesc" Type="varchar" MaxLength="50" />
+    <Property Name="ASWMeetBasicNeeds" Type="char" MaxLength="1" />
+    <Property Name="ASWMedIssContrib" Type="char" MaxLength="1" />
+    <Property Name="ASWMedIssContribDesc" Type="varchar" MaxLength="50" />
+    <Property Name="ASWHistSigMedIss" Type="char" MaxLength="1" />
+    <Property Name="ASWHistSigMedIssDesc" Type="varchar" MaxLength="50" />
+    <Property Name="ASWChronDisabImpFunct" Type="char" MaxLength="1" />
+    <Property Name="ASWChronDisabImpFunctDesc" Type="varchar" MaxLength="50" />
+    <Property Name="ASWChangReligInvo" Type="char" MaxLength="1" />
+    <Property Name="ASWCurrReligInvo" Type="varchar(max)" />
+    <Property Name="ASWCultIssContrib" Type="char" MaxLength="1" />
+    <Property Name="ASWCultIssContribDesc" Type="varchar(max)" />
+    <Property Name="ASWWeNeedKnow" Type="char" MaxLength="1" />
+    <Property Name="ASWWeNeedKnowDesc" Type="varchar(max)" />
+    <Property Name="ASWCareHIstNonComp" Type="char" MaxLength="1" />
+    <Property Name="ASWCareHouse" Type="char" MaxLength="1" />
+    <Property Name="ASWCarePetsUnsup" Type="char" MaxLength="1" />
+    <Property Name="ASWCareTrans" Type="char" MaxLength="1" />
+    <Property Name="ASWCareAcuteMed" Type="char" MaxLength="1" />
+    <Property Name="ASWCareNone" Type="char" MaxLength="1" />
+    <Property Name="ASWCareOther" Type="char" MaxLength="1" />
+    <Property Name="ASWCareOtherDesc" Type="varchar" MaxLength="50" />
+    <Property Name="ASWReadmNA" Type="char" MaxLength="1" />
+    <Property Name="ASWReadmMedStab" Type="char" MaxLength="1" />
+    <Property Name="ASWReadmPriorAuthor" Type="char" MaxLength="1" />
+    <Property Name="ASWReadmCompli" Type="char" MaxLength="1" />
+    <Property Name="ASWReadmOther" Type="char" MaxLength="1" />
+    <Property Name="ASWReadmOtherDesc" Type="varchar" MaxLength="50" />
+    <Property Name="ASWMAPartCommSupp" Type="char" MaxLength="1" />
+    <Property Name="ASWMAPartCommSuppWhen" Type="varchar" MaxLength="50" />
+    <Property Name="ASWMAPartCommSuppResp" Type="varchar" MaxLength="50" />
+    <Property Name="ASWObtMedTrans" Type="char" MaxLength="1" />
+    <Property Name="ASWObtMedIncome" Type="char" MaxLength="1" />
+    <Property Name="ASWObtMedNeed" Type="char" MaxLength="1" />
+    <Property Name="ASWObtMedNeedDesc" Type="varchar" MaxLength="50" />
+    <Property Name="ASWArrSchedPersVeh" Type="char" MaxLength="1" />
+    <Property Name="ASWArrSchedFamFri" Type="char" MaxLength="1" />
+    <Property Name="ASWArrSchedMATP" Type="char" MaxLength="1" />
+    <Property Name="ASWArrSchedNeed" Type="char" MaxLength="1" />
+    <Property Name="ASWArrSchedNeedDesc" Type="varchar" MaxLength="50" />
+    <Property Name="ASWPrefPharm" Type="varchar" MaxLength="50" />
+    <Property Name="ASWConcernFollowPlan" Type="char" MaxLength="1" />
+    <Property Name="ASWBarTrans" Type="char" MaxLength="1" />
+    <Property Name="ASWBarMeds" Type="char" MaxLength="1" />
+    <Property Name="ASWBarHouse" Type="char" MaxLength="1" />
+    <Property Name="ASWBarNonComp" Type="char" MaxLength="1" />
+    <Property Name="ASWBarAbsFacAccSpecNeed" Type="char" MaxLength="1" />
+    <Property Name="ASWBarOther" Type="char" MaxLength="1" />
+    <Property Name="ASWBarOtherDesc" Type="varchar" MaxLength="50" />
+    <Property Name="ASWBarNone" Type="char" MaxLength="1" />
+    <Property Name="ASWReferOutpat" Type="char" MaxLength="1" />
+    <Property Name="ASWReferPsych" Type="char" MaxLength="1" />
+    <Property Name="ASWReferPHP" Type="char" MaxLength="1" />
+    <Property Name="ASWReferPsychRehab" Type="char" MaxLength="1" />
+    <Property Name="ASWReferIOP" Type="char" MaxLength="1" />
+    <Property Name="ASWReferLTSRCRR" Type="char" MaxLength="1" />
+    <Property Name="ASWReferEAC" Type="char" MaxLength="1" />
+    <Property Name="ASWReferStateHosp" Type="char" MaxLength="1" />
+    <Property Name="ASWReferCMBCM" Type="char" MaxLength="1" />
+    <Property Name="ASWReferInpatDA" Type="char" MaxLength="1" />
+    <Property Name="ASWReferPCP" Type="char" MaxLength="1" />
+    <Property Name="ASWReferOutpatDA" Type="char" MaxLength="1" />
+    <Property Name="ASWReferPeerSpec" Type="char" MaxLength="1" />
+    <Property Name="ASWReferOther" Type="char" MaxLength="1" />
+    <Property Name="ASWReferOtherDesc" Type="varchar" MaxLength="50" />
+    <Property Name="ASWReferNone" Type="char" MaxLength="1" />
+    <Property Name="ASWConcRecom" Type="varchar(max)" />
+    <Property Name="ASWRoleGrpTher" Type="char" MaxLength="1" />
+    <Property Name="ASWRoleIndivTher" Type="char" MaxLength="1" />
+    <Property Name="ASWRoleFamTher" Type="char" MaxLength="1" />
+    <Property Name="ASWRoleAftercare" Type="char" MaxLength="1" />
+    <Property Name="ASWRoleOther" Type="char" MaxLength="1" />
+    <Property Name="ASWRoleOtherDesc" Type="varchar" MaxLength="50" />
+    <Property Name="ASWPrelimDischargePlan" Type="varchar(max)" />
+    <Property Name="ASWStaffSigDate" Type="date" />
+    <Property Name="ASWStaffSigTime" Type="varchar" MaxLength="10" />
+    <Property Name="CSWSocialWorker" Type="varchar" MaxLength="20" />
+    <Property Name="CSWDateComplete" Type="date" />
+    <Property Name="CSWLegalGardNa" Type="char" MaxLength="1" />
+    <Property Name="CSWLegalGardDesc" Type="varchar" MaxLength="20" />
+    <Property Name="CSWLegStat" Type="char" MaxLength="1" />
+    <Property Name="CSWLegStatDesc" Type="varchar" MaxLength="50" />
+    <Property Name="CSWSrcInfo" Type="varchar" MaxLength="50" />
+    <Property Name="CSWSrcReliab" Type="char" MaxLength="1" />
+    <Property Name="CSWSrcReliabDesc" Type="varchar" MaxLength="50" />
+    <Property Name="CSWNaturePresProb" Type="varchar(max)" />
+    <Property Name="CSWLevFuncDifTyp" Type="varchar(max)" />
+    <Property Name="CSWPatDescElse" Type="varchar(max)" />
+    <Property Name="CSWCareDescPat" Type="varchar(max)" />
+    <Property Name="CSWCommInv" Type="varchar(max)" />
+    <Property Name="CSWDanSelfNot" Type="char" MaxLength="1" />
+    <Property Name="CSWDanSelfCurr" Type="char" MaxLength="1" />
+    <Property Name="CSWDanSelfHist" Type="char" MaxLength="1" />
+    <Property Name="CSWDanSelfIdea" Type="char" MaxLength="1" />
+    <Property Name="CSWDanSelfPlan" Type="char" MaxLength="1" />
+    <Property Name="CSWDanSelfAtt" Type="char" MaxLength="1" />
+    <Property Name="CSWDanSelfInte" Type="char" MaxLength="1" />
+    <Property Name="CSWDanOthNot" Type="char" MaxLength="1" />
+    <Property Name="CSWDanOthCurr" Type="char" MaxLength="1" />
+    <Property Name="CSWDanOthHist" Type="char" MaxLength="1" />
+    <Property Name="CSWDanOthIdea" Type="char" MaxLength="1" />
+    <Property Name="CSWDanOthPlan" Type="char" MaxLength="1" />
+    <Property Name="CSWDanOthAtt" Type="char" MaxLength="1" />
+    <Property Name="CSWDanOthInte" Type="char" MaxLength="1" />
+    <Property Name="CSWDanDesc" Type="varchar(max)" />
+    <Property Name="CSWLethPriorMean" Type="varchar" MaxLength="30" />
+    <Property Name="CSWPastSelfInj" Type="char" MaxLength="1" />
+    <Property Name="CSWPastSelfInjDesc" Type="varchar(max)" />
+    <Property Name="CSWWeapHome" Type="char" MaxLength="1" />
+    <Property Name="CSWWeapPlanDesc" Type="varchar(max)" />
+    <Property Name="CSWEduRiskWeap" Type="char" MaxLength="1" />
+    <Property Name="CSWRespPt" Type="varchar" MaxLength="50" />
+    <Property Name="CSWRespDatePt" Type="date" />
+    <Property Name="CSWRespTimePt" Type="varchar" MaxLength="10" />
+    <Property Name="CSWVerif" Type="varchar" MaxLength="50" />
+    <Property Name="CSWVerifDate" Type="date" />
+    <Property Name="CSWVerifTime" Type="varchar" MaxLength="10" />
+    <Property Name="CSWSexAbuseVict" Type="char" MaxLength="1" />
+    <Property Name="CSWSexAbusePerp" Type="char" MaxLength="1" />
+    <Property Name="CSWSexAbuseWitness" Type="char" MaxLength="1" />
+    <Property Name="CSWSexAbuseWitnessDesc" Type="varchar" MaxLength="30" />
+    <Property Name="CSWSexAbuseReport" Type="char" MaxLength="1" />
+    <Property Name="CSWSexAbuseReportDesc" Type="varchar" MaxLength="30" />
+    <Property Name="CSWPsyAbuseVict" Type="char" MaxLength="1" />
+    <Property Name="CSWPsyAbusePerp" Type="char" MaxLength="1" />
+    <Property Name="CSWPsyAbuseWitness" Type="char" MaxLength="1" />
+    <Property Name="CSWPsyAbuseWitnessDesc" Type="varchar" MaxLength="30" />
+    <Property Name="CSWPsyAbuseReport" Type="char" MaxLength="1" />
+    <Property Name="CSWPsyAbuseReportDesc" Type="varchar" MaxLength="30" />
+    <Property Name="CSWEmoNegAbuseVict" Type="char" MaxLength="1" />
+    <Property Name="CSWEmoNegAbusePerp" Type="char" MaxLength="1" />
+    <Property Name="CSWEmoNegAbuseWitness" Type="char" MaxLength="1" />
+    <Property Name="CSWEmoNegAbuseWitnessDesc" Type="varchar" MaxLength="30" />
+    <Property Name="CSWEmoNegAbuseReport" Type="char" MaxLength="1" />
+    <Property Name="CSWEmoNegAbuseReportDesc" Type="varchar" MaxLength="30" />
+    <Property Name="CSWOthTraumaExp" Type="varchar(max)" />
+    <Property Name="CSWHomePriorAdmin" Type="varchar" MaxLength="50" />
+    <Property Name="CSWRetHome" Type="char" MaxLength="1" />
+    <Property Name="CSWRetHomeWhom" Type="varchar" MaxLength="30" />
+    <Property Name="CSWRetHomeWhen" Type="varchar" MaxLength="30" />
+    <Property Name="CSWCarePlanDisch" Type="varchar" MaxLength="50" />
+    <Property Name="CSWSafeHome" Type="char" MaxLength="1" />
+    <Property Name="CSWSafeHomeDesc" Type="varchar" MaxLength="50" />
+    <Property Name="CSWSexAct" Type="char" MaxLength="1" />
+    <Property Name="CSWSexActAge" Type="varchar" MaxLength="20" />
+    <Property Name="CSWSexActNumPart" Type="varchar" MaxLength="20" />
+    <Property Name="CSWSexActPreg" Type="char" MaxLength="1" />
+    <Property Name="CSWSexActPregTimes" Type="varchar" MaxLength="20" />
+    <Property Name="CSWSexActPregNumChi" Type="varchar" MaxLength="20" />
+    <Property Name="CSWSigRelat" Type="varchar" MaxLength="50" />
+    <Property Name="CSWParentMaritStat" Type="varchar" MaxLength="50" />
+    <Property Name="CSWParentMaritStatDate" Type="date" />
+    <Property Name="CSWPrimeCaregiver" Type="varchar" MaxLength="50" />
+    <Property Name="CSWVisitArrange" Type="varchar" MaxLength="50" />
+    <Property Name="CSWMemHelpPat" Type="char" MaxLength="1" />
+    <Property Name="CSWMemHelpPatDesc" Type="varchar" MaxLength="50" />
+    <Property Name="CSWRelatProbMem" Type="varchar(max)" />
+    <Property Name="CSWFamSessDate" Type="date" />
+    <Property Name="CSWFamSessInvite" Type="varchar" MaxLength="50" />
+    <Property Name="CSWFamSessDeclineReason" Type="varchar(max)" />
+    <Property Name="CSWLevFamInvPrior" Type="varchar(max)" />
+    <Property Name="CSWRecommFamInvAfter" Type="varchar(max)" />
+    <Property Name="CSWCarFeelPatDifBehav" Type="char" MaxLength="1" />
+    <Property Name="CSWCarFeelPatDifBehavDesc" Type="varchar(max)" />
+    <Property Name="CSWHistCYS" Type="char" MaxLength="1" />
+    <Property Name="CSWHistCYSDesc" Type="varchar(max)" />
+    <Property Name="CSWFamMemAbuImp" Type="char" MaxLength="1" />
+    <Property Name="CSWFamMemAbuImpDesc" Type="varchar(max)" />
+    <Property Name="CSWHistHomSuic" Type="char" MaxLength="1" />
+    <Property Name="CSWHistHomSuicDesc" Type="varchar(max)" />
+    <Property Name="CSWPatPartTreat" Type="varchar(max)" />
+    <Property Name="CSWPatMedPat" Type="char" MaxLength="1" />
+    <Property Name="CSWPatMedTreatProv" Type="char" MaxLength="1" />
+    <Property Name="CSWPatHospPrev" Type="char" MaxLength="1" />
+    <Property Name="CSWHospPrevHelpCommInvo" Type="varchar" MaxLength="50" />
+    <Property Name="CSWHosp30ContribReadmin" Type="varchar(max)" />
+    <Property Name="CSWEffIneffTreatHist" Type="varchar" MaxLength="50" />
+    <Property Name="CSWIncUseSubstance" Type="char" MaxLength="1" />
+    <Property Name="CSWSubResultArrest" Type="char" MaxLength="1" />
+    <Property Name="CSWSubResultRelatProb" Type="char" MaxLength="1" />
+    <Property Name="CSWSubResultUnpaidBills" Type="char" MaxLength="1" />
+    <Property Name="CSWSubResultThoughtSelfHarm" Type="char" MaxLength="1" />
+    <Property Name="CSWSubResultBlackout" Type="char" MaxLength="1" />
+    <Property Name="CSWSubResultWorkProb" Type="char" MaxLength="1" />
+    <Property Name="CSWSubResultPromisc" Type="char" MaxLength="1" />
+    <Property Name="CSWSubResultOther" Type="char" MaxLength="1" />
+    <Property Name="CSWSubResultOtherDesc" Type="varchar" MaxLength="50" />
+    <Property Name="CSWSubResultNone" Type="char" MaxLength="1" />
+    <Property Name="CSWSeeUseProb" Type="char" MaxLength="1" />
+    <Property Name="CSWDrugChoice" Type="varchar" MaxLength="30" />
+    <Property Name="CSWReasonUse" Type="varchar(max)" />
+    <Property Name="CSWSubAbuseTreatHist" Type="varchar(max)" />
+    <Property Name="CSWInterventions" Type="varchar(max)" />
+    <Property Name="CSWSubAbuseRecommNA" Type="char" MaxLength="1" />
+    <Property Name="CSWSubAbuseRecommDesc" Type="varchar(max)" />
+    <Property Name="CSWPatInformRecomm" Type="char" MaxLength="1" />
+    <Property Name="CSWEduProvPat" Type="char" MaxLength="1" />
+    <Property Name="CSWFamInformRecomm" Type="char" MaxLength="1" />
+    <Property Name="CSWEduProvFam" Type="char" MaxLength="1" />
+    <Property Name="CSWReferMade" Type="char" MaxLength="1" />
+    <Property Name="CSWReferMadeDesc" Type="varchar" MaxLength="50" />
+    <Property Name="CSWHistArrest" Type="char" MaxLength="1" />
+    <Property Name="CSWHistArrestDesc" Type="varchar" MaxLength="50" />
+    <Property Name="CSWOthLegIss" Type="char" MaxLength="1" />
+    <Property Name="CSWOthLegIssDesc" Type="varchar(max)" />
+    <Property Name="CSWTimeCurrSchool" Type="varchar" MaxLength="10" />
+    <Property Name="CSWNumSchoolAtt" Type="varchar" MaxLength="10" />
+    <Property Name="CSWPatFeelSchTeach" Type="varchar" MaxLength="50" />
+    <Property Name="CSWPatFeelClassmates" Type="varchar" MaxLength="50" />
+    <Property Name="CSWSigChanSocAca" Type="char" MaxLength="1" />
+    <Property Name="CSWSigChanSocAcaDesc" Type="varchar" MaxLength="50" />
+    <Property Name="CSWDetSuspensTruancy" Type="char" MaxLength="1" />
+    <Property Name="CSWDetSuspensTruancyDesc" Type="varchar" MaxLength="50" />
+    <Property Name="CSWWorking" Type="char" MaxLength="1" />
+    <Property Name="CSWWorkingHoursWeek" Type="varchar" MaxLength="10" />
+    <Property Name="CSWWorkingFeelings" Type="varchar" MaxLength="50" />
+    <Property Name="CSWParMilit" Type="char" MaxLength="1" />
+    <Property Name="CSWParMilitDesc" Type="varchar" MaxLength="50" />
+    <Property Name="CSWParMilitDeploy" Type="varchar" MaxLength="50" />
+    <Property Name="CSWBasicNeedMet" Type="char" MaxLength="1" />
+    <Property Name="CSWMedIssContrib" Type="char" MaxLength="1" />
+    <Property Name="CSWMedIssContribDesc" Type="varchar" MaxLength="50" />
+    <Property Name="CSWChronPainDisabImpFunct" Type="char" MaxLength="1" />
+    <Property Name="CSWChronPainDisabImpFunctDesc" Type="varchar" MaxLength="50" />
+    <Property Name="CSWHistSigMedIss" Type="char" MaxLength="1" />
+    <Property Name="CSWHistSigMedIssDesc" Type="varchar" MaxLength="50" />
+    <Property Name="CSWEatDepBored" Type="char" MaxLength="1" />
+    <Property Name="CSWEatDepBoredDesc" Type="varchar" MaxLength="50" />
+    <Property Name="CSWCurrStatedFeelBody" Type="varchar" MaxLength="50" />
+    <Property Name="CSWChangeReligInvolv" Type="char" MaxLength="1" />
+    <Property Name="CSWChangeReligInvolvDesc" Type="varchar" MaxLength="50" />
+    <Property Name="CSWCultIssContribProb" Type="char" MaxLength="1" />
+    <Property Name="CSWCultIssContribProbDesc" Type="varchar" MaxLength="50" />
+    <Property Name="CSWCultOther" Type="char" MaxLength="1" />
+    <Property Name="CSWCultOtherDesc" Type="varchar" MaxLength="50" />
+    <Property Name="CSWAssessNeed" Type="varchar" MaxLength="50" />
+    <Property Name="CSWMACommSuppServ" Type="char" MaxLength="1" />
+    <Property Name="CSWMACommSuppServWhen" Type="varchar" MaxLength="50" />
+    <Property Name="CSWMACommSuppServResponse" Type="varchar" MaxLength="50" />
+    <Property Name="CSWObtMed" Type="varchar" MaxLength="50" />
+    <Property Name="CSWPrefPharm" Type="varchar" MaxLength="50" />
+    <Property Name="CSWConcernFollDisch" Type="char" MaxLength="1" />
+    <Property Name="CSWHowArriveSchedAppoint" Type="varchar" MaxLength="50" />
+    <Property Name="CSWBarTransport" Type="char" MaxLength="1" />
+    <Property Name="CSWBarCostMed" Type="char" MaxLength="1" />
+    <Property Name="CSWBarHousing" Type="char" MaxLength="1" />
+    <Property Name="CSWBarHisNonComp" Type="char" MaxLength="1" />
+    <Property Name="CSWBarAbsFacSpecNeed" Type="char" MaxLength="1" />
+    <Property Name="CSWBarOther" Type="char" MaxLength="1" />
+    <Property Name="CSWBarOtherDesc" Type="varchar" MaxLength="50" />
+    <Property Name="CSWBarNone" Type="char" MaxLength="1" />
+    <Property Name="CSWRefOutpat" Type="char" MaxLength="1" />
+    <Property Name="CSWRefPsychia" Type="char" MaxLength="1" />
+    <Property Name="CSWRefPHP" Type="char" MaxLength="1" />
+    <Property Name="CSWRefTFCCRR" Type="char" MaxLength="1" />
+    <Property Name="CSWRefRTF" Type="char" MaxLength="1" />
+    <Property Name="CSWRefBHRS" Type="char" MaxLength="1" />
+    <Property Name="CSWRefFB" Type="char" MaxLength="1" />
+    <Property Name="CSWRefMST" Type="char" MaxLength="1" />
+    <Property Name="CSWRefCMBCM" Type="char" MaxLength="1" />
+    <Property Name="CSWRefInpatDA" Type="char" MaxLength="1" />
+    <Property Name="CSWRefPCP" Type="char" MaxLength="1" />
+    <Property Name="CSWRefOutpatDA" Type="char" MaxLength="1" />
+    <Property Name="CSWRefNeuro" Type="char" MaxLength="1" />
+    <Property Name="CSWRefOther" Type="char" MaxLength="1" />
+    <Property Name="CSWRefOtherDesc" Type="varchar" MaxLength="50" />
+    <Property Name="CSWRefNone" Type="char" MaxLength="1" />
+    <Property Name="CSWClinConcRecomm" Type="varchar" MaxLength="50" />
+    <Property Name="CSWSWGroup" Type="char" MaxLength="1" />
+    <Property Name="CSWSWIndiv" Type="char" MaxLength="1" />
+    <Property Name="CSWSWFamily" Type="char" MaxLength="1" />
+    <Property Name="CSWSWAftercare" Type="char" MaxLength="1" />
+    <Property Name="CSWSWOther" Type="char" MaxLength="1" />
+    <Property Name="CSWSWOtherDesc" Type="varchar" MaxLength="50" />
+    <Property Name="CSWPreDisch" Type="varchar(max)" />
+    <Property Name="CSWStaffSigDate" Type="date" />
+    <Property Name="CSWStaffSigTime" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="precaution">
+    <Key>
+      <PropertyRef Name="PatientID" />
+      <PropertyRef Name="PrecautionType" />
+    </Key>
+    <Property Name="PatientID" Type="int" Nullable="false" />
+    <Property Name="PrecautionType" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="PrecDateAdd" Type="date" />
+    <Property Name="PrecDateDC" Type="date" />
+  </EntityType>
+  <EntityType Name="psych_hospital">
+    <Key>
+      <PropertyRef Name="PatientID" />
+      <PropertyRef Name="Hospital" />
+    </Key>
+    <Property Name="PatientID" Type="int" Nullable="false" />
+    <Property Name="Hospital" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DatesServiced" Type="date" />
+    <Property Name="Reason" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="psychiatric_problem_list">
+    <Key>
+      <PropertyRef Name="PatientID" />
+      <PropertyRef Name="PsychProbID" />
+    </Key>
+    <Property Name="PatientID" Type="int" Nullable="false" />
+    <Property Name="PsychProbID" Type="int" Nullable="false" />
+    <Property Name="PsychProbDateEst" Type="date" />
+    <Property Name="PsychProb" Type="varchar" MaxLength="50" />
+    <Property Name="PsychProbChronStab" Type="varchar" MaxLength="10" />
+    <Property Name="PsychProbDateChange" Type="date" />
+    <Property Name="PsychProbResolved" Type="char" MaxLength="1" />
+    <Property Name="PsychProbDC" Type="char" MaxLength="1" />
+    <Property Name="PsychProbDefer" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="short_term_goals">
+    <Key>
+      <PropertyRef Name="PatientID" />
+      <PropertyRef Name="ShortGoalID" />
+    </Key>
+    <Property Name="PatientID" Type="int" Nullable="false" />
+    <Property Name="ShortGoalID" Type="int" Nullable="false" />
+    <Property Name="ShortGoalDate" Type="date" />
+    <Property Name="ShortGoal" Type="varchar" MaxLength="50" />
+    <Property Name="ShortGoalTargDate" Type="date" />
+    <Property Name="ShortGoalNewTargDate" Type="date" />
+    <Property Name="ShortGoalMet" Type="char" MaxLength="1" />
+    <Property Name="ShortGoalNotMet" Type="char" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="substance_abuse">
+    <Key>
+      <PropertyRef Name="PatientID" />
+      <PropertyRef Name="SubUsedName" />
+    </Key>
+    <Property Name="PatientID" Type="int" Nullable="false" />
+    <Property Name="SubUsedName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="SubUsedStartAge" Type="varchar" MaxLength="2" />
+    <Property Name="SubUsedFreqUse90" Type="varchar" MaxLength="50" />
+    <Property Name="SubUsedAmtUsed" Type="varchar" MaxLength="50" />
+    <Property Name="SubUsedMethod" Type="varchar" MaxLength="50" />
+    <Property Name="SubUsedDuration" Type="varchar" MaxLength="50" />
+    <Property Name="SubUsedPrdAbstin" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="treatment_facility">
+    <Key>
+      <PropertyRef Name="PatientID" />
+      <PropertyRef Name="Agency" />
+    </Key>
+    <Property Name="PatientID" Type="int" Nullable="false" />
+    <Property Name="Agency" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ClinicianDisiplineTitle" Type="varchar" MaxLength="10" />
+    <Property Name="CurrentFacility" Type="char" MaxLength="1" />
+  </EntityType>
+  <Association Name="FK_abuse_assessment_patient_admission">
+    <End Role="patient_admission" Type="Self.patient_admission" Multiplicity="1" />
+    <End Role="abuse_assessment" Type="Self.abuse_assessment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="patient_admission">
+        <PropertyRef Name="PatientID" />
+      </Principal>
+      <Dependent Role="abuse_assessment">
+        <PropertyRef Name="PatientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_allergies_patient_admission">
+    <End Role="patient_admission" Type="Self.patient_admission" Multiplicity="1" />
+    <End Role="allergies" Type="Self.allergies" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="patient_admission">
+        <PropertyRef Name="PatientID" />
+      </Principal>
+      <Dependent Role="allergies">
+        <PropertyRef Name="PatientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_deffered_problem_list_patient_admission">
+    <End Role="patient_admission" Type="Self.patient_admission" Multiplicity="1" />
+    <End Role="deffered_problem_list" Type="Self.deffered_problem_list" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="patient_admission">
+        <PropertyRef Name="PatientID" />
+      </Principal>
+      <Dependent Role="deffered_problem_list">
+        <PropertyRef Name="PatientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_family_members_patient_admission">
+    <End Role="patient_admission" Type="Self.patient_admission" Multiplicity="1" />
+    <End Role="family_members" Type="Self.family_members" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="patient_admission">
+        <PropertyRef Name="PatientID" />
+      </Principal>
+      <Dependent Role="family_members">
+        <PropertyRef Name="PatientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_functions_patient_admission">
+    <End Role="patient_admission" Type="Self.patient_admission" Multiplicity="1" />
+    <End Role="functions" Type="Self.functions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="patient_admission">
+        <PropertyRef Name="PatientID" />
+      </Principal>
+      <Dependent Role="functions">
+        <PropertyRef Name="PatientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_interventions_patient_admission">
+    <End Role="patient_admission" Type="Self.patient_admission" Multiplicity="1" />
+    <End Role="interventions" Type="Self.interventions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="patient_admission">
+        <PropertyRef Name="PatientID" />
+      </Principal>
+      <Dependent Role="interventions">
+        <PropertyRef Name="PatientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_medical_problem_list_patient_admission">
+    <End Role="patient_admission" Type="Self.patient_admission" Multiplicity="1" />
+    <End Role="medical_problem_list" Type="Self.medical_problem_list" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="patient_admission">
+        <PropertyRef Name="PatientID" />
+      </Principal>
+      <Dependent Role="medical_problem_list">
+        <PropertyRef Name="PatientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_medications_patient_admission">
+    <End Role="patient_admission" Type="Self.patient_admission" Multiplicity="1" />
+    <End Role="medications" Type="Self.medications" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="patient_admission">
+        <PropertyRef Name="PatientID" />
+      </Principal>
+      <Dependent Role="medications">
+        <PropertyRef Name="PatientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_pain_assessment_patient_admission">
+    <End Role="patient_admission" Type="Self.patient_admission" Multiplicity="1" />
+    <End Role="pain_assessment" Type="Self.pain_assessment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="patient_admission">
+        <PropertyRef Name="PatientID" />
+      </Principal>
+      <Dependent Role="pain_assessment">
+        <PropertyRef Name="PatientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_patient_admission_patient_admission_ext">
+    <End Role="patient_admission_ext" Type="Self.patient_admission_ext" Multiplicity="1" />
+    <End Role="patient_admission" Type="Self.patient_admission" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="patient_admission_ext">
+        <PropertyRef Name="PatientID" />
+      </Principal>
+      <Dependent Role="patient_admission">
+        <PropertyRef Name="PatientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_precaution_patient_admission">
+    <End Role="patient_admission" Type="Self.patient_admission" Multiplicity="1" />
+    <End Role="precaution" Type="Self.precaution" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="patient_admission">
+        <PropertyRef Name="PatientID" />
+      </Principal>
+      <Dependent Role="precaution">
+        <PropertyRef Name="PatientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_psych_hospital_patient_admission">
+    <End Role="patient_admission" Type="Self.patient_admission" Multiplicity="1" />
+    <End Role="psych_hospital" Type="Self.psych_hospital" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="patient_admission">
+        <PropertyRef Name="PatientID" />
+      </Principal>
+      <Dependent Role="psych_hospital">
+        <PropertyRef Name="PatientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_psychiatric_problem_list_patient_admission">
+    <End Role="patient_admission" Type="Self.patient_admission" Multiplicity="1" />
+    <End Role="psychiatric_problem_list" Type="Self.psychiatric_problem_list" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="patient_admission">
+        <PropertyRef Name="PatientID" />
+      </Principal>
+      <Dependent Role="psychiatric_problem_list">
+        <PropertyRef Name="PatientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_short_term_goals_patient_admission">
+    <End Role="patient_admission" Type="Self.patient_admission" Multiplicity="1" />
+    <End Role="short_term_goals" Type="Self.short_term_goals" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="patient_admission">
+        <PropertyRef Name="PatientID" />
+      </Principal>
+      <Dependent Role="short_term_goals">
+        <PropertyRef Name="PatientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_substance_abuse_patient_admission">
+    <End Role="patient_admission" Type="Self.patient_admission" Multiplicity="1" />
+    <End Role="substance_abuse" Type="Self.substance_abuse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="patient_admission">
+        <PropertyRef Name="PatientID" />
+      </Principal>
+      <Dependent Role="substance_abuse">
+        <PropertyRef Name="PatientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_treatment_facility_patient_admission">
+    <End Role="patient_admission" Type="Self.patient_admission" Multiplicity="1" />
+    <End Role="treatment_facility" Type="Self.treatment_facility" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="patient_admission">
+        <PropertyRef Name="PatientID" />
+      </Principal>
+      <Dependent Role="treatment_facility">
+        <PropertyRef Name="PatientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="CPCAppModelStoreContainer">
+    <EntitySet Name="abuse_assessment" EntityType="Self.abuse_assessment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="allergies" EntityType="Self.allergies" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="deffered_problem_list" EntityType="Self.deffered_problem_list" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="family_members" EntityType="Self.family_members" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="functions" EntityType="Self.functions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="interventions" EntityType="Self.interventions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="medical_problem_list" EntityType="Self.medical_problem_list" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="medications" EntityType="Self.medications" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="pain_assessment" EntityType="Self.pain_assessment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="patient_admission" EntityType="Self.patient_admission" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="patient_admission_ext" EntityType="Self.patient_admission_ext" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="precaution" EntityType="Self.precaution" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="psych_hospital" EntityType="Self.psych_hospital" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="psychiatric_problem_list" EntityType="Self.psychiatric_problem_list" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="short_term_goals" EntityType="Self.short_term_goals" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="substance_abuse" EntityType="Self.substance_abuse" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="treatment_facility" EntityType="Self.treatment_facility" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_abuse_assessment_patient_admission" Association="Self.FK_abuse_assessment_patient_admission">
+      <End Role="patient_admission" EntitySet="patient_admission" />
+      <End Role="abuse_assessment" EntitySet="abuse_assessment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_allergies_patient_admission" Association="Self.FK_allergies_patient_admission">
+      <End Role="patient_admission" EntitySet="patient_admission" />
+      <End Role="allergies" EntitySet="allergies" />
+    </AssociationSet>
+    <AssociationSet Name="FK_deffered_problem_list_patient_admission" Association="Self.FK_deffered_problem_list_patient_admission">
+      <End Role="patient_admission" EntitySet="patient_admission" />
+      <End Role="deffered_problem_list" EntitySet="deffered_problem_list" />
+    </AssociationSet>
+    <AssociationSet Name="FK_family_members_patient_admission" Association="Self.FK_family_members_patient_admission">
+      <End Role="patient_admission" EntitySet="patient_admission" />
+      <End Role="family_members" EntitySet="family_members" />
+    </AssociationSet>
+    <AssociationSet Name="FK_functions_patient_admission" Association="Self.FK_functions_patient_admission">
+      <End Role="patient_admission" EntitySet="patient_admission" />
+      <End Role="functions" EntitySet="functions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_interventions_patient_admission" Association="Self.FK_interventions_patient_admission">
+      <End Role="patient_admission" EntitySet="patient_admission" />
+      <End Role="interventions" EntitySet="interventions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_medical_problem_list_patient_admission" Association="Self.FK_medical_problem_list_patient_admission">
+      <End Role="patient_admission" EntitySet="patient_admission" />
+      <End Role="medical_problem_list" EntitySet="medical_problem_list" />
+    </AssociationSet>
+    <AssociationSet Name="FK_medications_patient_admission" Association="Self.FK_medications_patient_admission">
+      <End Role="patient_admission" EntitySet="patient_admission" />
+      <End Role="medications" EntitySet="medications" />
+    </AssociationSet>
+    <AssociationSet Name="FK_pain_assessment_patient_admission" Association="Self.FK_pain_assessment_patient_admission">
+      <End Role="patient_admission" EntitySet="patient_admission" />
+      <End Role="pain_assessment" EntitySet="pain_assessment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_patient_admission_patient_admission_ext" Association="Self.FK_patient_admission_patient_admission_ext">
+      <End Role="patient_admission_ext" EntitySet="patient_admission_ext" />
+      <End Role="patient_admission" EntitySet="patient_admission" />
+    </AssociationSet>
+    <AssociationSet Name="FK_precaution_patient_admission" Association="Self.FK_precaution_patient_admission">
+      <End Role="patient_admission" EntitySet="patient_admission" />
+      <End Role="precaution" EntitySet="precaution" />
+    </AssociationSet>
+    <AssociationSet Name="FK_psych_hospital_patient_admission" Association="Self.FK_psych_hospital_patient_admission">
+      <End Role="patient_admission" EntitySet="patient_admission" />
+      <End Role="psych_hospital" EntitySet="psych_hospital" />
+    </AssociationSet>
+    <AssociationSet Name="FK_psychiatric_problem_list_patient_admission" Association="Self.FK_psychiatric_problem_list_patient_admission">
+      <End Role="patient_admission" EntitySet="patient_admission" />
+      <End Role="psychiatric_problem_list" EntitySet="psychiatric_problem_list" />
+    </AssociationSet>
+    <AssociationSet Name="FK_short_term_goals_patient_admission" Association="Self.FK_short_term_goals_patient_admission">
+      <End Role="patient_admission" EntitySet="patient_admission" />
+      <End Role="short_term_goals" EntitySet="short_term_goals" />
+    </AssociationSet>
+    <AssociationSet Name="FK_substance_abuse_patient_admission" Association="Self.FK_substance_abuse_patient_admission">
+      <End Role="patient_admission" EntitySet="patient_admission" />
+      <End Role="substance_abuse" EntitySet="substance_abuse" />
+    </AssociationSet>
+    <AssociationSet Name="FK_treatment_facility_patient_admission" Association="Self.FK_treatment_facility_patient_admission">
+      <End Role="patient_admission" EntitySet="patient_admission" />
+      <End Role="treatment_facility" EntitySet="treatment_facility" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

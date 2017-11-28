@@ -12,3 +12,19 @@ C:\Users\TEST\OneDrive\Clarion\Senior Year\CIS 411\ExampleLook\ExampleLook\obj\D
 C:\Users\TEST\OneDrive\Clarion\Senior Year\CIS 411\ExampleLook BU5 nurse most done before db redo\ExampleLook\bin\Debug\ExampleLook.exe.config
 C:\Users\TEST\OneDrive\Clarion\Senior Year\CIS 411\ExampleLook BU5 nurse most done before db redo\ExampleLook\obj\Debug\ExampleLook.exe
 C:\Users\TEST\OneDrive\Clarion\Senior Year\CIS 411\ExampleLook BU5 nurse most done before db redo\ExampleLook\obj\Debug\ExampleLook.pdb
+C:\CIS411\ExampleLook\bin\Debug\ExampleLook.exe.config
+C:\CIS411\ExampleLook\obj\Debug\ExampleLook.exe
+C:\CIS411\ExampleLook\obj\Debug\ExampleLook.pdb
+C:\CIS411\ExampleLook\bin\Debug\ExampleLook.exe
+C:\CIS411\ExampleLook\bin\Debug\ExampleLook.pdb
+C:\CIS411\ExampleLook\obj\Debug\ExampleLook.csprojResolveAssemblyReference.cache
+C:\CIS411\ExampleLook\obj\Debug\ExampleLook.AdmissionsWindow.resources
+C:\CIS411\ExampleLook\obj\Debug\ExampleLook.CallSheetWindow.resources
+C:\CIS411\ExampleLook\obj\Debug\ExampleLook.NursingWindow.resources
+C:\CIS411\ExampleLook\obj\Debug\ExampleLook.Start.resources
+C:\CIS411\ExampleLook\obj\Debug\ExampleLook.Properties.Resources.resources
+C:\CIS411\ExampleLook\obj\Debug\ExampleLook.csproj.GenerateResource.Cache
+C:\CIS411\ExampleLook\bin\Debug\EntityFramework.dll
+C:\CIS411\ExampleLook\bin\Debug\EntityFramework.SqlServer.dll
+C:\CIS411\ExampleLook\bin\Debug\EntityFramework.xml
+C:\CIS411\ExampleLook\bin\Debug\EntityFramework.SqlServer.xml
