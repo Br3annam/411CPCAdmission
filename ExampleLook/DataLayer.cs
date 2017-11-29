@@ -36,7 +36,7 @@ namespace ExampleLook
         public string city { get; set; }
         public string state { get; set; }
         public string zip { get; set; }
-        public string County { get; set; }
+        public string county { get; set; }
         public string phone { get; set; }
         public string genderID { get; set; }
         public string commitStat { get; set; }
@@ -51,7 +51,7 @@ namespace ExampleLook
         public string lethalMeans { get; set; }
         public string subMisuse { get; set; }
         public string prevTx { get; set; }
-        public string CurrentOutpat { get; set; }
+        public string currentOutpat { get; set; }
         public string medConcerns { get; set; }
         public string potentialPreg { get; set; }
         public string intelDisable { get; set; }
