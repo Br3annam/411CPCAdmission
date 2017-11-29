@@ -12,6 +12,12 @@ namespace ExampleLook
 {
     public partial class AdultSocialWorkWindow : Form
     {
+        private CallSheetWindow callSheet;
+        private AdmissionsWindow admission;
+        private NursingWindow nursing;
+        private ChildSocialWorkerWindow childSW;
+        private ChangeLogWindow changeLog;
+
         public AdultSocialWorkWindow()
         {
             InitializeComponent();
@@ -27,6 +33,8 @@ namespace ExampleLook
 
         private void AdultSocialWorkWindow_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'cPCAppDataSet.functions' table. You can move, or remove it, as needed.
+            this.functionsTableAdapter.Fill(this.cPCAppDataSet.functions);
             // TODO: This line of code loads data into the 'cPCAppDataSet.substance_abuse' table. You can move, or remove it, as needed.
             this.substance_abuseTableAdapter.Fill(this.cPCAppDataSet.substance_abuse);
             // TODO: This line of code loads data into the 'cPCAppDataSet.family_members' table. You can move, or remove it, as needed.
@@ -38,9 +46,34 @@ namespace ExampleLook
 
         }
 
-        private void grpRiskAssess_Enter(object sender, EventArgs e)
+        private void btnCallSheet_Click(object sender, EventArgs e)
         {
+            callSheet = new CallSheetWindow();
+            callSheet.ShowDialog();
+        }
 
+        private void btnAdmission_Click(object sender, EventArgs e)
+        {
+            admission = new AdmissionsWindow();
+            admission.ShowDialog();
+        }
+
+        private void btnNursing_Click(object sender, EventArgs e)
+        {
+            nursing = new NursingWindow();
+            nursing.ShowDialog();
+        }
+
+        private void btnChildSW_Click(object sender, EventArgs e)
+        {
+            childSW = new ChildSocialWorkerWindow();
+            childSW.ShowDialog();
+        }
+
+        private void btnChangeLog_Click(object sender, EventArgs e)
+        {
+            changeLog = new ChangeLogWindow();
+            changeLog.ShowDialog();
         }
     }
 }

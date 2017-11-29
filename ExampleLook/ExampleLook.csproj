@@ -64,6 +64,12 @@
     <Compile Include="CallSheetWindow.Designer.cs">
       <DependentUpon>CallSheetWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="ChangeLogWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangeLogWindow.Designer.cs">
+      <DependentUpon>ChangeLogWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="ChildSocialWorkerWindow.cs">
       <SubType>Form</SubType>
     </Compile>

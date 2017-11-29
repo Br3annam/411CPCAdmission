@@ -12,6 +12,12 @@ namespace ExampleLook
 {
     public partial class NursingWindow : Form
     {
+        private CallSheetWindow callSheet;
+        private AdmissionsWindow admission;
+        private AdultSocialWorkWindow adultSW;
+        private ChildSocialWorkerWindow childSW;
+        private ChangeLogWindow changeLog;
+
         public NursingWindow()
         {
             InitializeComponent();
@@ -38,14 +44,34 @@ namespace ExampleLook
 
         }
 
-        private void feelAboutHospitalizedTextBox_TextChanged(object sender, EventArgs e)
+        private void btnCallSheet_Click(object sender, EventArgs e)
         {
-
+            callSheet = new CallSheetWindow();
+            callSheet.ShowDialog();
         }
 
-        private void grpImpSelf_Enter(object sender, EventArgs e)
+        private void btnAdmin_Click(object sender, EventArgs e)
         {
+            admission = new AdmissionsWindow();
+            admission.ShowDialog();
+        }
 
+        private void btnAdultSW_Click(object sender, EventArgs e)
+        {
+            adultSW = new AdultSocialWorkWindow();
+            adultSW.ShowDialog();
+        }
+
+        private void btnChildSW_Click(object sender, EventArgs e)
+        {
+            childSW = new ChildSocialWorkerWindow();
+            childSW.ShowDialog();
+        }
+
+        private void btnChangeLog_Click(object sender, EventArgs e)
+        {
+            changeLog = new ChangeLogWindow();
+            changeLog.ShowDialog();
         }
     }
 }

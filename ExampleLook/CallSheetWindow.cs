@@ -58,11 +58,6 @@ namespace ExampleLook
                 presentSuicideCheckBox.Checked = true;
         }
 
-        private void grpBxCommitStat_Enter(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnSave_Click(object sender, EventArgs e)
         {
             dl.DOB = dOBDateTimePicker.Value;
@@ -81,11 +76,6 @@ namespace ExampleLook
                 dl.PresentSuicide = 'n';
 
             MessageBox.Show(dl.DOB.ToString() + " " + dl.Gender + " " + dl.LastName + " " + dl.PresentSuicide);
-        }
-
-        private void grpBxPatientInfo_Enter(object sender, EventArgs e)
-        {
-
         }
     }
 }
