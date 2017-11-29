@@ -12,7 +12,7 @@ namespace ExampleLook
 {
     public partial class CallSheetWindow : Form
     {
-        DataLayer dl;
+        DataLayer dl = new DataLayer();
         public CallSheetWindow()
         {
             InitializeComponent();
@@ -50,11 +50,11 @@ namespace ExampleLook
             this.medicationsTableAdapter.Fill(this.cPCAppDataSet.medications);
             // TODO: This line of code loads data into the 'cPCAppDataSet.patient_admission' table. You can move, or remove it, as needed.
             this.patient_admissionTableAdapter.Fill(this.cPCAppDataSet.patient_admission);
-            //lastNameTextBox.Text = dl.LastName;
-            //if (dl.Gender == 'f')
+            //lastNameTextBox.Text = dl.lastName;
+            //if (dl.gender == 'f')
             //    genderComboBox.Text = "Female";
-            //dOBDateTimePicker.Text = dl.DOB.ToString();
-            //if (dl.PresentSuicide == 'y')
+            //dOBDateTimePicker.Text = dl.dOB.ToString();
+            //if (dl.presentSuicide == 'y')
             //    presentSuicideCheckBox.Checked = true;
         }
 
@@ -65,209 +65,243 @@ namespace ExampleLook
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            //dl.DOB = dOBDateTimePicker.Value;
+            //dl.dOB = dOBDateTimePicker.Value;
             //if(genderComboBox.Text =="Male")
             //{
-            //    dl.Gender = 'm';
+            //    dl.gender = 'm';
             //}
             //else if(genderComboBox.Text =="Female")
             //{
-            //    dl.Gender = 'm';
+            //    dl.gender = 'm';
             //}
-            //dl.LastName = lastNameTextBox.Text;
+            //dl.lastName = lastNameTextBox.Text;
             //if (presentSuicideCheckBox.Checked)
-            //    dl.PresentSuicide = 'y';
+            //    dl.presentSuicide = 'y';
             //else
-            //    dl.PresentSuicide = 'n';
+            //    dl.presentSuicide = 'n';
 
-            //MessageBox.Show(dl.DOB.ToString() + " " + dl.Gender + " " + dl.LastName + " " + dl.PresentSuicide);
+            //MessageBox.Show(dl.dOB.ToString() + " " + dl.gender + " " + dl.lastName + " " + dl.presentSuicide);
         }
 
-        //private void getCallSheetInfo()
-        //{
-        //    dl.CallerFName = callerFNameTextBox.Text;
-        //    dl.CallerZip = callerZipTextBox.Text;
-        //    dl.CallerLName = callerLNameTextBox.Text;
-        //    dl.CallerState = callerStateTextBox.Text;
-        //    dl.CallerRefName = callerRefNameTextBox.Text;
-        //    dl.CallerAgency = callerAgencyTextBox.Text;
-        //    dl.CallerCity = callerCityTextBox.Text;
-        //    dl.Phone = phoneTextBox.Text;
-        //    dl.County = countyTextBox.Text;
-        //    dl.Zip = zipTextBox.Text;
-        //    dl.State = stateTextBox.Text;
-        //    dl.City = cityTextBox.Text;
-        //    dl.Address = addressTextBox.Text;
-        //    dl.SSN = sSNTextBox.Text;
-        //    dl.DOB = dOBDateTimePicker.Value;
-        //    dl.Age = ageTextBox.Text;
-        //    dl.LastName = lastNameTextBox.Text;
-        //    dl.MiddleInitial = middleInitialTextBox.Text;
-        //    dl.FirstName = firstNameTextBox.Text;
-        //    dl.MedConcerns = medConcernsTextBox.Text;
-        //    dl.CurrentOutpat = currentOutpatTextBox.Text;
-        //    dl.PrevTx = prevTxTextBox.Text;
-        //    dl.SubMisuse = subMisuseTextBox.Text;
-        //    dl.LethalMeans = lethalMeansTextBox.Text;
-        //    dl.PresentProb = presentProbTextBox.Text;
-        //    dl.R = rTextBox.Text;
-        //    dl.P = pTextBox.Text;
-        //    dl.T = tTextBox.Text;
-        //    dl.BloodPressure = bloodPressureTextBox.Text;
-        //    dl.IQ = int.Parse(iQTextBox.Text);
-        //    dl.PrimInsPhone = primInsPhoneTextBox.Text;
-        //    dl.PrimInsName = primInsNameTextBox.Text;
-        //    dl.NurseIntake = nurseIntakeTextBox.Text;
-        //    dl.SecInsPhone = secInsPhoneTextBox.Text;
-        //    dl.SecInsName = secInsNameTextBox.Text;
-        //    dl.CallEnded = callEndedDateTimePicker.Value;
-        //    dl.CallCollectedBy = callCollectedByTextBox.Text;
-        //    dl.CallNotes = callNotesTextBox.Text;
-        //    dl.SchedAssessTime = schedAssessTimeTextBox.Text;
-        //    dl.SchedAssessDate = schedAssessDateDateTimePicker.Value;
-        //    dl.CallStarted = callStartedDateTimePicker.Value;
-        //    dl.CallerPhone = callerPhoneTextBox.Text;
-        //    dl.PresentOtherDesc = presentOtherDescTextBox.Text;
-        //    if (presentOtherCheckBox.Checked)
-        //        dl.PresentOther = "Y";
-        //    if (presentPsychosisCheckBox.Checked)
-        //        dl.PresentPsychosis = "Y";
-        //    if (presentHomicideCheckBox.Checked)
-        //        dl.PresentHomicide = "Y";
-        //    if (presentSelfHarmCheckBox.Checked)
-        //        dl.PresentSelfHarm = "Y";
-        //    if (presentSuicideCheckBox.Checked)
-        //        dl.PresentSuicide = "Y";
-        //    if (emergencyContactCheckBox.Checked)
-        //        dl.EmergencyContact = "Y";
-        //    dl.EmergencyContactLName = emergencyContactLNameTextBox.Text;
-        //    dl.EmergencyContactFName = emergencyContactFNameTextBox.Text;
-        //    dl.PowAttorneyPhone = powAttorneyPhoneTextBox.Text;
-        //    dl.PowAttorneyRelat = powAttorneyRelatTextBox.Text;
-        //    dl.PowAttorneyLName = powAttorneyLNameTextBox.Text;
-        //    dl.PowAttorneyFName = powAttorneyFNameTextBox.Text;
-        //    dl.GuardianshipPhone = guardianshipPhoneTextBox.Text;
-        //    dl.GuardianshipRelat = guardianshipRelatTextBox.Text;
-        //    dl.GuardianshipFName = guardianshipFNameTextBox.Text;
-        //    dl.GuardianshipLName = guardianshipLNameTextBox.Text;
-        //    dl.MedEduRightsRelat = medEduRightsRelatTextBox.Text;
-        //    dl.MedEduRightsPhone = medEduRightsPhoneTextBox.Text;
-        //    dl.MedEduRightsLName = medEduRightsLNameTextBox.Text;
-        //    dl.MedEduRightsFName = medEduRightsFNameTextBox.Text;
-        //    dl.EmergencyContactPhone = emergencyContactPhoneTextBox.Text;
-        //    dl.EmergencyContactRelat = emergencyContactRelatTextBox.Text;
-        //    dl.SexVictimDesc = sexVictimDescTextBox.Text;
-        //    dl.PrefLangDesc = prefLangDescTextBox.Text;
-        //    dl.SexAggressDesc = sexAggressDescTextBox.Text;
-        //    dl.CallStartedTime = callStartedTimeTextBox.Text;
-        //    dl.CommitStatDesc = commitStatDescTextBox.Text;
-        //    if (vitalsNotObtainCheckBox.Checked)
-        //        dl.VitalsNotObtain = "Y";
-        //    if (schedAssessCheckBox.Checked)
-        //        dl.SchedAssess = "Y";
-        //    dl.MedDiag = medDiagTextBox.Text;
-        //    dl.AdmPsyDiag = admPsyDiagTextBox.Text;
-        //    dl.TimeAccepted = timeAcceptedDateTimePicker.Value;
-        //    dl.NurseNotified = nurseNotifiedTextBox.Text;
-        //    dl.PhysOnCall = physOnCallTextBox.Text;
-        //    if (timeAcceptedNACheckBox.Checked)
-        //        dl.TimeAcceptedNA = "Y";
-        //    dl.TransportDesc = transportDescTextBox.Text;
-        //    dl.CallEndedTime = callEndedTimeTextBox.Text;
-        //}
+        private void getCallSheetInfo()
+        {
+            dl.callerFName = callerFNameTextBox.Text;
+            dl.callerZip = callerZipTextBox.Text;
+            dl.callerLName = callerLNameTextBox.Text;
+            dl.callerState = callerStateTextBox.Text;
+            dl.callerRefName = callerRefNameTextBox.Text;
+            dl.callerAgency = callerAgencyTextBox.Text;
+            dl.callerCity = callerCityTextBox.Text;
+            dl.phone = phoneTextBox.Text;
+            dl.county = countyTextBox.Text;
+            dl.zip = zipTextBox.Text;
+            dl.state = stateTextBox.Text;
+            dl.city = cityTextBox.Text;
+            dl.address = addressTextBox.Text;
+            dl.sSN = sSNTextBox.Text;
+            dl.dOB = dOBDateTimePicker.Value;
+            dl.age = ageTextBox.Text;
+            dl.lastName = lastNameTextBox.Text;
+            dl.middleInitial = middleInitialTextBox.Text;
+            dl.firstName = firstNameTextBox.Text;
+            dl.medConcerns = medConcernsTextBox.Text;
+            dl.currentOutpat = currentOutpatTextBox.Text;
+            dl.prevTx = prevTxTextBox.Text;
+            dl.subMisuse = subMisuseTextBox.Text;
+            dl.lethalMeans = lethalMeansTextBox.Text;
+            dl.presentProb = presentProbTextBox.Text;
+            dl.r = rTextBox.Text;
+            dl.p = pTextBox.Text;
+            dl.t = tTextBox.Text;
+            dl.bloodPressure = bloodPressureTextBox.Text;
+            dl.iQ = int.Parse(iQTextBox.Text);
+            dl.primInsPhone = primInsPhoneTextBox.Text;
+            dl.primInsName = primInsNameTextBox.Text;
+            dl.nurseIntake = nurseIntakeTextBox.Text;
+            dl.secInsPhone = secInsPhoneTextBox.Text;
+            dl.secInsName = secInsNameTextBox.Text;
+            dl.callEnded = callEndedDateTimePicker.Value;
+            dl.callCollectedBy = callCollectedByTextBox.Text;
+            dl.callNotes = callNotesTextBox.Text;
+            dl.schedAssessTime = schedAssessTimeTextBox.Text;
+            dl.schedAssessDate = schedAssessDateDateTimePicker.Value;
+            dl.callStarted = callStartedDateTimePicker.Value;
+            dl.callerPhone = callerPhoneTextBox.Text;
+            dl.presentOtherDesc = presentOtherDescTextBox.Text;
+            if (presentOtherCheckBox.Checked)
+                dl.presentOther = "Y";
+            else
+                dl.presentOther = "N";
+            if (presentPsychosisCheckBox.Checked)
+                dl.presentPsychosis = "Y";
+            else
+                dl.presentPsychosis = "N";
+            if (presentHomicideCheckBox.Checked)
+                dl.presentHomicide = "Y";
+            else
+                dl.presentHomicide = "N";
+            if (presentSelfHarmCheckBox.Checked)
+                dl.presentSelfHarm = "Y";
+            else
+                dl.presentSelfHarm = "N";
+            if (presentSuicideCheckBox.Checked)
+                dl.presentSuicide = "Y";
+            else
+                dl.presentSuicide = "N";
+            if (emergencyContactCheckBox.Checked)
+                dl.emergencyContact = "Y";
+            else
+                dl.emergencyContact = "N";
+            dl.emergencyContactLName = emergencyContactLNameTextBox.Text;
+            dl.emergencyContactFName = emergencyContactFNameTextBox.Text;
+            dl.powAttorneyPhone = powAttorneyPhoneTextBox.Text;
+            dl.powAttorneyRelat = powAttorneyRelatTextBox.Text;
+            dl.powAttorneyLName = powAttorneyLNameTextBox.Text;
+            dl.powAttorneyFName = powAttorneyFNameTextBox.Text;
+            dl.guardianshipPhone = guardianshipPhoneTextBox.Text;
+            dl.guardianshipRelat = guardianshipRelatTextBox.Text;
+            dl.guardianshipFName = guardianshipFNameTextBox.Text;
+            dl.guardianshipLName = guardianshipLNameTextBox.Text;
+            dl.medEduRightsRelat = medEduRightsRelatTextBox.Text;
+            dl.medEduRightsPhone = medEduRightsPhoneTextBox.Text;
+            dl.medEduRightsLName = medEduRightsLNameTextBox.Text;
+            dl.medEduRightsFName = medEduRightsFNameTextBox.Text;
+            dl.emergencyContactPhone = emergencyContactPhoneTextBox.Text;
+            dl.emergencyContactRelat = emergencyContactRelatTextBox.Text;
+            dl.sexVictimDesc = sexVictimDescTextBox.Text;
+            dl.prefLangDesc = prefLangDescTextBox.Text;
+            dl.sexAggressDesc = sexAggressDescTextBox.Text;
+            dl.callStartedTime = callStartedTimeTextBox.Text;
+            dl.commitStatDesc = commitStatDescTextBox.Text;
+            if (vitalsNotObtainCheckBox.Checked)
+                dl.vitalsNotObtain = "Y";
+            else
+                dl.vitalsNotObtain = "N";
+            if (schedAssessCheckBox.Checked)
+                dl.schedAssess = "Y";
+            else
+                dl.schedAssess = "N";
+            dl.medDiag = medDiagTextBox.Text;
+            dl.admPsyDiag = admPsyDiagTextBox.Text;
+            dl.timeAccepted = timeAcceptedDateTimePicker.Value;
+            dl.nurseNotified = nurseNotifiedTextBox.Text;
+            dl.physOnCall = physOnCallTextBox.Text;
+            if (timeAcceptedNACheckBox.Checked)
+                dl.timeAcceptedNA = "Y";
+            else
+                dl.timeAcceptedNA = "N";
+            dl.transportDesc = transportDescTextBox.Text;
+            dl.callEndedTime = callEndedTimeTextBox.Text;
+        }
 
-        //private void setCallSheetInfo()
-        //{
-        //    callerFNameTextBox.Text = dl.CallerFName;
-        //    callerZipTextBox.Text = dl.CallerZip;
-        //    callerLNameTextBox.Text = dl.CallerLName;
-        //    callerStateTextBox.Text = dl.CallerState;
-        //    callerRefNameTextBox.Text = dl.CallerRefName;
-        //    callerAgencyTextBox.Text = dl.CallerAgency;
-        //    callerCityTextBox.Text = dl.CallerCity;
-        //    phoneTextBox.Text = dl.Phone;
-        //    countyTextBox.Text = dl.County;
-        //    zipTextBox.Text = dl.Zip;
-        //    stateTextBox.Text = dl.State;
-        //    cityTextBox.Text = dl.City;
-        //    addressTextBox.Text = dl.Address;
-        //    sSNTextBox.Text = dl.SSN;
-        //    dOBDateTimePicker.Value = dl.DOB ?? DateTime.Today;
-        //    ageTextBox.Text = dl.Age;
-        //    lastNameTextBox.Text = dl.LastName;
-        //    middleInitialTextBox.Text = dl.MiddleInitial;
-        //    firstNameTextBox.Text = dl.FirstName;
-        //    medConcernsTextBox.Text = dl.MedConcerns;
-        //    currentOutpatTextBox.Text = dl.CurrentOutpat;
-        //    prevTxTextBox.Text = dl.PrevTx;
-        //    subMisuseTextBox.Text = dl.SubMisuse;
-        //    lethalMeansTextBox.Text = dl.LethalMeans;
-        //    presentProbTextBox.Text = dl.PresentProb;
-        //    rTextBox.Text = dl.R;
-        //    pTextBox.Text = dl.P;
-        //    tTextBox.Text = dl.T;
-        //    bloodPressureTextBox.Text = dl.BloodPressure;
-        //    iQTextBox.Text = dl.IQ.ToString();
-        //    primInsPhoneTextBox.Text = dl.PrimInsPhone;
-        //    primInsNameTextBox.Text = dl.PrimInsName;
-        //    nurseIntakeTextBox.Text = dl.NurseIntake;
-        //    secInsPhoneTextBox.Text = dl.SecInsPhone;
-        //    secInsNameTextBox.Text = dl.SecInsName;
-        //    callEndedDateTimePicker.Value = dl.CallEnded ?? DateTime.Today;
-        //    callCollectedByTextBox.Text = dl.CallCollectedBy;
-        //    callNotesTextBox.Text = dl.CallNotes;
-        //    schedAssessTimeTextBox.Text = dl.SchedAssessTime;
-        //    schedAssessDateDateTimePicker.Value = dl.SchedAssessDate ?? DateTime.Today;
-        //    callStartedDateTimePicker.Value = dl.CallStarted ?? DateTime.Today;
-        //    callerPhoneTextBox.Text = dl.CallerPhone;
-        //    presentOtherDescTextBox.Text = dl.PresentOtherDesc;
-        //    if (dl.PresentOther == "Y")
-        //        presentOtherCheckBox.Checked = true;
-        //    if (dl.PresentPsychosis == "Y")
-        //        presentPsychosisCheckBox.Checked = true;
-        //    if (dl.PresentHomicide == "Y")
-        //        presentHomicideCheckBox.Checked = true;
-        //    if (dl.PresentSelfHarm == "Y")
-        //        presentSelfHarmCheckBox.Checked = true;
-        //    if (dl.PresentSuicide == "Y")
-        //        presentSuicideCheckBox.Checked = true;
-        //    if (dl.EmergencyContact == "Y")
-        //        emergencyContactCheckBox.Checked = true;
-        //    emergencyContactLNameTextBox.Text = dl.EmergencyContactLName;
-        //    emergencyContactFNameTextBox.Text = dl.EmergencyContactFName;
-        //    powAttorneyPhoneTextBox.Text = dl.PowAttorneyPhone;
-        //    powAttorneyRelatTextBox.Text = dl.PowAttorneyRelat;
-        //    powAttorneyLNameTextBox.Text = dl.PowAttorneyLName;
-        //    powAttorneyFNameTextBox.Text = dl.PowAttorneyFName;
-        //    guardianshipPhoneTextBox.Text = dl.GuardianshipPhone;
-        //    guardianshipRelatTextBox.Text = dl.GuardianshipRelat;
-        //    guardianshipFNameTextBox.Text = dl.GuardianshipFName;
-        //    guardianshipLNameTextBox.Text = dl.GuardianshipLName;
-        //    medEduRightsRelatTextBox.Text = dl.MedEduRightsRelat;
-        //    medEduRightsPhoneTextBox.Text = dl.MedEduRightsPhone;
-        //    medEduRightsLNameTextBox.Text = dl.MedEduRightsLName;
-        //    medEduRightsFNameTextBox.Text = dl.MedEduRightsFName;
-        //    emergencyContactPhoneTextBox.Text = dl.EmergencyContactPhone;
-        //    emergencyContactRelatTextBox.Text = dl.EmergencyContactRelat;
-        //    sexVictimDescTextBox.Text = dl.SexVictimDesc;
-        //    prefLangDescTextBox.Text = dl.PrefLangDesc;
-        //    sexAggressDescTextBox.Text = dl.SexAggressDesc;
-        //    callStartedTimeTextBox.Text = dl.CallStartedTime;
-        //    commitStatDescTextBox.Text = dl.CommitStatDesc;
-        //    if (dl.VitalsNotObtain == "Y")
-        //        vitalsNotObtainCheckBox.Checked = true;
-        //    if (dl.SchedAssess == "Y")
-        //        schedAssessCheckBox.Checked = true;
-        //    medDiagTextBox.Text = dl.MedDiag;
-        //    admPsyDiagTextBox.Text = dl.AdmPsyDiag;
-        //    timeAcceptedDateTimePicker.Value = dl.TimeAccepted ?? DateTime.Today;
-        //    nurseNotifiedTextBox.Text = dl.NurseNotified;
-        //    physOnCallTextBox.Text = dl.PhysOnCall;
-        //    if (dl.TimeAcceptedNA == "Y")
-        //        timeAcceptedNACheckBox.Checked = true;
-        //    transportDescTextBox.Text = dl.TransportDesc;
-        //    callEndedTimeTextBox.Text = dl.CallEndedTime;
-        //}
+        private void setCallSheetInfo()
+        {
+            callerFNameTextBox.Text = dl.callerFName;
+            callerZipTextBox.Text = dl.callerZip;
+            callerLNameTextBox.Text = dl.callerLName;
+            callerStateTextBox.Text = dl.callerState;
+            callerRefNameTextBox.Text = dl.callerRefName;
+            callerAgencyTextBox.Text = dl.callerAgency;
+            callerCityTextBox.Text = dl.callerCity;
+            phoneTextBox.Text = dl.phone;
+            countyTextBox.Text = dl.county;
+            zipTextBox.Text = dl.zip;
+            stateTextBox.Text = dl.state;
+            cityTextBox.Text = dl.city;
+            addressTextBox.Text = dl.address;
+            sSNTextBox.Text = dl.sSN;
+            dOBDateTimePicker.Value = dl.dOB ?? DateTime.Today;
+            ageTextBox.Text = dl.age;
+            lastNameTextBox.Text = dl.lastName;
+            middleInitialTextBox.Text = dl.middleInitial;
+            firstNameTextBox.Text = dl.firstName;
+            medConcernsTextBox.Text = dl.medConcerns;
+            currentOutpatTextBox.Text = dl.currentOutpat;
+            prevTxTextBox.Text = dl.prevTx;
+            subMisuseTextBox.Text = dl.subMisuse;
+            lethalMeansTextBox.Text = dl.lethalMeans;
+            presentProbTextBox.Text = dl.presentProb;
+            rTextBox.Text = dl.r;
+            pTextBox.Text = dl.p;
+            tTextBox.Text = dl.t;
+            bloodPressureTextBox.Text = dl.bloodPressure;
+            iQTextBox.Text = dl.iQ.ToString();
+            primInsPhoneTextBox.Text = dl.primInsPhone;
+            primInsNameTextBox.Text = dl.primInsName;
+            nurseIntakeTextBox.Text = dl.nurseIntake;
+            secInsPhoneTextBox.Text = dl.secInsPhone;
+            secInsNameTextBox.Text = dl.secInsName;
+            callEndedDateTimePicker.Value = dl.callEnded ?? DateTime.Today;
+            callCollectedByTextBox.Text = dl.callCollectedBy;
+            callNotesTextBox.Text = dl.callNotes;
+            schedAssessTimeTextBox.Text = dl.schedAssessTime;
+            schedAssessDateDateTimePicker.Value = dl.schedAssessDate ?? DateTime.Today;
+            callStartedDateTimePicker.Value = dl.callStarted ?? DateTime.Today;
+            callerPhoneTextBox.Text = dl.callerPhone;
+            presentOtherDescTextBox.Text = dl.presentOtherDesc;
+            if (dl.presentOther == "Y")
+                presentOtherCheckBox.Checked = true;
+            else
+                presentOtherCheckBox.Checked = false;
+            if (dl.presentPsychosis == "Y")
+                presentPsychosisCheckBox.Checked = true;
+            else
+                presentPsychosisCheckBox.Checked = false;
+            if (dl.presentHomicide == "Y")
+                presentHomicideCheckBox.Checked = true;
+            else
+                presentHomicideCheckBox.Checked = false;
+            if (dl.presentSelfHarm == "Y")
+                presentSelfHarmCheckBox.Checked = true;
+            else
+                presentSelfHarmCheckBox.Checked = false;
+            if (dl.presentSuicide == "Y")
+                presentSuicideCheckBox.Checked = true;
+            else
+                presentSuicideCheckBox.Checked = false;
+            if (dl.emergencyContact == "Y")
+                emergencyContactCheckBox.Checked = true;
+            else
+                emergencyContactCheckBox.Checked = false;
+            emergencyContactLNameTextBox.Text = dl.emergencyContactLName;
+            emergencyContactFNameTextBox.Text = dl.emergencyContactFName;
+            powAttorneyPhoneTextBox.Text = dl.powAttorneyPhone;
+            powAttorneyRelatTextBox.Text = dl.powAttorneyRelat;
+            powAttorneyLNameTextBox.Text = dl.powAttorneyLName;
+            powAttorneyFNameTextBox.Text = dl.powAttorneyFName;
+            guardianshipPhoneTextBox.Text = dl.guardianshipPhone;
+            guardianshipRelatTextBox.Text = dl.guardianshipRelat;
+            guardianshipFNameTextBox.Text = dl.guardianshipFName;
+            guardianshipLNameTextBox.Text = dl.guardianshipLName;
+            medEduRightsRelatTextBox.Text = dl.medEduRightsRelat;
+            medEduRightsPhoneTextBox.Text = dl.medEduRightsPhone;
+            medEduRightsLNameTextBox.Text = dl.medEduRightsLName;
+            medEduRightsFNameTextBox.Text = dl.medEduRightsFName;
+            emergencyContactPhoneTextBox.Text = dl.emergencyContactPhone;
+            emergencyContactRelatTextBox.Text = dl.emergencyContactRelat;
+            sexVictimDescTextBox.Text = dl.sexVictimDesc;
+            prefLangDescTextBox.Text = dl.prefLangDesc;
+            sexAggressDescTextBox.Text = dl.sexAggressDesc;
+            callStartedTimeTextBox.Text = dl.callStartedTime;
+            commitStatDescTextBox.Text = dl.commitStatDesc;
+            if (dl.vitalsNotObtain == "Y")
+                vitalsNotObtainCheckBox.Checked = true;
+            else
+                vitalsNotObtainCheckBox.Checked = false;
+            if (dl.schedAssess == "Y")
+                schedAssessCheckBox.Checked = true;
+            else
+                schedAssessCheckBox.Checked = false;
+            medDiagTextBox.Text = dl.medDiag;
+            admPsyDiagTextBox.Text = dl.admPsyDiag;
+            timeAcceptedDateTimePicker.Value = dl.timeAccepted ?? DateTime.Today;
+            nurseNotifiedTextBox.Text = dl.nurseNotified;
+            physOnCallTextBox.Text = dl.physOnCall;
+            if (dl.timeAcceptedNA == "Y")
+                timeAcceptedNACheckBox.Checked = true;
+            transportDescTextBox.Text = dl.transportDesc;
+            callEndedTimeTextBox.Text = dl.callEndedTime;
+        }
 
         private void grpBxPatientInfo_Enter(object sender, EventArgs e)
         {

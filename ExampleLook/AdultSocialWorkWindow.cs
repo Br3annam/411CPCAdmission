@@ -12,6 +12,7 @@ namespace ExampleLook
 {
     public partial class AdultSocialWorkWindow : Form
     {
+        DataLayer dl = new DataLayer();
         public AdultSocialWorkWindow()
         {
             InitializeComponent();
@@ -38,377 +39,644 @@ namespace ExampleLook
 
         }
 
-        //private void setAdultSocialWork()
-        //{
-        //    dl.aSWAssignWorker = aSWAssignWorkerTextBox.Text;
-        //    dl.powAttorneyLName = powAttorneyLNameTextBox.Text;
-        //    dl.powAttorneyFName = powAttorneyFNameTextBox.Text;
-        //    dl.guardianshipLName = guardianshipLNameTextBox.Text;
-        //    dl.guardianshipFName = guardianshipFNameTextBox.Text;
-        //    dl.lastName = lastNameTextBox.Text;
-        //    dl.firstName = firstNameTextBox.Text;
-        //    dl.aSWDateComplete = aSWDateCompleteDateTimePicker.Value;
-        //    dl.assessStartDate = assessStartDateDateTimePicker.Value;
-        //    dl.aSWCommInvolve = aSWCommInvolveTextBox.Text;
-        //    dl.aSWFamSupDesc = aSWFamSupDescPatTextBox.Text;
-        //    dl.aSWPatDescSelfSomeone = aSWPatDescSelfSomeoneTextBox.Text;
-        //    dl.aSWCurLevFuncDifTypFunc = aSWCurLevFuncDifTypFuncTextBox.Text;
-        //    dl.aSWNaturePresProb = aSWNaturePresProbTextBox.Text;
-        //    dl.aSWReliableSrcDesc = aSWReliableSrcDescTextBox.Text;
-        //    dl.aSWSrcInfo = aSWSrcInfoTextBox.Text;
-        //    dl.aSWLegStatDesc = aSWLegStatDescTextBox.Text;
-        //    dl.aSWDangerSelfIntent = aSWDangerSelfIntentCheckBox.Checked;
-        //    dl.aSWDangerSelfAttempt = aSWDangerSelfAttemptCheckBox.Checked;
-        //    dl.aSWDangerSelfPlan = aSWDangerSelfPlanCheckBox.Checked;
-        //    dl.aSWDangerSelfIdeation = aSWDangerSelfIdeationCheckBox.Checked;
-        //    dl.aSWDangerSelfHistory = aSWDangerSelfHistoryCheckBox.Checked;
-        //    dl.aSWDangerSelfCurrent = aSWDangerSelfCurrentCheckBox.Checked;
-        //    dl.aSWDangerSelfNotPres = aSWDangerSelfNotPresCheckBox.Checked;
-        //    dl.aSWWeaponLethMeansRemovePlan = aSWWeaponLethMeansRemovePlanTextBox.Text;
-        //    dl.aSWPastSelfInjDesc = aSWPastSelfInjDescTextBox.Text;
-        //    dl.aSWLethPriorMeans = aSWLethPriorMeansTextBox.Text;
-        //    dl.aSWDangerDesc = aSWDangerDescTextBox.Text;
-        //    dl.aSWDangerOthersNotPres = aSWDangerOthersNotPresCheckBox.Checked;
-        //    dl.aSWDangerOthersIntent = aSWDangerOthersIntentCheckBox.Checked;
-        //    dl.aSWDangerOthersAttempt = aSWDangerOthersAttemptCheckBox.Checked;
-        //    dl.aSWDangerOthersPlan = aSWDangerOthersPlanCheckBox.Checked;
-        //    dl.aSWDangerOthersIdeation = aSWDangerOthersIdeationCheckBox.Checked;
-        //    dl.aSWDangerOthersHistory = aSWDangerOthersHistoryCheckBox.Checked;
-        //    dl.aSWDangerOthersCurrent = aSWDangerOthersCurrentCheckBox.Checked;
-        //    dl.aSWVerifyTime = aSWVerifyTimeTextBox.Text;
-        //    dl.aSWVerifyDate = aSWVerifyDateDateTimePicker.Value;
-        //    dl.aSWVerify = aSWVerifyTextBox.Text;
-        //    dl.aSWResponsePatTime = aSWResponsePatTimeTextBox.Text;
-        //    dl.aSWResponsePatDate = aSWResponsePatDateDateTimePicker.Value;
-        //    dl.aSWResponsePat = aSWResponsePatTextBox.Text;
-        //    dl.aSWEmoNegAbuseReportedDesc = aSWEmoNegAbuseReportedDescTextBox.Text;
-        //    dl.aSWEmoNegAbuseWitnessDesc = aSWEmoNegAbuseWitnessDescTextBox.Text;
-        //    dl.aSWPhsyAbuseReportDesc = aSWPhsyAbuseReportDescTextBox.Text;
-        //    dl.aSWPhsyAbuseWitnessDesc = aSWPhsyAbuseWitnessDescTextBox.Text;
-        //    dl.aSWSexAbuseReportDesc = aSWSexAbuseReportDescTextBox.Text;
-        //    dl.aSWSexAbuseWitnessDesc = aSWSexAbuseWitnessDescTextBox.Text;
-        //    dl.aSWOtherTraumaExp = aSWOtherTraumaExpTextBox.Text;
-        //    dl.aSWTermPregDesc = aSWTermPregDescTextBox.Text;
-        //    dl.aSWDateChange = aSWDateChangeDateTimePicker.Value;
-        //    dl.aSWSafeHomeDesc = aSWSafeHomeDescTextBox.Text;
-        //    dl.aSWHomePlanDisch = aSWHomePlanDischTextBox.Text;
-        //    dl.aSWRetHomeWhen = aSWRetHomeWhenTextBox.Text;
-        //    dl.aSWRetHomeWhom = aSWRetHomeWhomTextBox.Text;
-        //    dl.aSWHomePrior = aSWHomePriorTextBox.Text;
-        //    dl.aSWRecFamInvolve = aSWRecFamInvolveTextBox.Text;
-        //    dl.aSWFamDeclineReason = aSWFamDeclineReasonTextBox.Text;
-        //    dl.aSWFamSessInvite = aSWFamSessInviteTextBox.Text;
-        //    dl.aSWDateFamSess = aSWDateFamSessDateTimePicker.Value;
-        //    dl.aSWRelatProb = aSWRelatProbTextBox.Text;
-        //    dl.aSWMemHelpfulDesc = aSWMemHelpfulDescTextBox.Text;
-        //    dl.aSWPriorFamInvolve = aSWPriorFamInvolveTextBox.Text;
-        //    dl.aSWDvlpExplain = aSWDvlpExplainTextBox.Text;
-        //    dl.aSWDvlpOtherDesc = aSWDvlpOtherDescTextBox.Text;
-        //    dl.aSWDvlpOther = aSWDvlpOtherCheckBox.Checked;
-        //    dl.aSWDvlpHoardCollect = aSWDvlpHoardCollectCheckBox.Checked;
-        //    dl.aSWDvlpCleanOrg = aSWDvlpCleanOrgCheckBox.Checked;
-        //    dl.aSWDvlpEmoEat = aSWDvlpEmoEatCheckBox.Checked;
-        //    dl.aSWDvlpShopping = aSWDvlpShoppingCheckBox.Checked;
-        //    dl.aSWDvlpGambling = aSWDvlpGamblingCheckBox.Checked;
-        //    dl.aSWDvlpNone = aSWDvlpNoneCheckBox.Checked;
-        //    dl.aSWEffIneffTreatment = aSWEffIneffTreatmentTextBox.Text;
-        //    dl.aSWHospPrevRemainComm = aSWHospPrevRemainCommTextBox.Text;
-        //    dl.aSWHistHomSuicDesc = aSWHistHomSuicDescTextBox.Text;
-        //    dl.aSWProbImpactFamDesc = aSWProbImpactFamDescTextBox.Text;
-        //    dl.aSWOtherLegalDesc = aSWOtherLegalDescTextBox.Text;
-        //    dl.aSWHistArrestDesc = aSWHistArrestDescTextBox.Text;
-        //    dl.aSWHighestEduComplete = aSWHighestEduCompleteTextBox.Text;
-        //    dl.aSWSchoolStressDesc = aSWSchoolStressDescTextBox.Text;
-        //    dl.aSWCurrSchoolWhere = aSWCurrSchoolWhereTextBox.Text;
-        //    dl.auditSubComplTotal = auditSubComplTotalTextBox.Text;
-        //    dl.aSWSubAbuseResultNone = aSWSubAbuseResultNoneCheckBox.Checked;
-        //    dl.aSWSubABuseResultOtherDesc = aSWSubAbuseResultOtherDescTextBox.Text;
-        //    dl.aSWSubAbuseResultOther = aSWSubAbuseResultOtherCheckBox.Checked;
-        //    dl.aSWSubAbuseResultPromis = aSWSubAbuseResultPromisCheckBox.Checked;
-        //    dl.aSWSubAbuseResultWorkProb = aSWSubAbuseResultWorkProbCheckBox.Checked;
-        //    dl.aSWSubAbuseResultBlackout = aSWSubAbuseResultBlackoutCheckBox.Checked;
-        //    dl.aSWSubAbuseResultThoughtSelfHarm = aSWSubAbuseResultThoughtSelfHarmCheckBox.Checked;
-        //    dl.aSWSubAbuseResultUnpBills = aSWSubAbuseResultUnpBillsCheckBox.Checked;
-        //    dl.aSWSubAbuseResultRelatProb = aSWSubAbuseResultRelatProbCheckBox.Checked;
-        //    dl.aSWSubAbuseResultArrest = aSWSubAbuseResultArrestCheckBox.Checked;
-        //    dl.aSWSubAbuseNA = aSWSubAbuseNACheckBox.Checked;
-        //    dl.aSWReferMadeDesc = aSWReferMadeDescTextBox.Text;
-        //    dl.aSWReferMade = aSWReferMadeCheckBox.Checked;
-        //    dl.aSWEduProvPat = aSWEduProvPatCheckBox.Checked;
-        //    dl.aSWPatInformRecom = aSWPatInformRecomCheckBox.Checked;
-        //    dl.aSWRecomDesc = aSWRecomDescTextBox.Text;
-        //    dl.aSWRecom = aSWRecomCheckBox.Checked;
-        //    dl.aSWInterventionOtherDesc = aSWInterventionOtherDescTextBox.Text;
-        //    dl.aSWInterventionOther = aSWInterventionOtherCheckBox.Checked;
-        //    dl.aSWAdvAbstain = aSWAdvAbstainCheckBox.Checked;
-        //    dl.aSWMotDisc = aSWMotDiscCheckBox.Checked;
-        //    dl.aSWDiscSeverity = aSWDiscSeverityCheckBox.Checked;
-        //    dl.aSWDiscNegCons = aSWDiscNegConsCheckBox.Checked;
-        //    dl.aSWFeedback = aSWFeedbackCheckBox.Checked;
-        //    dl.aSWSubTreatHistDesc = aSWSubTreatHistDescTextBox.Text;
-        //    dl.aSWSubTreatHist = aSWSubTreatHistCheckBox.Checked;
-        //    dl.aSWBenefitUse = aSWBenefitUseTextBox.Text;
-        //    dl.aSWDrugChoice = aSWDrugChoiceTextBox.Text;
-        //    dl.aSWMilSigEvents = aSWMilSigEventsTextBox.Text;
-        //    dl.aSWMilDischar = aSWMilDischarTextBox.Text;
-        //    dl.aSWMilDates = aSWMilDatesTextBox.Text;
-        //    dl.aSWMilBranch = aSWMilBranchTextBox.Text;
-        //    dl.aSWSrcIncome = aSWSrcIncomeTextBox.Text;
-        //    dl.aSWAvhMonIncome = aSWAvgMonIncomeTextBox.Text;
-        //    dl.aSWFeelCurrWorkDesc = aSWFeelCurrWorkDescTextBox.Text;
-        //    dl.aSWFeelCurrWork = aSWFeelCurrWorkCheckBox.Checked;
-        //    dl.aSWWeNeedKnowDesc = aSWWeNeedKnowDescTextBox.Text;
-        //    dl.aSWCultIssContribDesc = aSWCultIssContribDescTextBox.Text;
-        //    dl.aSWCurrReligInvo = aSWCurrReligInvoTextBox.Text;
-        //    dl.aSWChronDisabImpFunctDesc = aSWChronDisabImpFunctDescTextBox.Text;
-        //    dl.aSWHistSigMedIssDesc = aSWHistSigMedIssDescTextBox.Text;
-        //    dl.aSWMedIssContribDesc = aSWMedIssContribDescTextBox.Text;
-        //    dl.aSWFinanceStressDesc = aSWFinanceStressDescTextBox.Text;
-        //    dl.aSWObtMedNeedDesc = aSWObtMedNeedDescTextBox.Text;
-        //    dl.aSWObtMedNeed = aSWObtMedNeedCheckBox.Checked;
-        //    dl.aSWMedIncome = aSWObtMedIncomeCheckBox.Checked;
-        //    dl.aSWMedTrans = aSWObtMedTransCheckBox.Checked;
-        //    dl.aSWMAPartCommSuppResp = aSWMAPartCommSuppRespTextBox.Text;
-        //    dl.aSWMAPartCommSuppWhen = aSWMAPartCommSuppWhenTextBox.Text;
-        //    dl.aSWReadmOtherDesc = aSWReadmOtherDescTextBox.Text;
-        //    dl.aSWReadmOther = aSWReadmOtherCheckBox.Checked;
-        //    dl.aSWReadmCompli = aSWReadmCompliCheckBox.Checked;
-        //    dl.aSWReadmPriorAuthor = aSWReadmPriorAuthorCheckBox.Checked;
-        //    dl.aSWReadmMedStab = aSWReadmMedStabCheckBox.Checked;
-        //    dl.aSWReadmNA = aSWReadmNACheckBox.Checked;
-        //    dl.aSWCareNone = aSWCareNoneCheckBox.Checked;
-        //    dl.aSWCareOtherDesc = aSWCareOtherDescTextBox.Text;
-        //    dl.aSWCareOther = aSWCareOtherCheckBox.Checked;
-        //    dl.aSWCareAcuteMed = aSWCareAcuteMedCheckBox.Checked;
-        //    dl.aSWCareTrans = aSWCareTransCheckBox.Checked;
-        //    dl.aSWCarePetsUnsup = aSWCarePetsUnsupCheckBox.Checked;
-        //    dl.aSWCareHouse = aSWCareHouseCheckBox.Checked;
-        //    dl.aSWCareHIstNonComp = aSWCareHIstNonCompCheckBox.Checked;
-        //    dl.aSWArrSchedNeedDesc = aSWArrSchedNeedDescTextBox.Text;
-        //    dl.aSWArrSchedNeed = aSWArrSchedNeedCheckBox.Checked;
-        //    dl.aSWArrSchedMATP = aSWArrSchedMATPCheckBox.Checked;
-        //    dl.aSWArrSchedFamFri = aSWArrSchedFamFriCheckBox.Checked;
-        //    dl.aSWArrSchedPersVeh = aSWArrSchedPersVehCheckBox.Checked;
-        //    dl.aSWPrelimDischargePlan = aSWPrelimDischargePlanTextBox.Text;
-        //    dl.aSWRoleOtherDesc = aSWRoleOtherDescTextBox.Text;
-        //    dl.aSWRoleOther = aSWRoleOtherCheckBox.Checked;
-        //    dl.aSWRoleAftercare = aSWRoleAftercareCheckBox.Checked;
-        //    dl.aSWRoleFamTher = aSWRoleFamTherCheckBox.Checked;
-        //    dl.aSWRoleIndivTher = aSWRoleIndivTherCheckBox.Checked;
-        //    dl.aSWRoleGrpTher = aSWRoleGrpTherCheckBox.Checked;
-        //    dl.aSWConcRecom = aSWConcRecomTextBox.Text;
-        //    dl.aSWReferNone = aSWReferNoneCheckBox.Checked;
-        //    dl.aSWReferOtherDesc = aSWReferOtherDescTextBox.Text;
-        //    dl.aSWReferOther = aSWReferOtherCheckBox.Checked;
-        //    dl.aSWReferPeerSpec = aSWReferPeerSpecCheckBox.Checked;
-        //    dl.aSWReferOutpatDA = aSWReferOutpatDACheckBox.Checked;
-        //    dl.aSWReferPCPCheckBox = aSWReferPCPCheckBox.Checked;
-        //    dl.aSWReferInpatDA = aSWReferInpatDACheckBox.Checked;
-        //    dl.aSWReferCMBC = aSWReferCMBCMCheckBox.Checked;
-        //    dl.aSWReferStateHosp = aSWReferStateHospCheckBox.Checked;
-        //    dl.aSWReferEAC = aSWReferEACCheckBox.Checked;
-        //    dl.aSWReferLTSRCRR = aSWReferLTSRCRRCheckBox.Checked;
-        //    dl.aSWReferIOP = aSWReferIOPCheckBox.Checked;
-        //    dl.aSWReferPsychRehab = aSWReferPsychRehabCheckBox.Checked;
-        //    dl.aSWReferPHP = aSWReferPHPCheckBox.Checked;
-        //    dl.aSWReferPsych = aSWReferPsychCheckBox.Checked;
-        //    dl.aSWReferOutpat = aSWReferOutpatCheckBox.Checked;
-        //    dl.aSWBarNone = aSWBarNoneCheckBox.Checked;
-        //    dl.aSWBarOtherDesc = aSWBarOtherDescTextBox.Text;
-        //    dl.aSWBarOther = aSWBarOtherCheckBox.Checked;
-        //    dl.aSWBarAbsFacAccSpecNeed = aSWBarAbsFacAccSpecNeedCheckBox.Checked;
-        //    dl.aSWBarNonComp = aSWBarNonCompCheckBox.Checked;
-        //    dl.aSWBarHouse = aSWBarHouseCheckBox.Checked;
-        //    dl.aSWBarMeds = aSWBarMedsCheckBox.Checked;
-        //    dl.aSWBarTrans = aSWBarTransCheckBox.Checked;
-        //    dl.aSWPrefPharm = aSWPrefPharmTextBox.Text;
-        //}
+        private void setAdultSocialWork()
+        {
+            dl.aSWAssignWorker = aSWAssignWorkerTextBox.Text;
+            dl.powAttorneyLName = powAttorneyLNameTextBox.Text;
+            dl.powAttorneyFName = powAttorneyFNameTextBox.Text;
+            dl.guardianshipLName = guardianshipLNameTextBox.Text;
+            dl.guardianshipFName = guardianshipFNameTextBox.Text;
+            dl.lastName = lastNameTextBox.Text;
+            dl.firstName = firstNameTextBox.Text;
+            dl.aSWDateComplete = aSWDateCompleteDateTimePicker.Value;
+            dl.assessStartDate = assessStartDateDateTimePicker.Value;
+            dl.aSWCommInvolve = aSWCommInvolveTextBox.Text;
+            dl.aSWFamSupDescPat = aSWFamSupDescPatTextBox.Text;
+            dl.aSWPatDescSelfSomeone = aSWPatDescSelfSomeoneTextBox.Text;
+            dl.aSWCurLevFuncDifTypFunc = aSWCurLevFuncDifTypFuncTextBox.Text;
+            dl.aSWNaturePresProb = aSWNaturePresProbTextBox.Text;
+            dl.aSWReliableSrcDesc = aSWReliableSrcDescTextBox.Text;
+            dl.aSWSrcInfo = aSWSrcInfoTextBox.Text;
+            dl.aSWLegStatDesc = aSWLegStatDescTextBox.Text;
+            dl.aSWDangerSelfIntent = aSWDangerSelfIntentCheckBox.Checked ? "Y" : "N";
+            dl.aSWDangerSelfAttempt = aSWDangerSelfAttemptCheckBox.Checked ? "Y" : "N";
+            dl.aSWDangerSelfPlan = aSWDangerSelfPlanCheckBox.Checked ? "Y" : "N";
+            dl.aSWDangerSelfIdeation = aSWDangerSelfIdeationCheckBox.Checked ? "Y" : "N";
+            dl.aSWDangerSelfHistory = aSWDangerSelfHistoryCheckBox.Checked ? "Y" : "N";
+            dl.aSWDangerSelfCurrent = aSWDangerSelfCurrentCheckBox.Checked ? "Y" : "N";
+            dl.aSWDangerSelfNotPres = aSWDangerSelfNotPresCheckBox.Checked ? "Y" : "N";
+            dl.aSWWeaponLethMeansRemovePlan = aSWWeaponLethMeansRemovePlanTextBox.Text;
+            dl.aSWPastSelfInjDesc = aSWPastSelfInjDescTextBox.Text;
+            dl.aSWLethPriorMeans = aSWLethPriorMeansTextBox.Text;
+            dl.aSWDangerDesc = aSWDangerDescTextBox.Text;
+            dl.aSWDangerOthersNotPres = aSWDangerOthersNotPresCheckBox.Checked ? "Y" : "N";
+            dl.aSWDangerOthersIntent = aSWDangerOthersIntentCheckBox.Checked ? "Y" : "N";
+            dl.aSWDangerOthersAttempt = aSWDangerOthersAttemptCheckBox.Checked ? "Y" : "N";
+            dl.aSWDangerOthersPlan = aSWDangerOthersPlanCheckBox.Checked ? "Y" : "N";
+            dl.aSWDangerOthersIdeation = aSWDangerOthersIdeationCheckBox.Checked ? "Y" : "N";
+            dl.aSWDangerOthersHistory = aSWDangerOthersHistoryCheckBox.Checked ? "Y" : "N";
+            dl.aSWDangerOthersCurrent = aSWDangerOthersCurrentCheckBox.Checked ? "Y" : "N";
+            dl.aSWVerifyTime = aSWVerifyTimeTextBox.Text;
+            dl.aSWVerifyDate = aSWVerifyDateDateTimePicker.Value;
+            dl.aSWVerify = aSWVerifyTextBox.Text;
+            dl.aSWResponsePatTime = aSWResponsePatTimeTextBox.Text;
+            dl.aSWResponsePatDate = aSWResponsePatDateDateTimePicker.Value;
+            dl.aSWResponsePat = aSWResponsePatTextBox.Text;
+            dl.aSWEmoNegAbuseReportedDesc = aSWEmoNegAbuseReportedDescTextBox.Text;
+            dl.aSWEmoNegAbuseWitnessDesc = aSWEmoNegAbuseWitnessDescTextBox.Text;
+            dl.aSWPhsyAbuseReportDesc = aSWPhsyAbuseReportDescTextBox.Text;
+            dl.aSWPhsyAbuseWitnessDesc = aSWPhsyAbuseWitnessDescTextBox.Text;
+            dl.aSWSexAbuseReportDesc = aSWSexAbuseReportDescTextBox.Text;
+            dl.aSWSexAbuseWitnessDesc = aSWSexAbuseWitnessDescTextBox.Text;
+            dl.aSWOtherTraumaExp = aSWOtherTraumaExpTextBox.Text;
+            dl.aSWTermPregDesc = aSWTermPregDescTextBox.Text;
+            dl.aSWDateChange = aSWDateChangeDateTimePicker.Value;
+            dl.aSWSafeHomeDesc = aSWSafeHomeDescTextBox.Text;
+            dl.aSWHomePlanDisch = aSWHomePlanDischTextBox.Text;
+            dl.aSWRetHomeWhen = aSWRetHomeWhenTextBox.Text;
+            dl.aSWRetHomeWhom = aSWRetHomeWhomTextBox.Text;
+            dl.aSWHomePrior = aSWHomePriorTextBox.Text;
+            dl.aSWRecFamInvolve = aSWRecFamInvolveTextBox.Text;
+            dl.aSWFamDeclineReason = aSWFamDeclineReasonTextBox.Text;
+            dl.aSWFamSessInvite = aSWFamSessInviteTextBox.Text;
+            dl.aSWDateFamSess = aSWDateFamSessDateTimePicker.Value;
+            dl.aSWRelatProb = aSWRelatProbTextBox.Text;
+            dl.aSWMemHelpfulDesc = aSWMemHelpfulDescTextBox.Text;
+            dl.aSWPriorFamInvolve = aSWPriorFamInvolveTextBox.Text;
+            dl.aSWDvlpExplain = aSWDvlpExplainTextBox.Text;
+            dl.aSWDvlpOtherDesc = aSWDvlpOtherDescTextBox.Text;
+            dl.aSWDvlpOther = aSWDvlpOtherCheckBox.Checked ? "Y" : "N";
+            dl.aSWDvlpHoardCollect = aSWDvlpHoardCollectCheckBox.Checked ? "Y" : "N";
+            dl.aSWDvlpCleanOrg = aSWDvlpCleanOrgCheckBox.Checked ? "Y" : "N";
+            dl.aSWDvlpEmoEat = aSWDvlpEmoEatCheckBox.Checked ? "Y" : "N";
+            dl.aSWDvlpShopping = aSWDvlpShoppingCheckBox.Checked ? "Y" : "N";
+            dl.aSWDvlpGambling = aSWDvlpGamblingCheckBox.Checked ? "Y" : "N";
+            dl.aSWDvlpNone = aSWDvlpNoneCheckBox.Checked ? "Y" : "N";
+            dl.aSWEffIneffTreatment = aSWEffIneffTreatmentTextBox.Text;
+            dl.aSWHospPrevRemainComm = aSWHospPrevRemainCommTextBox.Text;
+            dl.aSWHistHomSuicDesc = aSWHistHomSuicDescTextBox.Text;
+            dl.aSWProbImpactFamDesc = aSWProbImpactFamDescTextBox.Text;
+            dl.aSWOtherLegalDesc = aSWOtherLegalDescTextBox.Text;
+            dl.aSWHistArrestDesc = aSWHistArrestDescTextBox.Text;
+            dl.aSWHighestEduComplete = aSWHighestEduCompleteTextBox.Text;
+            dl.aSWSchoolStressDesc = aSWSchoolStressDescTextBox.Text;
+            dl.aSWCurrSchoolWhere = aSWCurrSchoolWhereTextBox.Text;
+            dl.auditSubComplTotal = auditSubComplTotalTextBox.Text;
+            dl.aSWSubAbuseResultNone = aSWSubAbuseResultNoneCheckBox.Checked ? "Y" : "N";
+            dl.aSWSubAbuseResultOtherDesc = aSWSubAbuseResultOtherDescTextBox.Text;
+            dl.aSWSubAbuseResultOther = aSWSubAbuseResultOtherCheckBox.Checked ? "Y" : "N";
+            dl.aSWSubAbuseResultPromis = aSWSubAbuseResultPromisCheckBox.Checked ? "Y" : "N";
+            dl.aSWSubAbuseResultWorkProb = aSWSubAbuseResultWorkProbCheckBox.Checked ? "Y" : "N";
+            dl.aSWSubAbuseResultBlackout = aSWSubAbuseResultBlackoutCheckBox.Checked ? "Y" : "N";
+            dl.aSWSubAbuseResultThoughtSelfHarm = aSWSubAbuseResultThoughtSelfHarmCheckBox.Checked ? "Y" : "N";
+            dl.aSWSubAbuseResultUnpBills = aSWSubAbuseResultUnpBillsCheckBox.Checked ? "Y" : "N";
+            dl.aSWSubAbuseResultRelatProb = aSWSubAbuseResultRelatProbCheckBox.Checked ? "Y" : "N";
+            dl.aSWSubAbuseResultArrest = aSWSubAbuseResultArrestCheckBox.Checked ? "Y" : "N";
+            dl.aSWSubAbuseNA = aSWSubAbuseNACheckBox.Checked ? "Y" : "N";
+            dl.aSWReferMadeDesc = aSWReferMadeDescTextBox.Text;
+            dl.aSWReferMade = aSWReferMadeCheckBox.Checked ? "Y" : "N";
+            dl.aSWEduProvPat = aSWEduProvPatCheckBox.Checked ? "Y" : "N";
+            dl.aSWPatInformRecom = aSWPatInformRecomCheckBox.Checked ? "Y" : "N";
+            dl.aSWRecomDesc = aSWRecomDescTextBox.Text;
+            dl.aSWRecom = aSWRecomCheckBox.Checked ? "Y" : "N";
+            dl.aSWInterventionOtherDesc = aSWInterventionOtherDescTextBox.Text;
+            dl.aSWInterventionOther = aSWInterventionOtherCheckBox.Checked ? "Y" : "N";
+            dl.aSWAdvAbstain = aSWAdvAbstainCheckBox.Checked ? "Y" : "N";
+            dl.aSWMotDisc = aSWMotDiscCheckBox.Checked ? "Y" : "N";
+            dl.aSWDiscSeverity = aSWDiscSeverityCheckBox.Checked ? "Y" : "N";
+            dl.aSWDiscNegCons = aSWDiscNegConsCheckBox.Checked ? "Y" : "N";
+            dl.aSWFeedback = aSWFeedbackCheckBox.Checked ? "Y" : "N";
+            dl.aSWSubTreatHistDesc = aSWSubTreatHistDescTextBox.Text;
+            dl.aSWSubTreatHist = aSWSubTreatHistCheckBox.Checked ? "Y" : "N";
+            dl.aSWBenefitUse = aSWBenefitUseTextBox.Text;
+            dl.aSWDrugChoice = aSWDrugChoiceTextBox.Text;
+            dl.aSWMilSigEvents = aSWMilSigEventsTextBox.Text;
+            dl.aSWMilDischar = aSWMilDischarTextBox.Text;
+            dl.aSWMilDates = aSWMilDatesTextBox.Text;
+            dl.aSWMilBranch = aSWMilBranchTextBox.Text;
+            dl.aSWSrcIncome = aSWSrcIncomeTextBox.Text;
+            dl.aSWAvgMonIncome = aSWAvgMonIncomeTextBox.Text;
+            dl.aSWFeelCurrWorkDesc = aSWFeelCurrWorkDescTextBox.Text;
+            dl.aSWFeelCurrWork = aSWFeelCurrWorkCheckBox.Checked ? "Y" : "N";
+            dl.aSWWeNeedKnowDesc = aSWWeNeedKnowDescTextBox.Text;
+            dl.aSWCultIssContribDesc = aSWCultIssContribDescTextBox.Text;
+            dl.aSWCurrReligInvo = aSWCurrReligInvoTextBox.Text;
+            dl.aSWChronDisabImpFunctDesc = aSWChronDisabImpFunctDescTextBox.Text;
+            dl.aSWHistSigMedIssDesc = aSWHistSigMedIssDescTextBox.Text;
+            dl.aSWMedIssContribDesc = aSWMedIssContribDescTextBox.Text;
+            dl.aSWFinanceStressDesc = aSWFinanceStressDescTextBox.Text;
+            dl.aSWObtMedNeedDesc = aSWObtMedNeedDescTextBox.Text;
+            dl.aSWObtMedNeed = aSWObtMedNeedCheckBox.Checked ? "Y" : "N";
+            dl.aSWObtMedIncome = aSWObtMedIncomeCheckBox.Checked ? "Y" : "N";
+            dl.aSWObtMedTrans = aSWObtMedTransCheckBox.Checked ? "Y" : "N";
+            dl.aSWMAPartCommSuppResp = aSWMAPartCommSuppRespTextBox.Text;
+            dl.aSWMAPartCommSuppWhen = aSWMAPartCommSuppWhenTextBox.Text;
+            dl.aSWReadmOtherDesc = aSWReadmOtherDescTextBox.Text;
+            dl.aSWReadmOther = aSWReadmOtherCheckBox.Checked ? "Y" : "N";
+            dl.aSWReadmCompli = aSWReadmCompliCheckBox.Checked ? "Y" : "N";
+            dl.aSWReadmPriorAuthor = aSWReadmPriorAuthorCheckBox.Checked ? "Y" : "N";
+            dl.aSWReadmMedStab = aSWReadmMedStabCheckBox.Checked ? "Y" : "N";
+            dl.aSWReadmNA = aSWReadmNACheckBox.Checked ? "Y" : "N";
+            dl.aSWCareNone = aSWCareNoneCheckBox.Checked ? "Y" : "N";
+            dl.aSWCareOtherDesc = aSWCareOtherDescTextBox.Text;
+            dl.aSWCareOther = aSWCareOtherCheckBox.Checked ? "Y" : "N";
+            dl.aSWCareAcuteMed = aSWCareAcuteMedCheckBox.Checked ? "Y" : "N";
+            dl.aSWCareTrans = aSWCareTransCheckBox.Checked ? "Y" : "N";
+            dl.aSWCarePetsUnsup = aSWCarePetsUnsupCheckBox.Checked ? "Y" : "N";
+            dl.aSWCareHouse = aSWCareHouseCheckBox.Checked ? "Y" : "N";
+            dl.aSWCareHIstNonComp = aSWCareHIstNonCompCheckBox.Checked ? "Y" : "N";
+            dl.aSWArrSchedNeedDesc = aSWArrSchedNeedDescTextBox.Text;
+            dl.aSWArrSchedNeed = aSWArrSchedNeedCheckBox.Checked ? "Y" : "N";
+            dl.aSWArrSchedMATP = aSWArrSchedMATPCheckBox.Checked ? "Y" : "N";
+            dl.aSWArrSchedFamFri = aSWArrSchedFamFriCheckBox.Checked ? "Y" : "N";
+            dl.aSWArrSchedPersVeh = aSWArrSchedPersVehCheckBox.Checked ? "Y" : "N";
+            dl.aSWPrelimDischargePlan = aSWPrelimDischargePlanTextBox.Text;
+            dl.aSWRoleOtherDesc = aSWRoleOtherDescTextBox.Text;
+            dl.aSWRoleOther = aSWRoleOtherCheckBox.Checked ? "Y" : "N";
+            dl.aSWRoleAftercare = aSWRoleAftercareCheckBox.Checked ? "Y" : "N";
+            dl.aSWRoleFamTher = aSWRoleFamTherCheckBox.Checked ? "Y" : "N";
+            dl.aSWRoleIndivTher = aSWRoleIndivTherCheckBox.Checked ? "Y" : "N";
+            dl.aSWRoleGrpTher = aSWRoleGrpTherCheckBox.Checked ? "Y" : "N";
+            dl.aSWConcRecom = aSWConcRecomTextBox.Text;
+            dl.aSWReferNone = aSWReferNoneCheckBox.Checked ? "Y" : "N";
+            dl.aSWReferOtherDesc = aSWReferOtherDescTextBox.Text;
+            dl.aSWReferOther = aSWReferOtherCheckBox.Checked ? "Y" : "N";
+            dl.aSWReferPeerSpec = aSWReferPeerSpecCheckBox.Checked ? "Y" : "N";
+            dl.aSWReferOutpatDA = aSWReferOutpatDACheckBox.Checked ? "Y" : "N";
+            dl.aSWReferPCP = aSWReferPCPCheckBox.Checked ? "Y" : "N";
+            dl.aSWReferInpatDA = aSWReferInpatDACheckBox.Checked ? "Y" : "N";
+            dl.aSWReferCMBCM = aSWReferCMBCMCheckBox.Checked ? "Y" : "N";
+            dl.aSWReferStateHosp = aSWReferStateHospCheckBox.Checked ? "Y" : "N";
+            dl.aSWReferEAC = aSWReferEACCheckBox.Checked ? "Y" : "N";
+            dl.aSWReferLTSRCRR = aSWReferLTSRCRRCheckBox.Checked ? "Y" : "N";
+            dl.aSWReferIOP = aSWReferIOPCheckBox.Checked ? "Y" : "N";
+            dl.aSWReferPsychRehab = aSWReferPsychRehabCheckBox.Checked ? "Y" : "N";
+            dl.aSWReferPHP = aSWReferPHPCheckBox.Checked ? "Y" : "N";
+            dl.aSWReferPsych = aSWReferPsychCheckBox.Checked ? "Y" : "N";
+            dl.aSWReferOutpat = aSWReferOutpatCheckBox.Checked ? "Y" : "N";
+            dl.aSWBarNone = aSWBarNoneCheckBox.Checked ? "Y" : "N";
+            dl.aSWBarOtherDesc = aSWBarOtherDescTextBox.Text;
+            dl.aSWBarOther = aSWBarOtherCheckBox.Checked ? "Y" : "N";
+            dl.aSWBarAbsFacAccSpecNeed = aSWBarAbsFacAccSpecNeedCheckBox.Checked ? "Y" : "N";
+            dl.aSWBarNonComp = aSWBarNonCompCheckBox.Checked ? "Y" : "N";
+            dl.aSWBarHouse = aSWBarHouseCheckBox.Checked ? "Y" : "N";
+            dl.aSWBarMeds = aSWBarMedsCheckBox.Checked ? "Y" : "N";
+            dl.aSWBarTrans = aSWBarTransCheckBox.Checked ? "Y" : "N";
+            dl.aSWPrefPharm = aSWPrefPharmTextBox.Text;
+        }
 
-        //private void getAdultSocialWork()
-        //{
-        //    aSWAssignWorkerTextBox.Text = dl.aSWAssignWorker;
-        //    powAttorneyLNameTextBox.Text = dl.powAttorneyLName;
-        //    powAttorneyFNameTextBox.Text = dl.powAttorneyFName;
-        //    guardianshipLNameTextBox.Text = dl.guardianshipLName;
-        //    guardianshipFNameTextBox.Text = dl.guardianshipFName;
-        //    lastNameTextBox.Text = dl.lastName;
-        //    firstNameTextBox.Text = dl.firstName;
-        //    aSWDateCompleteDateTimePicker.Value = dl.aSWDateComplete;
-        //    assessStartDateDateTimePicker.Value = dl.assessStartDate;
-        //    aSWCommInvolveTextBox.Text = dl.aSWCommInvolve;
-        //    aSWFamSupDescPatTextBox.Text = dl.aSWFamSupDesc;
-        //    aSWPatDescSelfSomeoneTextBox.Text = dl.aSWPatDescSelfSomeone;
-        //    aSWCurLevFuncDifTypFuncTextBox.Text = dl.aSWCurLevFuncDifTypFunc;
-        //    aSWNaturePresProbTextBox.Text = dl.aSWNaturePresProb;
-        //    aSWReliableSrcDescTextBox.Text = dl.aSWReliableSrcDesc;
-        //    aSWSrcInfoTextBox.Text = dl.aSWSrcInfo;
-        //    aSWLegStatDescTextBox.Text = dl.aSWLegStatDesc;
-        //    aSWDangerSelfIntentCheckBox.Checked = dl.aSWDangerSelfIntent;
-        //    aSWDangerSelfAttemptCheckBox.Checked = dl.aSWDangerSelfAttempt;
-        //    aSWDangerSelfPlanCheckBox.Checked = dl.aSWDangerSelfPlan;
-        //    aSWDangerSelfIdeationCheckBox.Checked = dl.aSWDangerSelfIdeation;
-        //    aSWDangerSelfHistoryCheckBox.Checked = dl.aSWDangerSelfHistory;
-        //    aSWDangerSelfCurrentCheckBox.Checked = dl.aSWDangerSelfCurrent;
-        //    aSWDangerSelfNotPresCheckBox.Checked = dl.aSWDangerSelfNotPres;
-        //    aSWWeaponLethMeansRemovePlanTextBox.Text = dl.aSWWeaponLethMeansRemovePlan;
-        //    aSWPastSelfInjDescTextBox.Text = dl.aSWPastSelfInjDesc;
-        //    aSWLethPriorMeansTextBox.Text = dl.aSWLethPriorMeans;
-        //    aSWDangerDescTextBox.Text = dl.aSWDangerDesc;
-        //    aSWDangerOthersNotPresCheckBox.Checked = dl.aSWDangerOthersNotPres;
-        //    aSWDangerOthersIntentCheckBox.Checked = dl.aSWDangerOthersIntent;
-        //    aSWDangerOthersAttemptCheckBox.Checked = dl.aSWDangerOthersAttempt;
-        //    aSWDangerOthersPlanCheckBox.Checked = dl.aSWDangerOthersPlan;
-        //    aSWDangerOthersIdeationCheckBox.Checked = dl.aSWDangerOthersIdeation;
-        //    aSWDangerOthersHistoryCheckBox.Checked = dl.aSWDangerOthersHistory;
-        //    aSWDangerOthersCurrentCheckBox.Checked = dl.aSWDangerOthersCurrent;
-        //    aSWVerifyTimeTextBox.Text = dl.aSWVerifyTime;
-        //    aSWVerifyDateDateTimePicker.Value = dl.aSWVerifyDate;
-        //    aSWVerifyTextBox.Text = dl.aSWVerify;
-        //    aSWResponsePatTimeTextBox.Text = dl.aSWResponsePatTime;
-        //    aSWResponsePatDateDateTimePicker.Value = dl.aSWResponsePatDate;
-        //    aSWResponsePatTextBox.Text = dl.aSWResponsePat;
-        //    aSWEmoNegAbuseReportedDescTextBox.Text = dl.aSWEmoNegAbuseReportedDesc;
-        //    aSWEmoNegAbuseWitnessDescTextBox.Text = dl.aSWEmoNegAbuseWitnessDesc;
-        //    aSWPhsyAbuseReportDescTextBox.Text = dl.aSWPhsyAbuseReportDesc;
-        //    aSWPhsyAbuseWitnessDescTextBox.Text = dl.aSWPhsyAbuseWitnessDesc;
-        //    aSWSexAbuseReportDescTextBox.Text = dl.aSWSexAbuseReportDesc;
-        //    aSWSexAbuseWitnessDescTextBox.Text = dl.aSWSexAbuseWitnessDesc;
-        //    aSWOtherTraumaExpTextBox.Text = dl.aSWOtherTraumaExp;
-        //    aSWTermPregDescTextBox.Text = dl.aSWTermPregDesc;
-        //    aSWDateChangeDateTimePicker.Value = dl.aSWDateChange;
-        //    aSWSafeHomeDescTextBox.Text = dl.aSWSafeHomeDesc;
-        //    aSWHomePlanDischTextBox.Text = dl.aSWHomePlanDisch;
-        //    aSWRetHomeWhenTextBox.Text = dl.aSWRetHomeWhen;
-        //    aSWRetHomeWhomTextBox.Text = dl.aSWRetHomeWhom;
-        //    aSWHomePriorTextBox.Text = dl.aSWHomePrior;
-        //    aSWRecFamInvolveTextBox.Text = dl.aSWRecFamInvolve;
-        //    aSWFamDeclineReasonTextBox.Text = dl.aSWFamDeclineReason;
-        //    aSWFamSessInviteTextBox.Text = dl.aSWFamSessInvite;
-        //    aSWDateFamSessDateTimePicker.Value = dl.aSWDateFamSess;
-        //    aSWRelatProbTextBox.Text = dl.aSWRelatProb;
-        //    aSWMemHelpfulDescTextBox.Text = dl.aSWMemHelpfulDesc;
-        //    aSWPriorFamInvolveTextBox.Text = dl.aSWPriorFamInvolve;
-        //    aSWDvlpExplainTextBox.Text = dl.aSWDvlpExplain;
-        //    aSWDvlpOtherDescTextBox.Text = dl.aSWDvlpOtherDesc;
-        //    aSWDvlpOtherCheckBox.Checked = dl.aSWDvlpOther;
-        //    aSWDvlpHoardCollectCheckBox.Checked = dl.aSWDvlpHoardCollect;
-        //    aSWDvlpCleanOrgCheckBox.Checked = dl.aSWDvlpCleanOrg;
-        //    aSWDvlpEmoEatCheckBox.Checked = dl.aSWDvlpEmoEat;
-        //    aSWDvlpShoppingCheckBox.Checked = dl.aSWDvlpShopping;
-        //    aSWDvlpGamblingCheckBox.Checked = dl.aSWDvlpGambling;
-        //    aSWDvlpNoneCheckBox.Checked = dl.aSWDvlpNone;
-        //    aSWEffIneffTreatmentTextBox.Text = dl.aSWEffIneffTreatment;
-        //    aSWHospPrevRemainCommTextBox.Text = dl.aSWHospPrevRemainComm;
-        //    aSWHistHomSuicDescTextBox.Text = dl.aSWHistHomSuicDesc;
-        //    aSWProbImpactFamDescTextBox.Text = dl.aSWProbImpactFamDesc;
-        //    aSWOtherLegalDescTextBox.Text = dl.aSWOtherLegalDesc;
-        //    aSWHistArrestDescTextBox.Text = dl.aSWHistArrestDesc;
-        //    aSWHighestEduCompleteTextBox.Text = dl.aSWHighestEduComplete;
-        //    aSWSchoolStressDescTextBox.Text = dl.aSWSchoolStressDesc;
-        //    aSWCurrSchoolWhereTextBox.Text = dl.aSWCurrSchoolWhere;
-        //    auditSubComplTotalTextBox.Text = dl.auditSubComplTotal;
-        //    aSWSubAbuseResultNoneCheckBox.Checked = dl.aSWSubAbuseResultNone;
-        //    aSWSubAbuseResultOtherDescTextBox.Text = dl.aSWSubABuseResultOtherDesc;
-        //    aSWSubAbuseResultOtherCheckBox.Checked = dl.aSWSubAbuseResultOther;
-        //    aSWSubAbuseResultPromisCheckBox.Checked = dl.aSWSubAbuseResultPromis;
-        //    aSWSubAbuseResultWorkProbCheckBox.Checked = dl.aSWSubAbuseResultWorkProb;
-        //    aSWSubAbuseResultBlackoutCheckBox.Checked = dl.aSWSubAbuseResultBlackout;
-        //    aSWSubAbuseResultThoughtSelfHarmCheckBox.Checked = dl.aSWSubAbuseResultThoughtSelfHarm;
-        //    aSWSubAbuseResultUnpBillsCheckBox.Checked = dl.aSWSubAbuseResultUnpBills;
-        //    aSWSubAbuseResultRelatProbCheckBox.Checked = dl.aSWSubAbuseResultRelatProb;
-        //    aSWSubAbuseResultArrestCheckBox.Checked = dl.aSWSubAbuseResultArrest;
-        //    aSWSubAbuseNACheckBox.Checked = dl.aSWSubAbuseNA;
-        //    aSWReferMadeDescTextBox.Text = dl.aSWReferMadeDesc;
-        //    aSWReferMadeCheckBox.Checked = dl.aSWReferMade;
-        //    aSWEduProvPatCheckBox.Checked = dl.aSWEduProvPat;
-        //    aSWPatInformRecomCheckBox.Checked = dl.aSWPatInformRecom;
-        //    aSWRecomDescTextBox.Text = dl.aSWRecomDesc;
-        //    aSWRecomCheckBox.Checked = dl.aSWRecom;
-        //    aSWInterventionOtherDescTextBox.Text = dl.aSWInterventionOtherDesc;
-        //    aSWInterventionOtherCheckBox.Checked = dl.aSWInterventionOther;
-        //    aSWAdvAbstainCheckBox.Checked = dl.aSWAdvAbstain;
-        //    aSWMotDiscCheckBox.Checked = dl.aSWMotDisc;
-        //    aSWDiscSeverityCheckBox.Checked = dl.aSWDiscSeverity;
-        //    aSWDiscNegConsCheckBox.Checked = dl.aSWDiscNegCons;
-        //    aSWFeedbackCheckBox.Checked = dl.aSWFeedback;
-        //    aSWSubTreatHistDescTextBox.Text = dl.aSWSubTreatHistDesc;
-        //    aSWSubTreatHistCheckBox.Checked = dl.aSWSubTreatHist;
-        //    aSWBenefitUseTextBox.Text = dl.aSWBenefitUse;
-        //    aSWDrugChoiceTextBox.Text = dl.aSWDrugChoice;
-        //    aSWMilSigEventsTextBox.Text = dl.aSWMilSigEvents;
-        //    aSWMilDischarTextBox.Text = dl.aSWMilDischar;
-        //    aSWMilDatesTextBox.Text = dl.aSWMilDates;
-        //    aSWMilBranchTextBox.Text = dl.aSWMilBranch;
-        //    aSWSrcIncomeTextBox.Text = dl.aSWSrcIncome;
-        //    aSWAvgMonIncomeTextBox.Text = dl.aSWAvhMonIncome;
-        //    aSWFeelCurrWorkDescTextBox.Text = dl.aSWFeelCurrWorkDesc;
-        //    aSWFeelCurrWorkCheckBox.Checked = dl.aSWFeelCurrWork;
-        //    aSWWeNeedKnowDescTextBox.Text = dl.aSWWeNeedKnowDesc;
-        //    aSWCultIssContribDescTextBox.Text = dl.aSWCultIssContribDesc;
-        //    aSWCurrReligInvoTextBox.Text = dl.aSWCurrReligInvo;
-        //    aSWChronDisabImpFunctDescTextBox.Text = dl.aSWChronDisabImpFunctDesc;
-        //    aSWHistSigMedIssDescTextBox.Text = dl.aSWHistSigMedIssDesc;
-        //    aSWMedIssContribDescTextBox.Text = dl.aSWMedIssContribDesc;
-        //    aSWFinanceStressDescTextBox.Text = dl.aSWFinanceStressDesc;
-        //    aSWObtMedNeedDescTextBox.Text = dl.aSWObtMedNeedDesc;
-        //    aSWObtMedNeedCheckBox.Checked = dl.aSWObtMedNeed;
-        //    aSWObtMedIncomeCheckBox.Checked = dl.aSWMedIncome;
-        //    aSWObtMedTransCheckBox.Checked = dl.aSWMedTrans;
-        //    aSWMAPartCommSuppRespTextBox.Text = dl.aSWMAPartCommSuppResp;
-        //    aSWMAPartCommSuppWhenTextBox.Text = dl.aSWMAPartCommSuppWhen;
-        //    aSWReadmOtherDescTextBox.Text = dl.aSWReadmOtherDesc;
-        //    aSWReadmOtherCheckBox.Checked = dl.aSWReadmOther;
-        //    aSWReadmCompliCheckBox.Checked = dl.aSWReadmCompli;
-        //    aSWReadmPriorAuthorCheckBox.Checked = dl.aSWReadmPriorAuthor;
-        //    aSWReadmMedStabCheckBox.Checked = dl.aSWReadmMedStab;
-        //    aSWReadmNACheckBox.Checked = dl.aSWReadmNA;
-        //    aSWCareNoneCheckBox.Checked = dl.aSWCareNone;
-        //    aSWCareOtherDescTextBox.Text = dl.aSWCareOtherDesc;
-        //    aSWCareOtherCheckBox.Checked = dl.aSWCareOther;
-        //    aSWCareAcuteMedCheckBox.Checked = dl.aSWCareAcuteMed;
-        //    aSWCareTransCheckBox.Checked = dl.aSWCareTrans;
-        //    aSWCarePetsUnsupCheckBox.Checked = dl.aSWCarePetsUnsup;
-        //    aSWCareHouseCheckBox.Checked = dl.aSWCareHouse;
-        //    aSWCareHIstNonCompCheckBox.Checked = dl.aSWCareHIstNonComp;
-        //    aSWArrSchedNeedDescTextBox.Text = dl.aSWArrSchedNeedDesc;
-        //    aSWArrSchedNeedCheckBox.Checked = dl.aSWArrSchedNeed;
-        //    aSWArrSchedMATPCheckBox.Checked = dl.aSWArrSchedMATP;
-        //    aSWArrSchedFamFriCheckBox.Checked = dl.aSWArrSchedFamFri;
-        //    aSWArrSchedPersVehCheckBox.Checked = dl.aSWArrSchedPersVeh;
-        //    aSWPrelimDischargePlanTextBox.Text = dl.aSWPrelimDischargePlan;
-        //    aSWRoleOtherDescTextBox.Text = dl.aSWRoleOtherDesc;
-        //    aSWRoleOtherCheckBox.Checked = dl.aSWRoleOther;
-        //    aSWRoleAftercareCheckBox.Checked = dl.aSWRoleAftercare;
-        //    aSWRoleFamTherCheckBox.Checked = dl.aSWRoleFamTher;
-        //    aSWRoleIndivTherCheckBox.Checked = dl.aSWRoleIndivTher;
-        //    aSWRoleGrpTherCheckBox.Checked = dl.aSWRoleGrpTher;
-        //    aSWConcRecomTextBox.Text = dl.aSWConcRecom;
-        //    aSWReferNoneCheckBox.Checked = dl.aSWReferNone;
-        //    aSWReferOtherDescTextBox.Text = dl.aSWReferOtherDesc;
-        //    aSWReferOtherCheckBox.Checked = dl.aSWReferOther;
-        //    aSWReferPeerSpecCheckBox.Checked = dl.aSWReferPeerSpec;
-        //    aSWReferOutpatDACheckBox.Checked = dl.aSWReferOutpatDA;
-        //    aSWReferPCPCheckBox.Checked = dl.aSWReferPCPCheckBox;
-        //    aSWReferInpatDACheckBox.Checked = dl.aSWReferInpatDA;
-        //    aSWReferCMBCMCheckBox.Checked = dl.aSWReferCMBC;
-        //    aSWReferStateHospCheckBox.Checked = dl.aSWReferStateHosp;
-        //    aSWReferEACCheckBox.Checked = dl.aSWReferEAC;
-        //    aSWReferLTSRCRRCheckBox.Checked = dl.aSWReferLTSRCRR;
-        //    aSWReferIOPCheckBox.Checked = dl.aSWReferIOP;
-        //    aSWReferPsychRehabCheckBox.Checked = dl.aSWReferPsychRehab;
-        //    aSWReferPHPCheckBox.Checked = dl.aSWReferPHP;
-        //    aSWReferPsychCheckBox.Checked = dl.aSWReferPsych;
-        //    aSWReferOutpatCheckBox.Checked = dl.aSWReferOutpat;
-        //    aSWBarNoneCheckBox.Checked = dl.aSWBarNone;
-        //    aSWBarOtherDescTextBox.Text = dl.aSWBarOtherDesc;
-        //    aSWBarOtherCheckBox.Checked = dl.aSWBarOther;
-        //    aSWBarAbsFacAccSpecNeedCheckBox.Checked = dl.aSWBarAbsFacAccSpecNeed;
-        //    aSWBarNonCompCheckBox.Checked = dl.aSWBarNonComp;
-        //    aSWBarHouseCheckBox.Checked = dl.aSWBarHouse;
-        //    aSWBarMedsCheckBox.Checked = dl.aSWBarMeds;
-        //    aSWBarTransCheckBox.Checked = dl.aSWBarTrans;
-        //    aSWPrefPharmTextBox.Text = dl.aSWPrefPharm;
-        //}
+        private void getAdultSocialWork()
+        {
+            aSWAssignWorkerTextBox.Text = dl.aSWAssignWorker;
+            powAttorneyLNameTextBox.Text = dl.powAttorneyLName;
+            powAttorneyFNameTextBox.Text = dl.powAttorneyFName;
+            guardianshipLNameTextBox.Text = dl.guardianshipLName;
+            guardianshipFNameTextBox.Text = dl.guardianshipFName;
+            lastNameTextBox.Text = dl.lastName;
+            firstNameTextBox.Text = dl.firstName;
+            aSWDateCompleteDateTimePicker.Value = dl.aSWDateComplete ?? DateTime.Today;
+            assessStartDateDateTimePicker.Value = dl.assessStartDate ?? DateTime.Today;
+            aSWCommInvolveTextBox.Text = dl.aSWCommInvolve;
+            aSWFamSupDescPatTextBox.Text = dl.aSWFamSupDescPat;
+            aSWPatDescSelfSomeoneTextBox.Text = dl.aSWPatDescSelfSomeone;
+            aSWCurLevFuncDifTypFuncTextBox.Text = dl.aSWCurLevFuncDifTypFunc;
+            aSWNaturePresProbTextBox.Text = dl.aSWNaturePresProb;
+            aSWReliableSrcDescTextBox.Text = dl.aSWReliableSrcDesc;
+            aSWSrcInfoTextBox.Text = dl.aSWSrcInfo;
+            aSWLegStatDescTextBox.Text = dl.aSWLegStatDesc;
+            if (dl.aSWDangerSelfIntent == "Y")
+                aSWDangerSelfIntentCheckBox.Checked = true;
+            else
+                aSWDangerSelfIntentCheckBox.Checked = false;
+            if (dl.aSWDangerSelfAttempt == "Y")
+                aSWDangerSelfAttemptCheckBox.Checked = true;
+            else
+                aSWDangerSelfAttemptCheckBox.Checked = false;
+            if (dl.aSWDangerSelfPlan == "Y")
+                aSWDangerSelfPlanCheckBox.Checked = true;
+            else
+                aSWDangerSelfPlanCheckBox.Checked = false;
+            if (dl.aSWDangerSelfIdeation == "Y")
+                aSWDangerSelfIdeationCheckBox.Checked = true;
+            else
+                aSWDangerSelfIdeationCheckBox.Checked = false;
+            if (dl.aSWDangerSelfHistory == "Y")
+                aSWDangerSelfHistoryCheckBox.Checked = true;
+            else
+                aSWDangerSelfHistoryCheckBox.Checked = false;
+            if (dl.aSWDangerSelfCurrent == "Y")
+                aSWDangerSelfCurrentCheckBox.Checked = true;
+            else
+                aSWDangerSelfCurrentCheckBox.Checked = false;
+            if (dl.aSWDangerSelfNotPres == "Y")
+                aSWDangerSelfNotPresCheckBox.Checked = true;
+            else
+                aSWDangerSelfNotPresCheckBox.Checked = false;
+            aSWWeaponLethMeansRemovePlanTextBox.Text = dl.aSWWeaponLethMeansRemovePlan;
+            aSWPastSelfInjDescTextBox.Text = dl.aSWPastSelfInjDesc;
+            aSWLethPriorMeansTextBox.Text = dl.aSWLethPriorMeans;
+            aSWDangerDescTextBox.Text = dl.aSWDangerDesc;
+            if (dl.aSWDangerOthersNotPres == "Y")
+                aSWDangerOthersNotPresCheckBox.Checked = true;
+            else
+                aSWDangerOthersNotPresCheckBox.Checked = false;
+            if (dl.aSWDangerOthersIntent == "Y")
+                aSWDangerOthersIntentCheckBox.Checked = true;
+            else
+                aSWDangerOthersIntentCheckBox.Checked = false;
+            if (dl.aSWDangerOthersAttempt == "Y")
+                aSWDangerOthersAttemptCheckBox.Checked = true;
+            else
+                aSWDangerOthersAttemptCheckBox.Checked = false;
+            if (dl.aSWDangerOthersPlan == "Y")
+                aSWDangerOthersPlanCheckBox.Checked = true;
+            else
+                aSWDangerOthersPlanCheckBox.Checked = false;
+            if (dl.aSWDangerOthersIdeation == "Y")
+                aSWDangerOthersIdeationCheckBox.Checked = true;
+            else
+                aSWDangerOthersIdeationCheckBox.Checked = false;
+            if (dl.aSWDangerOthersHistory == "Y")
+                aSWDangerOthersHistoryCheckBox.Checked = true;
+            else
+                aSWDangerOthersHistoryCheckBox.Checked = false;
+            if (dl.aSWDangerOthersCurrent == "Y")
+                aSWDangerOthersCurrentCheckBox.Checked = true;
+            else
+                aSWDangerOthersCurrentCheckBox.Checked = false;
+            aSWVerifyTimeTextBox.Text = dl.aSWVerifyTime;
+            aSWVerifyDateDateTimePicker.Value = dl.aSWVerifyDate ?? DateTime.Today;
+            aSWVerifyTextBox.Text = dl.aSWVerify;
+            aSWResponsePatTimeTextBox.Text = dl.aSWResponsePatTime;
+            aSWResponsePatDateDateTimePicker.Value = dl.aSWResponsePatDate ?? DateTime.Today;
+            aSWResponsePatTextBox.Text = dl.aSWResponsePat;
+            aSWEmoNegAbuseReportedDescTextBox.Text = dl.aSWEmoNegAbuseReportedDesc;
+            aSWEmoNegAbuseWitnessDescTextBox.Text = dl.aSWEmoNegAbuseWitnessDesc;
+            aSWPhsyAbuseReportDescTextBox.Text = dl.aSWPhsyAbuseReportDesc;
+            aSWPhsyAbuseWitnessDescTextBox.Text = dl.aSWPhsyAbuseWitnessDesc;
+            aSWSexAbuseReportDescTextBox.Text = dl.aSWSexAbuseReportDesc;
+            aSWSexAbuseWitnessDescTextBox.Text = dl.aSWSexAbuseWitnessDesc;
+            aSWOtherTraumaExpTextBox.Text = dl.aSWOtherTraumaExp;
+            aSWTermPregDescTextBox.Text = dl.aSWTermPregDesc;
+            aSWDateChangeDateTimePicker.Value = dl.aSWDateChange ?? DateTime.Today;
+            aSWSafeHomeDescTextBox.Text = dl.aSWSafeHomeDesc;
+            aSWHomePlanDischTextBox.Text = dl.aSWHomePlanDisch;
+            aSWRetHomeWhenTextBox.Text = dl.aSWRetHomeWhen;
+            aSWRetHomeWhomTextBox.Text = dl.aSWRetHomeWhom;
+            aSWHomePriorTextBox.Text = dl.aSWHomePrior;
+            aSWRecFamInvolveTextBox.Text = dl.aSWRecFamInvolve;
+            aSWFamDeclineReasonTextBox.Text = dl.aSWFamDeclineReason;
+            aSWFamSessInviteTextBox.Text = dl.aSWFamSessInvite;
+            aSWDateFamSessDateTimePicker.Value = dl.aSWDateFamSess ?? DateTime.Today;
+            aSWRelatProbTextBox.Text = dl.aSWRelatProb;
+            aSWMemHelpfulDescTextBox.Text = dl.aSWMemHelpfulDesc;
+            aSWPriorFamInvolveTextBox.Text = dl.aSWPriorFamInvolve;
+            aSWDvlpExplainTextBox.Text = dl.aSWDvlpExplain;
+            aSWDvlpOtherDescTextBox.Text = dl.aSWDvlpOtherDesc;
+            if (dl.aSWDvlpOther == "Y")
+                aSWDvlpOtherCheckBox.Checked = true;
+            else
+                aSWDvlpOtherCheckBox.Checked = false;
+            if (dl.aSWDvlpHoardCollect == "Y")
+                aSWDvlpHoardCollectCheckBox.Checked = true;
+            else
+                aSWDvlpHoardCollectCheckBox.Checked = false;
+            if (dl.aSWDvlpCleanOrg == "Y")
+                aSWDvlpCleanOrgCheckBox.Checked = true;
+            else
+                aSWDvlpCleanOrgCheckBox.Checked = false;
+            if (dl.aSWDvlpEmoEat == "Y")
+                aSWDvlpEmoEatCheckBox.Checked = true;
+            else
+                aSWDvlpEmoEatCheckBox.Checked = false;
+            if (dl.aSWDvlpShopping == "Y")
+                aSWDvlpShoppingCheckBox.Checked = true;
+            else
+                aSWDvlpShoppingCheckBox.Checked = false;
+            if (dl.aSWDvlpGambling == "Y")
+                aSWDvlpGamblingCheckBox.Checked = true;
+            else
+                aSWDvlpGamblingCheckBox.Checked = false;
+            if (dl.aSWDvlpNone == "Y")
+                aSWDvlpNoneCheckBox.Checked = true;
+            else
+                aSWDvlpNoneCheckBox.Checked = false;
+            aSWEffIneffTreatmentTextBox.Text = dl.aSWEffIneffTreatment;
+            aSWHospPrevRemainCommTextBox.Text = dl.aSWHospPrevRemainComm;
+            aSWHistHomSuicDescTextBox.Text = dl.aSWHistHomSuicDesc;
+            aSWProbImpactFamDescTextBox.Text = dl.aSWProbImpactFamDesc;
+            aSWOtherLegalDescTextBox.Text = dl.aSWOtherLegalDesc;
+            aSWHistArrestDescTextBox.Text = dl.aSWHistArrestDesc;
+            aSWHighestEduCompleteTextBox.Text = dl.aSWHighestEduComplete;
+            aSWSchoolStressDescTextBox.Text = dl.aSWSchoolStressDesc;
+            aSWCurrSchoolWhereTextBox.Text = dl.aSWCurrSchoolWhere;
+            auditSubComplTotalTextBox.Text = dl.auditSubComplTotal;
+            if (dl.aSWSubAbuseResultNone == "Y")
+                aSWSubAbuseResultNoneCheckBox.Checked = true;
+            else
+                aSWSubAbuseResultNoneCheckBox.Checked = false;
+            aSWSubAbuseResultOtherDescTextBox.Text = dl.aSWSubAbuseResultOtherDesc;
+            if (dl.aSWSubAbuseResultOther == "Y")
+                aSWSubAbuseResultOtherCheckBox.Checked = true;
+            else
+                aSWSubAbuseResultOtherCheckBox.Checked = false;
+            if (dl.aSWSubAbuseResultPromis == "Y")
+                aSWSubAbuseResultPromisCheckBox.Checked = true;
+            else
+                aSWSubAbuseResultPromisCheckBox.Checked = false;
+            if (dl.aSWSubAbuseResultWorkProb == "Y")
+                aSWSubAbuseResultWorkProbCheckBox.Checked = true;
+            else
+                aSWSubAbuseResultWorkProbCheckBox.Checked = false;
+            if (dl.aSWSubAbuseResultBlackout == "Y")
+                aSWSubAbuseResultBlackoutCheckBox.Checked = true;
+            else
+                aSWSubAbuseResultBlackoutCheckBox.Checked = false;
+            if (dl.aSWSubAbuseResultThoughtSelfHarm == "Y")
+                aSWSubAbuseResultThoughtSelfHarmCheckBox.Checked = true;
+            else
+                aSWSubAbuseResultThoughtSelfHarmCheckBox.Checked = false;
+            if (dl.aSWSubAbuseResultUnpBills == "Y")
+                aSWSubAbuseResultUnpBillsCheckBox.Checked = true;
+            else
+                aSWSubAbuseResultUnpBillsCheckBox.Checked = false;
+            if (dl.aSWSubAbuseResultRelatProb == "Y")
+                aSWSubAbuseResultRelatProbCheckBox.Checked = true;
+            else
+                aSWSubAbuseResultRelatProbCheckBox.Checked = false;
+            if (dl.aSWSubAbuseResultArrest == "Y")
+                aSWSubAbuseResultArrestCheckBox.Checked = true;
+            else
+                aSWSubAbuseResultArrestCheckBox.Checked = false;
+            if (dl.aSWSubAbuseNA == "Y")
+                aSWSubAbuseNACheckBox.Checked = true;
+            else
+                aSWSubAbuseNACheckBox.Checked = false;
+            aSWReferMadeDescTextBox.Text = dl.aSWReferMadeDesc;
+            if (dl.aSWReferMade == "Y")
+                aSWReferMadeCheckBox.Checked = true;
+            else
+                aSWReferMadeCheckBox.Checked = false;
+            if (dl.aSWEduProvPat == "Y")
+                aSWEduProvPatCheckBox.Checked = true;
+            else
+                aSWEduProvPatCheckBox.Checked = false;
+            if (dl.aSWPatInformRecom == "Y")
+                aSWPatInformRecomCheckBox.Checked = true;
+            else
+                aSWPatInformRecomCheckBox.Checked = false;
+            aSWRecomDescTextBox.Text = dl.aSWRecomDesc;
+            if (dl.aSWRecom == "Y")
+                aSWRecomCheckBox.Checked = true;
+            else
+                aSWRecomCheckBox.Checked = false;
+            aSWInterventionOtherDescTextBox.Text = dl.aSWInterventionOtherDesc;
+            if (dl.aSWInterventionOther == "Y")
+                aSWInterventionOtherCheckBox.Checked = true;
+            else
+                aSWInterventionOtherCheckBox.Checked = false;
+            if (dl.aSWAdvAbstain == "Y")
+                aSWAdvAbstainCheckBox.Checked = true;
+            else
+                aSWAdvAbstainCheckBox.Checked = false;
+            if (dl.aSWMotDisc == "Y")
+                aSWMotDiscCheckBox.Checked = true;
+            else
+                aSWMotDiscCheckBox.Checked = false;
+            if (dl.aSWDiscSeverity == "Y")
+                aSWDiscSeverityCheckBox.Checked = true;
+            else
+                aSWDiscSeverityCheckBox.Checked = false;
+            if (dl.aSWDiscNegCons == "Y")
+                aSWDiscNegConsCheckBox.Checked = true;
+            else
+                aSWDiscNegConsCheckBox.Checked = false;
+            if (dl.aSWFeedback == "Y")
+                aSWFeedbackCheckBox.Checked = true;
+            else
+                aSWFeedbackCheckBox.Checked = false;
+            aSWSubTreatHistDescTextBox.Text = dl.aSWSubTreatHistDesc;
+            if (dl.aSWSubTreatHist == "Y")
+                aSWSubTreatHistCheckBox.Checked = true;
+            else
+                aSWSubTreatHistCheckBox.Checked = false;
+            aSWBenefitUseTextBox.Text = dl.aSWBenefitUse;
+            aSWDrugChoiceTextBox.Text = dl.aSWDrugChoice;
+            aSWMilSigEventsTextBox.Text = dl.aSWMilSigEvents;
+            aSWMilDischarTextBox.Text = dl.aSWMilDischar;
+            aSWMilDatesTextBox.Text = dl.aSWMilDates;
+            aSWMilBranchTextBox.Text = dl.aSWMilBranch;
+            aSWSrcIncomeTextBox.Text = dl.aSWSrcIncome;
+            aSWAvgMonIncomeTextBox.Text = dl.aSWAvgMonIncome;
+            aSWFeelCurrWorkDescTextBox.Text = dl.aSWFeelCurrWorkDesc;
+            if (dl.aSWFeelCurrWork == "Y")
+                aSWFeelCurrWorkCheckBox.Checked = true;
+            else
+                aSWFeelCurrWorkCheckBox.Checked = false;
+            aSWWeNeedKnowDescTextBox.Text = dl.aSWWeNeedKnowDesc;
+            aSWCultIssContribDescTextBox.Text = dl.aSWCultIssContribDesc;
+            aSWCurrReligInvoTextBox.Text = dl.aSWCurrReligInvo;
+            aSWChronDisabImpFunctDescTextBox.Text = dl.aSWChronDisabImpFunctDesc;
+            aSWHistSigMedIssDescTextBox.Text = dl.aSWHistSigMedIssDesc;
+            aSWMedIssContribDescTextBox.Text = dl.aSWMedIssContribDesc;
+            aSWFinanceStressDescTextBox.Text = dl.aSWFinanceStressDesc;
+            aSWObtMedNeedDescTextBox.Text = dl.aSWObtMedNeedDesc;
+            if (dl.aSWObtMedNeed == "Y")
+                aSWObtMedNeedCheckBox.Checked = true;
+            else
+                aSWObtMedNeedCheckBox.Checked = false;
+            if (dl.aSWObtMedIncome == "Y")
+                aSWObtMedIncomeCheckBox.Checked = true;
+            else
+                aSWObtMedIncomeCheckBox.Checked = false;
+            if (dl.aSWObtMedTrans == "Y")
+                aSWObtMedTransCheckBox.Checked = true;
+            else
+                aSWObtMedTransCheckBox.Checked = false;
+            aSWMAPartCommSuppRespTextBox.Text = dl.aSWMAPartCommSuppResp;
+            aSWMAPartCommSuppWhenTextBox.Text = dl.aSWMAPartCommSuppWhen;
+            aSWReadmOtherDescTextBox.Text = dl.aSWReadmOtherDesc;
+            if (dl.aSWReadmOther == "Y")
+                aSWReadmOtherCheckBox.Checked = true;
+            else
+                aSWReadmOtherCheckBox.Checked = false;
+            if (dl.aSWReadmCompli == "Y")
+                aSWReadmCompliCheckBox.Checked = true;
+            else
+                aSWReadmCompliCheckBox.Checked = false;
+            if (dl.aSWReadmPriorAuthor == "Y")
+                aSWReadmPriorAuthorCheckBox.Checked = true;
+            else
+                aSWReadmPriorAuthorCheckBox.Checked = false;
+            if (dl.aSWReadmMedStab == "Y")
+                aSWReadmMedStabCheckBox.Checked = true;
+            else
+                aSWReadmMedStabCheckBox.Checked = false;
+            if (dl.aSWReadmNA == "Y")
+                aSWReadmNACheckBox.Checked = true;
+            else
+                aSWReadmNACheckBox.Checked = false;
+            if (dl.aSWCareNone == "Y")
+                aSWCareNoneCheckBox.Checked = true;
+            else
+                aSWCareNoneCheckBox.Checked = false;
+            aSWCareOtherDescTextBox.Text = dl.aSWCareOtherDesc;
+            if (dl.aSWCareOther == "Y")
+                aSWCareOtherCheckBox.Checked = true;
+            else
+                aSWCareOtherCheckBox.Checked = false;
+            if (dl.aSWCareAcuteMed == "Y")
+                aSWCareAcuteMedCheckBox.Checked = true;
+            else
+                aSWCareAcuteMedCheckBox.Checked = false;
+            if (dl.aSWCareTrans == "Y")
+                aSWCareTransCheckBox.Checked = true;
+            else
+                aSWCareTransCheckBox.Checked = false;
+            if (dl.aSWCarePetsUnsup == "Y")
+                aSWCarePetsUnsupCheckBox.Checked = true;
+            else
+                aSWCarePetsUnsupCheckBox.Checked = false;
+            if (dl.aSWCareHouse == "Y")
+                aSWCareHouseCheckBox.Checked = true;
+            else
+                aSWCareHouseCheckBox.Checked = false;
+            if (dl.aSWCareHIstNonComp == "Y")
+                aSWCareHIstNonCompCheckBox.Checked = true;
+            else
+                aSWCareHIstNonCompCheckBox.Checked = false;
+            aSWArrSchedNeedDescTextBox.Text = dl.aSWArrSchedNeedDesc;
+            if (dl.aSWArrSchedNeed == "Y")
+                aSWArrSchedNeedCheckBox.Checked = true;
+            else
+                aSWArrSchedNeedCheckBox.Checked = false;
+            if (dl.aSWArrSchedMATP == "Y")
+                aSWArrSchedMATPCheckBox.Checked = true;
+            else
+                aSWArrSchedMATPCheckBox.Checked = false;
+            if (dl.aSWArrSchedFamFri == "Y")
+                aSWArrSchedFamFriCheckBox.Checked = true;
+            else
+                aSWArrSchedFamFriCheckBox.Checked = false;
+            if (dl.aSWArrSchedPersVeh == "Y")
+                aSWArrSchedPersVehCheckBox.Checked = true;
+            else
+                aSWArrSchedPersVehCheckBox.Checked = false;
+            aSWPrelimDischargePlanTextBox.Text = dl.aSWPrelimDischargePlan;
+            aSWRoleOtherDescTextBox.Text = dl.aSWRoleOtherDesc;
+            if (dl.aSWRoleOther == "Y")
+                aSWRoleOtherCheckBox.Checked = true;
+            else
+                aSWRoleOtherCheckBox.Checked = false;
+            if (dl.aSWRoleAftercare == "Y")
+                aSWRoleAftercareCheckBox.Checked = true;
+            else
+                aSWRoleAftercareCheckBox.Checked = false;
+            if (dl.aSWRoleFamTher == "Y")
+                aSWRoleFamTherCheckBox.Checked = true;
+            else
+                aSWRoleFamTherCheckBox.Checked = false;
+            if (dl.aSWRoleIndivTher == "Y")
+                aSWRoleIndivTherCheckBox.Checked = true;
+            else
+                aSWRoleIndivTherCheckBox.Checked = false;
+            if (dl.aSWRoleGrpTher == "Y")
+                aSWRoleGrpTherCheckBox.Checked = true;
+            else
+                aSWRoleGrpTherCheckBox.Checked = false;
+            aSWConcRecomTextBox.Text = dl.aSWConcRecom;
+            if (dl.aSWReferNone == "Y")
+                aSWReferNoneCheckBox.Checked = true;
+            else
+                aSWReferNoneCheckBox.Checked = false;
+            aSWReferOtherDescTextBox.Text = dl.aSWReferOtherDesc;
+            if (dl.aSWReferOther == "Y")
+                aSWReferOtherCheckBox.Checked = true;
+            else
+                aSWReferOtherCheckBox.Checked = false;
+            if (dl.aSWReferPeerSpec == "Y")
+                aSWReferPeerSpecCheckBox.Checked = true;
+            else
+                aSWReferPeerSpecCheckBox.Checked = false;
+            if (dl.aSWReferOutpatDA == "Y")
+                aSWReferOutpatDACheckBox.Checked = true;
+            else
+                aSWReferOutpatDACheckBox.Checked = false;
+            if (dl.aSWReferPCP == "Y")
+                aSWReferPCPCheckBox.Checked = true;
+            else
+                aSWReferPCPCheckBox.Checked = false;
+            if (dl.aSWReferInpatDA == "Y")
+                aSWReferInpatDACheckBox.Checked = true;
+            else
+                aSWReferInpatDACheckBox.Checked = false;
+            if (dl.aSWReferCMBCM == "Y")
+                aSWReferCMBCMCheckBox.Checked = true;
+            else
+                aSWReferCMBCMCheckBox.Checked = false;
+            if (dl.aSWReferStateHosp == "Y")
+                aSWReferStateHospCheckBox.Checked = true;
+            else
+                aSWReferStateHospCheckBox.Checked = false;
+            if (dl.aSWReferEAC == "Y")
+                aSWReferEACCheckBox.Checked = true;
+            else
+                aSWReferEACCheckBox.Checked = false;
+            if (dl.aSWReferLTSRCRR == "Y")
+                aSWReferLTSRCRRCheckBox.Checked = true;
+            else
+                aSWReferLTSRCRRCheckBox.Checked = false;
+            if (dl.aSWReferIOP == "Y")
+                aSWReferIOPCheckBox.Checked = true;
+            else
+                aSWReferIOPCheckBox.Checked = false;
+            if (dl.aSWReferPsychRehab == "Y")
+                aSWReferPsychRehabCheckBox.Checked = true;
+            else
+                aSWReferPsychRehabCheckBox.Checked = false;
+            if (dl.aSWReferPHP == "Y")
+                aSWReferPHPCheckBox.Checked = true;
+            else
+                aSWReferPHPCheckBox.Checked = false;
+            if (dl.aSWReferPsych == "Y")
+                aSWReferPsychCheckBox.Checked = true;
+            else
+                aSWReferPsychCheckBox.Checked = false;
+            if (dl.aSWReferOutpat == "Y")
+                aSWReferOutpatCheckBox.Checked = true;
+            else
+                aSWReferOutpatCheckBox.Checked = false;
+            if (dl.aSWBarNone == "Y")
+                aSWBarNoneCheckBox.Checked = true;
+            else
+                aSWBarNoneCheckBox.Checked = false;
+            aSWBarOtherDescTextBox.Text = dl.aSWBarOtherDesc;
+            if (dl.aSWBarOther == "Y")
+                aSWBarOtherCheckBox.Checked = true;
+            else
+                aSWBarOtherCheckBox.Checked = false;
+            if (dl.aSWBarAbsFacAccSpecNeed == "Y")
+                aSWBarAbsFacAccSpecNeedCheckBox.Checked = true;
+            else
+                aSWBarAbsFacAccSpecNeedCheckBox.Checked = false;
+            if (dl.aSWBarNonComp == "Y")
+                aSWBarNonCompCheckBox.Checked = true;
+            else
+                aSWBarNonCompCheckBox.Checked = false;
+            if (dl.aSWBarHouse == "Y")
+                aSWBarHouseCheckBox.Checked = true;
+            else
+                aSWBarHouseCheckBox.Checked = false;
+            if (dl.aSWBarMeds == "Y")
+                aSWBarMedsCheckBox.Checked = true;
+            else
+                aSWBarMedsCheckBox.Checked = false;
+            if (dl.aSWBarTrans == "Y")
+                aSWBarTransCheckBox.Checked = true;
+            else
+                aSWBarTransCheckBox.Checked = false;
+            aSWPrefPharmTextBox.Text = dl.aSWPrefPharm;
+        }
 
         private void grpRiskAssess_Enter(object sender, EventArgs e)
         {
