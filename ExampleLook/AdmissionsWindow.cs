@@ -12,6 +12,13 @@ namespace ExampleLook
 {
     public partial class AdmissionsWindow : Form
     {
+        //Declare all form objects
+        private CallSheetWindow callSheet;
+        private NursingWindow nursing;
+        private AdultSocialWorkWindow adultSW;
+        private ChildSocialWorkerWindow childSW;
+        private ChangeLogWindow changeLog;
+
         public AdmissionsWindow()
         {
             InitializeComponent();
@@ -46,19 +53,28 @@ namespace ExampleLook
 
         }
 
-        private void mRNumTextBox_TextChanged(object sender, EventArgs e)
+        private void btnCallSheet_Click(object sender, EventArgs e)
         {
-
+            callSheet = new CallSheetWindow();
+            callSheet.ShowDialog();
         }
 
-        private void thoughtContGraCheckBox_CheckedChanged(object sender, EventArgs e)
+        private void btnNurse_Click(object sender, EventArgs e)
         {
-
+            nursing = new NursingWindow();
+            nursing.ShowDialog();
         }
 
-        private void suicIdeaDescLabel_Click(object sender, EventArgs e)
+        private void btnAdultSW_Click(object sender, EventArgs e)
         {
+            adultSW = new AdultSocialWorkWindow();
+            adultSW.ShowDialog();
+        }
 
+        private void btnChildSW_Click(object sender, EventArgs e)
+        {
+            childSW = new ChildSocialWorkerWindow();
+            childSW.ShowDialog();
         }
 
         private void groupBox8_Enter(object sender, EventArgs e)
@@ -71,24 +87,10 @@ namespace ExampleLook
 
         }
 
-        private void howOftenAlcLabel_Click(object sender, EventArgs e)
+        private void btnChangeLog_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void psychHallDescLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void psychDelDescLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void contextFactCheckBox_CheckedChanged(object sender, EventArgs e)
-        {
-
+            changeLog = new ChangeLogWindow();
+            changeLog.ShowDialog();
         }
     }
 }

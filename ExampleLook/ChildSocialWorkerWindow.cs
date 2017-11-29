@@ -12,6 +12,12 @@ namespace ExampleLook
 {
     public partial class ChildSocialWorkerWindow : Form
     {
+        private CallSheetWindow callSheet;
+        private AdmissionsWindow admission;
+        private NursingWindow nursing;
+        private AdultSocialWorkWindow adultSW;
+        private ChangeLogWindow changeLog;
+
         public ChildSocialWorkerWindow()
         {
             InitializeComponent();
@@ -40,14 +46,34 @@ namespace ExampleLook
 
         }
 
-        private void cSWPsyAbuseReportComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void btnCallSheet_Click(object sender, EventArgs e)
         {
-
+            callSheet = new CallSheetWindow();
+            callSheet.ShowDialog();
         }
 
-        private void cSWSubResultOtherDescTextBox_TextChanged(object sender, EventArgs e)
+        private void btnAdmission_Click(object sender, EventArgs e)
         {
+            admission = new AdmissionsWindow();
+            admission.ShowDialog();
+        }
 
+        private void btnNursing_Click(object sender, EventArgs e)
+        {
+            nursing = new NursingWindow();
+            nursing.ShowDialog();
+        }
+
+        private void btnAdultSW_Click(object sender, EventArgs e)
+        {
+            adultSW = new AdultSocialWorkWindow();
+            adultSW.ShowDialog();
+        }
+
+        private void btnChangeLog_Click(object sender, EventArgs e)
+        {
+            changeLog = new ChangeLogWindow();
+            changeLog.ShowDialog();
         }
     }
 }

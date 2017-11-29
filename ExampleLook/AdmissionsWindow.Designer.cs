@@ -41,7 +41,6 @@
             System.Windows.Forms.Label assessStartDateLabel;
             System.Windows.Forms.Label schedAssessTimeLabel;
             System.Windows.Forms.Label commitStatLabel;
-            System.Windows.Forms.Label srcInfoLabel;
             System.Windows.Forms.Label admPsyDiagLabel;
             System.Windows.Forms.Label chiefComplaintLabel;
             System.Windows.Forms.Label moodLabel;
@@ -186,26 +185,44 @@
             System.Windows.Forms.Label psychosocialFactLabel;
             System.Windows.Forms.Label contextFactLabel;
             System.Windows.Forms.Label funcAssessLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdmissionsWindow));
             System.Windows.Forms.Label insightLabel;
             System.Windows.Forms.Label judgementLabel;
             System.Windows.Forms.Label appearanceLabel;
             System.Windows.Forms.Label motorBehaviorLabel;
-            System.Windows.Forms.Label violSelf6MoLabel;
-            System.Windows.Forms.Label suicPriorAttLabel;
-            System.Windows.Forms.Label famHistSuicLabel;
-            System.Windows.Forms.Label attemptInpatLabel;
             System.Windows.Forms.Label violOthers6MoLabel;
             System.Windows.Forms.Label violOtherHistLabel;
             System.Windows.Forms.Label homPriorAttLabel;
             System.Windows.Forms.Label famHistHomLabel;
             System.Windows.Forms.Label livingSituationLabel;
+            System.Windows.Forms.Label panMRNumLabel;
+            System.Windows.Forms.Label firstNameLabel1;
+            System.Windows.Forms.Label lastNameLabel1;
+            System.Windows.Forms.Label srcInfoLabel;
+            System.Windows.Forms.Label violSelf6MoLabel;
+            System.Windows.Forms.Label suicPriorAttLabel;
+            System.Windows.Forms.Label famHistSuicLabel;
+            System.Windows.Forms.Label attemptInpatLabel;
+            System.Windows.Forms.Label violSelf6MoDescLabel;
+            System.Windows.Forms.Label suicPriorAttDescLabel;
+            System.Windows.Forms.Label famHistSuicDescLabel;
+            System.Windows.Forms.Label attemptInpatDescLabel;
+            System.Windows.Forms.Label violOthers6MoDescLabel;
+            System.Windows.Forms.Label violOtherHistDescLabel;
+            System.Windows.Forms.Label homPriorAttDescLabel;
+            System.Windows.Forms.Label famHistHomDescLabel;
+            System.Windows.Forms.Label livingSituationDescLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdmissionsWindow));
             this.ArcTabs = new System.Windows.Forms.TabControl();
             this.PatientAssess = new System.Windows.Forms.TabPage();
             this.idDataTextBox = new System.Windows.Forms.TextBox();
             this.patient_admissionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cPCAppDataSet = new ExampleLook.cPCAppDataSet();
             this.grpPatAssess = new System.Windows.Forms.GroupBox();
+            this.motorBehaviorDescTextBox = new System.Windows.Forms.TextBox();
+            this.motorBehaviorComboBox = new System.Windows.Forms.ComboBox();
+            this.appearanceComboBox = new System.Windows.Forms.ComboBox();
+            this.judgementComboBox = new System.Windows.Forms.ComboBox();
+            this.insightComboBox = new System.Windows.Forms.ComboBox();
             this.sleUnaCheckBox = new System.Windows.Forms.CheckBox();
             this.sleNigCheckBox = new System.Windows.Forms.CheckBox();
             this.sleIntCheckBox = new System.Windows.Forms.CheckBox();
@@ -268,6 +285,7 @@
             this.moodDepCheckBox = new System.Windows.Forms.CheckBox();
             this.moodAppCheckBox = new System.Windows.Forms.CheckBox();
             this.grpPatientInfo = new System.Windows.Forms.GroupBox();
+            this.srcInfoTextBox = new System.Windows.Forms.TextBox();
             this.transportDescTextBox = new System.Windows.Forms.TextBox();
             this.transportComboBox = new System.Windows.Forms.ComboBox();
             this.chiefComplaintTextBox = new System.Windows.Forms.TextBox();
@@ -307,7 +325,6 @@
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.treatment_facilityBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.psychHospComboBox = new System.Windows.Forms.ComboBox();
             this.autismSpecDisComboBox = new System.Windows.Forms.ComboBox();
@@ -333,6 +350,14 @@
             this.medHistoryTextBox = new System.Windows.Forms.TextBox();
             this.RiskAssess = new System.Windows.Forms.TabPage();
             this.grpHom = new System.Windows.Forms.GroupBox();
+            this.famHistHomDescTextBox = new System.Windows.Forms.TextBox();
+            this.homPriorAttDescTextBox = new System.Windows.Forms.TextBox();
+            this.violOtherHistDescTextBox = new System.Windows.Forms.TextBox();
+            this.violOthers6MoDescTextBox = new System.Windows.Forms.TextBox();
+            this.famHistHomComboBox = new System.Windows.Forms.ComboBox();
+            this.homPriorAttComboBox = new System.Windows.Forms.ComboBox();
+            this.violOtherHistComboBox = new System.Windows.Forms.ComboBox();
+            this.violOthers6MoComboBox = new System.Windows.Forms.ComboBox();
             this.accessWeapDescTextBox = new System.Windows.Forms.TextBox();
             this.accessWeapComboBox = new System.Windows.Forms.ComboBox();
             this.grpDenyHomRisk = new System.Windows.Forms.GroupBox();
@@ -351,6 +376,14 @@
             this.selfInjLastAttTextBox = new System.Windows.Forms.TextBox();
             this.deniesSelfInjCheckBox = new System.Windows.Forms.CheckBox();
             this.grpSuicideRisk = new System.Windows.Forms.GroupBox();
+            this.attemptInpatDescTextBox = new System.Windows.Forms.TextBox();
+            this.famHistSuicDescTextBox = new System.Windows.Forms.TextBox();
+            this.suicPriorAttDescTextBox = new System.Windows.Forms.TextBox();
+            this.violSelf6MoDescTextBox = new System.Windows.Forms.TextBox();
+            this.attemptInpatComboBox = new System.Windows.Forms.ComboBox();
+            this.famHistSuicComboBox = new System.Windows.Forms.ComboBox();
+            this.suicPriorAttComboBox = new System.Windows.Forms.ComboBox();
+            this.violSelf6MoComboBox = new System.Windows.Forms.ComboBox();
             this.grpDenySuiRisk = new System.Windows.Forms.GroupBox();
             this.assoIsolativeCheckBox = new System.Windows.Forms.CheckBox();
             this.assoImpulsiveCheckBox = new System.Windows.Forms.CheckBox();
@@ -383,6 +416,17 @@
             this.sexAggRiskBehComboBox = new System.Windows.Forms.ComboBox();
             this.megLawComboBox = new System.Windows.Forms.ComboBox();
             this.grpTraumaAbuse = new System.Windows.Forms.GroupBox();
+            this.abuse_assessmentDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.abuse_assessmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.expSelfDescTextBox = new System.Windows.Forms.TextBox();
             this.expSelfComboBox = new System.Windows.Forms.ComboBox();
             this.incPromDescTextBox = new System.Windows.Forms.TextBox();
@@ -441,6 +485,8 @@
             this.medCompliantDescTextBox = new System.Windows.Forms.TextBox();
             this.medCompliantComboBox = new System.Windows.Forms.ComboBox();
             this.grpSocialHist = new System.Windows.Forms.GroupBox();
+            this.livingSituationDescTextBox = new System.Windows.Forms.TextBox();
+            this.livingSituationComboBox = new System.Windows.Forms.ComboBox();
             this.strCopSkillsTextBox = new System.Windows.Forms.TextBox();
             this.supportsTextBox = new System.Windows.Forms.TextBox();
             this.childUnd18CareTextBox = new System.Windows.Forms.TextBox();
@@ -520,7 +566,7 @@
             this.encoEnurComboBox = new System.Windows.Forms.ComboBox();
             this.curSchoolNamTextBox = new System.Windows.Forms.TextBox();
             this.educationCheckBox = new System.Windows.Forms.CheckBox();
-            this.Diagnosis = new System.Windows.Forms.TabPage();
+            this.tabDiagnosis = new System.Windows.Forms.TabPage();
             this.grpProvDiag = new System.Windows.Forms.GroupBox();
             this.funcAssessTextBox = new System.Windows.Forms.TextBox();
             this.contextFactDescTextBox = new System.Windows.Forms.TextBox();
@@ -549,56 +595,23 @@
             this.substance_abuseBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.patient_admissionTableAdapter = new ExampleLook.cPCAppDataSetTableAdapters.patient_admissionTableAdapter();
             this.tableAdapterManager = new ExampleLook.cPCAppDataSetTableAdapters.TableAdapterManager();
-            this.patient_admissionBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.patient_admissionBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.treatment_facilityTableAdapter = new ExampleLook.cPCAppDataSetTableAdapters.treatment_facilityTableAdapter();
             this.psych_hospitalTableAdapter = new ExampleLook.cPCAppDataSetTableAdapters.psych_hospitalTableAdapter();
             this.medicationsTableAdapter = new ExampleLook.cPCAppDataSetTableAdapters.medicationsTableAdapter();
             this.substance_abuseTableAdapter = new ExampleLook.cPCAppDataSetTableAdapters.substance_abuseTableAdapter();
-            this.insightComboBox = new System.Windows.Forms.ComboBox();
-            this.judgementComboBox = new System.Windows.Forms.ComboBox();
-            this.appearanceComboBox = new System.Windows.Forms.ComboBox();
-            this.motorBehaviorComboBox = new System.Windows.Forms.ComboBox();
-            this.motorBehaviorDescTextBox = new System.Windows.Forms.TextBox();
-            this.violSelf6MoComboBox = new System.Windows.Forms.ComboBox();
-            this.violSelf6MoDescTextBox = new System.Windows.Forms.TextBox();
-            this.suicPriorAttComboBox = new System.Windows.Forms.ComboBox();
-            this.suicPriorAttDescTextBox = new System.Windows.Forms.TextBox();
-            this.famHistSuicComboBox = new System.Windows.Forms.ComboBox();
-            this.famHistSuicDescTextBox = new System.Windows.Forms.TextBox();
-            this.attemptInpatComboBox = new System.Windows.Forms.ComboBox();
-            this.attemptInpatDescTextBox = new System.Windows.Forms.TextBox();
-            this.violOthers6MoComboBox = new System.Windows.Forms.ComboBox();
-            this.violOthers6MoDescTextBox = new System.Windows.Forms.TextBox();
-            this.violOtherHistComboBox = new System.Windows.Forms.ComboBox();
-            this.violOtherHistDescTextBox = new System.Windows.Forms.TextBox();
-            this.homPriorAttComboBox = new System.Windows.Forms.ComboBox();
-            this.homPriorAttDescTextBox = new System.Windows.Forms.TextBox();
-            this.famHistHomComboBox = new System.Windows.Forms.ComboBox();
-            this.famHistHomDescTextBox = new System.Windows.Forms.TextBox();
-            this.abuse_assessmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.abuse_assessmentTableAdapter = new ExampleLook.cPCAppDataSetTableAdapters.abuse_assessmentTableAdapter();
-            this.abuse_assessmentDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.grpAdminButtons = new System.Windows.Forms.GroupBox();
+            this.btnChangeLog = new System.Windows.Forms.Button();
+            this.lastNameTextBox1 = new System.Windows.Forms.TextBox();
+            this.firstNameTextBox1 = new System.Windows.Forms.TextBox();
+            this.panMRNumTextBox = new System.Windows.Forms.TextBox();
+            this.btnCallSheet = new System.Windows.Forms.Button();
+            this.btnChildSW = new System.Windows.Forms.Button();
+            this.btnAdultSW = new System.Windows.Forms.Button();
+            this.btnNurse = new System.Windows.Forms.Button();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
             this.substance_abuseDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -608,8 +621,17 @@
             this.dataGridViewTextBoxColumn27 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn28 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn29 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.livingSituationComboBox = new System.Windows.Forms.ComboBox();
-            this.livingSituationDescTextBox = new System.Windows.Forms.TextBox();
+            this.dataGridViewTextBoxColumn30 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.substance_abuseDataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn31 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn32 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn36 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn33 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn39 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn35 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn37 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn38 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn34 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             firstNameLabel = new System.Windows.Forms.Label();
             lastNameLabel = new System.Windows.Forms.Label();
             dOBLabel = new System.Windows.Forms.Label();
@@ -622,7 +644,6 @@
             assessStartDateLabel = new System.Windows.Forms.Label();
             schedAssessTimeLabel = new System.Windows.Forms.Label();
             commitStatLabel = new System.Windows.Forms.Label();
-            srcInfoLabel = new System.Windows.Forms.Label();
             admPsyDiagLabel = new System.Windows.Forms.Label();
             chiefComplaintLabel = new System.Windows.Forms.Label();
             moodLabel = new System.Windows.Forms.Label();
@@ -771,15 +792,28 @@
             judgementLabel = new System.Windows.Forms.Label();
             appearanceLabel = new System.Windows.Forms.Label();
             motorBehaviorLabel = new System.Windows.Forms.Label();
-            violSelf6MoLabel = new System.Windows.Forms.Label();
-            suicPriorAttLabel = new System.Windows.Forms.Label();
-            famHistSuicLabel = new System.Windows.Forms.Label();
-            attemptInpatLabel = new System.Windows.Forms.Label();
             violOthers6MoLabel = new System.Windows.Forms.Label();
             violOtherHistLabel = new System.Windows.Forms.Label();
             homPriorAttLabel = new System.Windows.Forms.Label();
             famHistHomLabel = new System.Windows.Forms.Label();
             livingSituationLabel = new System.Windows.Forms.Label();
+            panMRNumLabel = new System.Windows.Forms.Label();
+            firstNameLabel1 = new System.Windows.Forms.Label();
+            lastNameLabel1 = new System.Windows.Forms.Label();
+            srcInfoLabel = new System.Windows.Forms.Label();
+            violSelf6MoLabel = new System.Windows.Forms.Label();
+            suicPriorAttLabel = new System.Windows.Forms.Label();
+            famHistSuicLabel = new System.Windows.Forms.Label();
+            attemptInpatLabel = new System.Windows.Forms.Label();
+            violSelf6MoDescLabel = new System.Windows.Forms.Label();
+            suicPriorAttDescLabel = new System.Windows.Forms.Label();
+            famHistSuicDescLabel = new System.Windows.Forms.Label();
+            attemptInpatDescLabel = new System.Windows.Forms.Label();
+            violOthers6MoDescLabel = new System.Windows.Forms.Label();
+            violOtherHistDescLabel = new System.Windows.Forms.Label();
+            homPriorAttDescLabel = new System.Windows.Forms.Label();
+            famHistHomDescLabel = new System.Windows.Forms.Label();
+            livingSituationDescLabel = new System.Windows.Forms.Label();
             this.ArcTabs.SuspendLayout();
             this.PatientAssess.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.patient_admissionBindingSource)).BeginInit();
@@ -807,6 +841,8 @@
             this.grpVicRisk.SuspendLayout();
             this.grpAggRisk.SuspendLayout();
             this.grpTraumaAbuse.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.abuse_assessmentDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.abuse_assessmentBindingSource)).BeginInit();
             this.grpPsychFamHist.SuspendLayout();
             this.grpAssaultViolent.SuspendLayout();
             this.grpDenyAssultVio.SuspendLayout();
@@ -824,15 +860,13 @@
             this.InSchool.SuspendLayout();
             this.grpEducation.SuspendLayout();
             this.grpDenyEduInfo.SuspendLayout();
-            this.Diagnosis.SuspendLayout();
+            this.tabDiagnosis.SuspendLayout();
             this.grpProvDiag.SuspendLayout();
             this.grpPhysicianRecom.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.substance_abuseBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.patient_admissionBindingNavigator)).BeginInit();
-            this.patient_admissionBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.abuse_assessmentBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.abuse_assessmentDataGridView)).BeginInit();
+            this.grpAdminButtons.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.substance_abuseDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.substance_abuseDataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // firstNameLabel
@@ -943,19 +977,10 @@
             commitStatLabel.TabIndex = 22;
             commitStatLabel.Text = "Legal Status:";
             // 
-            // srcInfoLabel
-            // 
-            srcInfoLabel.AutoSize = true;
-            srcInfoLabel.Location = new System.Drawing.Point(6, 109);
-            srcInfoLabel.Name = "srcInfoLabel";
-            srcInfoLabel.Size = new System.Drawing.Size(147, 17);
-            srcInfoLabel.TabIndex = 25;
-            srcInfoLabel.Text = "Source of Information:";
-            // 
             // admPsyDiagLabel
             // 
             admPsyDiagLabel.AutoSize = true;
-            admPsyDiagLabel.Location = new System.Drawing.Point(6, 161);
+            admPsyDiagLabel.Location = new System.Drawing.Point(6, 176);
             admPsyDiagLabel.Name = "admPsyDiagLabel";
             admPsyDiagLabel.Size = new System.Drawing.Size(147, 17);
             admPsyDiagLabel.TabIndex = 26;
@@ -964,7 +989,7 @@
             // chiefComplaintLabel
             // 
             chiefComplaintLabel.AutoSize = true;
-            chiefComplaintLabel.Location = new System.Drawing.Point(6, 190);
+            chiefComplaintLabel.Location = new System.Drawing.Point(6, 205);
             chiefComplaintLabel.Name = "chiefComplaintLabel";
             chiefComplaintLabel.Size = new System.Drawing.Size(134, 17);
             chiefComplaintLabel.TabIndex = 28;
@@ -1246,9 +1271,9 @@
             legalCountyLabel.AutoSize = true;
             legalCountyLabel.Location = new System.Drawing.Point(198, 46);
             legalCountyLabel.Name = "legalCountyLabel";
-            legalCountyLabel.Size = new System.Drawing.Size(93, 17);
+            legalCountyLabel.Size = new System.Drawing.Size(97, 17);
             legalCountyLabel.TabIndex = 5;
-            legalCountyLabel.Text = "Name/County";
+            legalCountyLabel.Text = "Name/County:";
             // 
             // chargesLabel
             // 
@@ -1285,7 +1310,6 @@
             suicIdeaDescLabel.Size = new System.Drawing.Size(68, 17);
             suicIdeaDescLabel.TabIndex = 8;
             suicIdeaDescLabel.Text = "Describe:";
-            suicIdeaDescLabel.Click += new System.EventHandler(this.suicIdeaDescLabel_Click);
             // 
             // assoLabel
             // 
@@ -1353,7 +1377,7 @@
             // transportLabel
             // 
             transportLabel.AutoSize = true;
-            transportLabel.Location = new System.Drawing.Point(6, 131);
+            transportLabel.Location = new System.Drawing.Point(6, 146);
             transportLabel.Name = "transportLabel";
             transportLabel.Size = new System.Drawing.Size(154, 17);
             transportLabel.TabIndex = 30;
@@ -1362,7 +1386,7 @@
             // accessWeapLabel
             // 
             accessWeapLabel.AutoSize = true;
-            accessWeapLabel.Location = new System.Drawing.Point(31, 316);
+            accessWeapLabel.Location = new System.Drawing.Point(22, 400);
             accessWeapLabel.Name = "accessWeapLabel";
             accessWeapLabel.Size = new System.Drawing.Size(137, 17);
             accessWeapLabel.TabIndex = 2;
@@ -1371,7 +1395,7 @@
             // accessWeapDescLabel
             // 
             accessWeapDescLabel.AutoSize = true;
-            accessWeapDescLabel.Location = new System.Drawing.Point(262, 316);
+            accessWeapDescLabel.Location = new System.Drawing.Point(256, 400);
             accessWeapDescLabel.Name = "accessWeapDescLabel";
             accessWeapDescLabel.Size = new System.Drawing.Size(68, 17);
             accessWeapDescLabel.TabIndex = 4;
@@ -1425,7 +1449,7 @@
             // traumEveLabel
             // 
             traumEveLabel.AutoSize = true;
-            traumEveLabel.Location = new System.Drawing.Point(6, 128);
+            traumEveLabel.Location = new System.Drawing.Point(6, 161);
             traumEveLabel.Name = "traumEveLabel";
             traumEveLabel.Size = new System.Drawing.Size(115, 17);
             traumEveLabel.TabIndex = 1;
@@ -1434,7 +1458,7 @@
             // traumEveDescLabel
             // 
             traumEveDescLabel.AutoSize = true;
-            traumEveDescLabel.Location = new System.Drawing.Point(220, 126);
+            traumEveDescLabel.Location = new System.Drawing.Point(220, 159);
             traumEveDescLabel.Name = "traumEveDescLabel";
             traumEveDescLabel.Size = new System.Drawing.Size(68, 17);
             traumEveDescLabel.TabIndex = 3;
@@ -1443,7 +1467,7 @@
             // combVicLabel
             // 
             combVicLabel.AutoSize = true;
-            combVicLabel.Location = new System.Drawing.Point(6, 163);
+            combVicLabel.Location = new System.Drawing.Point(6, 196);
             combVicLabel.Name = "combVicLabel";
             combVicLabel.Size = new System.Drawing.Size(166, 17);
             combVicLabel.TabIndex = 5;
@@ -1452,7 +1476,7 @@
             // combVicDescLabel
             // 
             combVicDescLabel.AutoSize = true;
-            combVicDescLabel.Location = new System.Drawing.Point(254, 161);
+            combVicDescLabel.Location = new System.Drawing.Point(254, 194);
             combVicDescLabel.Name = "combVicDescLabel";
             combVicDescLabel.Size = new System.Drawing.Size(68, 17);
             combVicDescLabel.TabIndex = 7;
@@ -1461,7 +1485,7 @@
             // incPromLabel
             // 
             incPromLabel.AutoSize = true;
-            incPromLabel.Location = new System.Drawing.Point(6, 198);
+            incPromLabel.Location = new System.Drawing.Point(6, 231);
             incPromLabel.Name = "incPromLabel";
             incPromLabel.Size = new System.Drawing.Size(284, 17);
             incPromLabel.TabIndex = 9;
@@ -1470,7 +1494,7 @@
             // incPromDescLabel
             // 
             incPromDescLabel.AutoSize = true;
-            incPromDescLabel.Location = new System.Drawing.Point(423, 198);
+            incPromDescLabel.Location = new System.Drawing.Point(423, 231);
             incPromDescLabel.Name = "incPromDescLabel";
             incPromDescLabel.Size = new System.Drawing.Size(68, 17);
             incPromDescLabel.TabIndex = 11;
@@ -1479,7 +1503,7 @@
             // expSelfLabel
             // 
             expSelfLabel.AutoSize = true;
-            expSelfLabel.Location = new System.Drawing.Point(6, 233);
+            expSelfLabel.Location = new System.Drawing.Point(6, 266);
             expSelfLabel.Name = "expSelfLabel";
             expSelfLabel.Size = new System.Drawing.Size(368, 17);
             expSelfLabel.TabIndex = 13;
@@ -1488,7 +1512,7 @@
             // expSelfDescLabel
             // 
             expSelfDescLabel.AutoSize = true;
-            expSelfDescLabel.Location = new System.Drawing.Point(507, 233);
+            expSelfDescLabel.Location = new System.Drawing.Point(507, 266);
             expSelfDescLabel.Name = "expSelfDescLabel";
             expSelfDescLabel.Size = new System.Drawing.Size(68, 17);
             expSelfDescLabel.TabIndex = 15;
@@ -1619,7 +1643,6 @@
             howOftenAlcLabel.Size = new System.Drawing.Size(468, 17);
             howOftenAlcLabel.TabIndex = 0;
             howOftenAlcLabel.Text = "How often do you have a drink containing alcohol? (select one response)";
-            howOftenAlcLabel.Click += new System.EventHandler(this.howOftenAlcLabel_Click);
             // 
             // howManyAlcTypLabel
             // 
@@ -1665,7 +1688,6 @@
             psychHallDescLabel.Size = new System.Drawing.Size(68, 17);
             psychHallDescLabel.TabIndex = 2;
             psychHallDescLabel.Text = "Describe:";
-            psychHallDescLabel.Click += new System.EventHandler(this.psychHallDescLabel_Click);
             // 
             // psychCommLabel
             // 
@@ -1702,7 +1724,6 @@
             psychDelDescLabel.Size = new System.Drawing.Size(68, 17);
             psychDelDescLabel.TabIndex = 10;
             psychDelDescLabel.Text = "Describe:";
-            psychDelDescLabel.Click += new System.EventHandler(this.psychDelDescLabel_Click);
             // 
             // psychRelLabel
             // 
@@ -1817,9 +1838,9 @@
             medCompliantLabel.AutoSize = true;
             medCompliantLabel.Location = new System.Drawing.Point(6, 28);
             medCompliantLabel.Name = "medCompliantLabel";
-            medCompliantLabel.Size = new System.Drawing.Size(142, 17);
+            medCompliantLabel.Size = new System.Drawing.Size(146, 17);
             medCompliantLabel.TabIndex = 0;
-            medCompliantLabel.Text = "Medication Compliant";
+            medCompliantLabel.Text = "Medication Compliant:";
             // 
             // medCompliantDescLabel
             // 
@@ -2253,6 +2274,240 @@
             funcAssessLabel.TabIndex = 14;
             funcAssessLabel.Text = "Functional Assessment:";
             // 
+            // insightLabel
+            // 
+            insightLabel.AutoSize = true;
+            insightLabel.Location = new System.Drawing.Point(722, 18);
+            insightLabel.Name = "insightLabel";
+            insightLabel.Size = new System.Drawing.Size(53, 17);
+            insightLabel.TabIndex = 74;
+            insightLabel.Text = "Insight:";
+            // 
+            // judgementLabel
+            // 
+            judgementLabel.AutoSize = true;
+            judgementLabel.Location = new System.Drawing.Point(722, 72);
+            judgementLabel.Name = "judgementLabel";
+            judgementLabel.Size = new System.Drawing.Size(82, 17);
+            judgementLabel.TabIndex = 75;
+            judgementLabel.Text = "Judgement:";
+            // 
+            // appearanceLabel
+            // 
+            appearanceLabel.AutoSize = true;
+            appearanceLabel.Location = new System.Drawing.Point(320, 307);
+            appearanceLabel.Name = "appearanceLabel";
+            appearanceLabel.Size = new System.Drawing.Size(89, 17);
+            appearanceLabel.TabIndex = 76;
+            appearanceLabel.Text = "Appearance:";
+            // 
+            // motorBehaviorLabel
+            // 
+            motorBehaviorLabel.AutoSize = true;
+            motorBehaviorLabel.Location = new System.Drawing.Point(320, 358);
+            motorBehaviorLabel.Name = "motorBehaviorLabel";
+            motorBehaviorLabel.Size = new System.Drawing.Size(108, 17);
+            motorBehaviorLabel.TabIndex = 77;
+            motorBehaviorLabel.Text = "Motor Behavior:";
+            // 
+            // violOthers6MoLabel
+            // 
+            violOthers6MoLabel.AutoSize = true;
+            violOthers6MoLabel.Location = new System.Drawing.Point(22, 168);
+            violOthers6MoLabel.Name = "violOthers6MoLabel";
+            violOthers6MoLabel.Size = new System.Drawing.Size(288, 17);
+            violOthers6MoLabel.TabIndex = 6;
+            violOthers6MoLabel.Text = "Violence toward others in the past 6 months:";
+            // 
+            // violOtherHistLabel
+            // 
+            violOtherHistLabel.AutoSize = true;
+            violOtherHistLabel.Location = new System.Drawing.Point(22, 226);
+            violOtherHistLabel.Name = "violOtherHistLabel";
+            violOtherHistLabel.Size = new System.Drawing.Size(286, 17);
+            violOtherHistLabel.TabIndex = 9;
+            violOtherHistLabel.Text = "Violence towards others by history (lifetime):";
+            // 
+            // homPriorAttLabel
+            // 
+            homPriorAttLabel.AutoSize = true;
+            homPriorAttLabel.Location = new System.Drawing.Point(22, 284);
+            homPriorAttLabel.Name = "homPriorAttLabel";
+            homPriorAttLabel.Size = new System.Drawing.Size(101, 17);
+            homPriorAttLabel.TabIndex = 12;
+            homPriorAttLabel.Text = "Prior Attempts:";
+            // 
+            // famHistHomLabel
+            // 
+            famHistHomLabel.AutoSize = true;
+            famHistHomLabel.Location = new System.Drawing.Point(22, 342);
+            famHistHomLabel.Name = "famHistHomLabel";
+            famHistHomLabel.Size = new System.Drawing.Size(281, 17);
+            famHistHomLabel.TabIndex = 15;
+            famHistHomLabel.Text = "Family history of homicidal/violent behavior:";
+            // 
+            // livingSituationLabel
+            // 
+            livingSituationLabel.AutoSize = true;
+            livingSituationLabel.Location = new System.Drawing.Point(6, 247);
+            livingSituationLabel.Name = "livingSituationLabel";
+            livingSituationLabel.Size = new System.Drawing.Size(108, 17);
+            livingSituationLabel.TabIndex = 24;
+            livingSituationLabel.Text = "Living Situation:";
+            // 
+            // panMRNumLabel
+            // 
+            panMRNumLabel.AutoSize = true;
+            panMRNumLabel.Location = new System.Drawing.Point(3, 186);
+            panMRNumLabel.Name = "panMRNumLabel";
+            panMRNumLabel.Size = new System.Drawing.Size(45, 17);
+            panMRNumLabel.TabIndex = 4;
+            panMRNumLabel.Text = "MR #:";
+            // 
+            // firstNameLabel1
+            // 
+            firstNameLabel1.AutoSize = true;
+            firstNameLabel1.Location = new System.Drawing.Point(3, 95);
+            firstNameLabel1.Name = "firstNameLabel1";
+            firstNameLabel1.Size = new System.Drawing.Size(80, 17);
+            firstNameLabel1.TabIndex = 6;
+            firstNameLabel1.Text = "First Name:";
+            // 
+            // lastNameLabel1
+            // 
+            lastNameLabel1.AutoSize = true;
+            lastNameLabel1.Location = new System.Drawing.Point(6, 140);
+            lastNameLabel1.Name = "lastNameLabel1";
+            lastNameLabel1.Size = new System.Drawing.Size(80, 17);
+            lastNameLabel1.TabIndex = 8;
+            lastNameLabel1.Text = "Last Name:";
+            // 
+            // srcInfoLabel
+            // 
+            srcInfoLabel.AutoSize = true;
+            srcInfoLabel.Location = new System.Drawing.Point(6, 109);
+            srcInfoLabel.Name = "srcInfoLabel";
+            srcInfoLabel.Size = new System.Drawing.Size(147, 17);
+            srcInfoLabel.TabIndex = 33;
+            srcInfoLabel.Text = "Source of Information:";
+            // 
+            // violSelf6MoLabel
+            // 
+            violSelf6MoLabel.AutoSize = true;
+            violSelf6MoLabel.Location = new System.Drawing.Point(22, 203);
+            violSelf6MoLabel.Name = "violSelf6MoLabel";
+            violSelf6MoLabel.Size = new System.Drawing.Size(270, 17);
+            violSelf6MoLabel.TabIndex = 2;
+            violSelf6MoLabel.Text = "Violence toward self in the past 6 months:";
+            // 
+            // suicPriorAttLabel
+            // 
+            suicPriorAttLabel.AutoSize = true;
+            suicPriorAttLabel.Location = new System.Drawing.Point(22, 261);
+            suicPriorAttLabel.Name = "suicPriorAttLabel";
+            suicPriorAttLabel.Size = new System.Drawing.Size(101, 17);
+            suicPriorAttLabel.TabIndex = 5;
+            suicPriorAttLabel.Text = "Prior Attempts:";
+            // 
+            // famHistSuicLabel
+            // 
+            famHistSuicLabel.AutoSize = true;
+            famHistSuicLabel.Location = new System.Drawing.Point(22, 318);
+            famHistSuicLabel.Name = "famHistSuicLabel";
+            famHistSuicLabel.Size = new System.Drawing.Size(162, 17);
+            famHistSuicLabel.TabIndex = 8;
+            famHistSuicLabel.Text = "Family history of suicide:";
+            // 
+            // attemptInpatLabel
+            // 
+            attemptInpatLabel.AutoSize = true;
+            attemptInpatLabel.Location = new System.Drawing.Point(22, 376);
+            attemptInpatLabel.Name = "attemptInpatLabel";
+            attemptInpatLabel.Size = new System.Drawing.Size(433, 17);
+            attemptInpatLabel.TabIndex = 11;
+            attemptInpatLabel.Text = "Has patient ever attempted suicide in an inpatient facility/ RTF/ ED?";
+            // 
+            // violSelf6MoDescLabel
+            // 
+            violSelf6MoDescLabel.AutoSize = true;
+            violSelf6MoDescLabel.Location = new System.Drawing.Point(425, 203);
+            violSelf6MoDescLabel.Name = "violSelf6MoDescLabel";
+            violSelf6MoDescLabel.Size = new System.Drawing.Size(211, 17);
+            violSelf6MoDescLabel.TabIndex = 12;
+            violSelf6MoDescLabel.Text = "If yes, describe (date, methods):";
+            // 
+            // suicPriorAttDescLabel
+            // 
+            suicPriorAttDescLabel.AutoSize = true;
+            suicPriorAttDescLabel.Location = new System.Drawing.Point(256, 261);
+            suicPriorAttDescLabel.Name = "suicPriorAttDescLabel";
+            suicPriorAttDescLabel.Size = new System.Drawing.Size(209, 17);
+            suicPriorAttDescLabel.TabIndex = 13;
+            suicPriorAttDescLabel.Text = "If yes, descibe(dates, methods):";
+            // 
+            // famHistSuicDescLabel
+            // 
+            famHistSuicDescLabel.AutoSize = true;
+            famHistSuicDescLabel.Location = new System.Drawing.Point(322, 318);
+            famHistSuicDescLabel.Name = "famHistSuicDescLabel";
+            famHistSuicDescLabel.Size = new System.Drawing.Size(231, 17);
+            famHistSuicDescLabel.TabIndex = 14;
+            famHistSuicDescLabel.Text = "If yes, provide relationship/severity)";
+            // 
+            // attemptInpatDescLabel
+            // 
+            attemptInpatDescLabel.AutoSize = true;
+            attemptInpatDescLabel.Location = new System.Drawing.Point(588, 376);
+            attemptInpatDescLabel.Name = "attemptInpatDescLabel";
+            attemptInpatDescLabel.Size = new System.Drawing.Size(102, 17);
+            attemptInpatDescLabel.TabIndex = 16;
+            attemptInpatDescLabel.Text = "If yes, descibe:";
+            // 
+            // violOthers6MoDescLabel
+            // 
+            violOthers6MoDescLabel.AutoSize = true;
+            violOthers6MoDescLabel.Location = new System.Drawing.Point(443, 168);
+            violOthers6MoDescLabel.Name = "violOthers6MoDescLabel";
+            violOthers6MoDescLabel.Size = new System.Drawing.Size(218, 17);
+            violOthers6MoDescLabel.TabIndex = 16;
+            violOthers6MoDescLabel.Text = "If yes, describe (dates, methods):";
+            // 
+            // violOtherHistDescLabel
+            // 
+            violOtherHistDescLabel.AutoSize = true;
+            violOtherHistDescLabel.Location = new System.Drawing.Point(447, 226);
+            violOtherHistDescLabel.Name = "violOtherHistDescLabel";
+            violOtherHistDescLabel.Size = new System.Drawing.Size(214, 17);
+            violOtherHistDescLabel.TabIndex = 17;
+            violOtherHistDescLabel.Text = "If yes, describe (dates, methods)";
+            // 
+            // homPriorAttDescLabel
+            // 
+            homPriorAttDescLabel.AutoSize = true;
+            homPriorAttDescLabel.Location = new System.Drawing.Point(256, 284);
+            homPriorAttDescLabel.Name = "homPriorAttDescLabel";
+            homPriorAttDescLabel.Size = new System.Drawing.Size(218, 17);
+            homPriorAttDescLabel.TabIndex = 18;
+            homPriorAttDescLabel.Text = "If yes, describe (dates, methods):";
+            // 
+            // famHistHomDescLabel
+            // 
+            famHistHomDescLabel.AutoSize = true;
+            famHistHomDescLabel.Location = new System.Drawing.Point(436, 342);
+            famHistHomDescLabel.Name = "famHistHomDescLabel";
+            famHistHomDescLabel.Size = new System.Drawing.Size(68, 17);
+            famHistHomDescLabel.TabIndex = 20;
+            famHistHomDescLabel.Text = "Describe:";
+            // 
+            // livingSituationDescLabel
+            // 
+            livingSituationDescLabel.AutoSize = true;
+            livingSituationDescLabel.Location = new System.Drawing.Point(247, 247);
+            livingSituationDescLabel.Name = "livingSituationDescLabel";
+            livingSituationDescLabel.Size = new System.Drawing.Size(69, 17);
+            livingSituationDescLabel.TabIndex = 26;
+            livingSituationDescLabel.Text = "With who:";
+            // 
             // ArcTabs
             // 
             this.ArcTabs.Controls.Add(this.PatientAssess);
@@ -2262,11 +2517,11 @@
             this.ArcTabs.Controls.Add(this.DrugAlco);
             this.ArcTabs.Controls.Add(this.Education);
             this.ArcTabs.Controls.Add(this.InSchool);
-            this.ArcTabs.Controls.Add(this.Diagnosis);
-            this.ArcTabs.Location = new System.Drawing.Point(115, 30);
+            this.ArcTabs.Controls.Add(this.tabDiagnosis);
+            this.ArcTabs.Location = new System.Drawing.Point(232, 53);
             this.ArcTabs.Name = "ArcTabs";
             this.ArcTabs.SelectedIndex = 0;
-            this.ArcTabs.Size = new System.Drawing.Size(1077, 1057);
+            this.ArcTabs.Size = new System.Drawing.Size(1077, 1153);
             this.ArcTabs.TabIndex = 0;
             // 
             // PatientAssess
@@ -2279,7 +2534,7 @@
             this.PatientAssess.Location = new System.Drawing.Point(4, 25);
             this.PatientAssess.Name = "PatientAssess";
             this.PatientAssess.Padding = new System.Windows.Forms.Padding(3);
-            this.PatientAssess.Size = new System.Drawing.Size(1069, 1028);
+            this.PatientAssess.Size = new System.Drawing.Size(1069, 1124);
             this.PatientAssess.TabIndex = 0;
             this.PatientAssess.Text = "Patient Assessment";
             this.PatientAssess.UseVisualStyleBackColor = true;
@@ -2385,9 +2640,74 @@
             this.grpPatAssess.Controls.Add(this.moodAppCheckBox);
             this.grpPatAssess.Location = new System.Drawing.Point(30, 265);
             this.grpPatAssess.Name = "grpPatAssess";
-            this.grpPatAssess.Size = new System.Drawing.Size(968, 601);
+            this.grpPatAssess.Size = new System.Drawing.Size(954, 601);
             this.grpPatAssess.TabIndex = 1;
             this.grpPatAssess.TabStop = false;
+            // 
+            // motorBehaviorDescTextBox
+            // 
+            this.motorBehaviorDescTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "MotorBehaviorDesc", true));
+            this.motorBehaviorDescTextBox.Location = new System.Drawing.Point(320, 408);
+            this.motorBehaviorDescTextBox.Name = "motorBehaviorDescTextBox";
+            this.motorBehaviorDescTextBox.Size = new System.Drawing.Size(160, 22);
+            this.motorBehaviorDescTextBox.TabIndex = 79;
+            // 
+            // motorBehaviorComboBox
+            // 
+            this.motorBehaviorComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "MotorBehavior", true));
+            this.motorBehaviorComboBox.FormattingEnabled = true;
+            this.motorBehaviorComboBox.Items.AddRange(new object[] {
+            "Normal",
+            "Lethargic",
+            "Restless",
+            "Agitated",
+            "Other, describe:"});
+            this.motorBehaviorComboBox.Location = new System.Drawing.Point(320, 378);
+            this.motorBehaviorComboBox.Name = "motorBehaviorComboBox";
+            this.motorBehaviorComboBox.Size = new System.Drawing.Size(160, 24);
+            this.motorBehaviorComboBox.TabIndex = 78;
+            // 
+            // appearanceComboBox
+            // 
+            this.appearanceComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "Appearance", true));
+            this.appearanceComboBox.FormattingEnabled = true;
+            this.appearanceComboBox.Items.AddRange(new object[] {
+            "Well Groomed",
+            "Appropriate",
+            "Disheveled",
+            "Neglected"});
+            this.appearanceComboBox.Location = new System.Drawing.Point(320, 331);
+            this.appearanceComboBox.Name = "appearanceComboBox";
+            this.appearanceComboBox.Size = new System.Drawing.Size(160, 24);
+            this.appearanceComboBox.TabIndex = 77;
+            // 
+            // judgementComboBox
+            // 
+            this.judgementComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "Judgement", true));
+            this.judgementComboBox.FormattingEnabled = true;
+            this.judgementComboBox.Items.AddRange(new object[] {
+            "Good",
+            "Fair",
+            "Poor"});
+            this.judgementComboBox.Location = new System.Drawing.Point(725, 98);
+            this.judgementComboBox.Name = "judgementComboBox";
+            this.judgementComboBox.Size = new System.Drawing.Size(188, 24);
+            this.judgementComboBox.TabIndex = 76;
+            // 
+            // insightComboBox
+            // 
+            this.insightComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "Insight", true));
+            this.insightComboBox.FormattingEnabled = true;
+            this.insightComboBox.Items.AddRange(new object[] {
+            "Good",
+            "Fair",
+            "Poor",
+            "Impaired",
+            "None"});
+            this.insightComboBox.Location = new System.Drawing.Point(725, 40);
+            this.insightComboBox.Name = "insightComboBox";
+            this.insightComboBox.Size = new System.Drawing.Size(188, 24);
+            this.insightComboBox.TabIndex = 75;
             // 
             // sleUnaCheckBox
             // 
@@ -2796,7 +3116,6 @@
             this.thoughtContGraCheckBox.TabIndex = 23;
             this.thoughtContGraCheckBox.Text = "Gradiose";
             this.thoughtContGraCheckBox.UseVisualStyleBackColor = true;
-            this.thoughtContGraCheckBox.CheckedChanged += new System.EventHandler(this.thoughtContGraCheckBox_CheckedChanged);
             // 
             // thoughtContPreCheckBox
             // 
@@ -2988,6 +3307,8 @@
             // 
             // grpPatientInfo
             // 
+            this.grpPatientInfo.Controls.Add(srcInfoLabel);
+            this.grpPatientInfo.Controls.Add(this.srcInfoTextBox);
             this.grpPatientInfo.Controls.Add(this.transportDescTextBox);
             this.grpPatientInfo.Controls.Add(transportLabel);
             this.grpPatientInfo.Controls.Add(this.transportComboBox);
@@ -2995,7 +3316,6 @@
             this.grpPatientInfo.Controls.Add(this.chiefComplaintTextBox);
             this.grpPatientInfo.Controls.Add(admPsyDiagLabel);
             this.grpPatientInfo.Controls.Add(this.admPsyDiagTextBox);
-            this.grpPatientInfo.Controls.Add(srcInfoLabel);
             this.grpPatientInfo.Controls.Add(this.commitStatDescTextBox);
             this.grpPatientInfo.Controls.Add(commitStatLabel);
             this.grpPatientInfo.Controls.Add(this.commitStatComboBox);
@@ -3023,14 +3343,22 @@
             this.grpPatientInfo.Controls.Add(this.firstNameTextBox);
             this.grpPatientInfo.Location = new System.Drawing.Point(30, 21);
             this.grpPatientInfo.Name = "grpPatientInfo";
-            this.grpPatientInfo.Size = new System.Drawing.Size(954, 238);
+            this.grpPatientInfo.Size = new System.Drawing.Size(954, 244);
             this.grpPatientInfo.TabIndex = 0;
             this.grpPatientInfo.TabStop = false;
+            // 
+            // srcInfoTextBox
+            // 
+            this.srcInfoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "SrcInfo", true));
+            this.srcInfoTextBox.Location = new System.Drawing.Point(159, 106);
+            this.srcInfoTextBox.Name = "srcInfoTextBox";
+            this.srcInfoTextBox.Size = new System.Drawing.Size(754, 22);
+            this.srcInfoTextBox.TabIndex = 34;
             // 
             // transportDescTextBox
             // 
             this.transportDescTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "TransportDesc", true));
-            this.transportDescTextBox.Location = new System.Drawing.Point(346, 128);
+            this.transportDescTextBox.Location = new System.Drawing.Point(346, 143);
             this.transportDescTextBox.Name = "transportDescTextBox";
             this.transportDescTextBox.Size = new System.Drawing.Size(567, 22);
             this.transportDescTextBox.TabIndex = 33;
@@ -3045,7 +3373,7 @@
             "Constable",
             "Private Vehicle",
             "Other"});
-            this.transportComboBox.Location = new System.Drawing.Point(166, 128);
+            this.transportComboBox.Location = new System.Drawing.Point(166, 143);
             this.transportComboBox.Name = "transportComboBox";
             this.transportComboBox.Size = new System.Drawing.Size(174, 24);
             this.transportComboBox.TabIndex = 31;
@@ -3053,7 +3381,7 @@
             // chiefComplaintTextBox
             // 
             this.chiefComplaintTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "ChiefComplaint", true));
-            this.chiefComplaintTextBox.Location = new System.Drawing.Point(146, 187);
+            this.chiefComplaintTextBox.Location = new System.Drawing.Point(146, 202);
             this.chiefComplaintTextBox.Name = "chiefComplaintTextBox";
             this.chiefComplaintTextBox.Size = new System.Drawing.Size(767, 22);
             this.chiefComplaintTextBox.TabIndex = 29;
@@ -3061,7 +3389,7 @@
             // admPsyDiagTextBox
             // 
             this.admPsyDiagTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "AdmPsyDiag", true));
-            this.admPsyDiagTextBox.Location = new System.Drawing.Point(159, 158);
+            this.admPsyDiagTextBox.Location = new System.Drawing.Point(159, 173);
             this.admPsyDiagTextBox.Name = "admPsyDiagTextBox";
             this.admPsyDiagTextBox.Size = new System.Drawing.Size(754, 22);
             this.admPsyDiagTextBox.TabIndex = 27;
@@ -3162,7 +3490,6 @@
             this.mRNumTextBox.Name = "mRNumTextBox";
             this.mRNumTextBox.Size = new System.Drawing.Size(132, 22);
             this.mRNumTextBox.TabIndex = 7;
-            this.mRNumTextBox.TextChanged += new System.EventHandler(this.mRNumTextBox_TextChanged);
             // 
             // dOBDateTimePicker
             // 
@@ -3196,7 +3523,7 @@
             this.MedicalHIist.Location = new System.Drawing.Point(4, 25);
             this.MedicalHIist.Name = "MedicalHIist";
             this.MedicalHIist.Padding = new System.Windows.Forms.Padding(3);
-            this.MedicalHIist.Size = new System.Drawing.Size(1069, 1028);
+            this.MedicalHIist.Size = new System.Drawing.Size(1069, 1124);
             this.MedicalHIist.TabIndex = 1;
             this.MedicalHIist.Text = "Medical History";
             this.MedicalHIist.UseVisualStyleBackColor = true;
@@ -3244,8 +3571,8 @@
             this.incarcComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "Incarc", true));
             this.incarcComboBox.FormattingEnabled = true;
             this.incarcComboBox.Items.AddRange(new object[] {
-            "No",
-            "Yes"});
+            "Yes",
+            "No"});
             this.incarcComboBox.Location = new System.Drawing.Point(108, 100);
             this.incarcComboBox.Name = "incarcComboBox";
             this.incarcComboBox.Size = new System.Drawing.Size(77, 24);
@@ -3264,7 +3591,7 @@
             this.legalCountyTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "LegalCounty", true));
             this.legalCountyTextBox.Location = new System.Drawing.Point(298, 43);
             this.legalCountyTextBox.Name = "legalCountyTextBox";
-            this.legalCountyTextBox.Size = new System.Drawing.Size(100, 22);
+            this.legalCountyTextBox.Size = new System.Drawing.Size(673, 22);
             this.legalCountyTextBox.TabIndex = 6;
             // 
             // paroleCheckBox
@@ -3358,6 +3685,7 @@
             this.dataGridViewTextBoxColumn5.DataPropertyName = "PatientID";
             this.dataGridViewTextBoxColumn5.HeaderText = "PatientID";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.Visible = false;
             // 
             // dataGridViewTextBoxColumn6
             // 
@@ -3368,14 +3696,16 @@
             // dataGridViewTextBoxColumn7
             // 
             this.dataGridViewTextBoxColumn7.DataPropertyName = "DatesServiced";
-            this.dataGridViewTextBoxColumn7.HeaderText = "DatesServiced";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Dates of Service";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             // 
             // dataGridViewTextBoxColumn8
             // 
+            this.dataGridViewTextBoxColumn8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.dataGridViewTextBoxColumn8.DataPropertyName = "Reason";
-            this.dataGridViewTextBoxColumn8.HeaderText = "Reason";
+            this.dataGridViewTextBoxColumn8.HeaderText = "Reason(suicidal, depression, homicidal)";
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.Width = 204;
             // 
             // psych_hospitalBindingSource
             // 
@@ -3389,8 +3719,7 @@
             this.treatment_facilityDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4});
+            this.dataGridViewTextBoxColumn3});
             this.treatment_facilityDataGridView.DataSource = this.treatment_facilityBindingSource;
             this.treatment_facilityDataGridView.Location = new System.Drawing.Point(9, 84);
             this.treatment_facilityDataGridView.Name = "treatment_facilityDataGridView";
@@ -3403,6 +3732,7 @@
             this.dataGridViewTextBoxColumn1.DataPropertyName = "PatientID";
             this.dataGridViewTextBoxColumn1.HeaderText = "PatientID";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Visible = false;
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -3412,15 +3742,11 @@
             // 
             // dataGridViewTextBoxColumn3
             // 
+            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.dataGridViewTextBoxColumn3.DataPropertyName = "ClinicianDisiplineTitle";
-            this.dataGridViewTextBoxColumn3.HeaderText = "ClinicianDisiplineTitle";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Clinician and DisiplineTitle(BCM, TSS, etc)";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "CurrentFacility";
-            this.dataGridViewTextBoxColumn4.HeaderText = "CurrentFacility";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn3.Width = 221;
             // 
             // treatment_facilityBindingSource
             // 
@@ -3444,11 +3770,11 @@
             this.autismSpecDisComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "AutismSpecDis", true));
             this.autismSpecDisComboBox.FormattingEnabled = true;
             this.autismSpecDisComboBox.Items.AddRange(new object[] {
-            "No",
-            "Yes"});
+            "Yes",
+            "No"});
             this.autismSpecDisComboBox.Location = new System.Drawing.Point(260, 476);
             this.autismSpecDisComboBox.Name = "autismSpecDisComboBox";
-            this.autismSpecDisComboBox.Size = new System.Drawing.Size(73, 24);
+            this.autismSpecDisComboBox.Size = new System.Drawing.Size(112, 24);
             this.autismSpecDisComboBox.TabIndex = 20;
             // 
             // iQTextBox
@@ -3464,8 +3790,8 @@
             this.intelDisableComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "IntelDisable", true));
             this.intelDisableComboBox.FormattingEnabled = true;
             this.intelDisableComboBox.Items.AddRange(new object[] {
-            "No",
-            "Yes"});
+            "Yes",
+            "No"});
             this.intelDisableComboBox.Location = new System.Drawing.Point(311, 446);
             this.intelDisableComboBox.Name = "intelDisableComboBox";
             this.intelDisableComboBox.Size = new System.Drawing.Size(111, 24);
@@ -3494,9 +3820,9 @@
             this.reHospNonCompComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "ReHospNonComp", true));
             this.reHospNonCompComboBox.FormattingEnabled = true;
             this.reHospNonCompComboBox.Items.AddRange(new object[] {
-            "N/A",
             "Yes",
-            "No"});
+            "No",
+            "N/A"});
             this.reHospNonCompComboBox.Location = new System.Drawing.Point(482, 385);
             this.reHospNonCompComboBox.Name = "reHospNonCompComboBox";
             this.reHospNonCompComboBox.Size = new System.Drawing.Size(121, 24);
@@ -3507,9 +3833,9 @@
             this.histNonCompMedComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "HistNonCompMed", true));
             this.histNonCompMedComboBox.FormattingEnabled = true;
             this.histNonCompMedComboBox.Items.AddRange(new object[] {
-            "N/A",
             "Yes",
-            "No"});
+            "No",
+            "N/A"});
             this.histNonCompMedComboBox.Location = new System.Drawing.Point(565, 351);
             this.histNonCompMedComboBox.Name = "histNonCompMedComboBox";
             this.histNonCompMedComboBox.Size = new System.Drawing.Size(121, 24);
@@ -3528,9 +3854,9 @@
             this.complTreatComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "ComplTreat", true));
             this.complTreatComboBox.FormattingEnabled = true;
             this.complTreatComboBox.Items.AddRange(new object[] {
-            "N/A",
             "Yes",
-            "No"});
+            "No",
+            "N/A"});
             this.complTreatComboBox.Location = new System.Drawing.Point(183, 54);
             this.complTreatComboBox.Name = "complTreatComboBox";
             this.complTreatComboBox.Size = new System.Drawing.Size(82, 24);
@@ -3582,8 +3908,8 @@
             this.histFallsComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "HistFalls", true));
             this.histFallsComboBox.FormattingEnabled = true;
             this.histFallsComboBox.Items.AddRange(new object[] {
-            "No",
-            "Yes"});
+            "Yes",
+            "No"});
             this.histFallsComboBox.Location = new System.Drawing.Point(117, 191);
             this.histFallsComboBox.Name = "histFallsComboBox";
             this.histFallsComboBox.Size = new System.Drawing.Size(76, 24);
@@ -3626,8 +3952,8 @@
             this.pCPComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "PCP", true));
             this.pCPComboBox.FormattingEnabled = true;
             this.pCPComboBox.Items.AddRange(new object[] {
-            "No",
-            "Yes"});
+            "Yes",
+            "No"});
             this.pCPComboBox.Location = new System.Drawing.Point(51, 226);
             this.pCPComboBox.Name = "pCPComboBox";
             this.pCPComboBox.Size = new System.Drawing.Size(70, 24);
@@ -3638,8 +3964,8 @@
             this.dietRestComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "DietRest", true));
             this.dietRestComboBox.FormattingEnabled = true;
             this.dietRestComboBox.Items.AddRange(new object[] {
-            "No",
-            "Yes"});
+            "Yes",
+            "No"});
             this.dietRestComboBox.Location = new System.Drawing.Point(281, 156);
             this.dietRestComboBox.Name = "dietRestComboBox";
             this.dietRestComboBox.Size = new System.Drawing.Size(78, 24);
@@ -3650,9 +3976,9 @@
             this.histMRSAComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "HistMRSA", true));
             this.histMRSAComboBox.FormattingEnabled = true;
             this.histMRSAComboBox.Items.AddRange(new object[] {
-            "No",
-            "Yes"});
-            this.histMRSAComboBox.Location = new System.Drawing.Point(127, 121);
+            "Yes",
+            "No"});
+            this.histMRSAComboBox.Location = new System.Drawing.Point(127, 120);
             this.histMRSAComboBox.Name = "histMRSAComboBox";
             this.histMRSAComboBox.Size = new System.Drawing.Size(66, 24);
             this.histMRSAComboBox.TabIndex = 5;
@@ -3682,23 +4008,27 @@
             this.RiskAssess.Location = new System.Drawing.Point(4, 25);
             this.RiskAssess.Name = "RiskAssess";
             this.RiskAssess.Padding = new System.Windows.Forms.Padding(3);
-            this.RiskAssess.Size = new System.Drawing.Size(1069, 1028);
+            this.RiskAssess.Size = new System.Drawing.Size(1069, 1124);
             this.RiskAssess.TabIndex = 2;
             this.RiskAssess.Text = "Risk Assessment";
             this.RiskAssess.UseVisualStyleBackColor = true;
             // 
             // grpHom
             // 
+            this.grpHom.Controls.Add(famHistHomDescLabel);
             this.grpHom.Controls.Add(this.famHistHomDescTextBox);
+            this.grpHom.Controls.Add(homPriorAttDescLabel);
+            this.grpHom.Controls.Add(this.homPriorAttDescTextBox);
+            this.grpHom.Controls.Add(violOtherHistDescLabel);
+            this.grpHom.Controls.Add(this.violOtherHistDescTextBox);
+            this.grpHom.Controls.Add(violOthers6MoDescLabel);
+            this.grpHom.Controls.Add(this.violOthers6MoDescTextBox);
             this.grpHom.Controls.Add(famHistHomLabel);
             this.grpHom.Controls.Add(this.famHistHomComboBox);
-            this.grpHom.Controls.Add(this.homPriorAttDescTextBox);
             this.grpHom.Controls.Add(homPriorAttLabel);
             this.grpHom.Controls.Add(this.homPriorAttComboBox);
-            this.grpHom.Controls.Add(this.violOtherHistDescTextBox);
             this.grpHom.Controls.Add(violOtherHistLabel);
             this.grpHom.Controls.Add(this.violOtherHistComboBox);
-            this.grpHom.Controls.Add(this.violOthers6MoDescTextBox);
             this.grpHom.Controls.Add(violOthers6MoLabel);
             this.grpHom.Controls.Add(this.violOthers6MoComboBox);
             this.grpHom.Controls.Add(accessWeapDescLabel);
@@ -3707,17 +4037,97 @@
             this.grpHom.Controls.Add(this.accessWeapComboBox);
             this.grpHom.Controls.Add(this.grpDenyHomRisk);
             this.grpHom.Controls.Add(this.deniesHomCheckBox);
-            this.grpHom.Location = new System.Drawing.Point(16, 623);
+            this.grpHom.Location = new System.Drawing.Point(16, 671);
             this.grpHom.Name = "grpHom";
-            this.grpHom.Size = new System.Drawing.Size(1009, 366);
+            this.grpHom.Size = new System.Drawing.Size(1009, 439);
             this.grpHom.TabIndex = 2;
             this.grpHom.TabStop = false;
             this.grpHom.Text = "Homicidal Risk Assessment";
             // 
+            // famHistHomDescTextBox
+            // 
+            this.famHistHomDescTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "FamHistHomDesc", true));
+            this.famHistHomDescTextBox.Location = new System.Drawing.Point(25, 369);
+            this.famHistHomDescTextBox.Name = "famHistHomDescTextBox";
+            this.famHistHomDescTextBox.Size = new System.Drawing.Size(944, 22);
+            this.famHistHomDescTextBox.TabIndex = 21;
+            // 
+            // homPriorAttDescTextBox
+            // 
+            this.homPriorAttDescTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "HomPriorAttDesc", true));
+            this.homPriorAttDescTextBox.Location = new System.Drawing.Point(25, 311);
+            this.homPriorAttDescTextBox.Name = "homPriorAttDescTextBox";
+            this.homPriorAttDescTextBox.Size = new System.Drawing.Size(943, 22);
+            this.homPriorAttDescTextBox.TabIndex = 19;
+            // 
+            // violOtherHistDescTextBox
+            // 
+            this.violOtherHistDescTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "ViolOtherHistDesc", true));
+            this.violOtherHistDescTextBox.Location = new System.Drawing.Point(25, 253);
+            this.violOtherHistDescTextBox.Name = "violOtherHistDescTextBox";
+            this.violOtherHistDescTextBox.Size = new System.Drawing.Size(944, 22);
+            this.violOtherHistDescTextBox.TabIndex = 18;
+            // 
+            // violOthers6MoDescTextBox
+            // 
+            this.violOthers6MoDescTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "ViolOthers6MoDesc", true));
+            this.violOthers6MoDescTextBox.Location = new System.Drawing.Point(25, 195);
+            this.violOthers6MoDescTextBox.Name = "violOthers6MoDescTextBox";
+            this.violOthers6MoDescTextBox.Size = new System.Drawing.Size(944, 22);
+            this.violOthers6MoDescTextBox.TabIndex = 17;
+            // 
+            // famHistHomComboBox
+            // 
+            this.famHistHomComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "FamHistHom", true));
+            this.famHistHomComboBox.FormattingEnabled = true;
+            this.famHistHomComboBox.Items.AddRange(new object[] {
+            "Yes",
+            "No"});
+            this.famHistHomComboBox.Location = new System.Drawing.Point(309, 339);
+            this.famHistHomComboBox.Name = "famHistHomComboBox";
+            this.famHistHomComboBox.Size = new System.Drawing.Size(121, 24);
+            this.famHistHomComboBox.TabIndex = 16;
+            // 
+            // homPriorAttComboBox
+            // 
+            this.homPriorAttComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "HomPriorAtt", true));
+            this.homPriorAttComboBox.FormattingEnabled = true;
+            this.homPriorAttComboBox.Items.AddRange(new object[] {
+            "Yes",
+            "No"});
+            this.homPriorAttComboBox.Location = new System.Drawing.Point(129, 281);
+            this.homPriorAttComboBox.Name = "homPriorAttComboBox";
+            this.homPriorAttComboBox.Size = new System.Drawing.Size(121, 24);
+            this.homPriorAttComboBox.TabIndex = 13;
+            // 
+            // violOtherHistComboBox
+            // 
+            this.violOtherHistComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "ViolOtherHist", true));
+            this.violOtherHistComboBox.FormattingEnabled = true;
+            this.violOtherHistComboBox.Items.AddRange(new object[] {
+            "Yes",
+            "No"});
+            this.violOtherHistComboBox.Location = new System.Drawing.Point(314, 223);
+            this.violOtherHistComboBox.Name = "violOtherHistComboBox";
+            this.violOtherHistComboBox.Size = new System.Drawing.Size(121, 24);
+            this.violOtherHistComboBox.TabIndex = 10;
+            // 
+            // violOthers6MoComboBox
+            // 
+            this.violOthers6MoComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "ViolOthers6Mo", true));
+            this.violOthers6MoComboBox.FormattingEnabled = true;
+            this.violOthers6MoComboBox.Items.AddRange(new object[] {
+            "Yes",
+            "No"});
+            this.violOthers6MoComboBox.Location = new System.Drawing.Point(316, 165);
+            this.violOthers6MoComboBox.Name = "violOthers6MoComboBox";
+            this.violOthers6MoComboBox.Size = new System.Drawing.Size(121, 24);
+            this.violOthers6MoComboBox.TabIndex = 7;
+            // 
             // accessWeapDescTextBox
             // 
             this.accessWeapDescTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "AccessWeapDesc", true));
-            this.accessWeapDescTextBox.Location = new System.Drawing.Point(336, 313);
+            this.accessWeapDescTextBox.Location = new System.Drawing.Point(336, 400);
             this.accessWeapDescTextBox.Name = "accessWeapDescTextBox";
             this.accessWeapDescTextBox.Size = new System.Drawing.Size(633, 22);
             this.accessWeapDescTextBox.TabIndex = 5;
@@ -3727,11 +4137,11 @@
             this.accessWeapComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "AccessWeap", true));
             this.accessWeapComboBox.FormattingEnabled = true;
             this.accessWeapComboBox.Items.AddRange(new object[] {
-            "No",
-            "Yes"});
-            this.accessWeapComboBox.Location = new System.Drawing.Point(174, 313);
+            "Yes",
+            "No"});
+            this.accessWeapComboBox.Location = new System.Drawing.Point(165, 397);
             this.accessWeapComboBox.Name = "accessWeapComboBox";
-            this.accessWeapComboBox.Size = new System.Drawing.Size(82, 24);
+            this.accessWeapComboBox.Size = new System.Drawing.Size(85, 24);
             this.accessWeapComboBox.TabIndex = 3;
             // 
             // grpDenyHomRisk
@@ -3832,9 +4242,9 @@
             // 
             this.grpSelfHarm.Controls.Add(this.grpDenySelfInj);
             this.grpSelfHarm.Controls.Add(this.deniesSelfInjCheckBox);
-            this.grpSelfHarm.Location = new System.Drawing.Point(16, 410);
+            this.grpSelfHarm.Location = new System.Drawing.Point(16, 458);
             this.grpSelfHarm.Name = "grpSelfHarm";
-            this.grpSelfHarm.Size = new System.Drawing.Size(1004, 206);
+            this.grpSelfHarm.Size = new System.Drawing.Size(1009, 206);
             this.grpSelfHarm.TabIndex = 1;
             this.grpSelfHarm.TabStop = false;
             this.grpSelfHarm.Text = "Self-Injurious/Self-Harming Behaviors";
@@ -3866,11 +4276,11 @@
             this.selfInjInpatientComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "SelfInjInpatient", true));
             this.selfInjInpatientComboBox.FormattingEnabled = true;
             this.selfInjInpatientComboBox.Items.AddRange(new object[] {
-            "No",
-            "Yes"});
+            "Yes",
+            "No"});
             this.selfInjInpatientComboBox.Location = new System.Drawing.Point(425, 69);
             this.selfInjInpatientComboBox.Name = "selfInjInpatientComboBox";
-            this.selfInjInpatientComboBox.Size = new System.Drawing.Size(73, 24);
+            this.selfInjInpatientComboBox.Size = new System.Drawing.Size(115, 24);
             this.selfInjInpatientComboBox.TabIndex = 3;
             // 
             // selfInjLastAttTextBox
@@ -3894,26 +4304,110 @@
             // 
             // grpSuicideRisk
             // 
+            this.grpSuicideRisk.Controls.Add(attemptInpatDescLabel);
             this.grpSuicideRisk.Controls.Add(this.attemptInpatDescTextBox);
+            this.grpSuicideRisk.Controls.Add(famHistSuicDescLabel);
+            this.grpSuicideRisk.Controls.Add(this.famHistSuicDescTextBox);
+            this.grpSuicideRisk.Controls.Add(suicPriorAttDescLabel);
+            this.grpSuicideRisk.Controls.Add(this.suicPriorAttDescTextBox);
+            this.grpSuicideRisk.Controls.Add(violSelf6MoDescLabel);
+            this.grpSuicideRisk.Controls.Add(this.violSelf6MoDescTextBox);
             this.grpSuicideRisk.Controls.Add(attemptInpatLabel);
             this.grpSuicideRisk.Controls.Add(this.attemptInpatComboBox);
-            this.grpSuicideRisk.Controls.Add(this.famHistSuicDescTextBox);
             this.grpSuicideRisk.Controls.Add(famHistSuicLabel);
             this.grpSuicideRisk.Controls.Add(this.famHistSuicComboBox);
-            this.grpSuicideRisk.Controls.Add(this.suicPriorAttDescTextBox);
             this.grpSuicideRisk.Controls.Add(suicPriorAttLabel);
             this.grpSuicideRisk.Controls.Add(this.suicPriorAttComboBox);
-            this.grpSuicideRisk.Controls.Add(this.violSelf6MoDescTextBox);
             this.grpSuicideRisk.Controls.Add(violSelf6MoLabel);
             this.grpSuicideRisk.Controls.Add(this.violSelf6MoComboBox);
             this.grpSuicideRisk.Controls.Add(this.grpDenySuiRisk);
             this.grpSuicideRisk.Controls.Add(this.deniesSuicCheckBox);
             this.grpSuicideRisk.Location = new System.Drawing.Point(16, 16);
             this.grpSuicideRisk.Name = "grpSuicideRisk";
-            this.grpSuicideRisk.Size = new System.Drawing.Size(1009, 387);
+            this.grpSuicideRisk.Size = new System.Drawing.Size(1009, 436);
             this.grpSuicideRisk.TabIndex = 0;
             this.grpSuicideRisk.TabStop = false;
             this.grpSuicideRisk.Text = "Suicide Risk Assessment";
+            // 
+            // attemptInpatDescTextBox
+            // 
+            this.attemptInpatDescTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "AttemptInpatDesc", true));
+            this.attemptInpatDescTextBox.Location = new System.Drawing.Point(25, 403);
+            this.attemptInpatDescTextBox.Name = "attemptInpatDescTextBox";
+            this.attemptInpatDescTextBox.Size = new System.Drawing.Size(944, 22);
+            this.attemptInpatDescTextBox.TabIndex = 17;
+            // 
+            // famHistSuicDescTextBox
+            // 
+            this.famHistSuicDescTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "FamHistSuicDesc", true));
+            this.famHistSuicDescTextBox.Location = new System.Drawing.Point(25, 345);
+            this.famHistSuicDescTextBox.Name = "famHistSuicDescTextBox";
+            this.famHistSuicDescTextBox.Size = new System.Drawing.Size(944, 22);
+            this.famHistSuicDescTextBox.TabIndex = 15;
+            // 
+            // suicPriorAttDescTextBox
+            // 
+            this.suicPriorAttDescTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "SuicPriorAttDesc", true));
+            this.suicPriorAttDescTextBox.Location = new System.Drawing.Point(25, 288);
+            this.suicPriorAttDescTextBox.Name = "suicPriorAttDescTextBox";
+            this.suicPriorAttDescTextBox.Size = new System.Drawing.Size(944, 22);
+            this.suicPriorAttDescTextBox.TabIndex = 14;
+            // 
+            // violSelf6MoDescTextBox
+            // 
+            this.violSelf6MoDescTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "ViolSelf6MoDesc", true));
+            this.violSelf6MoDescTextBox.Location = new System.Drawing.Point(25, 230);
+            this.violSelf6MoDescTextBox.Name = "violSelf6MoDescTextBox";
+            this.violSelf6MoDescTextBox.Size = new System.Drawing.Size(944, 22);
+            this.violSelf6MoDescTextBox.TabIndex = 13;
+            // 
+            // attemptInpatComboBox
+            // 
+            this.attemptInpatComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "AttemptInpat", true));
+            this.attemptInpatComboBox.FormattingEnabled = true;
+            this.attemptInpatComboBox.Items.AddRange(new object[] {
+            "Yes",
+            "No"});
+            this.attemptInpatComboBox.Location = new System.Drawing.Point(461, 373);
+            this.attemptInpatComboBox.Name = "attemptInpatComboBox";
+            this.attemptInpatComboBox.Size = new System.Drawing.Size(121, 24);
+            this.attemptInpatComboBox.TabIndex = 12;
+            // 
+            // famHistSuicComboBox
+            // 
+            this.famHistSuicComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "FamHistSuic", true));
+            this.famHistSuicComboBox.FormattingEnabled = true;
+            this.famHistSuicComboBox.Items.AddRange(new object[] {
+            "Yes",
+            "No"});
+            this.famHistSuicComboBox.Location = new System.Drawing.Point(190, 315);
+            this.famHistSuicComboBox.Name = "famHistSuicComboBox";
+            this.famHistSuicComboBox.Size = new System.Drawing.Size(121, 24);
+            this.famHistSuicComboBox.TabIndex = 9;
+            // 
+            // suicPriorAttComboBox
+            // 
+            this.suicPriorAttComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "SuicPriorAtt", true));
+            this.suicPriorAttComboBox.FormattingEnabled = true;
+            this.suicPriorAttComboBox.Items.AddRange(new object[] {
+            "Yes",
+            "No"});
+            this.suicPriorAttComboBox.Location = new System.Drawing.Point(129, 258);
+            this.suicPriorAttComboBox.Name = "suicPriorAttComboBox";
+            this.suicPriorAttComboBox.Size = new System.Drawing.Size(121, 24);
+            this.suicPriorAttComboBox.TabIndex = 6;
+            // 
+            // violSelf6MoComboBox
+            // 
+            this.violSelf6MoComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "ViolSelf6Mo", true));
+            this.violSelf6MoComboBox.FormattingEnabled = true;
+            this.violSelf6MoComboBox.Items.AddRange(new object[] {
+            "Yes",
+            "No"});
+            this.violSelf6MoComboBox.Location = new System.Drawing.Point(298, 200);
+            this.violSelf6MoComboBox.Name = "violSelf6MoComboBox";
+            this.violSelf6MoComboBox.Size = new System.Drawing.Size(121, 24);
+            this.violSelf6MoComboBox.TabIndex = 3;
             // 
             // grpDenySuiRisk
             // 
@@ -4088,7 +4582,7 @@
             this.AssaultVio.Location = new System.Drawing.Point(4, 25);
             this.AssaultVio.Name = "AssaultVio";
             this.AssaultVio.Padding = new System.Windows.Forms.Padding(3);
-            this.AssaultVio.Size = new System.Drawing.Size(1069, 1028);
+            this.AssaultVio.Size = new System.Drawing.Size(1069, 1124);
             this.AssaultVio.TabIndex = 3;
             this.AssaultVio.Text = "Assault/Violent";
             this.AssaultVio.UseVisualStyleBackColor = true;
@@ -4176,11 +4670,11 @@
             this.secVicRiskComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "SecVicRisk", true));
             this.secVicRiskComboBox.FormattingEnabled = true;
             this.secVicRiskComboBox.Items.AddRange(new object[] {
-            "No",
-            "Yes"});
+            "Yes",
+            "No"});
             this.secVicRiskComboBox.Location = new System.Drawing.Point(179, 15);
             this.secVicRiskComboBox.Name = "secVicRiskComboBox";
-            this.secVicRiskComboBox.Size = new System.Drawing.Size(77, 24);
+            this.secVicRiskComboBox.Size = new System.Drawing.Size(90, 24);
             this.secVicRiskComboBox.TabIndex = 1;
             // 
             // grpAggRisk
@@ -4242,8 +4736,8 @@
             this.sexAggRiskBehComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "SexAggRiskBeh", true));
             this.sexAggRiskBehComboBox.FormattingEnabled = true;
             this.sexAggRiskBehComboBox.Items.AddRange(new object[] {
-            "No",
-            "Yes"});
+            "Yes",
+            "No"});
             this.sexAggRiskBehComboBox.Location = new System.Drawing.Point(233, 19);
             this.sexAggRiskBehComboBox.Name = "sexAggRiskBehComboBox";
             this.sexAggRiskBehComboBox.Size = new System.Drawing.Size(87, 24);
@@ -4254,8 +4748,8 @@
             this.megLawComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "MegLaw", true));
             this.megLawComboBox.FormattingEnabled = true;
             this.megLawComboBox.Items.AddRange(new object[] {
-            "No",
-            "Yes"});
+            "Yes",
+            "No"});
             this.megLawComboBox.Location = new System.Drawing.Point(106, 20);
             this.megLawComboBox.Name = "megLawComboBox";
             this.megLawComboBox.Size = new System.Drawing.Size(121, 24);
@@ -4288,10 +4782,91 @@
             this.grpTraumaAbuse.TabStop = false;
             this.grpTraumaAbuse.Text = "Trauma and Abuse History";
             // 
+            // abuse_assessmentDataGridView
+            // 
+            this.abuse_assessmentDataGridView.AutoGenerateColumns = false;
+            this.abuse_assessmentDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.abuse_assessmentDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn13,
+            this.dataGridViewTextBoxColumn14,
+            this.dataGridViewTextBoxColumn15,
+            this.dataGridViewTextBoxColumn16,
+            this.dataGridViewTextBoxColumn17,
+            this.dataGridViewTextBoxColumn18,
+            this.dataGridViewTextBoxColumn19,
+            this.dataGridViewTextBoxColumn20,
+            this.dataGridViewTextBoxColumn21});
+            this.abuse_assessmentDataGridView.DataSource = this.abuse_assessmentBindingSource;
+            this.abuse_assessmentDataGridView.Location = new System.Drawing.Point(27, 51);
+            this.abuse_assessmentDataGridView.Name = "abuse_assessmentDataGridView";
+            this.abuse_assessmentDataGridView.RowTemplate.Height = 24;
+            this.abuse_assessmentDataGridView.Size = new System.Drawing.Size(952, 101);
+            this.abuse_assessmentDataGridView.TabIndex = 17;
+            // 
+            // dataGridViewTextBoxColumn13
+            // 
+            this.dataGridViewTextBoxColumn13.DataPropertyName = "PatientID";
+            this.dataGridViewTextBoxColumn13.HeaderText = "PatientID";
+            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            this.dataGridViewTextBoxColumn13.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn14
+            // 
+            this.dataGridViewTextBoxColumn14.DataPropertyName = "AbuseType";
+            this.dataGridViewTextBoxColumn14.HeaderText = "Abuse Type";
+            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
+            // 
+            // dataGridViewTextBoxColumn15
+            // 
+            this.dataGridViewTextBoxColumn15.DataPropertyName = "Issue";
+            this.dataGridViewTextBoxColumn15.HeaderText = "Issue";
+            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
+            // 
+            // dataGridViewTextBoxColumn16
+            // 
+            this.dataGridViewTextBoxColumn16.DataPropertyName = "AgeOfAbuse";
+            this.dataGridViewTextBoxColumn16.HeaderText = "Age of Abuse";
+            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
+            // 
+            // dataGridViewTextBoxColumn17
+            // 
+            this.dataGridViewTextBoxColumn17.DataPropertyName = "AbuserName";
+            this.dataGridViewTextBoxColumn17.HeaderText = "Abuser Name";
+            this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
+            // 
+            // dataGridViewTextBoxColumn18
+            // 
+            this.dataGridViewTextBoxColumn18.DataPropertyName = "AbusedTime";
+            this.dataGridViewTextBoxColumn18.HeaderText = "Abused Time";
+            this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
+            // 
+            // dataGridViewTextBoxColumn19
+            // 
+            this.dataGridViewTextBoxColumn19.DataPropertyName = "Reported";
+            this.dataGridViewTextBoxColumn19.HeaderText = "Reported";
+            this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
+            // 
+            // dataGridViewTextBoxColumn20
+            // 
+            this.dataGridViewTextBoxColumn20.DataPropertyName = "ReportedToWhom";
+            this.dataGridViewTextBoxColumn20.HeaderText = "Reported To Whom";
+            this.dataGridViewTextBoxColumn20.Name = "dataGridViewTextBoxColumn20";
+            // 
+            // dataGridViewTextBoxColumn21
+            // 
+            this.dataGridViewTextBoxColumn21.DataPropertyName = "CY47Complete";
+            this.dataGridViewTextBoxColumn21.HeaderText = "CY47 Complete";
+            this.dataGridViewTextBoxColumn21.Name = "dataGridViewTextBoxColumn21";
+            // 
+            // abuse_assessmentBindingSource
+            // 
+            this.abuse_assessmentBindingSource.DataMember = "FK_abuse_assessment_patient_admission";
+            this.abuse_assessmentBindingSource.DataSource = this.patient_admissionBindingSource;
+            // 
             // expSelfDescTextBox
             // 
             this.expSelfDescTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "ExpSelfDesc", true));
-            this.expSelfDescTextBox.Location = new System.Drawing.Point(581, 230);
+            this.expSelfDescTextBox.Location = new System.Drawing.Point(581, 263);
             this.expSelfDescTextBox.Name = "expSelfDescTextBox";
             this.expSelfDescTextBox.Size = new System.Drawing.Size(398, 22);
             this.expSelfDescTextBox.TabIndex = 16;
@@ -4301,9 +4876,9 @@
             this.expSelfComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "ExpSelf", true));
             this.expSelfComboBox.FormattingEnabled = true;
             this.expSelfComboBox.Items.AddRange(new object[] {
-            "No",
-            "Yes"});
-            this.expSelfComboBox.Location = new System.Drawing.Point(380, 230);
+            "Yes",
+            "No"});
+            this.expSelfComboBox.Location = new System.Drawing.Point(380, 263);
             this.expSelfComboBox.Name = "expSelfComboBox";
             this.expSelfComboBox.Size = new System.Drawing.Size(121, 24);
             this.expSelfComboBox.TabIndex = 14;
@@ -4311,7 +4886,7 @@
             // incPromDescTextBox
             // 
             this.incPromDescTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "IncPromDesc", true));
-            this.incPromDescTextBox.Location = new System.Drawing.Point(497, 195);
+            this.incPromDescTextBox.Location = new System.Drawing.Point(497, 228);
             this.incPromDescTextBox.Name = "incPromDescTextBox";
             this.incPromDescTextBox.Size = new System.Drawing.Size(482, 22);
             this.incPromDescTextBox.TabIndex = 12;
@@ -4321,9 +4896,9 @@
             this.incPromComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "IncProm", true));
             this.incPromComboBox.FormattingEnabled = true;
             this.incPromComboBox.Items.AddRange(new object[] {
-            "No",
-            "Yes"});
-            this.incPromComboBox.Location = new System.Drawing.Point(296, 195);
+            "Yes",
+            "No"});
+            this.incPromComboBox.Location = new System.Drawing.Point(296, 228);
             this.incPromComboBox.Name = "incPromComboBox";
             this.incPromComboBox.Size = new System.Drawing.Size(121, 24);
             this.incPromComboBox.TabIndex = 10;
@@ -4331,7 +4906,7 @@
             // combVicDescTextBox
             // 
             this.combVicDescTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "CombVicDesc", true));
-            this.combVicDescTextBox.Location = new System.Drawing.Point(328, 160);
+            this.combVicDescTextBox.Location = new System.Drawing.Point(328, 193);
             this.combVicDescTextBox.Name = "combVicDescTextBox";
             this.combVicDescTextBox.Size = new System.Drawing.Size(651, 22);
             this.combVicDescTextBox.TabIndex = 8;
@@ -4341,9 +4916,9 @@
             this.combVicComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "CombVic", true));
             this.combVicComboBox.FormattingEnabled = true;
             this.combVicComboBox.Items.AddRange(new object[] {
-            "No",
-            "Yes"});
-            this.combVicComboBox.Location = new System.Drawing.Point(179, 160);
+            "Yes",
+            "No"});
+            this.combVicComboBox.Location = new System.Drawing.Point(179, 193);
             this.combVicComboBox.Name = "combVicComboBox";
             this.combVicComboBox.Size = new System.Drawing.Size(69, 24);
             this.combVicComboBox.TabIndex = 6;
@@ -4351,7 +4926,7 @@
             // traumEveDescTextBox
             // 
             this.traumEveDescTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "TraumEveDesc", true));
-            this.traumEveDescTextBox.Location = new System.Drawing.Point(294, 125);
+            this.traumEveDescTextBox.Location = new System.Drawing.Point(294, 158);
             this.traumEveDescTextBox.Name = "traumEveDescTextBox";
             this.traumEveDescTextBox.Size = new System.Drawing.Size(685, 22);
             this.traumEveDescTextBox.TabIndex = 4;
@@ -4361,9 +4936,9 @@
             this.traumEveComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "TraumEve", true));
             this.traumEveComboBox.FormattingEnabled = true;
             this.traumEveComboBox.Items.AddRange(new object[] {
-            "No",
-            "Yes"});
-            this.traumEveComboBox.Location = new System.Drawing.Point(127, 125);
+            "Yes",
+            "No"});
+            this.traumEveComboBox.Location = new System.Drawing.Point(127, 158);
             this.traumEveComboBox.Name = "traumEveComboBox";
             this.traumEveComboBox.Size = new System.Drawing.Size(87, 24);
             this.traumEveComboBox.TabIndex = 2;
@@ -4461,8 +5036,8 @@
             this.angerProbComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "AngerProb", true));
             this.angerProbComboBox.FormattingEnabled = true;
             this.angerProbComboBox.Items.AddRange(new object[] {
-            "No",
             "Yes",
+            "No",
             "N/A"});
             this.angerProbComboBox.Location = new System.Drawing.Point(125, 74);
             this.angerProbComboBox.Name = "angerProbComboBox";
@@ -4483,8 +5058,8 @@
             this.histAssaBehComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "HistAssaBeh", true));
             this.histAssaBehComboBox.FormattingEnabled = true;
             this.histAssaBehComboBox.Items.AddRange(new object[] {
-            "No",
-            "Yes"});
+            "Yes",
+            "No"});
             this.histAssaBehComboBox.Location = new System.Drawing.Point(213, 14);
             this.histAssaBehComboBox.Name = "histAssaBehComboBox";
             this.histAssaBehComboBox.Size = new System.Drawing.Size(83, 24);
@@ -4507,7 +5082,7 @@
             this.DrugAlco.Location = new System.Drawing.Point(4, 25);
             this.DrugAlco.Name = "DrugAlco";
             this.DrugAlco.Padding = new System.Windows.Forms.Padding(3);
-            this.DrugAlco.Size = new System.Drawing.Size(1069, 1028);
+            this.DrugAlco.Size = new System.Drawing.Size(1069, 1124);
             this.DrugAlco.TabIndex = 4;
             this.DrugAlco.Text = "Drug/Alcohol";
             this.DrugAlco.UseVisualStyleBackColor = true;
@@ -4594,7 +5169,7 @@
             // 
             // grpAlcoDrugHist
             // 
-            this.grpAlcoDrugHist.Controls.Add(this.substance_abuseDataGridView);
+            this.grpAlcoDrugHist.Controls.Add(this.substance_abuseDataGridView1);
             this.grpAlcoDrugHist.Controls.Add(currentTobUseDescLabel);
             this.grpAlcoDrugHist.Controls.Add(this.currentTobUseDescTextBox);
             this.grpAlcoDrugHist.Controls.Add(currentTobUseLabel);
@@ -4640,8 +5215,8 @@
             this.currentTobUseComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "CurrentTobUse", true));
             this.currentTobUseComboBox.FormattingEnabled = true;
             this.currentTobUseComboBox.Items.AddRange(new object[] {
-            "No",
-            "Yes"});
+            "Yes",
+            "No"});
             this.currentTobUseComboBox.Location = new System.Drawing.Point(237, 525);
             this.currentTobUseComboBox.Name = "currentTobUseComboBox";
             this.currentTobUseComboBox.Size = new System.Drawing.Size(95, 24);
@@ -4660,8 +5235,8 @@
             this.famHistSubAbuComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "FamHistSubAbu", true));
             this.famHistSubAbuComboBox.FormattingEnabled = true;
             this.famHistSubAbuComboBox.Items.AddRange(new object[] {
-            "No",
-            "Yes"});
+            "Yes",
+            "No"});
             this.famHistSubAbuComboBox.Location = new System.Drawing.Point(238, 488);
             this.famHistSubAbuComboBox.Name = "famHistSubAbuComboBox";
             this.famHistSubAbuComboBox.Size = new System.Drawing.Size(94, 24);
@@ -4680,8 +5255,8 @@
             this.subLegalProbComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "SubLegalProb", true));
             this.subLegalProbComboBox.FormattingEnabled = true;
             this.subLegalProbComboBox.Items.AddRange(new object[] {
-            "No",
-            "Yes"});
+            "Yes",
+            "No"});
             this.subLegalProbComboBox.Location = new System.Drawing.Point(235, 453);
             this.subLegalProbComboBox.Name = "subLegalProbComboBox";
             this.subLegalProbComboBox.Size = new System.Drawing.Size(121, 24);
@@ -4710,11 +5285,11 @@
             this.delTremComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "DelTrem", true));
             this.delTremComboBox.FormattingEnabled = true;
             this.delTremComboBox.Items.AddRange(new object[] {
-            "No",
-            "Yes"});
+            "Yes",
+            "No"});
             this.delTremComboBox.Location = new System.Drawing.Point(189, 386);
             this.delTremComboBox.Name = "delTremComboBox";
-            this.delTremComboBox.Size = new System.Drawing.Size(84, 24);
+            this.delTremComboBox.Size = new System.Drawing.Size(110, 24);
             this.delTremComboBox.TabIndex = 8;
             // 
             // histWIthdrawSympDescTextBox
@@ -4730,8 +5305,8 @@
             this.histWithdrawSympComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "HistWithdrawSymp", true));
             this.histWithdrawSympComboBox.FormattingEnabled = true;
             this.histWithdrawSympComboBox.Items.AddRange(new object[] {
-            "No",
-            "Yes"});
+            "Yes",
+            "No"});
             this.histWithdrawSympComboBox.Location = new System.Drawing.Point(338, 355);
             this.histWithdrawSympComboBox.Name = "histWithdrawSympComboBox";
             this.histWithdrawSympComboBox.Size = new System.Drawing.Size(80, 24);
@@ -4739,6 +5314,7 @@
             // 
             // grpDenyAlcDrugTreat
             // 
+            this.grpDenyAlcDrugTreat.Controls.Add(this.substance_abuseDataGridView);
             this.grpDenyAlcDrugTreat.Controls.Add(this.alcDrugHistDescTextBox);
             this.grpDenyAlcDrugTreat.Controls.Add(this.alcDrugHistCheckBox);
             this.grpDenyAlcDrugTreat.Controls.Add(this.currentAlcDrugTreatDescTextBox);
@@ -4814,7 +5390,7 @@
             this.Education.Location = new System.Drawing.Point(4, 25);
             this.Education.Name = "Education";
             this.Education.Padding = new System.Windows.Forms.Padding(3);
-            this.Education.Size = new System.Drawing.Size(1069, 1028);
+            this.Education.Size = new System.Drawing.Size(1069, 1124);
             this.Education.TabIndex = 5;
             this.Education.Text = "Education";
             this.Education.UseVisualStyleBackColor = true;
@@ -4856,23 +5432,24 @@
             this.dataGridViewTextBoxColumn9.DataPropertyName = "PatientID";
             this.dataGridViewTextBoxColumn9.HeaderText = "PatientID";
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.Visible = false;
             // 
             // dataGridViewTextBoxColumn10
             // 
             this.dataGridViewTextBoxColumn10.DataPropertyName = "MedCurrent";
-            this.dataGridViewTextBoxColumn10.HeaderText = "MedCurrent";
+            this.dataGridViewTextBoxColumn10.HeaderText = "Medication";
             this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
             // 
             // dataGridViewTextBoxColumn11
             // 
             this.dataGridViewTextBoxColumn11.DataPropertyName = "MedDosage";
-            this.dataGridViewTextBoxColumn11.HeaderText = "MedDosage";
+            this.dataGridViewTextBoxColumn11.HeaderText = "Dosage";
             this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
             // 
             // dataGridViewTextBoxColumn12
             // 
             this.dataGridViewTextBoxColumn12.DataPropertyName = "MedFrequency";
-            this.dataGridViewTextBoxColumn12.HeaderText = "MedFrequency";
+            this.dataGridViewTextBoxColumn12.HeaderText = "Frequency";
             this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
             // 
             // medicationsBindingSource
@@ -4901,13 +5478,18 @@
             // 
             this.medCompliantComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "MedCompliant", true));
             this.medCompliantComboBox.FormattingEnabled = true;
-            this.medCompliantComboBox.Location = new System.Drawing.Point(161, 25);
+            this.medCompliantComboBox.Items.AddRange(new object[] {
+            "Yes",
+            "No",
+            "N/A"});
+            this.medCompliantComboBox.Location = new System.Drawing.Point(158, 25);
             this.medCompliantComboBox.Name = "medCompliantComboBox";
-            this.medCompliantComboBox.Size = new System.Drawing.Size(77, 24);
+            this.medCompliantComboBox.Size = new System.Drawing.Size(80, 24);
             this.medCompliantComboBox.TabIndex = 1;
             // 
             // grpSocialHist
             // 
+            this.grpSocialHist.Controls.Add(livingSituationDescLabel);
             this.grpSocialHist.Controls.Add(this.livingSituationDescTextBox);
             this.grpSocialHist.Controls.Add(livingSituationLabel);
             this.grpSocialHist.Controls.Add(this.livingSituationComboBox);
@@ -4941,6 +5523,31 @@
             this.grpSocialHist.TabIndex = 1;
             this.grpSocialHist.TabStop = false;
             this.grpSocialHist.Text = "Past/Personal/Current Social History";
+            // 
+            // livingSituationDescTextBox
+            // 
+            this.livingSituationDescTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "LivingSituationDesc", true));
+            this.livingSituationDescTextBox.Location = new System.Drawing.Point(322, 244);
+            this.livingSituationDescTextBox.Name = "livingSituationDescTextBox";
+            this.livingSituationDescTextBox.Size = new System.Drawing.Size(681, 22);
+            this.livingSituationDescTextBox.TabIndex = 27;
+            // 
+            // livingSituationComboBox
+            // 
+            this.livingSituationComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "LivingSituation", true));
+            this.livingSituationComboBox.FormattingEnabled = true;
+            this.livingSituationComboBox.Items.AddRange(new object[] {
+            "Home",
+            "Group home",
+            "Shelter",
+            "Half-way house",
+            "Boarding home",
+            "Assisted living",
+            "Homeless"});
+            this.livingSituationComboBox.Location = new System.Drawing.Point(120, 244);
+            this.livingSituationComboBox.Name = "livingSituationComboBox";
+            this.livingSituationComboBox.Size = new System.Drawing.Size(121, 24);
+            this.livingSituationComboBox.TabIndex = 25;
             // 
             // strCopSkillsTextBox
             // 
@@ -4979,8 +5586,8 @@
             this.childrenComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "Children", true));
             this.childrenComboBox.FormattingEnabled = true;
             this.childrenComboBox.Items.AddRange(new object[] {
-            "No",
-            "Yes"});
+            "Yes",
+            "No"});
             this.childrenComboBox.Location = new System.Drawing.Point(76, 178);
             this.childrenComboBox.Name = "childrenComboBox";
             this.childrenComboBox.Size = new System.Drawing.Size(121, 24);
@@ -4999,8 +5606,8 @@
             this.siblingsComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "Siblings", true));
             this.siblingsComboBox.FormattingEnabled = true;
             this.siblingsComboBox.Items.AddRange(new object[] {
-            "No",
-            "Yes"});
+            "Yes",
+            "No"});
             this.siblingsComboBox.Location = new System.Drawing.Point(73, 147);
             this.siblingsComboBox.Name = "siblingsComboBox";
             this.siblingsComboBox.Size = new System.Drawing.Size(121, 24);
@@ -5019,8 +5626,8 @@
             this.disabilityComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "Disability", true));
             this.disabilityComboBox.FormattingEnabled = true;
             this.disabilityComboBox.Items.AddRange(new object[] {
-            "No",
-            "Yes"});
+            "Yes",
+            "No"});
             this.disabilityComboBox.Location = new System.Drawing.Point(80, 117);
             this.disabilityComboBox.Name = "disabilityComboBox";
             this.disabilityComboBox.Size = new System.Drawing.Size(121, 24);
@@ -5039,8 +5646,8 @@
             this.repPayeeComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "RepPayee", true));
             this.repPayeeComboBox.FormattingEnabled = true;
             this.repPayeeComboBox.Items.AddRange(new object[] {
-            "No",
-            "Yes"});
+            "Yes",
+            "No"});
             this.repPayeeComboBox.Location = new System.Drawing.Point(161, 83);
             this.repPayeeComboBox.Name = "repPayeeComboBox";
             this.repPayeeComboBox.Size = new System.Drawing.Size(105, 24);
@@ -5059,8 +5666,8 @@
             this.employedComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "Employed", true));
             this.employedComboBox.FormattingEnabled = true;
             this.employedComboBox.Items.AddRange(new object[] {
-            "No",
-            "Yes"});
+            "Yes",
+            "No"});
             this.employedComboBox.Location = new System.Drawing.Point(86, 53);
             this.employedComboBox.Name = "employedComboBox";
             this.employedComboBox.Size = new System.Drawing.Size(121, 24);
@@ -5122,8 +5729,8 @@
             this.psychRelComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "PsychRel", true));
             this.psychRelComboBox.FormattingEnabled = true;
             this.psychRelComboBox.Items.AddRange(new object[] {
-            "No",
-            "Yes"});
+            "Yes",
+            "No"});
             this.psychRelComboBox.Location = new System.Drawing.Point(177, 133);
             this.psychRelComboBox.Name = "psychRelComboBox";
             this.psychRelComboBox.Size = new System.Drawing.Size(83, 24);
@@ -5132,7 +5739,7 @@
             // psychDelDescTextBox
             // 
             this.psychDelDescTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "PsychDelDesc", true));
-            this.psychDelDescTextBox.Location = new System.Drawing.Point(341, 97);
+            this.psychDelDescTextBox.Location = new System.Drawing.Point(341, 96);
             this.psychDelDescTextBox.Name = "psychDelDescTextBox";
             this.psychDelDescTextBox.Size = new System.Drawing.Size(656, 22);
             this.psychDelDescTextBox.TabIndex = 11;
@@ -5142,8 +5749,8 @@
             this.psychDelComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "PsychDel", true));
             this.psychDelComboBox.FormattingEnabled = true;
             this.psychDelComboBox.Items.AddRange(new object[] {
-            "No",
-            "Yes"});
+            "Yes",
+            "No"});
             this.psychDelComboBox.Location = new System.Drawing.Point(147, 97);
             this.psychDelComboBox.Name = "psychDelComboBox";
             this.psychDelComboBox.Size = new System.Drawing.Size(85, 24);
@@ -5162,8 +5769,8 @@
             this.psychCommComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "PsychComm", true));
             this.psychCommComboBox.FormattingEnabled = true;
             this.psychCommComboBox.Items.AddRange(new object[] {
-            "No",
-            "Yes"});
+            "Yes",
+            "No"});
             this.psychCommComboBox.Location = new System.Drawing.Point(149, 62);
             this.psychCommComboBox.Name = "psychCommComboBox";
             this.psychCommComboBox.Size = new System.Drawing.Size(97, 24);
@@ -5182,8 +5789,8 @@
             this.psychHallComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "PsychHall", true));
             this.psychHallComboBox.FormattingEnabled = true;
             this.psychHallComboBox.Items.AddRange(new object[] {
-            "No",
-            "Yes"});
+            "Yes",
+            "No"});
             this.psychHallComboBox.Location = new System.Drawing.Point(112, 24);
             this.psychHallComboBox.Name = "psychHallComboBox";
             this.psychHallComboBox.Size = new System.Drawing.Size(99, 24);
@@ -5205,7 +5812,7 @@
             this.InSchool.Location = new System.Drawing.Point(4, 25);
             this.InSchool.Name = "InSchool";
             this.InSchool.Padding = new System.Windows.Forms.Padding(3);
-            this.InSchool.Size = new System.Drawing.Size(1069, 1028);
+            this.InSchool.Size = new System.Drawing.Size(1069, 1124);
             this.InSchool.TabIndex = 6;
             this.InSchool.Text = "In School";
             this.InSchool.UseVisualStyleBackColor = true;
@@ -5216,7 +5823,7 @@
             this.grpEducation.Controls.Add(this.educationCheckBox);
             this.grpEducation.Location = new System.Drawing.Point(7, 17);
             this.grpEducation.Name = "grpEducation";
-            this.grpEducation.Size = new System.Drawing.Size(1056, 1005);
+            this.grpEducation.Size = new System.Drawing.Size(1056, 921);
             this.grpEducation.TabIndex = 0;
             this.grpEducation.TabStop = false;
             this.grpEducation.Text = "Education Information (K-12th Grade Only)";
@@ -5304,9 +5911,9 @@
             this.grpDenyEduInfo.Controls.Add(this.encoEnurComboBox);
             this.grpDenyEduInfo.Controls.Add(curSchoolNamLabel);
             this.grpDenyEduInfo.Controls.Add(this.curSchoolNamTextBox);
-            this.grpDenyEduInfo.Location = new System.Drawing.Point(23, 57);
+            this.grpDenyEduInfo.Location = new System.Drawing.Point(24, 51);
             this.grpDenyEduInfo.Name = "grpDenyEduInfo";
-            this.grpDenyEduInfo.Size = new System.Drawing.Size(1009, 940);
+            this.grpDenyEduInfo.Size = new System.Drawing.Size(1009, 858);
             this.grpDenyEduInfo.TabIndex = 2;
             this.grpDenyEduInfo.TabStop = false;
             this.grpDenyEduInfo.Enter += new System.EventHandler(this.groupBox13_Enter);
@@ -5343,8 +5950,8 @@
             this.anxRelOCDThoComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "AnxRelOCDTho", true));
             this.anxRelOCDThoComboBox.FormattingEnabled = true;
             this.anxRelOCDThoComboBox.Items.AddRange(new object[] {
-            "No",
-            "Yes"});
+            "Yes",
+            "No"});
             this.anxRelOCDThoComboBox.Location = new System.Drawing.Point(847, 663);
             this.anxRelOCDThoComboBox.Name = "anxRelOCDThoComboBox";
             this.anxRelOCDThoComboBox.Size = new System.Drawing.Size(87, 24);
@@ -5355,8 +5962,8 @@
             this.anxRelOCDBehComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "AnxRelOCDBeh", true));
             this.anxRelOCDBehComboBox.FormattingEnabled = true;
             this.anxRelOCDBehComboBox.Items.AddRange(new object[] {
-            "No",
-            "Yes"});
+            "Yes",
+            "No"});
             this.anxRelOCDBehComboBox.Location = new System.Drawing.Point(847, 710);
             this.anxRelOCDBehComboBox.Name = "anxRelOCDBehComboBox";
             this.anxRelOCDBehComboBox.Size = new System.Drawing.Size(87, 24);
@@ -5367,8 +5974,8 @@
             this.anxRelHandComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "AnxRelHand", true));
             this.anxRelHandComboBox.FormattingEnabled = true;
             this.anxRelHandComboBox.Items.AddRange(new object[] {
-            "No",
-            "Yes"});
+            "Yes",
+            "No"});
             this.anxRelHandComboBox.Location = new System.Drawing.Point(847, 616);
             this.anxRelHandComboBox.Name = "anxRelHandComboBox";
             this.anxRelHandComboBox.Size = new System.Drawing.Size(87, 24);
@@ -5379,8 +5986,8 @@
             this.anxRelPhysComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "AnxRelPhys", true));
             this.anxRelPhysComboBox.FormattingEnabled = true;
             this.anxRelPhysComboBox.Items.AddRange(new object[] {
-            "No",
-            "Yes"});
+            "Yes",
+            "No"});
             this.anxRelPhysComboBox.Location = new System.Drawing.Point(847, 569);
             this.anxRelPhysComboBox.Name = "anxRelPhysComboBox";
             this.anxRelPhysComboBox.Size = new System.Drawing.Size(87, 24);
@@ -5391,8 +5998,8 @@
             this.moodLabPoorComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "MoodLabPoor", true));
             this.moodLabPoorComboBox.FormattingEnabled = true;
             this.moodLabPoorComboBox.Items.AddRange(new object[] {
-            "No",
-            "Yes"});
+            "Yes",
+            "No"});
             this.moodLabPoorComboBox.Location = new System.Drawing.Point(459, 733);
             this.moodLabPoorComboBox.Name = "moodLabPoorComboBox";
             this.moodLabPoorComboBox.Size = new System.Drawing.Size(87, 24);
@@ -5403,8 +6010,8 @@
             this.moodLabGrandComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "MoodLabGrand", true));
             this.moodLabGrandComboBox.FormattingEnabled = true;
             this.moodLabGrandComboBox.Items.AddRange(new object[] {
-            "No",
-            "Yes"});
+            "Yes",
+            "No"});
             this.moodLabGrandComboBox.Location = new System.Drawing.Point(459, 692);
             this.moodLabGrandComboBox.Name = "moodLabGrandComboBox";
             this.moodLabGrandComboBox.Size = new System.Drawing.Size(87, 24);
@@ -5415,8 +6022,8 @@
             this.moodLabEscComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "MoodLabEsc", true));
             this.moodLabEscComboBox.FormattingEnabled = true;
             this.moodLabEscComboBox.Items.AddRange(new object[] {
-            "No",
-            "Yes"});
+            "Yes",
+            "No"});
             this.moodLabEscComboBox.Location = new System.Drawing.Point(459, 651);
             this.moodLabEscComboBox.Name = "moodLabEscComboBox";
             this.moodLabEscComboBox.Size = new System.Drawing.Size(87, 24);
@@ -5427,8 +6034,8 @@
             this.moodLabAggBehComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "MoodLabAggBeh", true));
             this.moodLabAggBehComboBox.FormattingEnabled = true;
             this.moodLabAggBehComboBox.Items.AddRange(new object[] {
-            "No",
-            "Yes"});
+            "Yes",
+            "No"});
             this.moodLabAggBehComboBox.Location = new System.Drawing.Point(459, 610);
             this.moodLabAggBehComboBox.Name = "moodLabAggBehComboBox";
             this.moodLabAggBehComboBox.Size = new System.Drawing.Size(87, 24);
@@ -5439,8 +6046,8 @@
             this.moodLabSwingsComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "MoodLabSwings", true));
             this.moodLabSwingsComboBox.FormattingEnabled = true;
             this.moodLabSwingsComboBox.Items.AddRange(new object[] {
-            "No",
-            "Yes"});
+            "Yes",
+            "No"});
             this.moodLabSwingsComboBox.Location = new System.Drawing.Point(459, 569);
             this.moodLabSwingsComboBox.Name = "moodLabSwingsComboBox";
             this.moodLabSwingsComboBox.Size = new System.Drawing.Size(87, 24);
@@ -5451,8 +6058,8 @@
             this.depSympIrritableComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "DepSympIrritable", true));
             this.depSympIrritableComboBox.FormattingEnabled = true;
             this.depSympIrritableComboBox.Items.AddRange(new object[] {
-            "No",
-            "Yes"});
+            "Yes",
+            "No"});
             this.depSympIrritableComboBox.Location = new System.Drawing.Point(130, 815);
             this.depSympIrritableComboBox.Name = "depSympIrritableComboBox";
             this.depSympIrritableComboBox.Size = new System.Drawing.Size(87, 24);
@@ -5463,8 +6070,8 @@
             this.depSympIsolativeComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "DepSympIsolative", true));
             this.depSympIsolativeComboBox.FormattingEnabled = true;
             this.depSympIsolativeComboBox.Items.AddRange(new object[] {
-            "No",
-            "Yes"});
+            "Yes",
+            "No"});
             this.depSympIsolativeComboBox.Location = new System.Drawing.Point(130, 774);
             this.depSympIsolativeComboBox.Name = "depSympIsolativeComboBox";
             this.depSympIsolativeComboBox.Size = new System.Drawing.Size(87, 24);
@@ -5475,8 +6082,8 @@
             this.depSympWithdrawnComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "DepSympWithdrawn", true));
             this.depSympWithdrawnComboBox.FormattingEnabled = true;
             this.depSympWithdrawnComboBox.Items.AddRange(new object[] {
-            "No",
-            "Yes"});
+            "Yes",
+            "No"});
             this.depSympWithdrawnComboBox.Location = new System.Drawing.Point(130, 733);
             this.depSympWithdrawnComboBox.Name = "depSympWithdrawnComboBox";
             this.depSympWithdrawnComboBox.Size = new System.Drawing.Size(87, 24);
@@ -5487,8 +6094,8 @@
             this.depSympHelplessComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "DepSympHelpless", true));
             this.depSympHelplessComboBox.FormattingEnabled = true;
             this.depSympHelplessComboBox.Items.AddRange(new object[] {
-            "No",
-            "Yes"});
+            "Yes",
+            "No"});
             this.depSympHelplessComboBox.Location = new System.Drawing.Point(130, 692);
             this.depSympHelplessComboBox.Name = "depSympHelplessComboBox";
             this.depSympHelplessComboBox.Size = new System.Drawing.Size(87, 24);
@@ -5499,8 +6106,8 @@
             this.depSympHopelessComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "DepSympHopeless", true));
             this.depSympHopelessComboBox.FormattingEnabled = true;
             this.depSympHopelessComboBox.Items.AddRange(new object[] {
-            "No",
-            "Yes"});
+            "Yes",
+            "No"});
             this.depSympHopelessComboBox.Location = new System.Drawing.Point(130, 651);
             this.depSympHopelessComboBox.Name = "depSympHopelessComboBox";
             this.depSympHopelessComboBox.Size = new System.Drawing.Size(87, 24);
@@ -5511,8 +6118,8 @@
             this.depSympCryingComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "DepSympCrying", true));
             this.depSympCryingComboBox.FormattingEnabled = true;
             this.depSympCryingComboBox.Items.AddRange(new object[] {
-            "No",
-            "Yes"});
+            "Yes",
+            "No"});
             this.depSympCryingComboBox.Location = new System.Drawing.Point(130, 610);
             this.depSympCryingComboBox.Name = "depSympCryingComboBox";
             this.depSympCryingComboBox.Size = new System.Drawing.Size(87, 24);
@@ -5523,8 +6130,8 @@
             this.depSympSadComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "DepSympSad", true));
             this.depSympSadComboBox.FormattingEnabled = true;
             this.depSympSadComboBox.Items.AddRange(new object[] {
-            "No",
-            "Yes"});
+            "Yes",
+            "No"});
             this.depSympSadComboBox.Location = new System.Drawing.Point(130, 569);
             this.depSympSadComboBox.Name = "depSympSadComboBox";
             this.depSympSadComboBox.Size = new System.Drawing.Size(87, 24);
@@ -5552,8 +6159,8 @@
             this.bullyOthComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "BullyOth", true));
             this.bullyOthComboBox.FormattingEnabled = true;
             this.bullyOthComboBox.Items.AddRange(new object[] {
-            "No",
-            "Yes"});
+            "Yes",
+            "No"});
             this.bullyOthComboBox.Location = new System.Drawing.Point(117, 483);
             this.bullyOthComboBox.Name = "bullyOthComboBox";
             this.bullyOthComboBox.Size = new System.Drawing.Size(104, 24);
@@ -5572,8 +6179,8 @@
             this.bulliedComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "Bullied", true));
             this.bulliedComboBox.FormattingEnabled = true;
             this.bulliedComboBox.Items.AddRange(new object[] {
-            "No",
-            "Yes"});
+            "Yes",
+            "No"});
             this.bulliedComboBox.Location = new System.Drawing.Point(66, 450);
             this.bulliedComboBox.Name = "bulliedComboBox";
             this.bulliedComboBox.Size = new System.Drawing.Size(121, 24);
@@ -5592,8 +6199,8 @@
             this.schRefuComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "SchRefu", true));
             this.schRefuComboBox.FormattingEnabled = true;
             this.schRefuComboBox.Items.AddRange(new object[] {
-            "No",
-            "Yes"});
+            "Yes",
+            "No"});
             this.schRefuComboBox.Location = new System.Drawing.Point(252, 419);
             this.schRefuComboBox.Name = "schRefuComboBox";
             this.schRefuComboBox.Size = new System.Drawing.Size(121, 24);
@@ -5612,8 +6219,8 @@
             this.difMakeFriendsComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "DifMakeFriends", true));
             this.difMakeFriendsComboBox.FormattingEnabled = true;
             this.difMakeFriendsComboBox.Items.AddRange(new object[] {
-            "No",
-            "Yes"});
+            "Yes",
+            "No"});
             this.difMakeFriendsComboBox.Location = new System.Drawing.Point(237, 389);
             this.difMakeFriendsComboBox.Name = "difMakeFriendsComboBox";
             this.difMakeFriendsComboBox.Size = new System.Drawing.Size(121, 24);
@@ -5624,8 +6231,8 @@
             this.indivEduProgComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "IndivEduProg", true));
             this.indivEduProgComboBox.FormattingEnabled = true;
             this.indivEduProgComboBox.Items.AddRange(new object[] {
-            "No",
-            "Yes"});
+            "Yes",
+            "No"});
             this.indivEduProgComboBox.Location = new System.Drawing.Point(208, 355);
             this.indivEduProgComboBox.Name = "indivEduProgComboBox";
             this.indivEduProgComboBox.Size = new System.Drawing.Size(121, 24);
@@ -5644,8 +6251,8 @@
             this.probSchoolComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "ProbSchool", true));
             this.probSchoolComboBox.FormattingEnabled = true;
             this.probSchoolComboBox.Items.AddRange(new object[] {
-            "No",
-            "Yes"});
+            "Yes",
+            "No"});
             this.probSchoolComboBox.Location = new System.Drawing.Point(144, 320);
             this.probSchoolComboBox.Name = "probSchoolComboBox";
             this.probSchoolComboBox.Size = new System.Drawing.Size(121, 24);
@@ -5664,8 +6271,8 @@
             this.detSchPerComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "DetSchPer", true));
             this.detSchPerComboBox.FormattingEnabled = true;
             this.detSchPerComboBox.Items.AddRange(new object[] {
-            "No",
-            "Yes"});
+            "Yes",
+            "No"});
             this.detSchPerComboBox.Location = new System.Drawing.Point(254, 287);
             this.detSchPerComboBox.Name = "detSchPerComboBox";
             this.detSchPerComboBox.Size = new System.Drawing.Size(121, 24);
@@ -5704,8 +6311,8 @@
             this.rebelComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "Rebel", true));
             this.rebelComboBox.FormattingEnabled = true;
             this.rebelComboBox.Items.AddRange(new object[] {
-            "No",
-            "Yes"});
+            "Yes",
+            "No"});
             this.rebelComboBox.Location = new System.Drawing.Point(139, 251);
             this.rebelComboBox.Name = "rebelComboBox";
             this.rebelComboBox.Size = new System.Drawing.Size(121, 24);
@@ -5724,8 +6331,8 @@
             this.runAwayComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "RunAway", true));
             this.runAwayComboBox.FormattingEnabled = true;
             this.runAwayComboBox.Items.AddRange(new object[] {
-            "No",
-            "Yes"});
+            "Yes",
+            "No"});
             this.runAwayComboBox.Location = new System.Drawing.Point(173, 220);
             this.runAwayComboBox.Name = "runAwayComboBox";
             this.runAwayComboBox.Size = new System.Drawing.Size(121, 24);
@@ -5744,8 +6351,8 @@
             this.lyingComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "Lying", true));
             this.lyingComboBox.FormattingEnabled = true;
             this.lyingComboBox.Items.AddRange(new object[] {
-            "No",
-            "Yes"});
+            "Yes",
+            "No"});
             this.lyingComboBox.Location = new System.Drawing.Point(58, 185);
             this.lyingComboBox.Name = "lyingComboBox";
             this.lyingComboBox.Size = new System.Drawing.Size(121, 24);
@@ -5754,7 +6361,7 @@
             // stealingDescTextBox
             // 
             this.stealingDescTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "StealingDesc", true));
-            this.stealingDescTextBox.Location = new System.Drawing.Point(198, 159);
+            this.stealingDescTextBox.Location = new System.Drawing.Point(198, 154);
             this.stealingDescTextBox.Name = "stealingDescTextBox";
             this.stealingDescTextBox.Size = new System.Drawing.Size(793, 22);
             this.stealingDescTextBox.TabIndex = 14;
@@ -5764,9 +6371,9 @@
             this.stealingComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "Stealing", true));
             this.stealingComboBox.FormattingEnabled = true;
             this.stealingComboBox.Items.AddRange(new object[] {
-            "No",
-            "Yes"});
-            this.stealingComboBox.Location = new System.Drawing.Point(71, 157);
+            "Yes",
+            "No"});
+            this.stealingComboBox.Location = new System.Drawing.Point(71, 153);
             this.stealingComboBox.Name = "stealingComboBox";
             this.stealingComboBox.Size = new System.Drawing.Size(121, 24);
             this.stealingComboBox.TabIndex = 12;
@@ -5783,6 +6390,9 @@
             // 
             this.fireSetComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "FireSet", true));
             this.fireSetComboBox.FormattingEnabled = true;
+            this.fireSetComboBox.Items.AddRange(new object[] {
+            "Yes",
+            "No"});
             this.fireSetComboBox.Location = new System.Drawing.Point(94, 121);
             this.fireSetComboBox.Name = "fireSetComboBox";
             this.fireSetComboBox.Size = new System.Drawing.Size(121, 24);
@@ -5801,8 +6411,8 @@
             this.cruelAnimalsComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "CruelAnimals", true));
             this.cruelAnimalsComboBox.FormattingEnabled = true;
             this.cruelAnimalsComboBox.Items.AddRange(new object[] {
-            "No",
-            "Yes"});
+            "Yes",
+            "No"});
             this.cruelAnimalsComboBox.Location = new System.Drawing.Point(125, 88);
             this.cruelAnimalsComboBox.Name = "cruelAnimalsComboBox";
             this.cruelAnimalsComboBox.Size = new System.Drawing.Size(121, 24);
@@ -5821,8 +6431,8 @@
             this.encoEnurComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "EncoEnur", true));
             this.encoEnurComboBox.FormattingEnabled = true;
             this.encoEnurComboBox.Items.AddRange(new object[] {
-            "No",
-            "Yes"});
+            "Yes",
+            "No"});
             this.encoEnurComboBox.Location = new System.Drawing.Point(153, 56);
             this.encoEnurComboBox.Name = "encoEnurComboBox";
             this.encoEnurComboBox.Size = new System.Drawing.Size(106, 24);
@@ -5846,17 +6456,17 @@
             this.educationCheckBox.Text = "N/A";
             this.educationCheckBox.UseVisualStyleBackColor = true;
             // 
-            // Diagnosis
+            // tabDiagnosis
             // 
-            this.Diagnosis.Controls.Add(this.grpProvDiag);
-            this.Diagnosis.Controls.Add(this.grpPhysicianRecom);
-            this.Diagnosis.Location = new System.Drawing.Point(4, 25);
-            this.Diagnosis.Name = "Diagnosis";
-            this.Diagnosis.Padding = new System.Windows.Forms.Padding(3);
-            this.Diagnosis.Size = new System.Drawing.Size(1069, 1028);
-            this.Diagnosis.TabIndex = 7;
-            this.Diagnosis.Text = "In School";
-            this.Diagnosis.UseVisualStyleBackColor = true;
+            this.tabDiagnosis.Controls.Add(this.grpProvDiag);
+            this.tabDiagnosis.Controls.Add(this.grpPhysicianRecom);
+            this.tabDiagnosis.Location = new System.Drawing.Point(4, 25);
+            this.tabDiagnosis.Name = "tabDiagnosis";
+            this.tabDiagnosis.Padding = new System.Windows.Forms.Padding(3);
+            this.tabDiagnosis.Size = new System.Drawing.Size(1069, 1124);
+            this.tabDiagnosis.TabIndex = 7;
+            this.tabDiagnosis.Text = "Diagnosis";
+            this.tabDiagnosis.UseVisualStyleBackColor = true;
             // 
             // grpProvDiag
             // 
@@ -5908,7 +6518,6 @@
             this.contextFactCheckBox.TabIndex = 12;
             this.contextFactCheckBox.Text = "None";
             this.contextFactCheckBox.UseVisualStyleBackColor = true;
-            this.contextFactCheckBox.CheckedChanged += new System.EventHandler(this.contextFactCheckBox_CheckedChanged);
             // 
             // psychosocialFactDescTextBox
             // 
@@ -6028,8 +6637,8 @@
             this.metalDetectComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "MetalDetect", true));
             this.metalDetectComboBox.FormattingEnabled = true;
             this.metalDetectComboBox.Items.AddRange(new object[] {
-            "No",
-            "Yes"});
+            "Yes",
+            "No"});
             this.metalDetectComboBox.Location = new System.Drawing.Point(460, 215);
             this.metalDetectComboBox.Name = "metalDetectComboBox";
             this.metalDetectComboBox.Size = new System.Drawing.Size(121, 24);
@@ -6136,6 +6745,7 @@
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.deffered_problem_listTableAdapter = null;
             this.tableAdapterManager.family_membersTableAdapter = null;
+            this.tableAdapterManager.functionsTableAdapter = null;
             this.tableAdapterManager.interventionsTableAdapter = null;
             this.tableAdapterManager.medical_problem_listTableAdapter = null;
             this.tableAdapterManager.medicationsTableAdapter = null;
@@ -6149,131 +6759,6 @@
             this.tableAdapterManager.substance_abuseTableAdapter = null;
             this.tableAdapterManager.treatment_facilityTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = ExampleLook.cPCAppDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            // 
-            // patient_admissionBindingNavigator
-            // 
-            this.patient_admissionBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
-            this.patient_admissionBindingNavigator.BindingSource = this.patient_admissionBindingSource;
-            this.patient_admissionBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.patient_admissionBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
-            this.patient_admissionBindingNavigator.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.patient_admissionBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.bindingNavigatorMoveFirstItem,
-            this.bindingNavigatorMovePreviousItem,
-            this.bindingNavigatorSeparator,
-            this.bindingNavigatorPositionItem,
-            this.bindingNavigatorCountItem,
-            this.bindingNavigatorSeparator1,
-            this.bindingNavigatorMoveNextItem,
-            this.bindingNavigatorMoveLastItem,
-            this.bindingNavigatorSeparator2,
-            this.bindingNavigatorAddNewItem,
-            this.bindingNavigatorDeleteItem,
-            this.patient_admissionBindingNavigatorSaveItem});
-            this.patient_admissionBindingNavigator.Location = new System.Drawing.Point(0, 0);
-            this.patient_admissionBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
-            this.patient_admissionBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
-            this.patient_admissionBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
-            this.patient_admissionBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
-            this.patient_admissionBindingNavigator.Name = "patient_admissionBindingNavigator";
-            this.patient_admissionBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.patient_admissionBindingNavigator.Size = new System.Drawing.Size(1885, 27);
-            this.patient_admissionBindingNavigator.TabIndex = 1;
-            this.patient_admissionBindingNavigator.Text = "bindingNavigator1";
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(24, 24);
-            this.bindingNavigatorAddNewItem.Text = "Add new";
-            // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(45, 24);
-            this.bindingNavigatorCountItem.Text = "of {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(24, 24);
-            this.bindingNavigatorDeleteItem.Text = "Delete";
-            // 
-            // bindingNavigatorMoveFirstItem
-            // 
-            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
-            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
-            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(24, 24);
-            this.bindingNavigatorMoveFirstItem.Text = "Move first";
-            // 
-            // bindingNavigatorMovePreviousItem
-            // 
-            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
-            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
-            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(24, 24);
-            this.bindingNavigatorMovePreviousItem.Text = "Move previous";
-            // 
-            // bindingNavigatorSeparator
-            // 
-            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 27);
-            // 
-            // bindingNavigatorPositionItem
-            // 
-            this.bindingNavigatorPositionItem.AccessibleName = "Position";
-            this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 27);
-            this.bindingNavigatorPositionItem.Text = "0";
-            this.bindingNavigatorPositionItem.ToolTipText = "Current position";
-            // 
-            // bindingNavigatorSeparator1
-            // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 27);
-            // 
-            // bindingNavigatorMoveNextItem
-            // 
-            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
-            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
-            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(24, 24);
-            this.bindingNavigatorMoveNextItem.Text = "Move next";
-            // 
-            // bindingNavigatorMoveLastItem
-            // 
-            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
-            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
-            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(24, 24);
-            this.bindingNavigatorMoveLastItem.Text = "Move last";
-            // 
-            // bindingNavigatorSeparator2
-            // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 27);
-            // 
-            // patient_admissionBindingNavigatorSaveItem
-            // 
-            this.patient_admissionBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.patient_admissionBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("patient_admissionBindingNavigatorSaveItem.Image")));
-            this.patient_admissionBindingNavigatorSaveItem.Name = "patient_admissionBindingNavigatorSaveItem";
-            this.patient_admissionBindingNavigatorSaveItem.Size = new System.Drawing.Size(24, 24);
-            this.patient_admissionBindingNavigatorSaveItem.Text = "Save Data";
-            this.patient_admissionBindingNavigatorSaveItem.Click += new System.EventHandler(this.patient_admissionBindingNavigatorSaveItem_Click);
             // 
             // treatment_facilityTableAdapter
             // 
@@ -6291,377 +6776,133 @@
             // 
             this.substance_abuseTableAdapter.ClearBeforeFill = true;
             // 
-            // insightLabel
-            // 
-            insightLabel.AutoSize = true;
-            insightLabel.Location = new System.Drawing.Point(736, 37);
-            insightLabel.Name = "insightLabel";
-            insightLabel.Size = new System.Drawing.Size(53, 17);
-            insightLabel.TabIndex = 74;
-            insightLabel.Text = "Insight:";
-            // 
-            // insightComboBox
-            // 
-            this.insightComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "Insight", true));
-            this.insightComboBox.FormattingEnabled = true;
-            this.insightComboBox.Location = new System.Drawing.Point(795, 34);
-            this.insightComboBox.Name = "insightComboBox";
-            this.insightComboBox.Size = new System.Drawing.Size(121, 24);
-            this.insightComboBox.TabIndex = 75;
-            // 
-            // judgementLabel
-            // 
-            judgementLabel.AutoSize = true;
-            judgementLabel.Location = new System.Drawing.Point(736, 86);
-            judgementLabel.Name = "judgementLabel";
-            judgementLabel.Size = new System.Drawing.Size(82, 17);
-            judgementLabel.TabIndex = 75;
-            judgementLabel.Text = "Judgement:";
-            // 
-            // judgementComboBox
-            // 
-            this.judgementComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "Judgement", true));
-            this.judgementComboBox.FormattingEnabled = true;
-            this.judgementComboBox.Location = new System.Drawing.Point(824, 83);
-            this.judgementComboBox.Name = "judgementComboBox";
-            this.judgementComboBox.Size = new System.Drawing.Size(121, 24);
-            this.judgementComboBox.TabIndex = 76;
-            // 
-            // appearanceLabel
-            // 
-            appearanceLabel.AutoSize = true;
-            appearanceLabel.Location = new System.Drawing.Point(283, 307);
-            appearanceLabel.Name = "appearanceLabel";
-            appearanceLabel.Size = new System.Drawing.Size(89, 17);
-            appearanceLabel.TabIndex = 76;
-            appearanceLabel.Text = "Appearance:";
-            // 
-            // appearanceComboBox
-            // 
-            this.appearanceComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "Appearance", true));
-            this.appearanceComboBox.FormattingEnabled = true;
-            this.appearanceComboBox.Location = new System.Drawing.Point(378, 304);
-            this.appearanceComboBox.Name = "appearanceComboBox";
-            this.appearanceComboBox.Size = new System.Drawing.Size(121, 24);
-            this.appearanceComboBox.TabIndex = 77;
-            // 
-            // motorBehaviorLabel
-            // 
-            motorBehaviorLabel.AutoSize = true;
-            motorBehaviorLabel.Location = new System.Drawing.Point(283, 358);
-            motorBehaviorLabel.Name = "motorBehaviorLabel";
-            motorBehaviorLabel.Size = new System.Drawing.Size(108, 17);
-            motorBehaviorLabel.TabIndex = 77;
-            motorBehaviorLabel.Text = "Motor Behavior:";
-            // 
-            // motorBehaviorComboBox
-            // 
-            this.motorBehaviorComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "MotorBehavior", true));
-            this.motorBehaviorComboBox.FormattingEnabled = true;
-            this.motorBehaviorComboBox.Location = new System.Drawing.Point(397, 355);
-            this.motorBehaviorComboBox.Name = "motorBehaviorComboBox";
-            this.motorBehaviorComboBox.Size = new System.Drawing.Size(121, 24);
-            this.motorBehaviorComboBox.TabIndex = 78;
-            // 
-            // motorBehaviorDescTextBox
-            // 
-            this.motorBehaviorDescTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "MotorBehaviorDesc", true));
-            this.motorBehaviorDescTextBox.Location = new System.Drawing.Point(397, 389);
-            this.motorBehaviorDescTextBox.Name = "motorBehaviorDescTextBox";
-            this.motorBehaviorDescTextBox.Size = new System.Drawing.Size(121, 22);
-            this.motorBehaviorDescTextBox.TabIndex = 79;
-            // 
-            // violSelf6MoLabel
-            // 
-            violSelf6MoLabel.AutoSize = true;
-            violSelf6MoLabel.Location = new System.Drawing.Point(22, 203);
-            violSelf6MoLabel.Name = "violSelf6MoLabel";
-            violSelf6MoLabel.Size = new System.Drawing.Size(90, 17);
-            violSelf6MoLabel.TabIndex = 2;
-            violSelf6MoLabel.Text = "Viol Self6Mo:";
-            // 
-            // violSelf6MoComboBox
-            // 
-            this.violSelf6MoComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "ViolSelf6Mo", true));
-            this.violSelf6MoComboBox.FormattingEnabled = true;
-            this.violSelf6MoComboBox.Location = new System.Drawing.Point(118, 200);
-            this.violSelf6MoComboBox.Name = "violSelf6MoComboBox";
-            this.violSelf6MoComboBox.Size = new System.Drawing.Size(121, 24);
-            this.violSelf6MoComboBox.TabIndex = 3;
-            // 
-            // violSelf6MoDescTextBox
-            // 
-            this.violSelf6MoDescTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "ViolSelf6MoDesc", true));
-            this.violSelf6MoDescTextBox.Location = new System.Drawing.Point(252, 200);
-            this.violSelf6MoDescTextBox.Name = "violSelf6MoDescTextBox";
-            this.violSelf6MoDescTextBox.Size = new System.Drawing.Size(100, 22);
-            this.violSelf6MoDescTextBox.TabIndex = 5;
-            // 
-            // suicPriorAttLabel
-            // 
-            suicPriorAttLabel.AutoSize = true;
-            suicPriorAttLabel.Location = new System.Drawing.Point(22, 241);
-            suicPriorAttLabel.Name = "suicPriorAttLabel";
-            suicPriorAttLabel.Size = new System.Drawing.Size(94, 17);
-            suicPriorAttLabel.TabIndex = 5;
-            suicPriorAttLabel.Text = "Suic Prior Att:";
-            // 
-            // suicPriorAttComboBox
-            // 
-            this.suicPriorAttComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "SuicPriorAtt", true));
-            this.suicPriorAttComboBox.FormattingEnabled = true;
-            this.suicPriorAttComboBox.Location = new System.Drawing.Point(122, 238);
-            this.suicPriorAttComboBox.Name = "suicPriorAttComboBox";
-            this.suicPriorAttComboBox.Size = new System.Drawing.Size(121, 24);
-            this.suicPriorAttComboBox.TabIndex = 6;
-            // 
-            // suicPriorAttDescTextBox
-            // 
-            this.suicPriorAttDescTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "SuicPriorAttDesc", true));
-            this.suicPriorAttDescTextBox.Location = new System.Drawing.Point(249, 238);
-            this.suicPriorAttDescTextBox.Name = "suicPriorAttDescTextBox";
-            this.suicPriorAttDescTextBox.Size = new System.Drawing.Size(100, 22);
-            this.suicPriorAttDescTextBox.TabIndex = 8;
-            // 
-            // famHistSuicLabel
-            // 
-            famHistSuicLabel.AutoSize = true;
-            famHistSuicLabel.Location = new System.Drawing.Point(22, 276);
-            famHistSuicLabel.Name = "famHistSuicLabel";
-            famHistSuicLabel.Size = new System.Drawing.Size(98, 17);
-            famHistSuicLabel.TabIndex = 8;
-            famHistSuicLabel.Text = "Fam Hist Suic:";
-            // 
-            // famHistSuicComboBox
-            // 
-            this.famHistSuicComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "FamHistSuic", true));
-            this.famHistSuicComboBox.FormattingEnabled = true;
-            this.famHistSuicComboBox.Location = new System.Drawing.Point(126, 273);
-            this.famHistSuicComboBox.Name = "famHistSuicComboBox";
-            this.famHistSuicComboBox.Size = new System.Drawing.Size(121, 24);
-            this.famHistSuicComboBox.TabIndex = 9;
-            // 
-            // famHistSuicDescTextBox
-            // 
-            this.famHistSuicDescTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "FamHistSuicDesc", true));
-            this.famHistSuicDescTextBox.Location = new System.Drawing.Point(253, 273);
-            this.famHistSuicDescTextBox.Name = "famHistSuicDescTextBox";
-            this.famHistSuicDescTextBox.Size = new System.Drawing.Size(100, 22);
-            this.famHistSuicDescTextBox.TabIndex = 11;
-            // 
-            // attemptInpatLabel
-            // 
-            attemptInpatLabel.AutoSize = true;
-            attemptInpatLabel.Location = new System.Drawing.Point(22, 308);
-            attemptInpatLabel.Name = "attemptInpatLabel";
-            attemptInpatLabel.Size = new System.Drawing.Size(95, 17);
-            attemptInpatLabel.TabIndex = 11;
-            attemptInpatLabel.Text = "Attempt Inpat:";
-            // 
-            // attemptInpatComboBox
-            // 
-            this.attemptInpatComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "AttemptInpat", true));
-            this.attemptInpatComboBox.FormattingEnabled = true;
-            this.attemptInpatComboBox.Location = new System.Drawing.Point(123, 305);
-            this.attemptInpatComboBox.Name = "attemptInpatComboBox";
-            this.attemptInpatComboBox.Size = new System.Drawing.Size(121, 24);
-            this.attemptInpatComboBox.TabIndex = 12;
-            // 
-            // attemptInpatDescTextBox
-            // 
-            this.attemptInpatDescTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "AttemptInpatDesc", true));
-            this.attemptInpatDescTextBox.Location = new System.Drawing.Point(253, 305);
-            this.attemptInpatDescTextBox.Name = "attemptInpatDescTextBox";
-            this.attemptInpatDescTextBox.Size = new System.Drawing.Size(100, 22);
-            this.attemptInpatDescTextBox.TabIndex = 14;
-            // 
-            // violOthers6MoLabel
-            // 
-            violOthers6MoLabel.AutoSize = true;
-            violOthers6MoLabel.Location = new System.Drawing.Point(22, 168);
-            violOthers6MoLabel.Name = "violOthers6MoLabel";
-            violOthers6MoLabel.Size = new System.Drawing.Size(109, 17);
-            violOthers6MoLabel.TabIndex = 6;
-            violOthers6MoLabel.Text = "Viol Others6Mo:";
-            // 
-            // violOthers6MoComboBox
-            // 
-            this.violOthers6MoComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "ViolOthers6Mo", true));
-            this.violOthers6MoComboBox.FormattingEnabled = true;
-            this.violOthers6MoComboBox.Location = new System.Drawing.Point(137, 165);
-            this.violOthers6MoComboBox.Name = "violOthers6MoComboBox";
-            this.violOthers6MoComboBox.Size = new System.Drawing.Size(121, 24);
-            this.violOthers6MoComboBox.TabIndex = 7;
-            // 
-            // violOthers6MoDescTextBox
-            // 
-            this.violOthers6MoDescTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "ViolOthers6MoDesc", true));
-            this.violOthers6MoDescTextBox.Location = new System.Drawing.Point(271, 165);
-            this.violOthers6MoDescTextBox.Name = "violOthers6MoDescTextBox";
-            this.violOthers6MoDescTextBox.Size = new System.Drawing.Size(100, 22);
-            this.violOthers6MoDescTextBox.TabIndex = 9;
-            // 
-            // violOtherHistLabel
-            // 
-            violOtherHistLabel.AutoSize = true;
-            violOtherHistLabel.Location = new System.Drawing.Point(22, 201);
-            violOtherHistLabel.Name = "violOtherHistLabel";
-            violOtherHistLabel.Size = new System.Drawing.Size(103, 17);
-            violOtherHistLabel.TabIndex = 9;
-            violOtherHistLabel.Text = "Viol Other Hist:";
-            // 
-            // violOtherHistComboBox
-            // 
-            this.violOtherHistComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "ViolOtherHist", true));
-            this.violOtherHistComboBox.FormattingEnabled = true;
-            this.violOtherHistComboBox.Location = new System.Drawing.Point(131, 198);
-            this.violOtherHistComboBox.Name = "violOtherHistComboBox";
-            this.violOtherHistComboBox.Size = new System.Drawing.Size(121, 24);
-            this.violOtherHistComboBox.TabIndex = 10;
-            // 
-            // violOtherHistDescTextBox
-            // 
-            this.violOtherHistDescTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "ViolOtherHistDesc", true));
-            this.violOtherHistDescTextBox.Location = new System.Drawing.Point(265, 198);
-            this.violOtherHistDescTextBox.Name = "violOtherHistDescTextBox";
-            this.violOtherHistDescTextBox.Size = new System.Drawing.Size(100, 22);
-            this.violOtherHistDescTextBox.TabIndex = 12;
-            // 
-            // homPriorAttComboBox
-            // 
-            this.homPriorAttComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "HomPriorAtt", true));
-            this.homPriorAttComboBox.FormattingEnabled = true;
-            this.homPriorAttComboBox.Location = new System.Drawing.Point(124, 230);
-            this.homPriorAttComboBox.Name = "homPriorAttComboBox";
-            this.homPriorAttComboBox.Size = new System.Drawing.Size(121, 24);
-            this.homPriorAttComboBox.TabIndex = 13;
-            // 
-            // homPriorAttLabel
-            // 
-            homPriorAttLabel.AutoSize = true;
-            homPriorAttLabel.Location = new System.Drawing.Point(22, 233);
-            homPriorAttLabel.Name = "homPriorAttLabel";
-            homPriorAttLabel.Size = new System.Drawing.Size(96, 17);
-            homPriorAttLabel.TabIndex = 12;
-            homPriorAttLabel.Text = "Hom Prior Att:";
-            // 
-            // homPriorAttDescTextBox
-            // 
-            this.homPriorAttDescTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "HomPriorAttDesc", true));
-            this.homPriorAttDescTextBox.Location = new System.Drawing.Point(253, 230);
-            this.homPriorAttDescTextBox.Name = "homPriorAttDescTextBox";
-            this.homPriorAttDescTextBox.Size = new System.Drawing.Size(100, 22);
-            this.homPriorAttDescTextBox.TabIndex = 15;
-            // 
-            // famHistHomLabel
-            // 
-            famHistHomLabel.AutoSize = true;
-            famHistHomLabel.Location = new System.Drawing.Point(22, 266);
-            famHistHomLabel.Name = "famHistHomLabel";
-            famHistHomLabel.Size = new System.Drawing.Size(100, 17);
-            famHistHomLabel.TabIndex = 15;
-            famHistHomLabel.Text = "Fam Hist Hom:";
-            // 
-            // famHistHomComboBox
-            // 
-            this.famHistHomComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "FamHistHom", true));
-            this.famHistHomComboBox.FormattingEnabled = true;
-            this.famHistHomComboBox.Location = new System.Drawing.Point(128, 263);
-            this.famHistHomComboBox.Name = "famHistHomComboBox";
-            this.famHistHomComboBox.Size = new System.Drawing.Size(121, 24);
-            this.famHistHomComboBox.TabIndex = 16;
-            // 
-            // famHistHomDescTextBox
-            // 
-            this.famHistHomDescTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "FamHistHomDesc", true));
-            this.famHistHomDescTextBox.Location = new System.Drawing.Point(255, 263);
-            this.famHistHomDescTextBox.Name = "famHistHomDescTextBox";
-            this.famHistHomDescTextBox.Size = new System.Drawing.Size(100, 22);
-            this.famHistHomDescTextBox.TabIndex = 18;
-            // 
-            // abuse_assessmentBindingSource
-            // 
-            this.abuse_assessmentBindingSource.DataMember = "FK_abuse_assessment_patient_admission";
-            this.abuse_assessmentBindingSource.DataSource = this.patient_admissionBindingSource;
-            // 
             // abuse_assessmentTableAdapter
             // 
             this.abuse_assessmentTableAdapter.ClearBeforeFill = true;
             // 
-            // abuse_assessmentDataGridView
+            // grpAdminButtons
             // 
-            this.abuse_assessmentDataGridView.AutoGenerateColumns = false;
-            this.abuse_assessmentDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.abuse_assessmentDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn13,
-            this.dataGridViewTextBoxColumn14,
-            this.dataGridViewTextBoxColumn15,
-            this.dataGridViewTextBoxColumn16,
-            this.dataGridViewTextBoxColumn17,
-            this.dataGridViewTextBoxColumn18,
-            this.dataGridViewTextBoxColumn19,
-            this.dataGridViewTextBoxColumn20,
-            this.dataGridViewTextBoxColumn21});
-            this.abuse_assessmentDataGridView.DataSource = this.abuse_assessmentBindingSource;
-            this.abuse_assessmentDataGridView.Location = new System.Drawing.Point(27, 51);
-            this.abuse_assessmentDataGridView.Name = "abuse_assessmentDataGridView";
-            this.abuse_assessmentDataGridView.RowTemplate.Height = 24;
-            this.abuse_assessmentDataGridView.Size = new System.Drawing.Size(952, 58);
-            this.abuse_assessmentDataGridView.TabIndex = 17;
+            this.grpAdminButtons.Controls.Add(this.btnChangeLog);
+            this.grpAdminButtons.Controls.Add(lastNameLabel1);
+            this.grpAdminButtons.Controls.Add(this.lastNameTextBox1);
+            this.grpAdminButtons.Controls.Add(firstNameLabel1);
+            this.grpAdminButtons.Controls.Add(this.firstNameTextBox1);
+            this.grpAdminButtons.Controls.Add(panMRNumLabel);
+            this.grpAdminButtons.Controls.Add(this.panMRNumTextBox);
+            this.grpAdminButtons.Controls.Add(this.btnCallSheet);
+            this.grpAdminButtons.Controls.Add(this.btnChildSW);
+            this.grpAdminButtons.Controls.Add(this.btnAdultSW);
+            this.grpAdminButtons.Controls.Add(this.btnNurse);
+            this.grpAdminButtons.Location = new System.Drawing.Point(14, 53);
+            this.grpAdminButtons.Name = "grpAdminButtons";
+            this.grpAdminButtons.Size = new System.Drawing.Size(200, 500);
+            this.grpAdminButtons.TabIndex = 2;
+            this.grpAdminButtons.TabStop = false;
             // 
-            // dataGridViewTextBoxColumn13
+            // btnChangeLog
             // 
-            this.dataGridViewTextBoxColumn13.DataPropertyName = "PatientID";
-            this.dataGridViewTextBoxColumn13.HeaderText = "PatientID";
-            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            this.btnChangeLog.Location = new System.Drawing.Point(6, 452);
+            this.btnChangeLog.Name = "btnChangeLog";
+            this.btnChangeLog.Size = new System.Drawing.Size(188, 25);
+            this.btnChangeLog.TabIndex = 10;
+            this.btnChangeLog.Text = "Change Log";
+            this.btnChangeLog.UseVisualStyleBackColor = true;
+            this.btnChangeLog.Click += new System.EventHandler(this.btnChangeLog_Click);
             // 
-            // dataGridViewTextBoxColumn14
+            // lastNameTextBox1
             // 
-            this.dataGridViewTextBoxColumn14.DataPropertyName = "AbuseType";
-            this.dataGridViewTextBoxColumn14.HeaderText = "AbuseType";
-            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
+            this.lastNameTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "LastName", true));
+            this.lastNameTextBox1.Location = new System.Drawing.Point(6, 160);
+            this.lastNameTextBox1.Name = "lastNameTextBox1";
+            this.lastNameTextBox1.Size = new System.Drawing.Size(188, 22);
+            this.lastNameTextBox1.TabIndex = 9;
             // 
-            // dataGridViewTextBoxColumn15
+            // firstNameTextBox1
             // 
-            this.dataGridViewTextBoxColumn15.DataPropertyName = "Issue";
-            this.dataGridViewTextBoxColumn15.HeaderText = "Issue";
-            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
+            this.firstNameTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "FirstName", true));
+            this.firstNameTextBox1.Location = new System.Drawing.Point(6, 115);
+            this.firstNameTextBox1.Name = "firstNameTextBox1";
+            this.firstNameTextBox1.Size = new System.Drawing.Size(188, 22);
+            this.firstNameTextBox1.TabIndex = 7;
             // 
-            // dataGridViewTextBoxColumn16
+            // panMRNumTextBox
             // 
-            this.dataGridViewTextBoxColumn16.DataPropertyName = "AgeOfAbuse";
-            this.dataGridViewTextBoxColumn16.HeaderText = "AgeOfAbuse";
-            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
+            this.panMRNumTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "MRNum", true));
+            this.panMRNumTextBox.Location = new System.Drawing.Point(6, 206);
+            this.panMRNumTextBox.Name = "panMRNumTextBox";
+            this.panMRNumTextBox.Size = new System.Drawing.Size(188, 22);
+            this.panMRNumTextBox.TabIndex = 5;
             // 
-            // dataGridViewTextBoxColumn17
+            // btnCallSheet
             // 
-            this.dataGridViewTextBoxColumn17.DataPropertyName = "AbuserName";
-            this.dataGridViewTextBoxColumn17.HeaderText = "AbuserName";
-            this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
+            this.btnCallSheet.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.btnCallSheet.Location = new System.Drawing.Point(6, 234);
+            this.btnCallSheet.Name = "btnCallSheet";
+            this.btnCallSheet.Size = new System.Drawing.Size(188, 25);
+            this.btnCallSheet.TabIndex = 3;
+            this.btnCallSheet.Text = "Call Sheet";
+            this.btnCallSheet.UseVisualStyleBackColor = false;
+            this.btnCallSheet.Click += new System.EventHandler(this.btnCallSheet_Click);
             // 
-            // dataGridViewTextBoxColumn18
+            // btnChildSW
             // 
-            this.dataGridViewTextBoxColumn18.DataPropertyName = "AbusedTime";
-            this.dataGridViewTextBoxColumn18.HeaderText = "AbusedTime";
-            this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
+            this.btnChildSW.BackColor = System.Drawing.Color.Pink;
+            this.btnChildSW.Location = new System.Drawing.Point(6, 351);
+            this.btnChildSW.Name = "btnChildSW";
+            this.btnChildSW.Size = new System.Drawing.Size(188, 25);
+            this.btnChildSW.TabIndex = 2;
+            this.btnChildSW.Text = "Child Social Work";
+            this.btnChildSW.UseVisualStyleBackColor = false;
+            this.btnChildSW.Click += new System.EventHandler(this.btnChildSW_Click);
             // 
-            // dataGridViewTextBoxColumn19
+            // btnAdultSW
             // 
-            this.dataGridViewTextBoxColumn19.DataPropertyName = "Reported";
-            this.dataGridViewTextBoxColumn19.HeaderText = "Reported";
-            this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
+            this.btnAdultSW.BackColor = System.Drawing.Color.Blue;
+            this.btnAdultSW.Location = new System.Drawing.Point(6, 312);
+            this.btnAdultSW.Name = "btnAdultSW";
+            this.btnAdultSW.Size = new System.Drawing.Size(188, 25);
+            this.btnAdultSW.TabIndex = 1;
+            this.btnAdultSW.Text = "Adult Social Work";
+            this.btnAdultSW.UseVisualStyleBackColor = false;
+            this.btnAdultSW.Click += new System.EventHandler(this.btnAdultSW_Click);
             // 
-            // dataGridViewTextBoxColumn20
+            // btnNurse
             // 
-            this.dataGridViewTextBoxColumn20.DataPropertyName = "ReportedToWhom";
-            this.dataGridViewTextBoxColumn20.HeaderText = "ReportedToWhom";
-            this.dataGridViewTextBoxColumn20.Name = "dataGridViewTextBoxColumn20";
+            this.btnNurse.BackColor = System.Drawing.Color.White;
+            this.btnNurse.Location = new System.Drawing.Point(6, 273);
+            this.btnNurse.Name = "btnNurse";
+            this.btnNurse.Size = new System.Drawing.Size(188, 25);
+            this.btnNurse.TabIndex = 0;
+            this.btnNurse.Text = "Nursing";
+            this.btnNurse.UseVisualStyleBackColor = false;
+            this.btnNurse.Click += new System.EventHandler(this.btnNurse_Click);
             // 
-            // dataGridViewTextBoxColumn21
+            // btnClear
             // 
-            this.dataGridViewTextBoxColumn21.DataPropertyName = "CY47Complete";
-            this.dataGridViewTextBoxColumn21.HeaderText = "CY47Complete";
-            this.dataGridViewTextBoxColumn21.Name = "dataGridViewTextBoxColumn21";
+            this.btnClear.Location = new System.Drawing.Point(1230, 22);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(75, 25);
+            this.btnClear.TabIndex = 10;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = true;
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Location = new System.Drawing.Point(1016, 22);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(75, 25);
+            this.btnEdit.TabIndex = 9;
+            this.btnEdit.Text = "Edit";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(1123, 22);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(75, 25);
+            this.btnSave.TabIndex = 8;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
             // 
             // substance_abuseDataGridView
             // 
@@ -6675,12 +6916,13 @@
             this.dataGridViewTextBoxColumn26,
             this.dataGridViewTextBoxColumn27,
             this.dataGridViewTextBoxColumn28,
-            this.dataGridViewTextBoxColumn29});
+            this.dataGridViewTextBoxColumn29,
+            this.dataGridViewTextBoxColumn30});
             this.substance_abuseDataGridView.DataSource = this.substance_abuseBindingSource;
-            this.substance_abuseDataGridView.Location = new System.Drawing.Point(29, 51);
+            this.substance_abuseDataGridView.Location = new System.Drawing.Point(0, -188);
             this.substance_abuseDataGridView.Name = "substance_abuseDataGridView";
             this.substance_abuseDataGridView.RowTemplate.Height = 24;
-            this.substance_abuseDataGridView.Size = new System.Drawing.Size(965, 151);
+            this.substance_abuseDataGridView.Size = new System.Drawing.Size(983, 151);
             this.substance_abuseDataGridView.TabIndex = 24;
             // 
             // dataGridViewTextBoxColumn22
@@ -6731,39 +6973,107 @@
             this.dataGridViewTextBoxColumn29.HeaderText = "SubUsedPrdAbstin";
             this.dataGridViewTextBoxColumn29.Name = "dataGridViewTextBoxColumn29";
             // 
-            // livingSituationLabel
+            // dataGridViewTextBoxColumn30
             // 
-            livingSituationLabel.AutoSize = true;
-            livingSituationLabel.Location = new System.Drawing.Point(6, 247);
-            livingSituationLabel.Name = "livingSituationLabel";
-            livingSituationLabel.Size = new System.Drawing.Size(108, 17);
-            livingSituationLabel.TabIndex = 24;
-            livingSituationLabel.Text = "Living Situation:";
+            this.dataGridViewTextBoxColumn30.DataPropertyName = "SubUsedDateLastUsed";
+            this.dataGridViewTextBoxColumn30.HeaderText = "SubUsedDateLastUsed";
+            this.dataGridViewTextBoxColumn30.Name = "dataGridViewTextBoxColumn30";
             // 
-            // livingSituationComboBox
+            // substance_abuseDataGridView1
             // 
-            this.livingSituationComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "LivingSituation", true));
-            this.livingSituationComboBox.FormattingEnabled = true;
-            this.livingSituationComboBox.Location = new System.Drawing.Point(120, 244);
-            this.livingSituationComboBox.Name = "livingSituationComboBox";
-            this.livingSituationComboBox.Size = new System.Drawing.Size(121, 24);
-            this.livingSituationComboBox.TabIndex = 25;
+            this.substance_abuseDataGridView1.AutoGenerateColumns = false;
+            this.substance_abuseDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.substance_abuseDataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn31,
+            this.dataGridViewTextBoxColumn32,
+            this.dataGridViewTextBoxColumn36,
+            this.dataGridViewTextBoxColumn33,
+            this.dataGridViewTextBoxColumn39,
+            this.dataGridViewTextBoxColumn35,
+            this.dataGridViewTextBoxColumn37,
+            this.dataGridViewTextBoxColumn38,
+            this.dataGridViewTextBoxColumn34});
+            this.substance_abuseDataGridView1.DataSource = this.substance_abuseBindingSource;
+            this.substance_abuseDataGridView1.Location = new System.Drawing.Point(29, 51);
+            this.substance_abuseDataGridView1.Name = "substance_abuseDataGridView1";
+            this.substance_abuseDataGridView1.RowTemplate.Height = 24;
+            this.substance_abuseDataGridView1.Size = new System.Drawing.Size(977, 151);
+            this.substance_abuseDataGridView1.TabIndex = 24;
             // 
-            // livingSituationDescTextBox
+            // dataGridViewTextBoxColumn31
             // 
-            this.livingSituationDescTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "LivingSituationDesc", true));
-            this.livingSituationDescTextBox.Location = new System.Drawing.Point(248, 244);
-            this.livingSituationDescTextBox.Name = "livingSituationDescTextBox";
-            this.livingSituationDescTextBox.Size = new System.Drawing.Size(755, 22);
-            this.livingSituationDescTextBox.TabIndex = 27;
+            this.dataGridViewTextBoxColumn31.DataPropertyName = "PatientID";
+            this.dataGridViewTextBoxColumn31.HeaderText = "PatientID";
+            this.dataGridViewTextBoxColumn31.Name = "dataGridViewTextBoxColumn31";
+            this.dataGridViewTextBoxColumn31.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn32
+            // 
+            this.dataGridViewTextBoxColumn32.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.dataGridViewTextBoxColumn32.DataPropertyName = "SubUsedName";
+            this.dataGridViewTextBoxColumn32.HeaderText = "Drug/Substance";
+            this.dataGridViewTextBoxColumn32.Name = "dataGridViewTextBoxColumn32";
+            this.dataGridViewTextBoxColumn32.Width = 139;
+            // 
+            // dataGridViewTextBoxColumn36
+            // 
+            this.dataGridViewTextBoxColumn36.DataPropertyName = "SubUsedMethod";
+            this.dataGridViewTextBoxColumn36.HeaderText = "Method";
+            this.dataGridViewTextBoxColumn36.Name = "dataGridViewTextBoxColumn36";
+            // 
+            // dataGridViewTextBoxColumn33
+            // 
+            this.dataGridViewTextBoxColumn33.DataPropertyName = "SubUsedStartAge";
+            this.dataGridViewTextBoxColumn33.HeaderText = "Age of First Use";
+            this.dataGridViewTextBoxColumn33.Name = "dataGridViewTextBoxColumn33";
+            // 
+            // dataGridViewTextBoxColumn39
+            // 
+            this.dataGridViewTextBoxColumn39.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.dataGridViewTextBoxColumn39.DataPropertyName = "SubUsedDateLastUsed";
+            this.dataGridViewTextBoxColumn39.HeaderText = "Date of Last Use";
+            this.dataGridViewTextBoxColumn39.Name = "dataGridViewTextBoxColumn39";
+            this.dataGridViewTextBoxColumn39.Width = 109;
+            // 
+            // dataGridViewTextBoxColumn35
+            // 
+            this.dataGridViewTextBoxColumn35.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.dataGridViewTextBoxColumn35.DataPropertyName = "SubUsedAmtUsed";
+            this.dataGridViewTextBoxColumn35.HeaderText = "Frequency/Amount";
+            this.dataGridViewTextBoxColumn35.Name = "dataGridViewTextBoxColumn35";
+            this.dataGridViewTextBoxColumn35.Width = 156;
+            // 
+            // dataGridViewTextBoxColumn37
+            // 
+            this.dataGridViewTextBoxColumn37.DataPropertyName = "SubUsedDuration";
+            this.dataGridViewTextBoxColumn37.HeaderText = "SubUsedDuration";
+            this.dataGridViewTextBoxColumn37.Name = "dataGridViewTextBoxColumn37";
+            this.dataGridViewTextBoxColumn37.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn38
+            // 
+            this.dataGridViewTextBoxColumn38.DataPropertyName = "SubUsedPrdAbstin";
+            this.dataGridViewTextBoxColumn38.HeaderText = "SubUsedPrdAbstin";
+            this.dataGridViewTextBoxColumn38.Name = "dataGridViewTextBoxColumn38";
+            this.dataGridViewTextBoxColumn38.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn34
+            // 
+            this.dataGridViewTextBoxColumn34.DataPropertyName = "SubUsedFreqUse90";
+            this.dataGridViewTextBoxColumn34.HeaderText = "SubUsedFreqUse90";
+            this.dataGridViewTextBoxColumn34.Name = "dataGridViewTextBoxColumn34";
+            this.dataGridViewTextBoxColumn34.Visible = false;
             // 
             // AdmissionsWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1906, 1037);
-            this.Controls.Add(this.patient_admissionBindingNavigator);
+            this.ClientSize = new System.Drawing.Size(1416, 1045);
+            this.Controls.Add(this.btnClear);
+            this.Controls.Add(this.btnEdit);
+            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.grpAdminButtons);
             this.Controls.Add(this.ArcTabs);
             this.Name = "AdmissionsWindow";
             this.Text = "AdmissionsWindow";
@@ -6810,6 +7120,8 @@
             this.grpAggRisk.PerformLayout();
             this.grpTraumaAbuse.ResumeLayout(false);
             this.grpTraumaAbuse.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.abuse_assessmentDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.abuse_assessmentBindingSource)).EndInit();
             this.grpPsychFamHist.ResumeLayout(false);
             this.grpPsychFamHist.PerformLayout();
             this.grpAssaultViolent.ResumeLayout(false);
@@ -6836,20 +7148,17 @@
             this.grpEducation.ResumeLayout(false);
             this.grpDenyEduInfo.ResumeLayout(false);
             this.grpDenyEduInfo.PerformLayout();
-            this.Diagnosis.ResumeLayout(false);
+            this.tabDiagnosis.ResumeLayout(false);
             this.grpProvDiag.ResumeLayout(false);
             this.grpProvDiag.PerformLayout();
             this.grpPhysicianRecom.ResumeLayout(false);
             this.grpPhysicianRecom.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.substance_abuseBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.patient_admissionBindingNavigator)).EndInit();
-            this.patient_admissionBindingNavigator.ResumeLayout(false);
-            this.patient_admissionBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.abuse_assessmentBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.abuse_assessmentDataGridView)).EndInit();
+            this.grpAdminButtons.ResumeLayout(false);
+            this.grpAdminButtons.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.substance_abuseDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.substance_abuseDataGridView1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -6863,19 +7172,6 @@
         private System.Windows.Forms.BindingSource patient_admissionBindingSource;
         private cPCAppDataSetTableAdapters.patient_admissionTableAdapter patient_admissionTableAdapter;
         private cPCAppDataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.BindingNavigator patient_admissionBindingNavigator;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
-        private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
-        private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
-        private System.Windows.Forms.ToolStripButton patient_admissionBindingNavigatorSaveItem;
         private System.Windows.Forms.TextBox firstNameTextBox;
         private System.Windows.Forms.TextBox mRNumTextBox;
         private System.Windows.Forms.DateTimePicker dOBDateTimePicker;
@@ -7168,7 +7464,7 @@
         private System.Windows.Forms.ComboBox depSympHopelessComboBox;
         private System.Windows.Forms.ComboBox depSympCryingComboBox;
         private System.Windows.Forms.ComboBox depSympSadComboBox;
-        private System.Windows.Forms.TabPage Diagnosis;
+        private System.Windows.Forms.TabPage tabDiagnosis;
         private System.Windows.Forms.GroupBox grpPhysicianRecom;
         private System.Windows.Forms.DateTimePicker timeAcceptedDateTimePicker;
         private System.Windows.Forms.TextBox physOnCallTextBox;
@@ -7197,25 +7493,13 @@
         private System.Windows.Forms.BindingSource treatment_facilityBindingSource;
         private cPCAppDataSetTableAdapters.treatment_facilityTableAdapter treatment_facilityTableAdapter;
         private System.Windows.Forms.DataGridView treatment_facilityDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.BindingSource psych_hospitalBindingSource;
         private cPCAppDataSetTableAdapters.psych_hospitalTableAdapter psych_hospitalTableAdapter;
         private System.Windows.Forms.DataGridView psych_hospitalDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.Label directionsLabel;
         private System.Windows.Forms.BindingSource medicationsBindingSource;
         private cPCAppDataSetTableAdapters.medicationsTableAdapter medicationsTableAdapter;
         private System.Windows.Forms.DataGridView medicationsDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
         private System.Windows.Forms.Label moodLabilityLabel;
         private System.Windows.Forms.Label anxietyRelatedLabel;
         private System.Windows.Forms.Label depressiveLabel;
@@ -7226,25 +7510,47 @@
         private System.Windows.Forms.ComboBox appearanceComboBox;
         private System.Windows.Forms.ComboBox judgementComboBox;
         private System.Windows.Forms.ComboBox insightComboBox;
-        private System.Windows.Forms.TextBox famHistHomDescTextBox;
         private System.Windows.Forms.ComboBox famHistHomComboBox;
-        private System.Windows.Forms.TextBox homPriorAttDescTextBox;
         private System.Windows.Forms.ComboBox homPriorAttComboBox;
-        private System.Windows.Forms.TextBox violOtherHistDescTextBox;
         private System.Windows.Forms.ComboBox violOtherHistComboBox;
-        private System.Windows.Forms.TextBox violOthers6MoDescTextBox;
         private System.Windows.Forms.ComboBox violOthers6MoComboBox;
-        private System.Windows.Forms.TextBox attemptInpatDescTextBox;
-        private System.Windows.Forms.ComboBox attemptInpatComboBox;
-        private System.Windows.Forms.TextBox famHistSuicDescTextBox;
-        private System.Windows.Forms.ComboBox famHistSuicComboBox;
-        private System.Windows.Forms.TextBox suicPriorAttDescTextBox;
-        private System.Windows.Forms.ComboBox suicPriorAttComboBox;
-        private System.Windows.Forms.TextBox violSelf6MoDescTextBox;
-        private System.Windows.Forms.ComboBox violSelf6MoComboBox;
         private System.Windows.Forms.BindingSource abuse_assessmentBindingSource;
         private cPCAppDataSetTableAdapters.abuse_assessmentTableAdapter abuse_assessmentTableAdapter;
         private System.Windows.Forms.DataGridView abuse_assessmentDataGridView;
+        private System.Windows.Forms.ComboBox livingSituationComboBox;
+        private System.Windows.Forms.GroupBox grpAdminButtons;
+        private System.Windows.Forms.Button btnCallSheet;
+        private System.Windows.Forms.Button btnChildSW;
+        private System.Windows.Forms.Button btnAdultSW;
+        private System.Windows.Forms.Button btnNurse;
+        private System.Windows.Forms.TextBox lastNameTextBox1;
+        private System.Windows.Forms.TextBox firstNameTextBox1;
+        private System.Windows.Forms.TextBox panMRNumTextBox;
+        private System.Windows.Forms.Button btnChangeLog;
+        private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.TextBox srcInfoTextBox;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.TextBox attemptInpatDescTextBox;
+        private System.Windows.Forms.TextBox famHistSuicDescTextBox;
+        private System.Windows.Forms.TextBox suicPriorAttDescTextBox;
+        private System.Windows.Forms.TextBox violSelf6MoDescTextBox;
+        private System.Windows.Forms.ComboBox attemptInpatComboBox;
+        private System.Windows.Forms.ComboBox famHistSuicComboBox;
+        private System.Windows.Forms.ComboBox suicPriorAttComboBox;
+        private System.Windows.Forms.ComboBox violSelf6MoComboBox;
+        private System.Windows.Forms.TextBox famHistHomDescTextBox;
+        private System.Windows.Forms.TextBox homPriorAttDescTextBox;
+        private System.Windows.Forms.TextBox violOtherHistDescTextBox;
+        private System.Windows.Forms.TextBox violOthers6MoDescTextBox;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
@@ -7254,6 +7560,21 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn19;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn20;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn21;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
+        private System.Windows.Forms.TextBox livingSituationDescTextBox;
+        private System.Windows.Forms.DataGridView substance_abuseDataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn31;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn32;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn36;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn33;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn39;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn35;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn37;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn38;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn34;
         private System.Windows.Forms.DataGridView substance_abuseDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn22;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn23;
@@ -7263,7 +7584,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn27;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn28;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn29;
-        private System.Windows.Forms.TextBox livingSituationDescTextBox;
-        private System.Windows.Forms.ComboBox livingSituationComboBox;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn30;
     }
 }

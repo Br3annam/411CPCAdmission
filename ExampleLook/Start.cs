@@ -14,6 +14,7 @@ namespace ExampleLook
     {
 
         private CallSheetWindow frmCallSheet;
+        private AdmissionsWindow admission;
         public Start()
         {
             InitializeComponent();
@@ -23,6 +24,12 @@ namespace ExampleLook
         {
             frmCallSheet = new CallSheetWindow();
             frmCallSheet.ShowDialog();
+        }
+
+        private void btnPatLookUp_Click(object sender, EventArgs e)
+        {
+            admission = new AdmissionsWindow();
+            admission.ShowDialog();
         }
     }
 }

@@ -108,7 +108,6 @@
             System.Windows.Forms.Label faxLabLabel;
             System.Windows.Forms.Label transportLabel;
             System.Windows.Forms.Label primInsNameLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CallSheetWindow));
             this.grpBxCallInfo = new System.Windows.Forms.GroupBox();
             this.callStartedTimeTextBox = new System.Windows.Forms.TextBox();
             this.patient_admissionBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -124,19 +123,6 @@
             this.callerStateTextBox = new System.Windows.Forms.TextBox();
             this.callerFNameTextBox = new System.Windows.Forms.TextBox();
             this.callerCityTextBox = new System.Windows.Forms.TextBox();
-            this.patient_admissionBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.patient_admissionBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.grpBxPatientInfo = new System.Windows.Forms.GroupBox();
             this.prefLangDescTextBox = new System.Windows.Forms.TextBox();
             this.prefLangComboBox = new System.Windows.Forms.ComboBox();
@@ -164,9 +150,6 @@
             this.bloodPressureTextBox = new System.Windows.Forms.TextBox();
             this.grpBxPresentProb = new System.Windows.Forms.GroupBox();
             this.allergiesDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.allergiesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sexAggressComboBox = new System.Windows.Forms.ComboBox();
             this.sexAggressDescTextBox = new System.Windows.Forms.TextBox();
@@ -193,10 +176,6 @@
             this.tabPgBack = new System.Windows.Forms.TabPage();
             this.callEndedTimeTextBox = new System.Windows.Forms.TextBox();
             this.medicationsDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.medicationsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.schedAssessCheckBox = new System.Windows.Forms.CheckBox();
             this.milStatComboBox = new System.Windows.Forms.ComboBox();
@@ -250,6 +229,15 @@
             this.tableAdapterManager = new ExampleLook.cPCAppDataSetTableAdapters.TableAdapterManager();
             this.medicationsTableAdapter = new ExampleLook.cPCAppDataSetTableAdapters.medicationsTableAdapter();
             this.allergiesTableAdapter = new ExampleLook.cPCAppDataSetTableAdapters.allergiesTableAdapter();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             callerFNameLabel = new System.Windows.Forms.Label();
             callerLNameLabel = new System.Windows.Forms.Label();
             callerCityLabel = new System.Windows.Forms.Label();
@@ -333,8 +321,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.patient_admissionBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cPCAppDataSet)).BeginInit();
             this.grpBxReferralData.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.patient_admissionBindingNavigator)).BeginInit();
-            this.patient_admissionBindingNavigator.SuspendLayout();
             this.grpBxPatientInfo.SuspendLayout();
             this.tabCallSheet.SuspendLayout();
             this.tabPgFront.SuspendLayout();
@@ -356,6 +342,7 @@
             // callerFNameLabel
             // 
             callerFNameLabel.AutoSize = true;
+            callerFNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
             callerFNameLabel.Location = new System.Drawing.Point(16, 31);
             callerFNameLabel.Name = "callerFNameLabel";
             callerFNameLabel.Size = new System.Drawing.Size(130, 17);
@@ -365,6 +352,7 @@
             // callerLNameLabel
             // 
             callerLNameLabel.AutoSize = true;
+            callerLNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
             callerLNameLabel.Location = new System.Drawing.Point(347, 31);
             callerLNameLabel.Name = "callerLNameLabel";
             callerLNameLabel.Size = new System.Drawing.Size(80, 17);
@@ -374,6 +362,7 @@
             // callerCityLabel
             // 
             callerCityLabel.AutoSize = true;
+            callerCityLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
             callerCityLabel.Location = new System.Drawing.Point(20, 64);
             callerCityLabel.Name = "callerCityLabel";
             callerCityLabel.Size = new System.Drawing.Size(35, 17);
@@ -383,6 +372,7 @@
             // callerStateLabel
             // 
             callerStateLabel.AutoSize = true;
+            callerStateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
             callerStateLabel.Location = new System.Drawing.Point(176, 64);
             callerStateLabel.Name = "callerStateLabel";
             callerStateLabel.Size = new System.Drawing.Size(45, 17);
@@ -392,6 +382,7 @@
             // callerZipLabel
             // 
             callerZipLabel.AutoSize = true;
+            callerZipLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
             callerZipLabel.Location = new System.Drawing.Point(344, 64);
             callerZipLabel.Name = "callerZipLabel";
             callerZipLabel.Size = new System.Drawing.Size(32, 17);
@@ -401,6 +392,7 @@
             // callerRefNameLabel
             // 
             callerRefNameLabel.AutoSize = true;
+            callerRefNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
             callerRefNameLabel.Location = new System.Drawing.Point(109, 98);
             callerRefNameLabel.Name = "callerRefNameLabel";
             callerRefNameLabel.Size = new System.Drawing.Size(103, 17);
@@ -410,6 +402,7 @@
             // callerAgencyLabel
             // 
             callerAgencyLabel.AutoSize = true;
+            callerAgencyLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
             callerAgencyLabel.Location = new System.Drawing.Point(362, 98);
             callerAgencyLabel.Name = "callerAgencyLabel";
             callerAgencyLabel.Size = new System.Drawing.Size(59, 17);
@@ -716,6 +709,7 @@
             // callerPhoneLabel
             // 
             callerPhoneLabel.AutoSize = true;
+            callerPhoneLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
             callerPhoneLabel.Location = new System.Drawing.Point(474, 65);
             callerPhoneLabel.Name = "callerPhoneLabel";
             callerPhoneLabel.Size = new System.Drawing.Size(53, 17);
@@ -1133,6 +1127,7 @@
             this.grpBxReferralData.Controls.Add(this.callerFNameTextBox);
             this.grpBxReferralData.Controls.Add(callerCityLabel);
             this.grpBxReferralData.Controls.Add(this.callerCityTextBox);
+            this.grpBxReferralData.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
             this.grpBxReferralData.Location = new System.Drawing.Point(6, 71);
             this.grpBxReferralData.Name = "grpBxReferralData";
             this.grpBxReferralData.Size = new System.Drawing.Size(713, 127);
@@ -1143,6 +1138,7 @@
             // callerPhoneTextBox
             // 
             this.callerPhoneTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "CallerPhone", true));
+            this.callerPhoneTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
             this.callerPhoneTextBox.Location = new System.Drawing.Point(533, 62);
             this.callerPhoneTextBox.Name = "callerPhoneTextBox";
             this.callerPhoneTextBox.Size = new System.Drawing.Size(125, 22);
@@ -1151,6 +1147,7 @@
             // callerAgencyTextBox
             // 
             this.callerAgencyTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "CallerAgency", true));
+            this.callerAgencyTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
             this.callerAgencyTextBox.Location = new System.Drawing.Point(423, 95);
             this.callerAgencyTextBox.Name = "callerAgencyTextBox";
             this.callerAgencyTextBox.Size = new System.Drawing.Size(144, 22);
@@ -1159,6 +1156,7 @@
             // callerRefNameTextBox
             // 
             this.callerRefNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "CallerRefName", true));
+            this.callerRefNameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
             this.callerRefNameTextBox.Location = new System.Drawing.Point(224, 95);
             this.callerRefNameTextBox.Name = "callerRefNameTextBox";
             this.callerRefNameTextBox.Size = new System.Drawing.Size(129, 22);
@@ -1167,6 +1165,7 @@
             // callerZipTextBox
             // 
             this.callerZipTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "CallerZip", true));
+            this.callerZipTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
             this.callerZipTextBox.Location = new System.Drawing.Point(378, 61);
             this.callerZipTextBox.Name = "callerZipTextBox";
             this.callerZipTextBox.Size = new System.Drawing.Size(82, 22);
@@ -1175,6 +1174,7 @@
             // callerLNameTextBox
             // 
             this.callerLNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "CallerLName", true));
+            this.callerLNameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
             this.callerLNameTextBox.Location = new System.Drawing.Point(444, 31);
             this.callerLNameTextBox.Name = "callerLNameTextBox";
             this.callerLNameTextBox.Size = new System.Drawing.Size(148, 22);
@@ -1183,6 +1183,7 @@
             // callerStateTextBox
             // 
             this.callerStateTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "CallerState", true));
+            this.callerStateTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
             this.callerStateTextBox.Location = new System.Drawing.Point(228, 61);
             this.callerStateTextBox.Name = "callerStateTextBox";
             this.callerStateTextBox.Size = new System.Drawing.Size(100, 22);
@@ -1191,6 +1192,7 @@
             // callerFNameTextBox
             // 
             this.callerFNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "CallerFName", true));
+            this.callerFNameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
             this.callerFNameTextBox.Location = new System.Drawing.Point(152, 28);
             this.callerFNameTextBox.Name = "callerFNameTextBox";
             this.callerFNameTextBox.Size = new System.Drawing.Size(170, 22);
@@ -1199,135 +1201,11 @@
             // callerCityTextBox
             // 
             this.callerCityTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.patient_admissionBindingSource, "CallerCity", true));
+            this.callerCityTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
             this.callerCityTextBox.Location = new System.Drawing.Point(66, 61);
             this.callerCityTextBox.Name = "callerCityTextBox";
             this.callerCityTextBox.Size = new System.Drawing.Size(100, 22);
             this.callerCityTextBox.TabIndex = 6;
-            // 
-            // patient_admissionBindingNavigator
-            // 
-            this.patient_admissionBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
-            this.patient_admissionBindingNavigator.BindingSource = this.patient_admissionBindingSource;
-            this.patient_admissionBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.patient_admissionBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
-            this.patient_admissionBindingNavigator.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.patient_admissionBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.bindingNavigatorMoveFirstItem,
-            this.bindingNavigatorMovePreviousItem,
-            this.bindingNavigatorSeparator,
-            this.bindingNavigatorPositionItem,
-            this.bindingNavigatorCountItem,
-            this.bindingNavigatorSeparator1,
-            this.bindingNavigatorMoveNextItem,
-            this.bindingNavigatorMoveLastItem,
-            this.bindingNavigatorSeparator2,
-            this.bindingNavigatorAddNewItem,
-            this.bindingNavigatorDeleteItem,
-            this.patient_admissionBindingNavigatorSaveItem});
-            this.patient_admissionBindingNavigator.Location = new System.Drawing.Point(0, 0);
-            this.patient_admissionBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
-            this.patient_admissionBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
-            this.patient_admissionBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
-            this.patient_admissionBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
-            this.patient_admissionBindingNavigator.Name = "patient_admissionBindingNavigator";
-            this.patient_admissionBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.patient_admissionBindingNavigator.Size = new System.Drawing.Size(1157, 27);
-            this.patient_admissionBindingNavigator.TabIndex = 2;
-            this.patient_admissionBindingNavigator.Text = "bindingNavigator1";
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(24, 24);
-            this.bindingNavigatorAddNewItem.Text = "Add new";
-            // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(45, 24);
-            this.bindingNavigatorCountItem.Text = "of {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(24, 24);
-            this.bindingNavigatorDeleteItem.Text = "Delete";
-            // 
-            // bindingNavigatorMoveFirstItem
-            // 
-            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
-            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
-            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(24, 24);
-            this.bindingNavigatorMoveFirstItem.Text = "Move first";
-            // 
-            // bindingNavigatorMovePreviousItem
-            // 
-            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
-            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
-            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(24, 24);
-            this.bindingNavigatorMovePreviousItem.Text = "Move previous";
-            // 
-            // bindingNavigatorSeparator
-            // 
-            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 27);
-            // 
-            // bindingNavigatorPositionItem
-            // 
-            this.bindingNavigatorPositionItem.AccessibleName = "Position";
-            this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 27);
-            this.bindingNavigatorPositionItem.Text = "0";
-            this.bindingNavigatorPositionItem.ToolTipText = "Current position";
-            // 
-            // bindingNavigatorSeparator1
-            // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 27);
-            // 
-            // bindingNavigatorMoveNextItem
-            // 
-            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
-            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
-            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(24, 24);
-            this.bindingNavigatorMoveNextItem.Text = "Move next";
-            // 
-            // bindingNavigatorMoveLastItem
-            // 
-            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
-            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
-            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(24, 24);
-            this.bindingNavigatorMoveLastItem.Text = "Move last";
-            // 
-            // bindingNavigatorSeparator2
-            // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 27);
-            // 
-            // patient_admissionBindingNavigatorSaveItem
-            // 
-            this.patient_admissionBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.patient_admissionBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("patient_admissionBindingNavigatorSaveItem.Image")));
-            this.patient_admissionBindingNavigatorSaveItem.Name = "patient_admissionBindingNavigatorSaveItem";
-            this.patient_admissionBindingNavigatorSaveItem.Size = new System.Drawing.Size(24, 24);
-            this.patient_admissionBindingNavigatorSaveItem.Text = "Save Data";
-            this.patient_admissionBindingNavigatorSaveItem.Click += new System.EventHandler(this.patient_admissionBindingNavigatorSaveItem_Click);
             // 
             // grpBxPatientInfo
             // 
@@ -1368,7 +1246,6 @@
             this.grpBxPatientInfo.TabIndex = 3;
             this.grpBxPatientInfo.TabStop = false;
             this.grpBxPatientInfo.Text = "Patient Information";
-            this.grpBxPatientInfo.Enter += new System.EventHandler(this.grpBxPatientInfo_Enter);
             // 
             // prefLangDescTextBox
             // 
@@ -1516,10 +1393,10 @@
             // 
             this.tabCallSheet.Controls.Add(this.tabPgFront);
             this.tabCallSheet.Controls.Add(this.tabPgBack);
-            this.tabCallSheet.Location = new System.Drawing.Point(12, 30);
+            this.tabCallSheet.Location = new System.Drawing.Point(12, 43);
             this.tabCallSheet.Name = "tabCallSheet";
             this.tabCallSheet.SelectedIndex = 0;
-            this.tabCallSheet.Size = new System.Drawing.Size(808, 1117);
+            this.tabCallSheet.Size = new System.Drawing.Size(808, 1168);
             this.tabCallSheet.TabIndex = 4;
             // 
             // tabPgFront
@@ -1534,7 +1411,7 @@
             this.tabPgFront.Location = new System.Drawing.Point(4, 25);
             this.tabPgFront.Name = "tabPgFront";
             this.tabPgFront.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPgFront.Size = new System.Drawing.Size(800, 1088);
+            this.tabPgFront.Size = new System.Drawing.Size(800, 1139);
             this.tabPgFront.TabIndex = 0;
             this.tabPgFront.Text = "Front";
             this.tabPgFront.UseVisualStyleBackColor = true;
@@ -1634,7 +1511,7 @@
             this.grpBxPresentProb.Controls.Add(this.presentProbTextBox);
             this.grpBxPresentProb.Location = new System.Drawing.Point(6, 442);
             this.grpBxPresentProb.Name = "grpBxPresentProb";
-            this.grpBxPresentProb.Size = new System.Drawing.Size(721, 604);
+            this.grpBxPresentProb.Size = new System.Drawing.Size(713, 604);
             this.grpBxPresentProb.TabIndex = 5;
             this.grpBxPresentProb.TabStop = false;
             this.grpBxPresentProb.Text = "Presenting Problem";
@@ -1653,24 +1530,6 @@
             this.allergiesDataGridView.RowTemplate.Height = 24;
             this.allergiesDataGridView.Size = new System.Drawing.Size(685, 172);
             this.allergiesDataGridView.TabIndex = 43;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "PatientID";
-            this.dataGridViewTextBoxColumn1.HeaderText = "PatientID";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "AllergicType";
-            this.dataGridViewTextBoxColumn5.HeaderText = "AllergicType";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "AllergicTypeDesc";
-            this.dataGridViewTextBoxColumn6.HeaderText = "AllergicTypeDesc";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             // 
             // allergiesBindingSource
             // 
@@ -1872,7 +1731,6 @@
             this.grpBxCommitStat.TabIndex = 4;
             this.grpBxCommitStat.TabStop = false;
             this.grpBxCommitStat.Text = "Commitment Status";
-            this.grpBxCommitStat.Enter += new System.EventHandler(this.grpBxCommitStat_Enter);
             // 
             // commitStatDescTextBox
             // 
@@ -1922,7 +1780,7 @@
             this.tabPgBack.Location = new System.Drawing.Point(4, 25);
             this.tabPgBack.Name = "tabPgBack";
             this.tabPgBack.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPgBack.Size = new System.Drawing.Size(800, 1088);
+            this.tabPgBack.Size = new System.Drawing.Size(800, 1139);
             this.tabPgBack.TabIndex = 1;
             this.tabPgBack.Text = "Back";
             this.tabPgBack.UseVisualStyleBackColor = true;
@@ -1950,30 +1808,6 @@
             this.medicationsDataGridView.RowTemplate.Height = 24;
             this.medicationsDataGridView.Size = new System.Drawing.Size(743, 182);
             this.medicationsDataGridView.TabIndex = 18;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "PatientID";
-            this.dataGridViewTextBoxColumn2.HeaderText = "PatientID";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "MedCurrent";
-            this.dataGridViewTextBoxColumn3.HeaderText = "MedCurrent";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "MedDosage";
-            this.dataGridViewTextBoxColumn4.HeaderText = "MedDosage";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "MedFrequency";
-            this.dataGridViewTextBoxColumn7.HeaderText = "MedFrequency";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             // 
             // medicationsBindingSource1
             // 
@@ -2035,7 +1869,6 @@
             this.schedAssessTimeTextBox.Name = "schedAssessTimeTextBox";
             this.schedAssessTimeTextBox.Size = new System.Drawing.Size(111, 22);
             this.schedAssessTimeTextBox.TabIndex = 2;
-            this.schedAssessTimeTextBox.Text = "3:00pm";
             // 
             // schedAssessDateDateTimePicker
             // 
@@ -2466,11 +2299,11 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(712, 4);
+            this.btnSave.Location = new System.Drawing.Point(633, 12);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.Size = new System.Drawing.Size(75, 25);
             this.btnSave.TabIndex = 5;
-            this.btnSave.Text = "\"Save\"";
+            this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
@@ -2485,6 +2318,7 @@
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.deffered_problem_listTableAdapter = null;
             this.tableAdapterManager.family_membersTableAdapter = null;
+            this.tableAdapterManager.functionsTableAdapter = null;
             this.tableAdapterManager.interventionsTableAdapter = null;
             this.tableAdapterManager.medical_problem_listTableAdapter = null;
             this.tableAdapterManager.medicationsTableAdapter = null;
@@ -2507,15 +2341,84 @@
             // 
             this.allergiesTableAdapter.ClearBeforeFill = true;
             // 
+            // btnEdit
+            // 
+            this.btnEdit.Location = new System.Drawing.Point(526, 12);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(75, 25);
+            this.btnEdit.TabIndex = 6;
+            this.btnEdit.Text = "Edit";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            // 
+            // btnClear
+            // 
+            this.btnClear.Location = new System.Drawing.Point(740, 12);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(75, 25);
+            this.btnClear.TabIndex = 7;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "PatientID";
+            this.dataGridViewTextBoxColumn2.HeaderText = "PatientID";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "MedCurrent";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Current Medication Name";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.Width = 146;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "MedDosage";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Dosage";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "MedFrequency";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Frequency";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "PatientID";
+            this.dataGridViewTextBoxColumn1.HeaderText = "PatientID";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "AllergicType";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Allergic Type";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.Width = 119;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "AllergicTypeDesc";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Allergic Description";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.Width = 145;
+            // 
             // CallSheetWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1178, 1037);
+            this.Controls.Add(this.btnClear);
+            this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.tabCallSheet);
-            this.Controls.Add(this.patient_admissionBindingNavigator);
             this.Name = "CallSheetWindow";
             this.Text = "Call Sheet";
             this.Load += new System.EventHandler(this.CallSheetWindow_Load);
@@ -2525,9 +2428,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.cPCAppDataSet)).EndInit();
             this.grpBxReferralData.ResumeLayout(false);
             this.grpBxReferralData.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.patient_admissionBindingNavigator)).EndInit();
-            this.patient_admissionBindingNavigator.ResumeLayout(false);
-            this.patient_admissionBindingNavigator.PerformLayout();
             this.grpBxPatientInfo.ResumeLayout(false);
             this.grpBxPatientInfo.PerformLayout();
             this.tabCallSheet.ResumeLayout(false);
@@ -2554,7 +2454,6 @@
             this.grpTansfer.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.medicationsBindingSource)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -2566,19 +2465,6 @@
         private System.Windows.Forms.BindingSource patient_admissionBindingSource;
         private cPCAppDataSetTableAdapters.patient_admissionTableAdapter patient_admissionTableAdapter;
         private cPCAppDataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.BindingNavigator patient_admissionBindingNavigator;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
-        private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
-        private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
-        private System.Windows.Forms.ToolStripButton patient_admissionBindingNavigatorSaveItem;
         private System.Windows.Forms.TextBox callerFNameTextBox;
         private System.Windows.Forms.TextBox callerZipTextBox;
         private System.Windows.Forms.TextBox callerLNameTextBox;
@@ -2691,15 +2577,17 @@
         private System.Windows.Forms.CheckBox timeAcceptedNACheckBox;
         private System.Windows.Forms.TextBox transportDescTextBox;
         private System.Windows.Forms.DataGridView allergiesDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridView medicationsDataGridView;
+        private System.Windows.Forms.BindingSource medicationsBindingSource1;
+        private System.Windows.Forms.TextBox callEndedTimeTextBox;
+        private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.BindingSource medicationsBindingSource1;
-        private System.Windows.Forms.TextBox callEndedTimeTextBox;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
     }
 }
