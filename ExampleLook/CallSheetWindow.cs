@@ -83,7 +83,7 @@ namespace ExampleLook
             //MessageBox.Show(dl.dOB.ToString() + " " + dl.gender + " " + dl.lastName + " " + dl.presentSuicide);
         }
 
-        private void getCallSheetInfo()
+        private void setCallSheetInfo()
         {
             dl.callerFName = callerFNameTextBox.Text;
             dl.callerZip = callerZipTextBox.Text;
@@ -192,9 +192,25 @@ namespace ExampleLook
                 dl.timeAcceptedNA = "N";
             dl.transportDesc = transportDescTextBox.Text;
             dl.callEndedTime = callEndedTimeTextBox.Text;
+            dl.prefLang = prefLangComboBox.SelectedIndex.ToString();
+            dl.genderID = genderIDComboBox.SelectedIndex.ToString();
+            dl.gender = genderComboBox.SelectedIndex.ToString();
+            dl.sexAggress = sexAggressComboBox.SelectedIndex.ToString();
+            dl.sexVictim = sexVictimComboBox.SelectedIndex.ToString();
+            dl.intelDisable = intelDisableComboBox.SelectedIndex.ToString();
+            dl.potentialPreg = potentialPregComboBox.SelectedIndex.ToString();
+            dl.commitStat = commitStatComboBox.SelectedIndex.ToString();
+            dl.milStat = milStatComboBox.SelectedIndex.ToString();
+            dl.transport = transportComboBox.SelectedIndex.ToString();
+            dl.faxLab = faxLabComboBox.SelectedIndex.ToString();
+            dl.powAttorney = powAttorneyComboBox.SelectedIndex.ToString();
+            dl.guardianship = guardianshipComboBox.SelectedIndex.ToString();
+            dl.medEduRights = medEduRightsComboBox.SelectedIndex.ToString();
+            dl.stableTrans = stableTransComboBox.SelectedIndex.ToString();
+
         }
 
-        private void setCallSheetInfo()
+        private void getCallSheetInfo()
         {
             callerFNameTextBox.Text = dl.callerFName;
             callerZipTextBox.Text = dl.callerZip;
@@ -301,6 +317,21 @@ namespace ExampleLook
                 timeAcceptedNACheckBox.Checked = true;
             transportDescTextBox.Text = dl.transportDesc;
             callEndedTimeTextBox.Text = dl.callEndedTime;
+            prefLangComboBox.SelectedIndex = int.Parse(dl.prefLang);
+            genderIDComboBox.SelectedIndex = int.Parse(dl.genderID);
+            genderComboBox.SelectedIndex = int.Parse(dl.gender);
+            sexAggressComboBox.SelectedIndex = int.Parse(dl.sexAggress);
+            sexVictimComboBox.SelectedIndex = int.Parse(dl.sexVictim);
+            intelDisableComboBox.SelectedIndex = int.Parse(dl.intelDisable);
+            potentialPregComboBox.SelectedIndex = int.Parse(dl.potentialPreg);
+            commitStatComboBox.SelectedIndex = int.Parse(dl.commitStat);
+            milStatComboBox.SelectedIndex = int.Parse(dl.milStat);
+            transportComboBox.SelectedIndex = int.Parse(dl.transport);
+            faxLabComboBox.SelectedIndex = int.Parse(dl.faxLab);
+            powAttorneyComboBox.SelectedIndex = int.Parse(dl.powAttorney);
+            guardianshipComboBox.SelectedIndex = int.Parse(dl.guardianship);
+            medEduRightsComboBox.SelectedIndex = int.Parse(dl.medEduRights);
+            stableTransComboBox.SelectedIndex = int.Parse(dl.stableTrans);
         }
 
         private void grpBxPatientInfo_Enter(object sender, EventArgs e)
